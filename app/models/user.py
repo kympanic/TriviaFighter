@@ -10,9 +10,15 @@ class User(db.Model, UserMixin):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(40), nullable=False, unique=True)
+    username = db.Column(db.String(25), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
+    profile_img = db.Column(db.String(255))
     hashed_password = db.Column(db.String(255), nullable=False)
+
+
+    #relationships
+    trivias = db.relationship('Trivia', back_populates='user', cascade='all,delete')
+    trivia_cards = db.relationship('TriviaCard', back_populates='user', cascade='all,delete')
 
     @property
     def password(self):
@@ -29,5 +35,15 @@ class User(db.Model, UserMixin):
         return {
             'id': self.id,
             'username': self.username,
-            'email': self.email
+            'email': self.email,
+            'profileImg': self.profile_img,
+            'trivias': [trivia.to_dict_basic() for trivia in self.trivias],
+            'triviaCards': [trivia_card.to_dict_basic() for trivia_card in self.trivia_cards]
+        }
+    
+    def to_dict_basic(self):
+        return{
+            'username': self.username,
+            'email': self.email,
+            'profileImg': self.profile_img,
         }

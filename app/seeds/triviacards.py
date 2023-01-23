@@ -1,12 +1,12 @@
-from app.models import db, User, environment, SCHEMA
+from app.models import db, TriviaCard, environment, SCHEMA
 
 
 # Adds a demo user, you can add other users here if you want
-def seed_users():
-    demo = User(
-        username='Demo', email='demo@aa.io', password='password',profile_img="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/defaultprofileimg.png")
-
-    db.session.add(demo)
+def seed_trivia_cards():
+    triviacard1 = TriviaCard(
+      name="Entertainment Bonanza", category="Entertainment", description="This game is all about movies from the 2000s", difficulty="Hard", user_id=1 )
+ 
+    db.session.add(triviacard1)
 
     db.session.commit()
 
@@ -17,10 +17,10 @@ def seed_users():
 # incrementing primary key, CASCADE deletes any dependent entities.  With
 # sqlite3 in development you need to instead use DELETE to remove all data and
 # it will reset the primary keys for you as well.
-def undo_users():
+def undo_trivia_cards():
     if environment == "production":
-        db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
+        db.session.execute(f"TRUNCATE table {SCHEMA}.triviacards RESTART IDENTITY CASCADE;")
     else:
-        db.session.execute("DELETE FROM users")
+        db.session.execute("DELETE FROM triviacards")
         
     db.session.commit()
