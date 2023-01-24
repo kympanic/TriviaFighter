@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { getAllTriviasCardsThunk } from "../../../store/triviacard";
 import AddTriviaCardModal from "../../Modals/AddTriviaCard/AddTriviaCardModal";
 import DeleteTriviaCardModal from "../../Modals/DeleteTriviaCard/DeleteTriviaCardModal";
+import EditTriviaCardModal from "../../Modals/EditTriviaCard/EditTriviaCardModal";
+
 const ProfilePage = () => {
 	const { userId } = useParams();
 	const id = parseInt(userId);
@@ -13,10 +15,11 @@ const ProfilePage = () => {
 
 	const [isOpenAddTriviaCard, setIsOpenAddTriviaCard] = useState(false);
 	const [isOpenDeleteTriviaCard, setIsOpenDeleteTriviaCard] = useState(false);
+	const [isOpenEditTriviaCard, setIsOpenEditTriviaCard] = useState(false);
 
 	useEffect(() => {
 		dispatch(getAllTriviasCardsThunk());
-	}, [dispatch, sessionUser.triviaCards.length]);
+	}, [dispatch]);
 
 	return (
 		<div>
@@ -84,7 +87,26 @@ const ProfilePage = () => {
 														triviacard={triviacard}
 													/>
 												)}
-												<button>Edit</button>
+												{isOpenEditTriviaCard && (
+													<EditTriviaCardModal
+														setIsOpen={
+															setIsOpenEditTriviaCard
+														}
+														triviacard={triviacard}
+														sessionUser={
+															sessionUser
+														}
+													/>
+												)}
+												<button
+													onClick={() =>
+														setIsOpenEditTriviaCard(
+															true
+														)
+													}
+												>
+													Edit
+												</button>
 												<button
 													onClick={() =>
 														setIsOpenDeleteTriviaCard(
@@ -105,7 +127,6 @@ const ProfilePage = () => {
 									</div>
 								))}
 						</div>
-
 						<div>
 							<h1>comments section placeholder</h1>
 						</div>
