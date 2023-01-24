@@ -8,24 +8,26 @@ const ProfilePage = () => {
 	const { userId } = useParams();
 	const id = parseInt(userId);
 	const dispatch = useDispatch();
-
+	const selectedUser = useSelector((state) => state?.users[userId]);
 	const sessionUser = useSelector((state) => state.session.user);
 
 	const [isOpenAddTriviaCard, setIsOpenAddTriviaCard] = useState(false);
-
-	console.log(sessionUser.triviaCards.length, "MAAN");
+	console.log(selectedUser, "this is the data i need to use");
 	useEffect(() => {
 		dispatch(getAllTriviasCardsThunk());
 	}, [dispatch, sessionUser.triviaCards.length]);
 
 	return (
 		<div>
-			{sessionUser && (
+			{sessionUser && selectedUser && (
 				<div>
 					<div className="profilepage-info-container">
-						<img src={sessionUser.profileImg} alt="" />
-						<p>{sessionUser.username}</p>
-						<p>{sessionUser.email}</p>
+						<img
+							src={selectedUser.profileImg}
+							alt={selectedUser.username}
+						/>
+						<p>{selectedUser.username}</p>
+						<p>{selectedUser.email}</p>
 						<p>average rating</p>
 					</div>
 					<div className="profilepage-header-container">
@@ -55,31 +57,37 @@ const ProfilePage = () => {
 								This is where the trivia cards made by the user
 								would go
 							</h1>
-							{sessionUser.triviaCards.map((triviacard) => (
-								<div key={triviacard.name}>
-									<img
-										src={triviacard.imageUrl}
-										alt={triviacard.name}
-									/>
-									<p>{triviacard.category}</p>
-									<p>{triviacard.difficulty}</p>
-									{sessionUser.trivias.length < 20 && (
-										<button>
-											You need more trivia questions!
-										</button>
-									)}
-									{sessionUser.id === userId ? (
-										<div>
-											<button>Edit</button>
-											<button>Delete</button>
-										</div>
-									) : (
-										<div>
-											<button>Play</button>
-										</div>
-									)}
-								</div>
-							))}
+							{selectedUser &&
+								sessionUser &&
+								selectedUser.triviaCards.map((triviacard) => (
+									<div key={triviacard.name}>
+										<img
+											src={triviacard.imageUrl}
+											alt={triviacard.name}
+										/>
+										<p>{triviacard.category}</p>
+										<p>{triviacard.difficulty}</p>
+										{sessionUser.id === id &&
+											sessionUser.trivias.length < 20 && (
+												<button>
+													You need more trivia
+													questions!
+												</button>
+											)}
+										{sessionUser.id === id && (
+											<div>
+												<button>Edit</button>
+												<button>Delete</button>
+											</div>
+										)}
+										{sessionUser.id !== id &&
+											triviacard.trivias.length === 1 && (
+												<div>
+													<button>Play</button>
+												</div>
+											)}
+									</div>
+								))}
 						</div>
 
 						<div>

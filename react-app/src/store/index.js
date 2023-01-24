@@ -3,11 +3,12 @@ import thunk from "redux-thunk";
 import session from "./session";
 import trivias from "./trivia";
 import triviacards from "./triviacard";
-
+import users from "./users";
 const rootReducer = combineReducers({
 	session,
 	trivias,
 	triviacards,
+	users,
 });
 
 let enhancer;

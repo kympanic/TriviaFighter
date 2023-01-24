@@ -32,6 +32,7 @@ class Trivia (db.Model):
             'incorrectAnswer3': self.incorrect_answer3,
             'category': self.category,
             'difficulty': self.difficulty,
+            'triviaCardId': self.trivia_card_id,
             'user': self.user.to_dict_basic(),
             'triviaCard': self.trivia_card.to_dict_basic(),
         }
@@ -46,4 +47,5 @@ class Trivia (db.Model):
             'category': self.category,
             'difficulty': self.difficulty,
             'userId': self.user_id,
+            'triviaCardId': self.trivia_card_id,
         }

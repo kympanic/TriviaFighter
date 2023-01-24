@@ -6,14 +6,16 @@ from app.models import User, TriviaCard
 user_routes = Blueprint('users', __name__)
 
 
-@user_routes.route('/')
-@login_required
+@user_routes.route('')
 def users():
     """
     Query for all users and returns them in a list of user dictionaries
     """
     users = User.query.all()
-    return {'users': [user.to_dict() for user in users]}
+    
+    res = {user.id: user.to_dict() for user in users}
+
+    return res
 
 
 @user_routes.route('/<int:id>')
