@@ -8,57 +8,38 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 	const dispatch = useDispatch();
 	const [errors, setErrors] = useState([]);
 	const [data, setData] = useState({
-		name: "",
+		cardName: "",
 		category: "",
 		difficulty: "",
 		description: "",
 		imageUrl: "",
 	});
 
-	const [triviaCardName, setTriviaCardName] = useState("");
-	const [category, setCategory] = useState("");
-	const [description, setDescription] = useState("");
-	const [difficulty, setDifficulty] = useState("");
-	const [imageUrl, setImageUrl] = useState("");
-
-	const updateTriviaCardName = (e) => {
-		setTriviaCardName(e.target.value);
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setData((prev) => {
+			return { ...prev, [name]: value };
+		});
 	};
-
-	const updateCategory = (e) => {
-		setCategory(e.target.value);
-	};
-
-	const updateDescription = (e) => {
-		setDescription(e.target.value);
-	};
-
-	const updateDifficulty = (e) => {
-		setDifficulty(e.target.value);
-	};
-	const updateImageUrl = (e) => {
-		setImageUrl(e.target.value);
-	};
+	console.log(data);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const newTriviaCard = {
-			user_id: sessionUser.id,
-			name: triviaCardName,
-			category,
-			difficulty,
-			description,
-			image_url: imageUrl,
-		};
-
-		const data = await dispatch(createTriviaCardThunk(newTriviaCard));
-
-		if (data) {
-			setErrors(data);
-		} else {
-			setIsOpen(false);
-		}
+		// const newTriviaCard = {
+		// 	user_id: sessionUser.id,
+		// 	name: cardName,
+		// 	category,
+		// 	difficulty,
+		// 	description,
+		// 	image_url: imageUrl,
+		// };
+		// const data = await dispatch(createTriviaCardThunk(newTriviaCard));
+		// if (data) {
+		// 	setErrors(data);
+		// } else {
+		// 	setIsOpen(false);
+		// }
 	};
 
 	return (
@@ -94,18 +75,14 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 								<label>Name: </label>
 								<input
 									type="text"
-									name="name"
-									onChange={updateTriviaCardName}
-									value={triviaCardName}
+									name="cardName"
+									onChange={handleChange}
 									maxLength={30}
 								/>
 							</div>
 							<div>
 								<label>Category: </label>
-								<select
-									value={category}
-									onChange={updateCategory}
-								>
+								<select onChange={handleChange}>
 									<option value="--">--</option>
 									<option value="General Knowledge">
 										General Knowledge
@@ -126,10 +103,7 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 							</div>
 							<div>
 								<label>Difficulty: </label>
-								<select
-									value={difficulty}
-									onChange={updateDifficulty}
-								>
+								<select onChange={handleChange}>
 									<option value="--">--</option>
 									<option value="easy">EASY</option>
 									<option value="medium">MEDIUM</option>
@@ -142,8 +116,7 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 									name="description"
 									rows="4"
 									cols="50"
-									onChange={updateDescription}
-									value={description}
+									onChange={handleChange}
 								></textarea>
 							</div>
 							<div>
@@ -151,8 +124,7 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 								<input
 									type="url"
 									name="imageUrl"
-									onChange={updateImageUrl}
-									value={imageUrl}
+									onChange={handleChange}
 									placeholder="https://example.com"
 								></input>
 							</div>
