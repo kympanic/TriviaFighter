@@ -1,46 +1,41 @@
 import { useState } from "react";
-
+import HomepageGameOptionModal from "../../../../Modals/HomepageGameOption/HomepageGameOptionModal";
+import PremadeGameName from "../PremadeGameName";
 const PremadeTriviaCard = ({ category }) => {
-	// const [triviaData, setTriviaData] = useState({});
 	const [difficulty, setDifficulty] = useState("");
-	//renders once and not again unless component changes
-	// useEffect(() => {
-	// 	getTriviaDataFetch();
-	// }, [triviaData.length]);
-	//getting the trivia data. Must do this dynamically. Do i want to save this or just use the data to load a game?
-	// const getTriviaDataFetch = async () => {
-	// 	const response = await fetch(
-	// 		`https://opentdb.com/api.php?amount=20&category=${category}&difficulty=hard&type=multiple`
-	// 	);
-	// 	const jsonData = await response.json();
-	// 	setTriviaData(jsonData);
-	// };
-
-	const handleClick = (e) => {
-		e.preventDefault();
-	};
+	const [isOpenOption, setIsOpenOption] = useState(false);
 
 	const updateDifficulty = (e) => {
 		setDifficulty(e.target.value);
+		setIsOpenOption(true);
 	};
+	const title = "";
 
-	// console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
 	return (
 		<div>
-			<h3>Image Placeholder</h3>
-			<form>
-				<label>difficulty</label>
-				<select value={difficulty} onChange={updateDifficulty}>
-					<option value="--">--</option>
-					<option value="Easy">EASY</option>
-					<option value="Medium">MEDIUM</option>
-					<option value="Hard">HARD</option>
-				</select>
-				{difficulty.length > 3 && (
-					<button onClick={handleClick}>PLAY</button>
-				)}
-				<>modal here</>
-			</form>
+			{category && (
+				<div>
+					<PremadeGameName category={category} />
+					<h3>Image Placeholder</h3>
+					<form>
+						<label>difficulty</label>
+						<select value={difficulty} onChange={updateDifficulty}>
+							<option value="--">--</option>
+							<option value="Easy">EASY</option>
+							<option value="Medium">MEDIUM</option>
+							<option value="Hard">HARD</option>
+						</select>
+						{isOpenOption && (
+							<HomepageGameOptionModal
+								setIsOpen={setIsOpenOption}
+								difficulty={difficulty}
+								category={category}
+							/>
+						)}
+						<>modal here</>
+					</form>
+				</div>
+			)}
 		</div>
 	);
 };
