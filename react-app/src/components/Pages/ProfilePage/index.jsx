@@ -21,7 +21,7 @@ const ProfilePage = () => {
 
 	useEffect(() => {
 		dispatch(getAllTriviasPackagesThunk());
-	}, [dispatch]);
+	}, [dispatch, selectedUser?.triviaPackages.length]);
 
 	return (
 		<div>
@@ -79,8 +79,11 @@ const ProfilePage = () => {
 												sessionUser.trivias.length <
 													20 && (
 													<button>
-														You need more trivia
-														questions!
+														You need{" "}
+														{20 -
+															sessionUser.trivias
+																.length}{" "}
+														more trivia questions!
 													</button>
 												)}
 											{sessionUser.id === id && (
