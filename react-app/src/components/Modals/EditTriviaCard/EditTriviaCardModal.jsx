@@ -7,34 +7,25 @@ import { editTriviaCardThunk } from "../../../store/triviacard";
 const EditTriviaCardModal = ({ setIsOpen, triviacard, sessionUser }) => {
 	const dispatch = useDispatch();
 	const [errors, setErrors] = useState([]);
-	const [details, setDetails] = useState({
-		cardName: "",
-		category: "",
-		difficulty: "",
-		description: "",
-		imageUrl: "",
-	});
-
-	const handleChange = (e) => {
-		const { name, value } = e.target;
-		setDetails((prev) => {
-			return { ...prev, [name]: value };
-		});
-	};
+	const [cardName, setCardName] = useState(triviacard.name);
+	const [category, setCategory] = useState("");
+	const [difficulty, setDifficulty] = useState("");
+	const [description, setDescription] = useState(triviacard.description);
+	const [imageUrl, setImageUrl] = useState("");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const newTriviaCard = {
+		const editTriviaCard = {
 			id: triviacard.id,
 			user_id: sessionUser.id,
-			name: details.cardName,
-			difficulty: details.difficulty,
-			category: details.category,
-			description: details.description,
-			image_url: details.imageUrl,
+			name: cardName,
+			difficulty,
+			category,
+			description,
+			image_url: imageUrl,
 		};
-		const data = await dispatch(editTriviaCardThunk(newTriviaCard));
+		const data = await dispatch(editTriviaCardThunk(editTriviaCard));
 
 		if (data) {
 			setErrors(data);
@@ -78,13 +69,21 @@ const EditTriviaCardModal = ({ setIsOpen, triviacard, sessionUser }) => {
 									type="text"
 									name="cardName"
 									placeholder="Package Name"
-									onChange={handleChange}
+									onChange={(e) =>
+										setCardName(e.target.value)
+									}
 									maxLength={30}
+									value={cardName}
 								/>
 							</div>
 							<div>
 								<label>Category: </label>
-								<select onChange={handleChange} name="category">
+								<select
+									onChange={(e) =>
+										setCategory(e.target.value)
+									}
+									name="category"
+								>
 									<option value="--">--</option>
 									<option value="General Knowledge">
 										General Knowledge
@@ -106,7 +105,9 @@ const EditTriviaCardModal = ({ setIsOpen, triviacard, sessionUser }) => {
 							<div>
 								<label>Difficulty: </label>
 								<select
-									onChange={handleChange}
+									onChange={(e) =>
+										setDifficulty(e.target.value)
+									}
 									name="difficulty"
 								>
 									<option value="--">--</option>
@@ -121,7 +122,10 @@ const EditTriviaCardModal = ({ setIsOpen, triviacard, sessionUser }) => {
 									name="description"
 									rows="4"
 									cols="50"
-									onChange={handleChange}
+									onChange={(e) =>
+										setDescription(e.target.value)
+									}
+									value={description}
 								></textarea>
 							</div>
 							<div>
@@ -129,7 +133,9 @@ const EditTriviaCardModal = ({ setIsOpen, triviacard, sessionUser }) => {
 								<input
 									type="url"
 									name="imageUrl"
-									onChange={handleChange}
+									onChange={(e) =>
+										setImageUrl(e.target.value)
+									}
 									placeholder="https://example.com"
 								></input>
 							</div>

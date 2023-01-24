@@ -22,6 +22,9 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 		});
 	};
 
+	const defaultTriviaImage =
+		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/defaultTriviaCardImg.jpeg";
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
