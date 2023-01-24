@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAllTriviasCardsThunk } from "../../../store/triviacard";
 import AddTriviaCardModal from "../../Modals/AddTriviaCard/AddTriviaCardModal";
-
+import DeleteTriviaCardModal from "../../Modals/DeleteTriviaCard/DeleteTriviaCardModal";
 const ProfilePage = () => {
 	const { userId } = useParams();
 	const id = parseInt(userId);
@@ -12,7 +12,8 @@ const ProfilePage = () => {
 	const sessionUser = useSelector((state) => state.session.user);
 
 	const [isOpenAddTriviaCard, setIsOpenAddTriviaCard] = useState(false);
-	// console.log(selectedUser, "this is the data i need to use");
+	const [isOpenDeleteTriviaCard, setIsOpenDeleteTriviaCard] = useState(false);
+
 	useEffect(() => {
 		dispatch(getAllTriviasCardsThunk());
 	}, [dispatch, sessionUser.triviaCards.length]);
@@ -51,7 +52,6 @@ const ProfilePage = () => {
 								<></>
 							)}
 						</div>
-
 						<div className="profilepage-triviacard-menu">
 							<h1>
 								This is where the trivia cards made by the user
@@ -76,8 +76,24 @@ const ProfilePage = () => {
 											)}
 										{sessionUser.id === id && (
 											<div>
+												{isOpenDeleteTriviaCard && (
+													<DeleteTriviaCardModal
+														setIsOpen={
+															setIsOpenDeleteTriviaCard
+														}
+														triviacard={triviacard}
+													/>
+												)}
 												<button>Edit</button>
-												<button>Delete</button>
+												<button
+													onClick={() =>
+														setIsOpenDeleteTriviaCard(
+															true
+														)
+													}
+												>
+													Delete
+												</button>
 											</div>
 										)}
 										{sessionUser.id !== id &&

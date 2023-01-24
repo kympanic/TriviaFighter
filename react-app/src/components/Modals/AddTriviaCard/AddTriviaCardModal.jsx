@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 	const dispatch = useDispatch();
 	const [errors, setErrors] = useState([]);
-	const [data, setData] = useState({
+	const [details, setDetails] = useState({
 		cardName: "",
 		category: "",
 		difficulty: "",
@@ -17,29 +17,29 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		setData((prev) => {
+		setDetails((prev) => {
 			return { ...prev, [name]: value };
 		});
 	};
-	console.log(data);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		// const newTriviaCard = {
-		// 	user_id: sessionUser.id,
-		// 	name: cardName,
-		// 	category,
-		// 	difficulty,
-		// 	description,
-		// 	image_url: imageUrl,
-		// };
-		// const data = await dispatch(createTriviaCardThunk(newTriviaCard));
-		// if (data) {
-		// 	setErrors(data);
-		// } else {
-		// 	setIsOpen(false);
-		// }
+		const newTriviaCard = {
+			user_id: sessionUser.id,
+			name: details.cardName,
+			difficulty: details.difficulty,
+			category: details.category,
+			description: details.description,
+			image_url: details.imageUrl,
+		};
+		const data = await dispatch(createTriviaCardThunk(newTriviaCard));
+
+		if (data) {
+			setErrors(data);
+		} else {
+			setIsOpen(false);
+		}
 	};
 
 	return (
@@ -59,7 +59,7 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 						<RiCloseLine style={{ marginBottom: "-3px" }} />
 					</button>
 					<div className={styles.modalContent}>
-						<form>
+						<form onSubmit={handleSubmit}>
 							<div className="errors-section">
 								{errors.map((error, ind) => (
 									<div className="error-body" key={ind}>
@@ -82,7 +82,7 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 							</div>
 							<div>
 								<label>Category: </label>
-								<select onChange={handleChange}>
+								<select onChange={handleChange} name="category">
 									<option value="--">--</option>
 									<option value="General Knowledge">
 										General Knowledge
@@ -103,7 +103,10 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 							</div>
 							<div>
 								<label>Difficulty: </label>
-								<select onChange={handleChange}>
+								<select
+									onChange={handleChange}
+									name="difficulty"
+								>
 									<option value="--">--</option>
 									<option value="easy">EASY</option>
 									<option value="medium">MEDIUM</option>
@@ -128,23 +131,23 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 									placeholder="https://example.com"
 								></input>
 							</div>
+							<div className={styles.modalActions}>
+								<div className={styles.actionsContainer}>
+									<button
+										type="submit"
+										className={styles.submitBtn}
+									>
+										Yes
+									</button>
+									<button
+										className={styles.cancelBtn}
+										onClick={() => setIsOpen(false)}
+									>
+										Cancel
+									</button>
+								</div>
+							</div>
 						</form>
-					</div>
-					<div className={styles.modalActions}>
-						<div className={styles.actionsContainer}>
-							<button
-								className={styles.submitBtn}
-								onClick={handleSubmit}
-							>
-								Yes
-							</button>
-							<button
-								className={styles.cancelBtn}
-								onClick={() => setIsOpen(false)}
-							>
-								Cancel
-							</button>
-						</div>
 					</div>
 				</div>
 			</div>
