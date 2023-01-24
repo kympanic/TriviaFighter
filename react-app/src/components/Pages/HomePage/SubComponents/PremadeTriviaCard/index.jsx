@@ -9,7 +9,7 @@ const PremadeTriviaCard = ({ category }) => {
 		setDifficulty(e.target.value);
 		setIsOpenOption(true);
 	};
-	const title = "";
+	console.log(category, "this is the category");
 
 	return (
 		<div>

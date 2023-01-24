@@ -8,6 +8,7 @@ import SignUpForm from "./components/auth/SignUpForm";
 import NavigationBar from "./components/NavigationBar";
 import HomePage from "./components/Pages/HomePage";
 import ProfilePage from "./components/Pages/ProfilePage";
+import OptionsPage from "./components/Pages/OptionsPage";
 import BattlePage from "./components/Pages/BattlePage";
 import GameOverPage from "./components/Pages/GameOverPage";
 import ResultsPage from "./components/Pages/ResultsPage";
@@ -40,6 +41,9 @@ function App() {
 				</Route>
 				<ProtectedRoute path="/profile/:profileId" exact={true}>
 					<ProfilePage />
+				</ProtectedRoute>
+				<ProtectedRoute path="/gameoptions">
+					<OptionsPage />
 				</ProtectedRoute>
 				<ProtectedRoute path="/gamebattle" exact={true}>
 					<BattlePage />
