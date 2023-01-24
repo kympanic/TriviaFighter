@@ -5,9 +5,16 @@ import { createTriviaCardThunk } from "../../../store/triviacard";
 import { useDispatch } from "react-redux";
 
 const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
-	console.log(sessionUser);
 	const dispatch = useDispatch();
 	const [errors, setErrors] = useState([]);
+	const [data, setData] = useState({
+		name: "",
+		category: "",
+		difficulty: "",
+		description: "",
+		imageUrl: "",
+	});
+
 	const [triviaCardName, setTriviaCardName] = useState("");
 	const [category, setCategory] = useState("");
 	const [description, setDescription] = useState("");

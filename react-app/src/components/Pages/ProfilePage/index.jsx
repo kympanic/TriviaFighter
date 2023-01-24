@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getAllTriviasCardsThunk } from "../../../store/triviacard";
 import AddTriviaCardModal from "../../Modals/AddTriviaCard/AddTriviaCardModal";
 
@@ -12,7 +12,7 @@ const ProfilePage = () => {
 	const sessionUser = useSelector((state) => state.session.user);
 
 	const [isOpenAddTriviaCard, setIsOpenAddTriviaCard] = useState(false);
-	console.log(selectedUser, "this is the data i need to use");
+	// console.log(selectedUser, "this is the data i need to use");
 	useEffect(() => {
 		dispatch(getAllTriviasCardsThunk());
 	}, [dispatch, sessionUser.triviaCards.length]);

@@ -12,9 +12,11 @@ const OptionsPage = () => {
 		e.preventDefault();
 		history.push("/");
 	};
+
 	// renders once and not again unless component changes
 	useEffect(() => {
 		getTriviaDataFetch();
+		// eslint-disable-next-line
 	}, []);
 
 	const getTriviaDataFetch = async () => {
