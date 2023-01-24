@@ -39,7 +39,7 @@ function App() {
 				<Route path="/sign-up" exact={true}>
 					<SignUpForm />
 				</Route>
-				<ProtectedRoute path="/profile/:profileId" exact={true}>
+				<ProtectedRoute path="/profile/:userId" exact={true}>
 					<ProfilePage />
 				</ProtectedRoute>
 				<ProtectedRoute path="/gameoptions">

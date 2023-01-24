@@ -28,7 +28,7 @@ class TriviaCard (db.Model):
             'difficulty': self.difficulty,
             'imageUrl': self.image_url,
             'user': self.user.to_dict_basic(),
-            'trivia': self.trivia.to_dict_basic(),
+            'trivia': self.trivia.to_dict(),
         }
 
     def to_dict_basic(self):

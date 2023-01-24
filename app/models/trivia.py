@@ -41,8 +41,8 @@ class Trivia (db.Model):
             'question': self.question,
             'correct_answer': self.correct_answer,
             'incorrectAnswer1' : self.incorrect_answer1,
-            'incorrectAnswer2' : self.incorrect_answer1,
-            'incorrectAnswer3' : self.incorrect_answer1,
+            'incorrectAnswer2' : self.incorrect_answer2,
+            'incorrectAnswer3' : self.incorrect_answer3,
             'category': self.category,
             'difficulty': self.difficulty,
         }

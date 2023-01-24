@@ -14,7 +14,7 @@ const loadTrivias = (payload) => ({
 // };
 
 export const getAllTriviasThunk = () => async (dispatch) => {
-	const res = await fetch("/api/trivia");
+	const res = await fetch("/api/trivias");
 
 	if (res.ok) {
 		const payload = await res.json();

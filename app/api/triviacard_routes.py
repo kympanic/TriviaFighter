@@ -1,8 +1,8 @@
 from flask import Blueprint
-from ..models import Trivia
+from ..models import TriviaCard
 
 
-trivia_routes = Blueprint('trivias', __name__)
+triviacard_routes = Blueprint('triviacards', __name__)
 
 def validation_errors_to_error_messages(validation_errors):
     """
@@ -14,11 +14,11 @@ def validation_errors_to_error_messages(validation_errors):
             errorMessages.append(f'{field} : {error}')
     return errorMessages
 
-#GET ALL TRIVIA
-@trivia_routes.route('')
-def get_all_trivias():
-    trivias = Trivia.query.all()
+#GET ALL TRIVIA CARDS
+@triviacard_routes.route('')
+def get_all_triviacards():
+    trivia_cards = TriviaCard.query.all()
 
-    res = {trivia.id: trivia.to_dict() for trivia in trivias}
+    res = {trivia_card.id: trivia_card.to_dict() for trivia_card in trivia_cards}
  
     return res

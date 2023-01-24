@@ -42,7 +42,9 @@ const HomepageGameOptionModal = ({ setIsOpen, category, difficulty }) => {
 			<div className={styles.centered}>
 				<div className={styles.modal}>
 					<div className={styles.modalHeader}>
-						<h5 className={styles.heading}>Delete Confirmation</h5>
+						<h5 className={styles.heading}>
+							Trivia Card Confirmation
+						</h5>
 					</div>
 					<button
 						className={styles.closeBtn}
