@@ -1,42 +1,31 @@
 import styles from "./Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
 import { useState } from "react";
-import { createTriviaCardThunk } from "../../../store/triviacard";
 import { useDispatch } from "react-redux";
+import { editTriviaPackageThunk } from "../../../store/triviapackage";
 
-const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
+const EditTriviaPackageModal = ({ setIsOpen, triviapackage, sessionUser }) => {
 	const dispatch = useDispatch();
 	const [errors, setErrors] = useState([]);
-	const [details, setDetails] = useState({
-		cardName: "",
-		category: "",
-		difficulty: "",
-		description: "",
-		imageUrl: "",
-	});
-
-	const handleChange = (e) => {
-		const { name, value } = e.target;
-		setDetails((prev) => {
-			return { ...prev, [name]: value };
-		});
-	};
-
-	const defaultTriviaImage =
-		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/defaultTriviaCardImg.jpeg";
+	const [packageName, setPackageName] = useState(triviapackage.name);
+	const [category, setCategory] = useState("");
+	const [difficulty, setDifficulty] = useState("");
+	const [description, setDescription] = useState(triviapackage.description);
+	const [imageUrl, setImageUrl] = useState("");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const newTriviaCard = {
+		const editTriviaPackage = {
+			id: triviapackage.id,
 			user_id: sessionUser.id,
-			name: details.cardName,
-			difficulty: details.difficulty,
-			category: details.category,
-			description: details.description,
-			image_url: details.imageUrl,
+			name: packageName,
+			difficulty,
+			category,
+			description,
+			image_url: imageUrl,
 		};
-		const data = await dispatch(createTriviaCardThunk(newTriviaCard));
+		const data = await dispatch(editTriviaPackageThunk(editTriviaPackage));
 
 		if (data) {
 			setErrors(data);
@@ -52,7 +41,7 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 				<div className={styles.modal}>
 					<div className={styles.modalHeader}>
 						<h5 className={styles.heading}>
-							Create your Trivia Card!
+							Edit Your Trivia Package!
 						</h5>
 					</div>
 					<button
@@ -78,14 +67,23 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 								<label>Name: </label>
 								<input
 									type="text"
-									name="cardName"
-									onChange={handleChange}
+									name="packageName"
+									placeholder="Package Name"
+									onChange={(e) =>
+										setPackageName(e.target.value)
+									}
 									maxLength={30}
+									value={packageName}
 								/>
 							</div>
 							<div>
 								<label>Category: </label>
-								<select onChange={handleChange} name="category">
+								<select
+									onChange={(e) =>
+										setCategory(e.target.value)
+									}
+									name="category"
+								>
 									<option value="--">--</option>
 									<option value="General Knowledge">
 										General Knowledge
@@ -107,7 +105,9 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 							<div>
 								<label>Difficulty: </label>
 								<select
-									onChange={handleChange}
+									onChange={(e) =>
+										setDifficulty(e.target.value)
+									}
 									name="difficulty"
 								>
 									<option value="--">--</option>
@@ -122,15 +122,20 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 									name="description"
 									rows="4"
 									cols="50"
-									onChange={handleChange}
+									onChange={(e) =>
+										setDescription(e.target.value)
+									}
+									value={description}
 								></textarea>
 							</div>
 							<div>
-								<label>Card Image Url: </label>
+								<label>Package Image Url: </label>
 								<input
 									type="url"
 									name="imageUrl"
-									onChange={handleChange}
+									onChange={(e) =>
+										setImageUrl(e.target.value)
+									}
 									placeholder="https://example.com"
 								></input>
 							</div>
@@ -158,4 +163,4 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 	);
 };
 
-export default AddTriviaCardModal;
+export default EditTriviaPackageModal;

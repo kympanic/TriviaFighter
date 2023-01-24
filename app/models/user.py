@@ -18,7 +18,7 @@ class User(db.Model, UserMixin):
 
     #relationships
     trivias = db.relationship('Trivia', back_populates='user', cascade='all,delete')
-    trivia_cards = db.relationship('TriviaCard', back_populates='user', cascade='all,delete')
+    trivia_packages = db.relationship('TriviaPackage', back_populates='user', cascade='all,delete')
 
     @property
     def password(self):
@@ -38,7 +38,7 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'profileImg': self.profile_img,
             'trivias': [trivia.to_dict_basic() for trivia in self.trivias],
-            'triviaCards': [trivia_card.to_dict_basic() for trivia_card in self.trivia_cards]
+            'triviaPackages': [trivia_package.to_dict_basic() for trivia_package in self.trivia_packages]
         }
     
     def to_dict_basic(self):

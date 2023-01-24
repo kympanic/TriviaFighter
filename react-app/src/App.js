@@ -48,7 +48,7 @@ function App() {
 				<ProtectedRoute path="/profile/:userId" exact={true}>
 					<ProfilePage />
 				</ProtectedRoute>
-				<ProtectedRoute path="/triviacard/:triviacardId">
+				<ProtectedRoute path="/triviapackage/:triviapackageId">
 					<AddTriviaPage />
 				</ProtectedRoute>
 				<ProtectedRoute path="/gameoptions">

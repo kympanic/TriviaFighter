@@ -8,7 +8,7 @@ from .models import db, User
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.trivia_routes import trivia_routes
-from .api.triviacard_routes import triviacard_routes
+from .api.triviapackage_routes import triviapackage_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -31,7 +31,7 @@ app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(trivia_routes, url_prefix="/api/trivias")
-app.register_blueprint(triviacard_routes, url_prefix="/api/triviacards")
+app.register_blueprint(triviapackage_routes, url_prefix="/api/triviapackages")
 db.init_app(app)
 Migrate(app, db)
 

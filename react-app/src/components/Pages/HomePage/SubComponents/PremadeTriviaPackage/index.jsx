@@ -1,7 +1,8 @@
 import { useState } from "react";
 import HomepageGameOptionModal from "../../../../Modals/HomepageGameOption/HomepageGameOptionModal";
 import PremadeGameName from "../PremadeGameName";
-const PremadeTriviaCard = ({ category }) => {
+
+const PremadeTriviaPackage = ({ category }) => {
 	const [difficulty, setDifficulty] = useState("");
 	const [isOpenOption, setIsOpenOption] = useState(false);
 
@@ -40,4 +41,4 @@ const PremadeTriviaCard = ({ category }) => {
 	);
 };
 
-export default PremadeTriviaCard;
+export default PremadeTriviaPackage;

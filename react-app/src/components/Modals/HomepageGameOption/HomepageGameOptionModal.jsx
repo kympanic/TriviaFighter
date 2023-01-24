@@ -23,7 +23,7 @@ const HomepageGameOptionModal = ({ setIsOpen, category, difficulty }) => {
 				<div className={styles.modal}>
 					<div className={styles.modalHeader}>
 						<h5 className={styles.heading}>
-							Trivia Card Confirmation
+							Trivia Package Confirmation
 						</h5>
 					</div>
 					<button

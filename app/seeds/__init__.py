@@ -1,7 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .trivias import seed_trivias, undo_trivias
-from .triviacards import seed_trivia_cards, undo_trivia_cards
+from .triviapackages import seed_trivia_packages, undo_trivia_packages
 from app.models.db import db, environment, SCHEMA
 
 # Creates a seed group to hold our commands
@@ -18,10 +18,10 @@ def seed():
         # the schema name (see comment in users.py undo_users function).
         # Make sure to add all your other model's undo functions below
         undo_trivias()
-        undo_trivia_cards()
+        undo_trivia_packages()
         undo_users()
     seed_users()
-    seed_trivia_cards()
+    seed_trivia_packages()
     seed_trivias()
     # Add other seed functions here
 
@@ -30,6 +30,6 @@ def seed():
 @seed_commands.command('undo')
 def undo():
     undo_trivias()
-    undo_trivia_cards()
+    undo_trivia_packages()
     undo_users()
     # Add other undo functions here

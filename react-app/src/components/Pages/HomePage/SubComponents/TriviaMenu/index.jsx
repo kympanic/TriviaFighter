@@ -1,6 +1,6 @@
 import React from "react";
-import PremadeTriviaCard from "../PremadeTriviaCard";
-import UserMadeTriviaCard from "../UserMadeTriviaCard";
+import PremadeTriviaPackage from "../PremadeTriviaPackage";
+import UserMadeTriviaPackage from "../UserMadeTriviaPackage";
 
 const TriviaMenu = () => {
 	//placeholder. Put real categories that are in the external api
@@ -20,11 +20,11 @@ const TriviaMenu = () => {
 		<div>
 			<div className="premade-trivia-container">
 				{premadeCategories.map((option) => (
-					<PremadeTriviaCard key={option} category={option} />
+					<PremadeTriviaPackage key={option} category={option} />
 				))}
 			</div>
 			<div className="usermade-trivia-container">
-				<UserMadeTriviaCard />
+				<UserMadeTriviaPackage />
 			</div>
 		</div>
 	);

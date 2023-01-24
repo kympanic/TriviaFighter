@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getAllTriviasCardsThunk } from "../../../store/triviacard";
-import AddTriviaCardModal from "../../Modals/AddTriviaCard/AddTriviaCardModal";
-import DeleteTriviaCardModal from "../../Modals/DeleteTriviaCard/DeleteTriviaCardModal";
-import EditTriviaCardModal from "../../Modals/EditTriviaCard/EditTriviaCardModal";
+import { getAllTriviasPackagesThunk } from "../../../store/triviapackage";
+import AddTriviaPackageModal from "../../Modals/AddTriviaPackage/AddTriviaPackageModal";
+import DeleteTriviaPackageModal from "../../Modals/DeleteTriviaPackage/DeleteTriviaPackageModal";
+import EditTriviaPackageModal from "../../Modals/EditTriviaPackage/EditTriviaPackageModal";
 
 const ProfilePage = () => {
 	const { userId } = useParams();
@@ -13,12 +13,14 @@ const ProfilePage = () => {
 	const selectedUser = useSelector((state) => state?.users[userId]);
 	const sessionUser = useSelector((state) => state.session.user);
 
-	const [isOpenAddTriviaCard, setIsOpenAddTriviaCard] = useState(false);
-	const [isOpenDeleteTriviaCard, setIsOpenDeleteTriviaCard] = useState(false);
-	const [isOpenEditTriviaCard, setIsOpenEditTriviaCard] = useState(false);
+	const [isOpenAddTriviaPackage, setIsOpenAddTriviaPackage] = useState(false);
+	const [isOpenDeleteTriviaPackage, setIsOpenDeleteTriviaPackage] =
+		useState(false);
+	const [isOpenEditTriviaPackage, setIsOpenEditTriviaPackage] =
+		useState(false);
 
 	useEffect(() => {
-		dispatch(getAllTriviasCardsThunk());
+		dispatch(getAllTriviasPackagesThunk());
 	}, [dispatch]);
 
 	return (
@@ -39,15 +41,17 @@ const ProfilePage = () => {
 					</div>
 					<div className="profilepage-content-container">
 						<div>
-							{isOpenAddTriviaCard && (
-								<AddTriviaCardModal
-									setIsOpen={setIsOpenAddTriviaCard}
+							{isOpenAddTriviaPackage && (
+								<AddTriviaPackageModal
+									setIsOpen={setIsOpenAddTriviaPackage}
 									sessionUser={sessionUser}
 								/>
 							)}
 							{sessionUser.id === id ? (
 								<button
-									onClick={() => setIsOpenAddTriviaCard(true)}
+									onClick={() =>
+										setIsOpenAddTriviaPackage(true)
+									}
 								>
 									Create Trivia!
 								</button>
@@ -55,77 +59,85 @@ const ProfilePage = () => {
 								<></>
 							)}
 						</div>
-						<div className="profilepage-triviacard-menu">
+						<div className="profilepage-triviapackage-menu">
 							<h1>
-								This is where the trivia cards made by the user
-								would go
+								This is where the trivia packages made by the
+								user would go
 							</h1>
 							{selectedUser &&
 								sessionUser &&
-								selectedUser.triviaCards.map((triviacard) => (
-									<div key={triviacard.name}>
-										<img
-											src={triviacard.imageUrl}
-											alt={triviacard.name}
-										/>
-										<p>{triviacard.category}</p>
-										<p>{triviacard.difficulty}</p>
-										{sessionUser.id === id &&
-											sessionUser.trivias.length < 20 && (
-												<button>
-													You need more trivia
-													questions!
-												</button>
-											)}
-										{sessionUser.id === id && (
-											<div>
-												{isOpenDeleteTriviaCard && (
-													<DeleteTriviaCardModal
-														setIsOpen={
-															setIsOpenDeleteTriviaCard
-														}
-														triviacard={triviacard}
-													/>
+								selectedUser.triviaPackages.map(
+									(triviapackage) => (
+										<div key={triviapackage.name}>
+											<img
+												src={triviapackage.imageUrl}
+												alt={triviapackage.name}
+											/>
+											<p>{triviapackage.category}</p>
+											<p>{triviapackage.difficulty}</p>
+											{sessionUser.id === id &&
+												sessionUser.trivias.length <
+													20 && (
+													<button>
+														You need more trivia
+														questions!
+													</button>
 												)}
-												{isOpenEditTriviaCard && (
-													<EditTriviaCardModal
-														setIsOpen={
-															setIsOpenEditTriviaCard
-														}
-														triviacard={triviacard}
-														sessionUser={
-															sessionUser
-														}
-													/>
-												)}
-												<button
-													onClick={() =>
-														setIsOpenEditTriviaCard(
-															true
-														)
-													}
-												>
-													Edit
-												</button>
-												<button
-													onClick={() =>
-														setIsOpenDeleteTriviaCard(
-															true
-														)
-													}
-												>
-													Delete
-												</button>
-											</div>
-										)}
-										{sessionUser.id !== id &&
-											triviacard.trivias.length === 1 && (
+											{sessionUser.id === id && (
 												<div>
-													<button>Play</button>
+													{isOpenDeleteTriviaPackage && (
+														<DeleteTriviaPackageModal
+															setIsOpen={
+																setIsOpenDeleteTriviaPackage
+															}
+															triviapackage={
+																triviapackage
+															}
+														/>
+													)}
+													{isOpenEditTriviaPackage && (
+														<EditTriviaPackageModal
+															setIsOpen={
+																setIsOpenEditTriviaPackage
+															}
+															triviapackage={
+																triviapackage
+															}
+															sessionUser={
+																sessionUser
+															}
+														/>
+													)}
+													<button
+														onClick={() =>
+															setIsOpenEditTriviaPackage(
+																true
+															)
+														}
+													>
+														Edit
+													</button>
+													<button
+														onClick={() =>
+															setIsOpenDeleteTriviaPackage(
+																true
+															)
+														}
+													>
+														Delete
+													</button>
 												</div>
 											)}
-									</div>
-								))}
+											{sessionUser.id !== id &&
+												triviapackage.trivias.length ===
+													1 && (
+													<div>
+														<button>Play</button>
+													</div>
+												)}
+										</div>
+									)
+								)}
 						</div>
 						<div>
 							<h1>comments section placeholder</h1>

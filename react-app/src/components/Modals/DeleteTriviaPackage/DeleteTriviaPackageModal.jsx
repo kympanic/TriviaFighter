@@ -1,15 +1,15 @@
 import styles from "./Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
 import { useDispatch } from "react-redux";
-import { deleteTriviaCardThunk } from "../../../store/triviacard";
+import { deleteTriviaPackageThunk } from "../../../store/triviapackage";
 
-const DeleteTriviaCardModal = ({ setIsOpen, triviacard }) => {
+const DeleteTriviaPackageModal = ({ setIsOpen, triviapackage }) => {
 	const dispatch = useDispatch();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setIsOpen(false);
-		dispatch(deleteTriviaCardThunk(triviacard));
+		dispatch(deleteTriviaPackageThunk(triviapackage));
 	};
 
 	return (
@@ -28,8 +28,11 @@ const DeleteTriviaCardModal = ({ setIsOpen, triviacard }) => {
 					</button>
 					<div className={styles.modalContent}>
 						Are you sure you want to delete the item?
-						<p>{triviacard.name}</p>
-						<img src={triviacard.imageUrl} alt={triviacard.name} />
+						<p>{triviapackage.name}</p>
+						<img
+							src={triviapackage.imageUrl}
+							alt={triviapackage.name}
+						/>
 					</div>
 					<div className={styles.modalActions}>
 						<div className={styles.actionsContainer}>
@@ -53,4 +56,4 @@ const DeleteTriviaCardModal = ({ setIsOpen, triviacard }) => {
 	);
 };
 
-export default DeleteTriviaCardModal;
+export default DeleteTriviaPackageModal;

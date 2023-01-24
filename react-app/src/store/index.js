@@ -2,12 +2,12 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import session from "./session";
 import trivias from "./trivia";
-import triviacards from "./triviacard";
+import triviapackages from "./triviapackage";
 import users from "./users";
 const rootReducer = combineReducers({
 	session,
 	trivias,
-	triviacards,
+	triviapackages,
 	users,
 });
 

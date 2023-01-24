@@ -1,31 +1,42 @@
 import styles from "./Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
 import { useState } from "react";
+import { createTriviaPackageThunk } from "../../../store/triviapackage";
 import { useDispatch } from "react-redux";
-import { editTriviaCardThunk } from "../../../store/triviacard";
 
-const EditTriviaCardModal = ({ setIsOpen, triviacard, sessionUser }) => {
+const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 	const dispatch = useDispatch();
 	const [errors, setErrors] = useState([]);
-	const [cardName, setCardName] = useState(triviacard.name);
-	const [category, setCategory] = useState("");
-	const [difficulty, setDifficulty] = useState("");
-	const [description, setDescription] = useState(triviacard.description);
-	const [imageUrl, setImageUrl] = useState("");
+	const [details, setDetails] = useState({
+		packageName: "",
+		category: "",
+		difficulty: "",
+		description: "",
+		imageUrl: "",
+	});
+
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setDetails((prev) => {
+			return { ...prev, [name]: value };
+		});
+	};
+
+	const defaultTriviaImage =
+		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/defaultTriviaCardImg.jpeg";
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const editTriviaCard = {
-			id: triviacard.id,
+		const newTriviaPackage = {
 			user_id: sessionUser.id,
-			name: cardName,
-			difficulty,
-			category,
-			description,
-			image_url: imageUrl,
+			name: details.packageName,
+			difficulty: details.difficulty,
+			category: details.category,
+			description: details.description,
+			image_url: details.imageUrl,
 		};
-		const data = await dispatch(editTriviaCardThunk(editTriviaCard));
+		const data = await dispatch(createTriviaPackageThunk(newTriviaPackage));
 
 		if (data) {
 			setErrors(data);
@@ -41,7 +52,7 @@ const EditTriviaCardModal = ({ setIsOpen, triviacard, sessionUser }) => {
 				<div className={styles.modal}>
 					<div className={styles.modalHeader}>
 						<h5 className={styles.heading}>
-							Edit Your Trivia Package!
+							Create your Trivia Package!
 						</h5>
 					</div>
 					<button
@@ -67,23 +78,14 @@ const EditTriviaCardModal = ({ setIsOpen, triviacard, sessionUser }) => {
 								<label>Name: </label>
 								<input
 									type="text"
-									name="cardName"
-									placeholder="Package Name"
-									onChange={(e) =>
-										setCardName(e.target.value)
-									}
+									name="packageName"
+									onChange={handleChange}
 									maxLength={30}
-									value={cardName}
 								/>
 							</div>
 							<div>
 								<label>Category: </label>
-								<select
-									onChange={(e) =>
-										setCategory(e.target.value)
-									}
-									name="category"
-								>
+								<select onChange={handleChange} name="category">
 									<option value="--">--</option>
 									<option value="General Knowledge">
 										General Knowledge
@@ -105,9 +107,7 @@ const EditTriviaCardModal = ({ setIsOpen, triviacard, sessionUser }) => {
 							<div>
 								<label>Difficulty: </label>
 								<select
-									onChange={(e) =>
-										setDifficulty(e.target.value)
-									}
+									onChange={handleChange}
 									name="difficulty"
 								>
 									<option value="--">--</option>
@@ -122,20 +122,15 @@ const EditTriviaCardModal = ({ setIsOpen, triviacard, sessionUser }) => {
 									name="description"
 									rows="4"
 									cols="50"
-									onChange={(e) =>
-										setDescription(e.target.value)
-									}
-									value={description}
+									onChange={handleChange}
 								></textarea>
 							</div>
 							<div>
-								<label>Card Image Url: </label>
+								<label>Package Image Url: </label>
 								<input
 									type="url"
 									name="imageUrl"
-									onChange={(e) =>
-										setImageUrl(e.target.value)
-									}
+									onChange={handleChange}
 									placeholder="https://example.com"
 								></input>
 							</div>
@@ -163,4 +158,4 @@ const EditTriviaCardModal = ({ setIsOpen, triviacard, sessionUser }) => {
 	);
 };
 
-export default EditTriviaCardModal;
+export default AddTriviaPackageModal;

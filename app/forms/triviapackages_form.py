@@ -21,7 +21,7 @@ def difficulty_check(form,field):
     if difficulty.count("-") > 1:
         raise ValidationError('Provide valid difficulty')
 
-class TriviaCardForm(FlaskForm):
+class TriviaPackageForm(FlaskForm):
     user_id=IntegerField('user_id', validators=[DataRequired()])
     name = StringField('name', validators=[DataRequired()])
     category=StringField('account_number', validators=[DataRequired(),category_check])

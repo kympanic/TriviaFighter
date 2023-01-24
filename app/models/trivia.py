@@ -16,11 +16,11 @@ class Trivia (db.Model):
     category = db.Column(db.String(50), nullable=False)
     difficulty = db.Column(db.String(10), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    trivia_card_id = db.Column(db.Integer, db.ForeignKey('triviacards.id'), nullable=False)
+    trivia_package_id = db.Column(db.Integer, db.ForeignKey('triviapackages.id'), nullable=False)
 
     #relationships
     user = db.relationship('User', back_populates = 'trivias')
-    trivia_card = db.relationship('TriviaCard', back_populates ='trivias')
+    trivia_package = db.relationship('TriviaPackage', back_populates ='trivias')
 
     def to_dict(self):
         return {
@@ -32,9 +32,9 @@ class Trivia (db.Model):
             'incorrectAnswer3': self.incorrect_answer3,
             'category': self.category,
             'difficulty': self.difficulty,
-            'triviaCardId': self.trivia_card_id,
+            'triviaPackageId': self.trivia_package_id,
             'user': self.user.to_dict_basic(),
-            'triviaCard': self.trivia_card.to_dict_basic(),
+            'triviaPackage': self.trivia_package.to_dict_basic(),
         }
 
     def to_dict_basic(self):
@@ -47,5 +47,5 @@ class Trivia (db.Model):
             'category': self.category,
             'difficulty': self.difficulty,
             'userId': self.user_id,
-            'triviaCardId': self.trivia_card_id,
+            'triviaPackageId': self.trivia_package_id,
         }

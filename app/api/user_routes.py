@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask_login import login_required
-from app.models import User, TriviaCard
+from app.models import User, TriviaPackage
 
 
 user_routes = Blueprint('users', __name__)
@@ -27,12 +27,12 @@ def user(id):
     user = User.query.get(id)
     return user.to_dict()
 
-@user_routes.route('/<int:id>/triviacards')
+@user_routes.route('/<int:id>/triviapackages')
 @login_required
-def get_triviacards_by_user(id):
-    trivia_cards =TriviaCard.query.filter_by(user_id=id).all()
+def get_trivia_packages_by_user(id):
+    trivia_packages =TriviaPackage.query.filter_by(user_id=id).all()
    
 
-    res = {trivia_card.id: trivia_card.to_dict() for trivia_card in trivia_cards}
+    res = {trivia_package.id: trivia_package.to_dict() for trivia_package in trivia_packages}
  
     return res

@@ -1,8 +1,8 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 
 
-class TriviaCard (db.Model):
-    __tablename__ = 'triviacards'
+class TriviaPackage (db.Model):
+    __tablename__ = 'triviapackages'
 
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
@@ -16,8 +16,8 @@ class TriviaCard (db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     #relationships
-    user = db.relationship('User', back_populates='trivia_cards')
-    trivias = db.relationship('Trivia', back_populates ='trivia_card', cascade='all,delete')
+    user = db.relationship('User', back_populates='trivia_packages')
+    trivias = db.relationship('Trivia', back_populates ='trivia_package', cascade='all,delete')
 
     def to_dict(self):
         return {
