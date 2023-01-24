@@ -38,4 +38,5 @@ class TriviaCard (db.Model):
             'description': self.description,
             'difficulty': self.difficulty,
             'imageUrl': self.image_url,
+            'trivias': [trivia.to_dict_basic() for trivia in self.trivias],
         }
