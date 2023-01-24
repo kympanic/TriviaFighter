@@ -1,8 +1,6 @@
 import styles from "./Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
-import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { Redirect } from "react-router-dom";
 
 const HomepageGameOptionModal = ({ setIsOpen, category, difficulty }) => {
 	const history = useHistory();
@@ -17,24 +15,6 @@ const HomepageGameOptionModal = ({ setIsOpen, category, difficulty }) => {
 		});
 		setIsOpen(false);
 	};
-
-	//renders once and not again unless component changes
-	// useEffect(() => {
-	// 	getTriviaDataFetch();
-	// }, []);
-	// getting the trivia data. Must do this dynamically. Do i want to save this or just use the data to load a game?
-
-	// const [triviaData, setTriviaData] = useState({});
-
-	// const getTriviaDataFetch = async () => {
-	// 	const response = await fetch(
-	// 		`https://opentdb.com/api.php?amount=20&category=${category}&difficulty=hard&type=multiple`
-	// 	);
-	// 	const jsonData = await response.json();
-	// 	setTriviaData(jsonData);
-	// };
-
-	// console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
 
 	return (
 		<>

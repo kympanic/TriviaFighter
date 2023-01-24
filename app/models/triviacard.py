@@ -17,7 +17,7 @@ class TriviaCard (db.Model):
 
     #relationships
     user = db.relationship('User', back_populates='trivia_cards')
-    trivia = db.relationship('Trivia', back_populates ='trivia_card', cascade='all,delete')
+    trivias = db.relationship('Trivia', back_populates ='trivia_card', cascade='all,delete')
 
     def to_dict(self):
         return {
@@ -28,7 +28,7 @@ class TriviaCard (db.Model):
             'difficulty': self.difficulty,
             'imageUrl': self.image_url,
             'user': self.user.to_dict_basic(),
-            'trivia': self.trivia.to_dict(),
+            'trivias': [trivia.to_dict_basic() for trivia in self.trivias]
         }
 
     def to_dict_basic(self):
@@ -37,5 +37,5 @@ class TriviaCard (db.Model):
             'category': self.category,
             'description': self.description,
             'difficulty': self.difficulty,
-            'image_url': self.image_url,
+            'imageUrl': self.image_url,
         }

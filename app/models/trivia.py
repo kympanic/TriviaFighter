@@ -20,7 +20,7 @@ class Trivia (db.Model):
 
     #relationships
     user = db.relationship('User', back_populates = 'trivias')
-    trivia_card = db.relationship('TriviaCard', back_populates ='trivia')
+    trivia_card = db.relationship('TriviaCard', back_populates ='trivias')
 
     def to_dict(self):
         return {
@@ -33,11 +33,11 @@ class Trivia (db.Model):
             'category': self.category,
             'difficulty': self.difficulty,
             'user': self.user.to_dict_basic(),
-            'triviaCard': self.user.to_dict_basic(),
+            'triviaCard': self.trivia_card.to_dict_basic(),
         }
 
     def to_dict_basic(self):
-        return{
+        return {
             'question': self.question,
             'correct_answer': self.correct_answer,
             'incorrectAnswer1' : self.incorrect_answer1,

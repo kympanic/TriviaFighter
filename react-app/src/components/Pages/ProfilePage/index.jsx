@@ -1,17 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ProfileTriviaCardMenu from "./ProfileTriviaCardMenu";
-import ProfileCreateTrivia from "./ProfileCreateTrivia";
-import { getAllTriviasThunk } from "../../../store/trivia";
+// import ProfileCreateTrivia from "./ProfileCreateTrivia";
+import { getAllTriviasCardsThunk } from "../../../store/triviacard";
+import AddTriviaCardModal from "../../Modals/AddTriviaCard/AddTriviaCardModal";
 
 const ProfilePage = () => {
 	const { userId } = useParams();
 	const dispatch = useDispatch();
 	const sessionUser = useSelector((state) => state.session.user);
-
+	const id = parseInt(userId);
+	// const [triviaCardLength, setTriviaCardLength] = useState("");
+	const [isOpenAddTriviaCard, setIsOpenAddTriviaCard] = useState(false);
+	// console.log(
+	// 	sessionUser.triviaCards.length,
+	// 	"length of the triviaCards array for the user"
+	// );
 	useEffect(() => {
-		dispatch(getAllTriviasThunk());
+		dispatch(getAllTriviasCardsThunk());
 	}, [dispatch]);
 
 	return (
@@ -29,10 +36,21 @@ const ProfilePage = () => {
 					</div>
 					<div className="profilepage-content-container">
 						<div>
-							<ProfileCreateTrivia
-								id={userId}
-								sessionUser={sessionUser}
-							/>
+							{isOpenAddTriviaCard && (
+								<AddTriviaCardModal
+									setIsOpen={setIsOpenAddTriviaCard}
+									sessionUser={sessionUser}
+								/>
+							)}
+							{sessionUser.id === id ? (
+								<button
+									onClick={() => setIsOpenAddTriviaCard(true)}
+								>
+									Create Trivia!
+								</button>
+							) : (
+								<></>
+							)}
 						</div>
 						<div>
 							<ProfileTriviaCardMenu
