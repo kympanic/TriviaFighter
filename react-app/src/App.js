@@ -8,12 +8,12 @@ import SignUpForm from "./components/auth/SignUpForm";
 import NavigationBar from "./components/NavigationBar";
 import HomePage from "./components/Pages/HomePage";
 import ProfilePage from "./components/Pages/ProfilePage";
+import AddTriviaPage from "./components/Pages/AddTriviaPage";
 import OptionsPage from "./components/Pages/OptionsPage";
 import BattlePage from "./components/Pages/BattlePage";
 import GameOverPage from "./components/Pages/GameOverPage";
 import ResultsPage from "./components/Pages/ResultsPage";
 import NotFoundPage from "./components/Pages/NotFoundPage";
-
 function App() {
 	const [loaded, setLoaded] = useState(false);
 	const dispatch = useDispatch();
@@ -41,6 +41,9 @@ function App() {
 				</Route>
 				<ProtectedRoute path="/profile/:userId" exact={true}>
 					<ProfilePage />
+				</ProtectedRoute>
+				<ProtectedRoute path="/profile/:userId/addTrivia">
+					<AddTriviaPage />
 				</ProtectedRoute>
 				<ProtectedRoute path="/gameoptions">
 					<OptionsPage />

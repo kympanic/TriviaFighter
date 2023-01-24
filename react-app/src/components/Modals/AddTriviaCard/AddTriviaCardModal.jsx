@@ -1,6 +1,6 @@
 import styles from "./Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { createTriviaCardThunk } from "../../../store/triviacard";
 import { useDispatch } from "react-redux";
 
@@ -33,7 +33,6 @@ const AddTriviaCardModal = ({ setIsOpen, sessionUser }) => {
 		setImageUrl(e.target.value);
 	};
 
-	useEffect(() => {});
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
