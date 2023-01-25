@@ -24,13 +24,16 @@ const AddTriviaPage = () => {
 	// 	history.push("/");
 	// }
 	useEffect(() => {
-		dispatch(getTriviaPackageThunk(trivPackageId));
+		const fetchData = async () => {
+			const data = await dispatch(getTriviaPackageThunk(trivPackageId));
+		};
+		fetchData();
 		dispatch(getAllUsersThunk());
 	}, [dispatch]);
 
 	return (
 		<div>
-			{sessionUser && (
+			{sessionUser && triviapackage && (
 				<div className="add-trivia-page-header-container">
 					<h1>THIS IS TO ADD TRIVIA PAGE</h1>
 				</div>
@@ -41,11 +44,16 @@ const AddTriviaPage = () => {
 					triviapackage={triviapackage[0]}
 				/>
 			</div>
+
 			<div className="add-trivia-page-edit-container">
-				<EditTriviaForm
-					sessionUser={sessionUser}
-					triviapackage={triviapackage[0]}
-				/>
+				{triviapackage[0] ? (
+					<EditTriviaForm
+						sessionUser={sessionUser}
+						triviapackage={triviapackage[0]}
+					/>
+				) : (
+					<div>Loading...</div>
+				)}
 			</div>
 		</div>
 	);

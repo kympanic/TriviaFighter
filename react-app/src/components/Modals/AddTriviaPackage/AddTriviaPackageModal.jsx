@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 
 const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 	const dispatch = useDispatch();
+
 	const [errors, setErrors] = useState([]);
 	const [details, setDetails] = useState({
 		packageName: "",
@@ -22,8 +23,8 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 		});
 	};
 
-	const defaultTriviaImage =
-		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/defaultTriviaCardImg.jpeg";
+	// const defaultTriviaImage =
+	// 	"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/defaultTriviaCardImg.jpeg";
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
