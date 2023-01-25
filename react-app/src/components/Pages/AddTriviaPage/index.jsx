@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import EditTriviaForm from "./EditTriviaSection";
+import EditContainer from "./EditTriviaSection/EditContainer";
 import AddTriviaForm from "./AddTriviaSection";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -25,7 +25,7 @@ const AddTriviaPage = () => {
 			</div>
 
 			<div className="add-trivia-page-edit-container">
-				<EditTriviaForm
+				<EditContainer
 					sessionUser={sessionUser}
 					triviapackage={triviapackage}
 				/>
