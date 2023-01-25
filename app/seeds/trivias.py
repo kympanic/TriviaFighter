@@ -4,7 +4,7 @@ from app.models import db, Trivia, environment, SCHEMA
 # Adds a demo user, you can add other users here if you want
 def seed_trivias():
     trivia1 = Trivia(
-      question="Is this the right answer?", correct_answer="This is the correct answer", incorrect_answer1="Wrong answer1", incorrect_answer2="Wrong answer2",incorrect_answer3="Wrong answer3", category="Entertainment", difficulty="Hard", user_id=1, trivia_package_id=1 )
+      question="Is this the right answer?", correct_answer="This is the correct answer", incorrect_answer1="Wrong answer1", incorrect_answer2="Wrong answer2",incorrect_answer3="Wrong answer3", user_id=1, trivia_package_id=1 )
  
     db.session.add(trivia1)
 

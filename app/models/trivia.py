@@ -13,8 +13,6 @@ class Trivia (db.Model):
     incorrect_answer1 = db.Column(db.String(255), nullable=False)
     incorrect_answer2 = db.Column(db.String(255), nullable=False)
     incorrect_answer3 = db.Column(db.String(255), nullable=False)
-    category = db.Column(db.String(50), nullable=False)
-    difficulty = db.Column(db.String(10), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     trivia_package_id = db.Column(db.Integer, db.ForeignKey('triviapackages.id'), nullable=False)
 
@@ -29,9 +27,7 @@ class Trivia (db.Model):
             'correctAnswer': self.correct_answer,
             'incorrectAnswer1': self.incorrect_answer1,
             'incorrectAnswer2': self.incorrect_answer2,
-            'incorrectAnswer3': self.incorrect_answer3,
-            'category': self.category,
-            'difficulty': self.difficulty,
+            'incorrectAnswer3': self.incorrect_answer3,            
             'triviaPackageId': self.trivia_package_id,
             'user': self.user.to_dict_basic(),
             'triviaPackage': self.trivia_package.to_dict_basic(),
@@ -44,8 +40,6 @@ class Trivia (db.Model):
             'incorrectAnswer1' : self.incorrect_answer1,
             'incorrectAnswer2' : self.incorrect_answer2,
             'incorrectAnswer3' : self.incorrect_answer3,
-            'category': self.category,
-            'difficulty': self.difficulty,
             'userId': self.user_id,
             'triviaPackageId': self.trivia_package_id,
         }

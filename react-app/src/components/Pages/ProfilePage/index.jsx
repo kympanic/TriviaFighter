@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { getAllTriviasPackagesThunk } from "../../../store/triviapackage";
 import AddTriviaPackageModal from "../../Modals/AddTriviaPackage/AddTriviaPackageModal";
 import DeleteTriviaPackageModal from "../../Modals/DeleteTriviaPackage/DeleteTriviaPackageModal";
@@ -10,6 +10,7 @@ const ProfilePage = () => {
 	const { userId } = useParams();
 	const id = parseInt(userId);
 	const dispatch = useDispatch();
+	const history = useHistory();
 	const selectedUser = useSelector((state) => state?.users[userId]);
 	const sessionUser = useSelector((state) => state.session.user);
 
@@ -21,7 +22,7 @@ const ProfilePage = () => {
 
 	useEffect(() => {
 		dispatch(getAllTriviasPackagesThunk());
-	}, [dispatch, selectedUser?.triviaPackages.length]);
+	}, [dispatch]);
 
 	return (
 		<div>
@@ -78,13 +79,14 @@ const ProfilePage = () => {
 											{sessionUser.id === id &&
 												sessionUser.trivias.length <
 													20 && (
-													<button>
+													<p>
 														You need{" "}
 														{20 -
-															sessionUser.trivias
+															triviapackage
+																.trivias
 																.length}{" "}
 														more trivia questions!
-													</button>
+													</p>
 												)}
 											{sessionUser.id === id && (
 												<div>
@@ -111,6 +113,19 @@ const ProfilePage = () => {
 															}
 														/>
 													)}
+													<button
+														onClick={() =>
+															history.push({
+																pathname: `/triviapackage/${triviapackage.id}`,
+																state: {
+																	triviapackage,
+																	sessionUser,
+																},
+															})
+														}
+													>
+														Add Trivia
+													</button>
 													<button
 														onClick={() =>
 															setIsOpenEditTriviaPackage(
