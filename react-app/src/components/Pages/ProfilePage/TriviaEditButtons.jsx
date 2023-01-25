@@ -17,6 +17,7 @@ const TriviaEditButtons = ({ sessionUser, triviapackage }) => {
 				onClick={() =>
 					history.push({
 						pathname: `/triviapackage/${triviapackage.id}`,
+						state: { triviapackage, sessionUser },
 					})
 				}
 			>

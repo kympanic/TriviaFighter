@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createTriviaThunk } from "../../../../store/trivia";
 
-const TestAddTriviaForm = ({ sessionUser, triviapackage }) => {
+const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 	const dispatch = useDispatch();
 	// console.log(sessionUser, "this is the session user info");
 	// console.log(triviapackage, "this is the triviapackage info");
@@ -108,4 +108,4 @@ const TestAddTriviaForm = ({ sessionUser, triviapackage }) => {
 	);
 };
 
-export default TestAddTriviaForm;
+export default AddTriviaForm;

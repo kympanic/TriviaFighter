@@ -1,6 +1,6 @@
 import { useState } from "react";
 import HomepageGameOptionModal from "../../../../Modals/HomepageGameOption/HomepageGameOptionModal";
-import PremadeGameName from "../PremadeGameName";
+import PremadeGameName from "./PremadeGameName";
 
 const PremadeTriviaPackage = ({ category }) => {
 	const [difficulty, setDifficulty] = useState("");

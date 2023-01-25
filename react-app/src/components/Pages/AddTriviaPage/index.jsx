@@ -1,35 +1,15 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
-import EditTriviaForm from "./EditTriviaForm";
-import TestAddTriviaForm from "./TestAddTriviaForm";
-import { getTriviaPackageThunk } from "../../../store/triviapackage";
-import { getAllUsersThunk } from "../../../store/users";
-
+import { useParams } from "react-router-dom";
+import EditTriviaForm from "./EditTriviaSection";
+import AddTriviaForm from "./AddTriviaSection";
+import { useLocation } from "react-router-dom";
 const AddTriviaPage = () => {
 	const { triviapackageId } = useParams();
 	const trivPackageId = parseInt(triviapackageId);
-	const dispatch = useDispatch();
-	// const location = useLocation();
-	const history = useHistory();
-	const sessionUser = useSelector((state) => state.session.user);
-	// const sessionUser = location.state?.sessionUser;
-	// const triviapackage = location.state?.triviapackage;
-	const triviapackage = useSelector((state) =>
-		Object.values(state?.triviapackages)
-	);
-	// console.log(selectedUser, "woah");
-	// console.log(triviapackage[0], "this is the trivia");
-	// if (sessionUser?.id !== triviapackage[0]?.userId) {
-	// 	history.push("/");
-	// }
-	useEffect(() => {
-		const fetchData = async () => {
-			const data = await dispatch(getTriviaPackageThunk(trivPackageId));
-		};
-		fetchData();
-		dispatch(getAllUsersThunk());
-	}, [dispatch]);
+
+	const location = useLocation();
+	// const sessionUser = useSelector((state) => state.session.user);
+	const sessionUser = location.state?.sessionUser;
+	const triviapackage = location.state?.triviapackage;
 
 	return (
 		<div>
@@ -39,21 +19,17 @@ const AddTriviaPage = () => {
 				</div>
 			)}
 			<div className="add-trivia-page-form-container">
-				<TestAddTriviaForm
+				<AddTriviaForm
 					sessionUser={sessionUser}
-					triviapackage={triviapackage[0]}
+					triviapackage={triviapackage}
 				/>
 			</div>
 
 			<div className="add-trivia-page-edit-container">
-				{triviapackage[0] ? (
-					<EditTriviaForm
-						sessionUser={sessionUser}
-						triviapackage={triviapackage[0]}
-					/>
-				) : (
-					<div>Loading...</div>
-				)}
+				<EditTriviaForm
+					sessionUser={sessionUser}
+					triviapackage={triviapackage}
+				/>
 			</div>
 		</div>
 	);

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import TriviaMenu from "./SubComponents/TriviaMenu";
+import TriviaMenu from "./TriviaMenu";
 import { getAllUsersThunk } from "../../../store/users";
 import { useEffect } from "react";
 const HomePage = () => {

@@ -5,24 +5,21 @@ import { getTriviaPackageThunk } from "../../../../store/triviapackage";
 const EditTriviaForm = ({ sessionUser, triviapackage }) => {
 	const dispatch = useDispatch();
 
-	const selectedUser = useSelector((state) => state?.users[sessionUser?.id]);
+	const allTrivia = useSelector((state) => Object.values(state.trivias));
 
-	console.log(triviapackage, "this is the trivia package");
-
-	const selectedTrivias = selectedUser?.trivias.filter((trivia) => {
-		return trivia?.triviaPackageId === triviapackage?.id;
+	const selectedTrivia = allTrivia.filter((trivia) => {
+		return triviapackage.id === trivia.triviaPackageId;
 	});
 
 	useEffect(() => {
 		dispatch(getAllTriviasThunk());
-		dispatch(getTriviaPackageThunk());
 	}, [dispatch]);
 
 	return (
 		<div>
-			{selectedTrivias && selectedTrivias.length > 0 ? (
+			{selectedTrivia && selectedTrivia.length > 0 ? (
 				<div>
-					{selectedTrivias.map((trivia) => (
+					{selectedTrivia.map((trivia) => (
 						<div key={trivia.id}>
 							<p>Question: {trivia.question}</p>
 							<p>Answer: {trivia.correctAnswer}</p>

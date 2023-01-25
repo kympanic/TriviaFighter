@@ -16,6 +16,7 @@ const ProfilePage = () => {
 	const allTriviaPackages = useSelector((state) =>
 		Object.values(state.triviapackages)
 	);
+
 	const profileTriviaPackages = allTriviaPackages.filter((triviaPackage) => {
 		return triviaPackage.userId === id;
 	});

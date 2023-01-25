@@ -1,5 +1,5 @@
 import React from "react";
-import PremadeTriviaPackage from "../PremadeTriviaPackage";
+import PremadeTriviaPackage from "../SubComponents/PremadeTriviaPackage";
 import UserMadeTriviaPackage from "../UserMadeTriviaPackage";
 
 const TriviaMenu = () => {
