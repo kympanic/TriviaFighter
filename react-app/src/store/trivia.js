@@ -48,30 +48,30 @@ export const createTriviaThunk = (data) => async (dispatch) => {
 	}
 };
 
-// export const editProductThunk = (data) => async (dispatch) => {
-// 	const editedProduct = JSON.stringify(data);
+export const editTriviaThunk = (data) => async (dispatch) => {
+	const editedTrivia = JSON.stringify(data);
 
-// 	const res = await fetch(`/api/products/${data.id}`, {
-// 		method: "PUT",
-// 		headers: {
-// 			"Content-Type": "application/json",
-// 		},
-// 		body: editedProduct,
-// 	});
+	const res = await fetch(`/api/trivias/${data.id}`, {
+		method: "PUT",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: editedTrivia,
+	});
 
-// 	if (res.ok) {
-// 		const data = await res.json();
-// 		dispatch(loadProducts(data));
-// 		return null;
-// 	} else if (res.status < 500) {
-// 		const data = await res.json();
-// 		if (data.errors) {
-// 			return data.errors;
-// 		}
-// 	} else {
-// 		return ["An error occurred. Please try again."];
-// 	}
-// };
+	if (res.ok) {
+		const data = await res.json();
+		dispatch(loadTrivias(data));
+		return null;
+	} else if (res.status < 500) {
+		const data = await res.json();
+		if (data.errors) {
+			return data.errors;
+		}
+	} else {
+		return ["An error occurred. Please try again."];
+	}
+};
 
 // export const deleteProductThunk = (data) => async (dispatch) => {
 // 	const body = JSON.stringify(data);

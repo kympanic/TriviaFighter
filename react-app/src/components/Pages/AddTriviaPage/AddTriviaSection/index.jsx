@@ -4,8 +4,6 @@ import { createTriviaThunk } from "../../../../store/trivia";
 
 const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 	const dispatch = useDispatch();
-	// console.log(sessionUser, "this is the session user info");
-	// console.log(triviapackage, "this is the triviapackage info");
 
 	const [errors, setErrors] = useState([]);
 	const [question, setQuestion] = useState("");

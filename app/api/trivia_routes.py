@@ -25,6 +25,7 @@ def get_all_trivias():
  
     return res
 
+#POST TRIVIA
 @trivia_routes.route('', methods=['POST'])
 @login_required
 def add_trivia():
@@ -41,3 +42,21 @@ def add_trivia():
         db.session.commit()
         return {new_trivia.id: new_trivia.to_dict()}
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+#EDIT TRIVIA BY ID
+@trivia_routes.route('/<int:id>', methods=['PUT','PATCH'])
+@login_required
+def edit_trivia(id):
+    edited_trivia = Trivia.query.get(id)
+    form = TriviaForm()
+    
+    if form.data["user_id"] != current_user.id:
+        return {'error': "You are not authorized to edit this product"}, 401
+
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        form.populate_obj(edited_trivia)
+        db.session.commit()
+        return {edited_trivia.id: edited_trivia.to_dict()}
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+ 
