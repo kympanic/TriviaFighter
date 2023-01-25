@@ -1,5 +1,5 @@
 import { useState } from "react";
-import HomepageGameOptionModal from "../../../../Modals/HomepageGameOption/HomepageGameOptionModal";
+import HomepageGameOptionModal from "../../../Modals/HomepageGameOption/HomepageGameOptionModal";
 import PremadeGameName from "./PremadeGameName";
 
 const PremadeTriviaPackage = ({ category }) => {

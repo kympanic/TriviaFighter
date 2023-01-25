@@ -10,9 +10,11 @@ const AddTriviaPage = () => {
 	const sessionUser = location.state?.sessionUser;
 	const triviapackage = location.state?.triviapackage;
 
-	// const allTrivias = useSelector((state) =>
-	// 	Object.values(state.trivias)
-	// );
+	const allTrivias = useSelector((state) => Object.values(state.trivias));
+	console.log(allTrivias);
+	// const selectedTrivias = allTrivias.filter(trivia=> {
+	// 	return
+	// })
 
 	return (
 		<div>
