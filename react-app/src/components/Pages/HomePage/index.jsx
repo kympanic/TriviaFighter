@@ -1,7 +1,13 @@
-import React from "react";
+import { useDispatch } from "react-redux";
 import TriviaMenu from "./SubComponents/TriviaMenu";
-
+import { getAllUsersThunk } from "../../../store/users";
+import { useEffect } from "react";
 const HomePage = () => {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getAllUsersThunk());
+	});
 	return (
 		<div>
 			<div className="homepage-header-container">

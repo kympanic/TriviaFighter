@@ -25,6 +25,16 @@ def get_all_triviapackages():
  
     return res
 
+#GET ONE TRIVIA PACKAGE
+@triviapackage_routes.route('/<int:id>')
+def get_trivia_package(id):
+    selected_trivia_package = TriviaPackage.query.get(id)
+
+    res = {selected_trivia_package.id: selected_trivia_package.to_dict()}
+
+    return res
+
+#POST TRIVIA PACKAGE
 @triviapackage_routes.route('', methods=['POST'])
 @login_required
 def add_trivia_package():

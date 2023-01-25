@@ -36,8 +36,8 @@ const TestAddTriviaForm = ({ sessionUser, triviapackage }) => {
 		e.preventDefault();
 
 		const newTrivia = {
-			user_id: sessionUser.id,
-			trivia_package_id: triviapackage.id,
+			user_id: sessionUser?.id,
+			trivia_package_id: triviapackage?.id,
 			question,
 			correct_answer: correctAnswer,
 			incorrect_answer1: incorrectAnswer1,

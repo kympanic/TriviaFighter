@@ -14,7 +14,6 @@ import BattlePage from "./components/Pages/BattlePage";
 import GameOverPage from "./components/Pages/GameOverPage";
 import ResultsPage from "./components/Pages/ResultsPage";
 import NotFoundPage from "./components/Pages/NotFoundPage";
-import { getAllUsersThunk } from "./store/users";
 
 function App() {
 	const [loaded, setLoaded] = useState(false);
@@ -26,10 +25,6 @@ function App() {
 			setLoaded(true);
 		})();
 	}, [dispatch]);
-
-	useEffect(() => {
-		dispatch(getAllUsersThunk());
-	});
 
 	if (!loaded) {
 		return null;

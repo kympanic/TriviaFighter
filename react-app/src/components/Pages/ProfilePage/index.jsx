@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getAllTriviasPackagesThunk } from "../../../store/triviapackage";
+import { getAllUsersThunk } from "../../../store/users";
 import AddTriviaPackageModal from "../../Modals/AddTriviaPackage/AddTriviaPackageModal";
 import DeleteTriviaPackageModal from "../../Modals/DeleteTriviaPackage/DeleteTriviaPackageModal";
 import EditTriviaPackageModal from "../../Modals/EditTriviaPackage/EditTriviaPackageModal";
@@ -22,6 +23,7 @@ const ProfilePage = () => {
 
 	useEffect(() => {
 		dispatch(getAllTriviasPackagesThunk());
+		dispatch(getAllUsersThunk());
 	}, [dispatch]);
 
 	return (
@@ -67,7 +69,7 @@ const ProfilePage = () => {
 							</h1>
 							{selectedUser &&
 								sessionUser &&
-								selectedUser.triviaPackages.map(
+								sessionUser.triviaPackages.map(
 									(triviapackage) => (
 										<div key={triviapackage.name}>
 											<img
@@ -117,10 +119,10 @@ const ProfilePage = () => {
 														onClick={() =>
 															history.push({
 																pathname: `/triviapackage/${triviapackage.id}`,
-																state: {
-																	triviapackage,
-																	sessionUser,
-																},
+																// state: {
+																// 	triviapackage,
+																// 	sessionUser,
+																// },
 															})
 														}
 													>

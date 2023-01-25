@@ -27,7 +27,7 @@ const OptionsPage = () => {
 		setTriviaData(jsonData);
 	};
 
-	console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
+	// console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
 
 	return (
 		<div>

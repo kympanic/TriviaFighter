@@ -1,29 +1,21 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { getAllTriviasThunk } from "../../../../store/trivia";
-
+import { getTriviaPackageThunk } from "../../../../store/triviapackage";
 const EditTriviaForm = ({ sessionUser, triviapackage }) => {
 	const dispatch = useDispatch();
-	const history = useHistory();
+
 	const selectedUser = useSelector((state) => state?.users[sessionUser?.id]);
 
-	const selectedTrivias = selectedUser?.trivias.filter((trivia) => {
-		return trivia.triviaPackageId === triviapackage.id;
-	});
+	console.log(triviapackage, "this is the trivia package");
 
-	//need to make sure only the user that owns the triviapackage can use this page
-	if (sessionUser?.id !== triviapackage?.userId) {
-		history.push("/");
-	}
-	console.log(
-		sessionUser?.id,
-		triviapackage?.userId,
-		"these should not match"
-	);
+	const selectedTrivias = selectedUser?.trivias.filter((trivia) => {
+		return trivia?.triviaPackageId === triviapackage?.id;
+	});
 
 	useEffect(() => {
 		dispatch(getAllTriviasThunk());
+		dispatch(getTriviaPackageThunk());
 	}, [dispatch]);
 
 	return (

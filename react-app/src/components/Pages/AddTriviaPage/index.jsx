@@ -1,12 +1,32 @@
-import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams, useHistory } from "react-router-dom";
 import EditTriviaForm from "./EditTriviaForm";
-// import AddTriviaForm from "./AddTriviaForm";
 import TestAddTriviaForm from "./TestAddTriviaForm";
+import { getTriviaPackageThunk } from "../../../store/triviapackage";
+import { getAllUsersThunk } from "../../../store/users";
 
 const AddTriviaPage = () => {
-	const location = useLocation();
-	const sessionUser = location.state?.sessionUser;
-	const triviapackage = location.state?.triviapackage;
+	const { triviapackageId } = useParams();
+	const trivPackageId = parseInt(triviapackageId);
+	const dispatch = useDispatch();
+	// const location = useLocation();
+	const history = useHistory();
+	const sessionUser = useSelector((state) => state.session.user);
+	// const sessionUser = location.state?.sessionUser;
+	// const triviapackage = location.state?.triviapackage;
+	const triviapackage = useSelector((state) =>
+		Object.values(state?.triviapackages)
+	);
+	// console.log(selectedUser, "woah");
+	// console.log(triviapackage[0], "this is the trivia");
+	// if (sessionUser?.id !== triviapackage[0]?.userId) {
+	// 	history.push("/");
+	// }
+	useEffect(() => {
+		dispatch(getTriviaPackageThunk(trivPackageId));
+		dispatch(getAllUsersThunk());
+	}, [dispatch]);
 
 	return (
 		<div>
@@ -18,13 +38,13 @@ const AddTriviaPage = () => {
 			<div className="add-trivia-page-form-container">
 				<TestAddTriviaForm
 					sessionUser={sessionUser}
-					triviapackage={triviapackage}
+					triviapackage={triviapackage[0]}
 				/>
 			</div>
 			<div className="add-trivia-page-edit-container">
 				<EditTriviaForm
 					sessionUser={sessionUser}
-					triviapackage={triviapackage}
+					triviapackage={triviapackage[0]}
 				/>
 			</div>
 		</div>

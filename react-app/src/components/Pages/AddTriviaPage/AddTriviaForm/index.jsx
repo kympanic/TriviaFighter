@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 const AddTriviaForm = ({ sessionUser, triviapackage }) => {
-	console.log(sessionUser, "this is the session user info");
-	console.log(triviapackage, "this is the triviapackage info");
+	// console.log(sessionUser, "this is the session user info");
+	// console.log(triviapackage, "this is the triviapackage info");
 
 	const [inputFields, setInputFields] = useState([
 		{
@@ -18,7 +18,6 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 		const values = [...inputFields];
 		values[index][event.target.name] = event.target.value;
 		setInputFields(values);
-		console.log(inputFields);
 	};
 
 	const handleAddFields = () => {

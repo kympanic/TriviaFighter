@@ -10,7 +10,7 @@ const PremadeTriviaPackage = ({ category }) => {
 		setDifficulty(e.target.value);
 		setIsOpenOption(true);
 	};
-	console.log(category, "this is the category");
+	// console.log(category, "this is the category");
 
 	return (
 		<div>

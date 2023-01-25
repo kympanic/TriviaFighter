@@ -23,6 +23,16 @@ export const getAllTriviasPackagesThunk = () => async (dispatch) => {
 	}
 };
 
+export const getTriviaPackageThunk = (id) => async (dispatch) => {
+	const res = await fetch(`/api/triviapackages/${id}`);
+
+	if (res.ok) {
+		const payload = await res.json();
+		dispatch(loadTriviaPackages(payload));
+		return payload;
+	}
+};
+
 export const createTriviaPackageThunk = (data) => async (dispatch) => {
 	const newTriviaPackage = JSON.stringify(data);
 
