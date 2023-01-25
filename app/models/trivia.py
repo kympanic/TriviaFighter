@@ -35,11 +35,11 @@ class Trivia (db.Model):
 
     def to_dict_basic(self):
         return {
+            'id': self.id,
             'question': self.question,
-            'correct_answer': self.correct_answer,
+            'correctAnswer': self.correct_answer,
             'incorrectAnswer1' : self.incorrect_answer1,
             'incorrectAnswer2' : self.incorrect_answer2,
             'incorrectAnswer3' : self.incorrect_answer3,
-            'userId': self.user_id,
             'triviaPackageId': self.trivia_package_id,
         }

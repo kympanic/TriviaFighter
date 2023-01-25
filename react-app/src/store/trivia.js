@@ -23,27 +23,10 @@ export const getAllTriviasThunk = () => async (dispatch) => {
 	}
 };
 
-// export const getSingleProduct = (id) => async (dispatch) => {
-// 	const res = await fetch(`/api/products/${id}`);
-
-// 	if (res.ok) {
-// 		const payload = await res.json();
-// 		dispatch(loadProducts(payload));
-// 		return payload;
-// 	} else if (res.status < 500) {
-// 		const data = await res.json();
-// 		if (data.errors) {
-// 			return data.errors;
-// 		}
-// 	} else {
-// 		return ["An error occurred. Please try again."];
-// 	}
-// };
-
 export const createTriviaThunk = (data) => async (dispatch) => {
 	const newTrivia = JSON.stringify(data);
 
-	const response = await fetch("/api/trivia", {
+	const response = await fetch("/api/trivias", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",

@@ -34,6 +34,7 @@ class TriviaPackage (db.Model):
     def to_dict_basic(self):
         return {
             'id':self.id,
+            'userId': self.user_id,
             'name': self.name,
             'category': self.category,
             'description': self.description,

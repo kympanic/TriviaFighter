@@ -40,8 +40,22 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 		setInputFields(values);
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
+		const data = inputFields.map((inputField) => {
+			return [
+				{
+					user_id: sessionUser.id,
+					trivia_package_id: triviapackage.id,
+					question: inputField.question,
+					correct_answer: inputField.correctAnswer,
+					incorrect_answer1: inputField.incorrectAnswer1,
+					incorrect_answer2: inputField.incorrectAnswer2,
+					incorrect_answer2: inputField.incorrectAnswer3,
+				},
+			];
+		});
+
 		console.log("Input Fields", inputFields);
 	};
 	return (
