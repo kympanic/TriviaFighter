@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createTriviaThunk } from "../../../../store/trivia";
+import { categoryConversion } from "../categoryconversion";
 
 const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 	const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 	const [incorrectAnswer1, setIncorrectAnswer1] = useState("");
 	const [incorrectAnswer2, setIncorrectAnswer2] = useState("");
 	const [incorrectAnswer3, setIncorrectAnswer3] = useState("");
+	const [triviaData, setTriviaData] = useState({});
 
 	const updateQuestion = (e) => {
 		setQuestion(e.target.value);
@@ -54,6 +56,26 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 			setIncorrectAnswer3("");
 		}
 	};
+	//converting the category to a number for the api route to get trivia
+	const categoryNum = categoryConversion(triviapackage?.category);
+
+	//fills in form data with the fetched trivia question
+	const handleGeneration = async (e) => {
+		e.preventDefault();
+		const response = await fetch(
+			`https://opentdb.com/api.php?amount=1&category=${categoryNum}&difficulty=${triviapackage.difficulty.toLowerCase()}&type=multiple`
+		);
+		const jsonData = await response.json();
+		setTriviaData(jsonData);
+		setTimeout(() => {
+			setQuestion(triviaData.results[0].question.replace(/&quot/g, "'"));
+			setCorrectAnswer(triviaData.results[0].correct_answer);
+			setIncorrectAnswer1(triviaData.results[0].incorrect_answers[0]);
+			setIncorrectAnswer2(triviaData.results[0].incorrect_answers[1]);
+			setIncorrectAnswer3(triviaData.results[0].incorrect_answers[2]);
+		}, 1000);
+	};
+	console.log(triviaData, "this is not working now?");
 
 	return (
 		<form onSubmit={handleSubmit}>
@@ -100,7 +122,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 			</div>
 			<div>
 				<button onClick={handleSubmit}>Submit Question</button>
-				<button>Generate Question</button>
+				<button onClick={handleGeneration}>Generate Question</button>
 			</div>
 		</form>
 	);

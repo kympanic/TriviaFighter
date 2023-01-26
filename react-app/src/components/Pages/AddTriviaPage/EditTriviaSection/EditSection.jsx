@@ -3,12 +3,12 @@ import { useSelector } from "react-redux";
 import EditTriviaModal from "../../../Modals/EditTrivia/EditTriviaModal";
 
 const EditSection = ({ sessionUser, triviaId }) => {
-	console.log(triviaId, "this is the id");
+	// console.log(triviaId, "this is the id");
 	const trivia = useSelector((state) => state.trivias[triviaId]);
 	const [isOpenEdit, setIsOpenEdit] = useState(false);
 	const [isOpenDelete, setIsOpenDelete] = useState(false);
 
-	console.log(trivia, "this is the trivia");
+	// console.log(trivia, "this is the trivia");
 
 	return (
 		trivia &&
