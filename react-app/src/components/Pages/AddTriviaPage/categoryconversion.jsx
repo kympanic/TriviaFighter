@@ -1,9 +1,9 @@
 export const categoryConversion = (category) => {
 	if (category === "General Knowledge") {
 		return 9;
-	} else if (category === "Television") {
+	} else if (category === "Entertainment: Television") {
 		return 14;
-	} else if (category === "Video Games") {
+	} else if (category === "Entertainment: Video Games") {
 		return 15;
 	} else if (category === "Sports") {
 		return 21;
