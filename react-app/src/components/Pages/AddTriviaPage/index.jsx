@@ -23,7 +23,6 @@ const AddTriviaPage = () => {
 					triviapackage={triviapackage}
 				/>
 			</div>
-
 			<div className="add-trivia-page-edit-container">
 				<EditContainer
 					sessionUser={sessionUser}
