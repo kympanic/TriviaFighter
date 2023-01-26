@@ -4,7 +4,7 @@ from app.models import db, TriviaPackage, environment, SCHEMA
 # Adds a demo user, you can add other users here if you want
 def seed_trivia_packages():
     triviapackage1 = TriviaPackage(
-      name="Entertainment Bonanza", category="Entertainment: Television", description="This game is all about movies from the 2000s", difficulty="Hard", user_id=1 )
+      name="Entertainment Bonanza", category="Entertainment: Television", description="This game is all about movies from the 2000s", difficulty="Hard", user_id=1, image_url="" )
  
     db.session.add(triviapackage1)
 

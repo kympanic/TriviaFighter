@@ -1,7 +1,8 @@
 import { useState } from "react";
 import HomepageGameOptionModal from "../../../Modals/HomepageGameOption/HomepageGameOptionModal";
 import PremadeGameName from "./PremadeGameName";
-
+import PremadeGameImg from "./PremadeGameImg";
+import "./premadetrivia.css";
 const PremadeTriviaPackage = ({ category }) => {
 	const [difficulty, setDifficulty] = useState("");
 	const [isOpenOption, setIsOpenOption] = useState(false);
@@ -13,11 +14,11 @@ const PremadeTriviaPackage = ({ category }) => {
 	// console.log(category, "this is the category");
 
 	return (
-		<div>
+		<div className="premade-trivia-container">
 			{category && (
 				<div>
 					<PremadeGameName category={category} />
-					<h3>Image Placeholder</h3>
+					<PremadeGameImg category={category} />
 					<form>
 						<label>difficulty</label>
 						<select value={difficulty} onChange={updateDifficulty}>
@@ -33,7 +34,6 @@ const PremadeTriviaPackage = ({ category }) => {
 								category={category}
 							/>
 						)}
-						<>modal here</>
 					</form>
 				</div>
 			)}

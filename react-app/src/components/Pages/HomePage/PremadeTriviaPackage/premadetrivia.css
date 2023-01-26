@@ -1,0 +1,13 @@
+.premade-triviapackage-img {
+	height: 230px;
+	border-radius: 20%;
+}
+
+.premade-trivia-container {
+	display: flex;
+	/* align-items: center; */
+	text-align: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 20px;
+}

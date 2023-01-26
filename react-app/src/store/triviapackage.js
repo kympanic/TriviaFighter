@@ -1,12 +1,12 @@
 const LOAD_TRIVIAPACKAGES = "/products/getalltriviapackages";
 const DELETE_TRIVIAPACKAGE = "/products/deletetrivia";
 
-const loadTriviaPackages = (payload) => ({
+export const loadTriviaPackages = (payload) => ({
 	type: LOAD_TRIVIAPACKAGES,
 	payload,
 });
 
-const deleteTriviaPackage = (payload) => {
+export const deleteTriviaPackage = (payload) => {
 	return {
 		type: DELETE_TRIVIAPACKAGE,
 		payload,

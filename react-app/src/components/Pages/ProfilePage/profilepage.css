@@ -1,0 +1,33 @@
+.profilepage-main-container {
+	margin-left: 8%;
+	margin-right: 8%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	border: 2px solid black;
+}
+
+.profilepage-profile-img {
+	height: 200px;
+	border-radius: 50%;
+}
+
+.profilepage-triviapackage-img {
+	height: 200px;
+	border-radius: 50%;
+}
+
+.profilepage-triviapackage-menu {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 20px;
+	margin: 20px;
+}
+
+.profilepage-triviapackage-card {
+	margin: 30px;
+	border: black 2px solid;
+	padding: 30px;
+}

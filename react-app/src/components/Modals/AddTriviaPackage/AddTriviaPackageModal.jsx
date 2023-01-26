@@ -7,44 +7,39 @@ import { useDispatch } from "react-redux";
 const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 	const dispatch = useDispatch();
 
+	const [imageLoading, setImageLoading] = useState(false);
 	const [errors, setErrors] = useState([]);
-	const [details, setDetails] = useState({
-		packageName: "",
-		category: "",
-		difficulty: "",
-		description: "",
-		imageUrl: "",
-	});
-
-	const handleChange = (e) => {
-		const { name, value } = e.target;
-		setDetails((prev) => {
-			return { ...prev, [name]: value };
-		});
-	};
-
-	// const defaultTriviaImage =
-	// 	"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/defaultTriviaCardImg.jpeg";
+	const [packageName, setPackageName] = useState("");
+	const [category, setCategory] = useState("");
+	const [difficulty, setDifficulty] = useState("");
+	const [description, setDescription] = useState("");
+	const [image, setImage] = useState("");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		const newTriviaPackage = {
 			user_id: sessionUser.id,
-			name: details.packageName,
-			difficulty: details.difficulty,
-			category: details.category,
-			description: details.description,
-			image_url: details.imageUrl,
+			name: packageName,
+			difficulty: difficulty,
+			category: category,
+			description: description,
+			image_url: image,
 		};
-		const data = await dispatch(createTriviaPackageThunk(newTriviaPackage));
 
+		const data = await dispatch(createTriviaPackageThunk(newTriviaPackage));
 		if (data) {
 			setErrors(data);
 		} else {
 			setIsOpen(false);
 		}
 	};
+
+	// const updateImage = (e) => {
+	// 	const file = e.target.files[0];
+	// 	setImage(file);
+	// 	console.log(image, "did this update");
+	// };
 
 	return (
 		<>
@@ -80,13 +75,20 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 								<input
 									type="text"
 									name="packageName"
-									onChange={handleChange}
+									onChange={(e) =>
+										setPackageName(e.target.value)
+									}
 									maxLength={30}
 								/>
 							</div>
 							<div>
 								<label>Category: </label>
-								<select onChange={handleChange} name="category">
+								<select
+									onChange={(e) =>
+										setCategory(e.target.value)
+									}
+									name="category"
+								>
 									<option value="--">--</option>
 									<option value="General Knowledge">
 										General Knowledge
@@ -108,7 +110,9 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 							<div>
 								<label>Difficulty: </label>
 								<select
-									onChange={handleChange}
+									onChange={(e) =>
+										setDifficulty(e.target.value)
+									}
 									name="difficulty"
 								>
 									<option value="--">--</option>
@@ -123,16 +127,19 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 									name="description"
 									rows="4"
 									cols="50"
-									onChange={handleChange}
+									onChange={(e) =>
+										setDescription(e.target.value)
+									}
 								></textarea>
 							</div>
 							<div>
-								<label>Package Image Url: </label>
+								<label>Cover Image: </label>
 								<input
+									// type="file"
 									type="url"
-									name="imageUrl"
-									onChange={handleChange}
-									placeholder="https://example.com"
+									name="image"
+									// accept="image/*"
+									onChange={(e) => setImage(e.target.value)}
 								></input>
 							</div>
 							<div className={styles.modalActions}>
@@ -143,6 +150,7 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 									>
 										Yes
 									</button>
+									{imageLoading && <p>Loading...</p>}
 									<button
 										className={styles.cancelBtn}
 										onClick={() => setIsOpen(false)}

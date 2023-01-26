@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField
+from wtforms import StringField, IntegerField, FileField
 from wtforms.validators import DataRequired, ValidationError
 
 def provider_check(form,field):
@@ -27,4 +27,4 @@ class TriviaPackageForm(FlaskForm):
     category=StringField('account_number', validators=[DataRequired(),category_check])
     description=StringField('description', validators=[DataRequired()])
     difficulty=StringField('difficulty', validators=[DataRequired(), difficulty_check])
-    image_url=StringField('image_url')
+    image_url=FileField('image_url')
