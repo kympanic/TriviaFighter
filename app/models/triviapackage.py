@@ -20,7 +20,23 @@ class TriviaPackage (db.Model):
     trivias = db.relationship('Trivia', back_populates ='trivia_package', cascade='all,delete')
     reviews = db.relationship('Review', back_populates='trivia_package', cascade='all,delete')
 
+
+
+
     def to_dict(self):
+        #conversion to get average rating on triviapackages
+        my_list_ratings = [review.to_dict()['rating'] for review in self.reviews]
+        #convert to float from string
+        converted_ratings = [float(x) for x in my_list_ratings]
+        #get the average
+        total = sum(converted_ratings)
+        if total == 0:
+            avg = 3.00
+        else:
+            avg = total / len(converted_ratings)
+        #only get 2 decimal places    
+        avg = (f'{avg:.2f}')
+
         return {
             'id': self.id,
             'userId': self.user_id,
@@ -28,21 +44,22 @@ class TriviaPackage (db.Model):
             'category': self.category,
             'description': self.description,
             'difficulty': self.difficulty,
+            'avgRating': avg,
             'imageUrl': self.image_url,
             'user': self.user.to_dict_basic(),
-            'trivias': [trivia.to_dict() for trivia in self.trivias],
-            'reviews':[review.to_dict() for review in self.reviews]
+            'trivias': [trivia.to_dict_basic() for trivia in self.trivias],
+            # 'reviews':[review.to_dict() for review in self.reviews]
         }
 
-    # def to_dict_basic(self):
-    #     return {
-    #         'id':self.id,
-    #         'userId': self.user_id,
-    #         'name': self.name,
-    #         'category': self.category,
-    #         'description': self.description,
-    #         'difficulty': self.difficulty,
-    #         'imageUrl': self.image_url,
-    #         'trivias': [trivia.to_dict_basic() for trivia in self.trivias],
-    #         'reviews':[review.to_dict_basic() for review in self.reviews]
-    #     }
+    def to_dict_basic(self):
+        return {
+            'id':self.id,
+            'userId': self.user_id,
+            'name': self.name,
+            'category': self.category,
+            'description': self.description,
+            'difficulty': self.difficulty,
+            'imageUrl': self.image_url,
+            'trivias': [trivia.to_dict_basic() for trivia in self.trivias],
+            # 'reviews':[review.to_dict_() for review in self.reviews]
+        }

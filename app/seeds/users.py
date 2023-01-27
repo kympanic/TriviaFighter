@@ -3,10 +3,11 @@ from app.models import db, User, environment, SCHEMA
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    demo = User(
-        username='Demo', email='demo@aa.io', password='password',profile_img="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/coolcatwithbat.jpg")
-
-    db.session.add(demo)
+    demo = User(username='Demo', email='demo@aa.io', password='password',profile_img="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/coolcatwithbat.jpg")
+    user2 = User(username='MooMoo', email='moomoo@aa.io', password='password',profile_img="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/sleepingcow.jpg")
+    user3 = User(username="Panda Programmer", email='pandaprogrammer@aa.io', password='password',profile_img="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/hackerpanda.jpg" )
+    
+    db.session.add_all([demo,user2,user3])
 
     db.session.commit()
 

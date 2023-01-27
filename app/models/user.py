@@ -38,8 +38,8 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email,
             'profileImg': self.profile_img,
-            'trivias': [trivia.to_dict() for trivia in self.trivias],
-            'triviaPackages': [trivia_package.to_dict() for trivia_package in self.trivia_packages]
+            'trivias': [trivia.to_dict_basic() for trivia in self.trivias],
+            'triviaPackages': [trivia_package.to_dict_basic() for trivia_package in self.trivia_packages]
         }
     
     def to_dict_basic(self):

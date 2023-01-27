@@ -30,16 +30,16 @@ class Trivia (db.Model):
             'incorrectAnswer3': self.incorrect_answer3,            
             'triviaPackageId': self.trivia_package_id,
             'user': self.user.to_dict_basic(),
-            'triviaPackage': self.trivia_package.to_dict(),
+            'triviaPackage': self.trivia_package.to_dict_basic(),
         }
 
-    # def to_dict_basic(self):
-    #     return {
-    #         'id': self.id,
-    #         'question': self.question,
-    #         'correctAnswer': self.correct_answer,
-    #         'incorrectAnswer1' : self.incorrect_answer1,
-    #         'incorrectAnswer2' : self.incorrect_answer2,
-    #         'incorrectAnswer3' : self.incorrect_answer3,
-    #         'triviaPackageId': self.trivia_package_id,
-    #     }
+    def to_dict_basic(self):
+        return {
+            'id': self.id,
+            'question': self.question,
+            'correctAnswer': self.correct_answer,
+            'incorrectAnswer1' : self.incorrect_answer1,
+            'incorrectAnswer2' : self.incorrect_answer2,
+            'incorrectAnswer3' : self.incorrect_answer3,
+            'triviaPackageId': self.trivia_package_id,
+        }
