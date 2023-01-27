@@ -1,9 +1,26 @@
-import React from "react";
+import "../homepage.css";
 
-const UserMadeTriviaPackage = () => {
+const UserMadeTriviaPackage = ({ triviapackage }) => {
+	const placeHolderImg =
+		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/defaulttriviaimage.jpg";
+	const onImageError = (e) => {
+		e.target.src = placeHolderImg;
+	};
 	return (
-		<div>
-			<h1>User Made trivia packages will be shown heres</h1>
+		<div className="usermade-trivia-container">
+			{triviapackage && (
+				<div className="usermade-trivia-packages">
+					<img
+						className="homepage-usermade-trivia-img"
+						src={triviapackage.imageUrl}
+						alt="triviapackage.name"
+						onError={onImageError}
+					/>
+					<p>{triviapackage.name}</p>
+					<p>{triviapackage.category}</p>
+					<p>{triviapackage.difficulty}</p>
+				</div>
+			)}
 		</div>
 	);
 };

@@ -60,3 +60,19 @@ def edit_trivia(id):
         return {edited_trivia.id: edited_trivia.to_dict()}
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
  
+ 
+#DELETE TRIVIA BY ID
+@trivia_routes.route('/<int:id>', methods=['DELETE'])
+@login_required
+def delete_trivia(id):
+    deleted_trivia = Trivia.query.get(id)
+    
+    if deleted_trivia.user_id != current_user.id:
+        return {'error': "You are not authorized to delete this product"}, 401
+
+    db.session.delete(deleted_trivia)
+    db.session.commit()
+
+    return {"msg": "Successfully deleted the trivia package!"}
+ 
+ 

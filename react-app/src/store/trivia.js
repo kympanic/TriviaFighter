@@ -6,12 +6,12 @@ const loadTrivias = (payload) => ({
 	payload,
 });
 
-// const deleteTrivia = (payload) => {
-// 	return {
-// 		type: DELETE_TRIVIA,
-// 		payload,
-// 	};
-// };
+const deleteTrivia = (payload) => {
+	return {
+		type: DELETE_TRIVIA,
+		payload,
+	};
+};
 
 export const getAllTriviasThunk = () => async (dispatch) => {
 	const res = await fetch("/api/trivias");
@@ -73,22 +73,22 @@ export const editTriviaThunk = (data) => async (dispatch) => {
 	}
 };
 
-// export const deleteProductThunk = (data) => async (dispatch) => {
-// 	const body = JSON.stringify(data);
+export const deleteTriviaThunk = (data) => async (dispatch) => {
+	const body = JSON.stringify(data);
 
-// 	const res = await fetch(`/api/products/${data.id}`, {
-// 		method: "DELETE",
-// 		headers: {
-// 			"Content-Type": "application/json",
-// 		},
-// 		body,
-// 	});
+	const res = await fetch(`/api/trivias/${data.id}`, {
+		method: "DELETE",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body,
+	});
 
-// 	if (res.ok) {
-// 		dispatch(deleteProduct(data.id));
-// 		return data;
-// 	}
-// };
+	if (res.ok) {
+		dispatch(deleteTrivia(data.id));
+		return data;
+	}
+};
 
 const triviaReducer = (state = {}, action) => {
 	let newState = { ...state };

@@ -2,4 +2,20 @@
 	border: 2px solid black;
 	margin-left: 8%;
 	margin-right: 8%;
+	text-align: center;
+}
+
+.homepage-usermade-trivia-img {
+	height: 230px;
+	border-radius: 20%;
+}
+
+.usermade-trivia-container {
+	border: 2px solid purple;
+	/* display: flex; */
+
+	height: 350px;
+	width: 350px;
+	padding-top: 50px;
+	padding-bottom: 30px;
 }

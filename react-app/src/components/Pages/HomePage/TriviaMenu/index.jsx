@@ -1,8 +1,20 @@
-import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import PremadeTriviaPackage from "../PremadeTriviaPackage";
 import UserMadeTriviaPackage from "../UserMadeTriviaPackage";
+import { getAllTriviasPackagesThunk } from "../../../../store/triviapackage";
 
 const TriviaMenu = () => {
+	const dispatch = useDispatch();
+	const allUserTriviaPackages = useSelector((state) =>
+		Object.values(state.triviapackages)
+	);
+
+	console.log(allUserTriviaPackages, "woah");
+	useEffect(() => {
+		dispatch(getAllTriviasPackagesThunk());
+	}, [dispatch]);
+
 	//placeholder. Put real categories that are in the external api
 
 	//numbers for the different categories
@@ -18,14 +30,27 @@ const TriviaMenu = () => {
 
 	return (
 		<div>
+			<div>
+				<h1>PreMade Trivia. Play Right Away!</h1>
+			</div>
 			<div className="premade-trivia-container">
 				{premadeCategories.map((option) => (
 					<PremadeTriviaPackage key={option} category={option} />
 				))}
 			</div>
-			<div className="usermade-trivia-container">
-				<UserMadeTriviaPackage />
+			<div>
+				<h1>Trivia Made by the Community</h1>
 			</div>
+			{allUserTriviaPackages &&
+				allUserTriviaPackages.map((triviapackage) => (
+					<UserMadeTriviaPackage
+						key={triviapackage.id}
+						triviapackage={triviapackage}
+					/>
+				))}
+			{/* <div className="usermade-trivia-container">
+				<UserMadeTriviaPackage />
+			</div> */}
 		</div>
 	);
 };
