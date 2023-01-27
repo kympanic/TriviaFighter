@@ -18,6 +18,7 @@ class TriviaPackage (db.Model):
     #relationships
     user = db.relationship('User', back_populates='trivia_packages')
     trivias = db.relationship('Trivia', back_populates ='trivia_package', cascade='all,delete')
+    reviews = db.relationship('Review', back_populates='trivia_package', cascade='all,delete')
 
     def to_dict(self):
         return {
@@ -29,17 +30,19 @@ class TriviaPackage (db.Model):
             'difficulty': self.difficulty,
             'imageUrl': self.image_url,
             'user': self.user.to_dict_basic(),
-            'trivias': [trivia.to_dict_basic() for trivia in self.trivias]
+            'trivias': [trivia.to_dict() for trivia in self.trivias],
+            'reviews':[review.to_dict() for review in self.reviews]
         }
 
-    def to_dict_basic(self):
-        return {
-            'id':self.id,
-            'userId': self.user_id,
-            'name': self.name,
-            'category': self.category,
-            'description': self.description,
-            'difficulty': self.difficulty,
-            'imageUrl': self.image_url,
-            'trivias': [trivia.to_dict_basic() for trivia in self.trivias],
-        }
+    # def to_dict_basic(self):
+    #     return {
+    #         'id':self.id,
+    #         'userId': self.user_id,
+    #         'name': self.name,
+    #         'category': self.category,
+    #         'description': self.description,
+    #         'difficulty': self.difficulty,
+    #         'imageUrl': self.image_url,
+    #         'trivias': [trivia.to_dict_basic() for trivia in self.trivias],
+    #         'reviews':[review.to_dict_basic() for review in self.reviews]
+    #     }

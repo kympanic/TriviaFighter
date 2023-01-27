@@ -25,7 +25,7 @@ def get_all_triviapackages():
  
     return res
 
-#GET ONE TRIVIA PACKAGE
+#GET ONE TRIVIA PACKAGE BY ID
 @triviapackage_routes.route('/<int:id>')
 def get_trivia_package(id):
     selected_trivia_package = TriviaPackage.query.get(id)
@@ -64,6 +64,7 @@ def add_trivia_package():
         return {trivia_package.id: trivia_package.to_dict()}
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
+#EDIT TRIVIA PACKAGE BY ID
 @triviapackage_routes.route('/<int:id>', methods=['PUT','PATCH'])
 @login_required
 def edit_trivia_package(id):
