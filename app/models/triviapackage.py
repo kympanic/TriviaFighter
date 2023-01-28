@@ -8,7 +8,7 @@ class TriviaPackage (db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(40), nullable=False, unique=True)
+    name = db.Column(db.String(35), nullable=False, unique=True)
     category = db.Column(db.String(255), nullable=False)
     description= db.Column(db.String(255), nullable=False)
     difficulty = db.Column(db.String(10),nullable=False)

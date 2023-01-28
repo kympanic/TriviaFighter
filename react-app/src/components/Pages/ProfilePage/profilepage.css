@@ -29,12 +29,15 @@
 .profilepage-triviapackage-card {
 	margin: 30px;
 	border: black 2px solid;
+	border-radius: 20px;
 	padding: 30px;
 }
 
 .profilepage-comments-container {
 	display: flex;
 	flex-direction: column;
+
+	padding-top: 40px;
 }
 
 .profilepage-profile-img {
@@ -44,4 +47,28 @@
 
 .profilepage-comments-components {
 	display: flex;
+	width: 1500px;
+	justify-content: flex-start;
+	border-bottom: palevioletred 3px solid;
+}
+
+.profilepage-comments-info {
+	padding-top: 30px;
+	padding-right: 50px;
+	padding-bottom: 30px;
+	padding-left: 60px;
+	max-width: 100px;
+}
+
+.profilepage-comments-body {
+	padding-top: 70px;
+	padding-left: 80px;
+}
+
+#profilepage-comment {
+	font-size: larger;
+
+	height: 100px;
+	width: 900px;
+	overflow: hidden;
 }

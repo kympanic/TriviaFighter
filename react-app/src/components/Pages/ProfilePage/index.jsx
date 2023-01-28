@@ -111,7 +111,7 @@ const ProfilePage = () => {
 					<div className="profilepage-comments-container">
 						{profileReviews.map((review) => (
 							<div className="profilepage-comments-components">
-								<div>
+								<div className="profilepage-comments-info">
 									<img
 										src={review.trivia_package.imageUrl}
 										alt={review.trivia_package.name}
@@ -121,8 +121,10 @@ const ProfilePage = () => {
 									<p>{review.trivia_package.name}</p>
 									<p>rating: {review.rating}</p>
 								</div>
-								<div>
-									<p>{review.body}</p>
+								<div className="profilepage-comments-body">
+									<p id="profilepage-comment">
+										{review.body}
+									</p>
 								</div>
 							</div>
 						))}
