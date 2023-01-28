@@ -58,7 +58,7 @@
 
 .profilepage-comments-components {
 	display: flex;
-	width: 1500px;
+	width: 100%;
 	justify-content: flex-start;
 	border-bottom: palevioletred 3px solid;
 }

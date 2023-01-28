@@ -1,0 +1,8 @@
+.editsection-container {
+	height: 750px;
+	overflow: auto;
+	width: 500px;
+	word-wrap: break-word;
+	text-align: center;
+	margin-top: 10px;
+}

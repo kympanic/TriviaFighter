@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createTriviaThunk } from "../../../../store/trivia";
 import { categoryConversion } from "../categoryconversion";
+import "./addtriviasection.css";
 
 const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 	const dispatch = useDispatch();
@@ -68,72 +69,119 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 		);
 		const jsonData = await response.json();
 		setTriviaData(jsonData);
-		setCorrectAnswer(triviaData?.results[0]?.correct_answer);
-		setIncorrectAnswer1(triviaData?.results[0]?.incorrect_answers[0]);
-		setIncorrectAnswer2(triviaData?.results[0]?.incorrect_answers[1]);
-		setIncorrectAnswer3(triviaData?.results[0]?.incorrect_answers[2]);
-		setQuestion(triviaData?.results[0]?.question);
+		setCorrectAnswer(
+			triviaData?.results[0]?.correct_answer.replace(/&amp;/gi, "&")
+		);
+		setIncorrectAnswer1(
+			triviaData?.results[0]?.incorrect_answers[0].replace(/&amp;/gi, "&")
+		);
+		setIncorrectAnswer2(
+			triviaData?.results[0]?.incorrect_answers[1].replace(/&amp;/gi, "&")
+		);
+		setIncorrectAnswer3(
+			triviaData?.results[0]?.incorrect_answers[2].replace(/&amp;/gi, "&")
+		);
+		setQuestion(
+			triviaData?.results[0]?.question.replace(/&#039;|&quot;|car/gi, "")
+		);
 	};
 
 	console.log(triviaData, "this is not working now?");
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<div className="errors-section">
-				{errors.map((error, ind) => (
-					<div className="error-body" key={ind}>
-						<ul>
-							<li className="error-item">{error}</li>
-						</ul>
+		<div>
+			<h1>Add Trivia</h1>
+			<form className="addtrivia-form-container" onSubmit={handleSubmit}>
+				<div className="errors-section">
+					{errors.map((error, ind) => (
+						<div className="error-body" key={ind}>
+							<ul>
+								<li className="error-item">{error}</li>
+							</ul>
+						</div>
+					))}
+				</div>
+				<div className="form-ind-sections">
+					<label>Question: </label>
+					<div>
+						<textarea
+							id="question-input"
+							type="text"
+							name="question"
+							value={question}
+							onChange={updateQuestion}
+							maxLength={250}
+						/>
 					</div>
-				))}
-			</div>
-			<div>
-				<label>Question: </label>
-				<input
-					type="text"
-					name="question"
-					value={question}
-					onChange={updateQuestion}
-				/>
-			</div>
-			<div>
-				<label>Answer: </label>
-				<input
-					type="text"
-					name="correctAnswer"
-					value={correctAnswer}
-					onChange={updateCorrectAnswer}
-				/>
-			</div>
-			<div>
-				<label>Incorrect Answer 1</label>
-				<input
-					type="text"
-					name="incorrectAnswer1"
-					value={incorrectAnswer1}
-					onChange={updateIncorrectAnswer1}
-				/>
-				<label>Incorrect Answer 2</label>
-				<input
-					type="text"
-					name="incorrectAnswer2"
-					value={incorrectAnswer2}
-					onChange={updateIncorrectAnswer2}
-				/>
-				<label>Incorrect Answer 3</label>
-				<input
-					type="text"
-					name="incorrectAnswer3"
-					value={incorrectAnswer3}
-					onChange={updateIncorrectAnswer3}
-				/>
-			</div>
-			<div>
-				<button onClick={handleSubmit}>Submit Question</button>
-				<button onClick={handleGeneration}>Generate Question</button>
-			</div>
-		</form>
+				</div>
+				<div className="form-ind-sections">
+					<label>Answer: </label>
+					<div>
+						<input
+							className="text-input-fields"
+							type="text"
+							name="correctAnswer"
+							value={correctAnswer}
+							onChange={updateCorrectAnswer}
+						/>
+					</div>
+				</div>
+				<div className="form-ind-sections">
+					<label>Incorrect Answer 1</label>
+					<div>
+						<input
+							className="text-input-fields"
+							type="text"
+							name="incorrectAnswer1"
+							value={incorrectAnswer1}
+							onChange={updateIncorrectAnswer1}
+						/>
+					</div>
+				</div>
+				<div className="form-ind-sections">
+					<label>Incorrect Answer 2</label>
+					<div>
+						<input
+							className="text-input-fields"
+							type="text"
+							name="incorrectAnswer2"
+							value={incorrectAnswer2}
+							onChange={updateIncorrectAnswer2}
+						/>
+					</div>
+				</div>
+				<div className="form-ind-sections">
+					<label>Incorrect Answer 3</label>
+					<div>
+						<input
+							className="text-input-fields"
+							type="text"
+							name="incorrectAnswer3"
+							value={incorrectAnswer3}
+							onChange={updateIncorrectAnswer3}
+						/>
+					</div>
+				</div>
+				<div>
+					<div className="generate-button-container">
+						<button
+							id="addtrivia-generate-btn"
+							onClick={handleGeneration}
+						>
+							Generate Question
+						</button>
+					</div>
+					<div className="submit-button-container">
+						<button
+							id="addtrivia-submit-btn"
+							onClick={handleSubmit}
+						>
+							Submit Question
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
 	);
 };
 

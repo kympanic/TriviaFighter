@@ -1,0 +1,50 @@
+/* .addtrivia-form-container {
+	
+} */
+
+.form-ind-sections {
+	padding-top: 5%;
+}
+#question-input {
+	width: 400px;
+	height: 160px;
+	border: 2px solid black;
+	border-radius: 5px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.text-input-fields {
+	width: 400px;
+	height: 25px;
+}
+
+.generate-button-container {
+	padding-top: 8%;
+
+	height: 70px;
+}
+
+.submit-button-container {
+	padding-top: 5%;
+
+	height: 70px;
+}
+
+#addtrivia-generate-btn {
+	height: 50px;
+	width: 200px;
+	border-radius: 20px;
+	border: none;
+	background-color: palevioletred;
+	color: white;
+}
+
+#addtrivia-submit-btn {
+	height: 50px;
+	width: 200px;
+	border-radius: 20px;
+	border: none;
+	background-color: slateblue;
+	color: white;
+}

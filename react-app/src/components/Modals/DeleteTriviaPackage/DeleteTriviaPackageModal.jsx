@@ -29,10 +29,6 @@ const DeleteTriviaPackageModal = ({ setIsOpen, triviapackage }) => {
 					<div className={styles.modalContent}>
 						Are you sure you want to delete the item?
 						<p>{triviapackage.name}</p>
-						<img
-							src={triviapackage.imageUrl}
-							alt={triviapackage.name}
-						/>
 					</div>
 					<div className={styles.modalActions}>
 						<div className={styles.actionsContainer}>

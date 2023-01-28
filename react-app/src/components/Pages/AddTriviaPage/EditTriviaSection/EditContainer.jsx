@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllTriviasThunk } from "../../../../store/trivia";
 import EditSection from "./EditSection";
+import "./editsection.css";
 
 const EditContainer = ({ sessionUser, triviapackage }) => {
 	const dispatch = useDispatch();
@@ -15,11 +16,11 @@ const EditContainer = ({ sessionUser, triviapackage }) => {
 		dispatch(getAllTriviasThunk());
 	}, [dispatch]);
 
-	console.log(selectedTrivia, "THIS IS THE TRIVIA BEING MAPPED");
+	// console.log(selectedTrivia, "THIS IS THE TRIVIA BEING MAPPED");
 	return (
 		<div>
 			{selectedTrivia && selectedTrivia.length > 0 ? (
-				<div>
+				<div className="editsection-container">
 					{selectedTrivia.map((trivia) => (
 						<div key={trivia.id}>
 							<EditSection
