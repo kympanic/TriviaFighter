@@ -1,11 +1,8 @@
-import { useParams } from "react-router-dom";
 import EditContainer from "./EditTriviaSection/EditContainer";
 import AddTriviaForm from "./AddTriviaSection";
 import { useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
 const AddTriviaPage = () => {
-	const { triviapackageId } = useParams();
-	const trivPackageId = parseInt(triviapackageId);
+	// const { triviapackageId } = useParams();
 	const location = useLocation();
 	const sessionUser = location.state?.sessionUser;
 	const triviapackage = location.state?.triviapackage;

@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 	const dispatch = useDispatch();
 
-	const [imageLoading, setImageLoading] = useState(false);
+	// const [imageLoading, setImageLoading] = useState(false);
 	const [errors, setErrors] = useState([]);
 	const [packageName, setPackageName] = useState("");
 	const [category, setCategory] = useState("");
@@ -150,7 +150,7 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 									>
 										Yes
 									</button>
-									{imageLoading && <p>Loading...</p>}
+									{/* {imageLoading && <p>Loading...</p>} */}
 									<button
 										className={styles.cancelBtn}
 										onClick={() => setIsOpen(false)}

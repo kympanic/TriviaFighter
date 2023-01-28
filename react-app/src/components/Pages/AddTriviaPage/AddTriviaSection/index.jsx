@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createTriviaThunk } from "../../../../store/trivia";
@@ -80,6 +79,15 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 
 	return (
 		<form onSubmit={handleSubmit}>
+			<div className="errors-section">
+				{errors.map((error, ind) => (
+					<div className="error-body" key={ind}>
+						<ul>
+							<li className="error-item">{error}</li>
+						</ul>
+					</div>
+				))}
+			</div>
 			<div>
 				<label>Question: </label>
 				<input
