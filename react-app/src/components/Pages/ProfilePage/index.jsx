@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { getAllTriviasPackagesThunk } from "../../../store/triviapackage";
 import { getAllUsersThunk } from "../../../store/users";
 import AddTriviaButton from "./AddTriviaButton";
@@ -13,6 +13,7 @@ const ProfilePage = () => {
 	const { userId } = useParams();
 	const id = parseInt(userId);
 	const dispatch = useDispatch();
+	const history = useHistory();
 	const profileUser = useSelector((state) => state?.users[userId]);
 	const sessionUser = useSelector((state) => state.session.user);
 	const allTriviaPackages = useSelector((state) =>
@@ -38,6 +39,7 @@ const ProfilePage = () => {
 	const onImageError = (e) => {
 		e.target.src = placeHolderImg;
 	};
+
 	return (
 		<div className="profilepage-main-container">
 			{sessionUser && profileUser && profileTriviaPackages && (
@@ -117,10 +119,15 @@ const ProfilePage = () => {
 							>
 								<div className="profilepage-comments-info">
 									<img
+										className="review-triviapackage-img"
 										src={review.trivia_package.imageUrl}
 										alt={review.trivia_package.name}
 										onError={onImageError}
-										className="profilepage-profile-img"
+										onClick={() =>
+											history.push(
+												`/profile/${review.trivia_package.userId}`
+											)
+										}
 									/>
 									<p>{review.trivia_package.name}</p>
 									<p>rating: {review.rating}</p>
