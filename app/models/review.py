@@ -24,7 +24,7 @@ class Review(db.Model):
             'body': self.body,
             'userId': self.user_id,
             'triviaPackageId': self.trivia_package_id,
-            'trivia_package': self.trivia_package.to_dict(),
+            'trivia_package': self.trivia_package.to_dict_basic(),
             'user': self.user.to_dict_basic()
         }
 

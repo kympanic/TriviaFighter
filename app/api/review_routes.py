@@ -24,3 +24,4 @@ def get_all_reviews():
     res = {review.id: review.to_dict() for review in reviews}
  
     return res
+

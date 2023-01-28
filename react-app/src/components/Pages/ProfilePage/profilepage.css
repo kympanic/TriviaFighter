@@ -31,3 +31,17 @@
 	border: black 2px solid;
 	padding: 30px;
 }
+
+.profilepage-comments-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.profilepage-profile-img {
+	height: 100px;
+	border-radius: 50%;
+}
+
+.profilepage-comments-components {
+	display: flex;
+}

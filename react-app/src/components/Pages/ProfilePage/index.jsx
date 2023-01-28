@@ -5,6 +5,7 @@ import { getAllTriviasPackagesThunk } from "../../../store/triviapackage";
 import { getAllUsersThunk } from "../../../store/users";
 import AddTriviaButton from "./AddTriviaButton";
 import TriviaEditButtons from "./TriviaEditButtons";
+import { getAllReviewsThunk } from "../../../store/reviews";
 import "./profilepage.css";
 
 const ProfilePage = () => {
@@ -16,14 +17,19 @@ const ProfilePage = () => {
 	const allTriviaPackages = useSelector((state) =>
 		Object.values(state.triviapackages)
 	);
+	const allReviews = useSelector((state) => Object.values(state.reviews));
 
 	const profileTriviaPackages = allTriviaPackages.filter((triviaPackage) => {
 		return triviaPackage.userId === id;
+	});
+	const profileReviews = allReviews.filter((review) => {
+		return review.userId === id;
 	});
 
 	useEffect(() => {
 		dispatch(getAllTriviasPackagesThunk());
 		dispatch(getAllUsersThunk());
+		dispatch(getAllReviewsThunk());
 	}, [dispatch]);
 
 	const placeHolderImg =
@@ -73,10 +79,11 @@ const ProfilePage = () => {
 										Difficulty: {triviapackage.difficulty}
 									</p>
 									{sessionUser.id === id &&
-										sessionUser.trivias.length < 20 && (
+										triviapackage.trivias.length < 14 &&
+										triviapackage.trivias.length >= 1 && (
 											<p>
 												You need{" "}
-												{20 -
+												{14 -
 													triviapackage.trivias
 														.length}{" "}
 												more trivia questions!
@@ -89,7 +96,7 @@ const ProfilePage = () => {
 										/>
 									)}
 									{sessionUser.id !== id &&
-										triviapackage.trivias.length > 1 && (
+										triviapackage.trivias.length >= 14 && (
 											<div>
 												<button>Play</button>
 											</div>
@@ -98,8 +105,27 @@ const ProfilePage = () => {
 							))}
 						</div>
 					</div>
-					<div>
-						<h1>comments section placeholder</h1>
+					<div className="profilepage-reviews-title">
+						<h1>Reviews</h1>
+					</div>
+					<div className="profilepage-comments-container">
+						{profileReviews.map((review) => (
+							<div className="profilepage-comments-components">
+								<div>
+									<img
+										src={review.trivia_package.imageUrl}
+										alt={review.trivia_package.name}
+										onError={onImageError}
+										className="profilepage-profile-img"
+									/>
+									<p>{review.trivia_package.name}</p>
+									<p>rating: {review.rating}</p>
+								</div>
+								<div>
+									<p>{review.body}</p>
+								</div>
+							</div>
+						))}
 					</div>
 				</div>
 			)}

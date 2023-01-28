@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask_login import login_required
-from app.models import User, TriviaPackage
+from app.models import User, TriviaPackage, Review
 
 
 user_routes = Blueprint('users', __name__)
@@ -35,4 +35,14 @@ def get_trivia_packages_by_user(id):
    
     res = {trivia_package.id: trivia_package.to_dict() for trivia_package in trivia_packages}
  
+    return res
+
+#GET ALL REVIEWS BY USER ID
+@user_routes.route('/<int:id>/reviews')
+@login_required
+def get_reviews_by_user(id):
+    reviews = Review.query.filter_by(user_id=id).all()
+    
+    res = {review.id: review.to_dict() for review in reviews}
+
     return res
