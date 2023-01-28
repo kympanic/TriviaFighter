@@ -1,0 +1,46 @@
+.battle-player-img {
+	height: 300px;
+	border-radius: 50%;
+}
+
+.battlepage-main-container {
+	display: flex;
+	justify-content: space-between;
+	background: linear-gradient(
+		90deg,
+		rgba(24, 161, 203, 1) 0%,
+		rgba(255, 255, 255, 1) 35%,
+		rgba(255, 255, 255, 1) 65%,
+		rgb(224, 147, 238) 100%
+	);
+}
+
+.player1-summary {
+	margin-left: 10%;
+	text-align: center;
+	border-radius: 20%;
+	height: 400px;
+	width: 400px;
+	padding: 20px;
+	margin-top: 2.5%;
+}
+
+.player2-summary {
+	margin-right: 10%;
+	text-align: center;
+
+	border-radius: 20%;
+	height: 400px;
+	width: 400px;
+	padding: 20px;
+	margin-top: 2.5%;
+}
+
+.player-container {
+	border: 2px solid black;
+	height: 550px;
+	margin-top: 2%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}

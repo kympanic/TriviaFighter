@@ -28,6 +28,11 @@ const ProfilePage = () => {
 		return review.userId === id;
 	});
 
+	console.log(
+		profileTriviaPackages,
+		"this is the profile trivia packages I need to work with"
+	);
+
 	useEffect(() => {
 		dispatch(getAllTriviasPackagesThunk());
 		dispatch(getAllUsersThunk());

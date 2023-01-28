@@ -5,12 +5,14 @@ import trivias from "./trivia";
 import triviapackages from "./triviapackage";
 import users from "./users";
 import reviews from "./reviews";
+import quiz from "./quiz";
 const rootReducer = combineReducers({
 	session,
 	trivias,
 	triviapackages,
 	users,
 	reviews,
+	quiz,
 });
 
 let enhancer;

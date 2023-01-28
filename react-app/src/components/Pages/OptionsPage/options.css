@@ -1,0 +1,28 @@
+.optionspage-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.optionspage-title {
+	text-align: center;
+}
+
+.optionspage-player-img {
+	height: 200px;
+	border-radius: 50%;
+}
+
+.player-boxes-container {
+	display: flex;
+	justify-content: space-around;
+}
+
+.optionspage-btns-container {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.ind-player-info {
+	display: flex;
+	flex-direction: column;
+}
