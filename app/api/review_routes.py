@@ -25,3 +25,37 @@ def get_all_reviews():
  
     return res
 
+#EDIT REVIEW BY ID
+
+#EDIT TRIVIA BY ID
+@review_routes.route('/<int:id>', methods=['PUT','PATCH'])
+@login_required
+def edit_trivia(id):
+    edited_review = Review.query.get(id)
+    form = ReviewForm()
+    
+    if form.data["user_id"] != current_user.id:
+        return {'error': "You are not authorized to edit this product"}, 401
+
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        form.populate_obj(edited_review)
+        db.session.commit()
+        return {edited_review.id: edited_review.to_dict()}
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+ 
+ #DELETE TRIVIA BY ID
+@review_routes.route('/<int:id>', methods=['DELETE'])
+@login_required
+def delete_trivia(id):
+    deleted_trivia = Review.query.get(id)
+    
+    if deleted_trivia.user_id != current_user.id:
+        return {'error': "You are not authorized to delete this product"}, 401
+
+    db.session.delete(deleted_trivia)
+    db.session.commit()
+
+    return {"msg": "Successfully deleted the trivia package!"}
+ 
+ 

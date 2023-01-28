@@ -1,15 +1,15 @@
 import styles from "./Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
 import { useDispatch } from "react-redux";
-import { deleteTriviaThunk } from "../../../store/trivia";
+import { deleteReviewThunk } from "../../../store/reviews";
 
-const DeleteTriviaModal = ({ setIsOpen, trivia }) => {
+const DeleteReviewModal = ({ setIsOpen, review }) => {
 	const dispatch = useDispatch();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setIsOpen(false);
-		dispatch(deleteTriviaThunk(trivia));
+		dispatch(deleteReviewThunk(review));
 	};
 
 	return (
@@ -29,8 +29,8 @@ const DeleteTriviaModal = ({ setIsOpen, trivia }) => {
 						<RiCloseLine style={{ marginBottom: "-3px" }} />
 					</button>
 					<div className={styles.modalContent}>
-						Are you sure you want to delete this question?
-						<p>{trivia.question}</p>
+						Are you sure you want to delete this review?
+						<p>{review.body}</p>
 					</div>
 					<div className={styles.modalActions}>
 						<div className={styles.actionsContainer}>
@@ -54,4 +54,4 @@ const DeleteTriviaModal = ({ setIsOpen, trivia }) => {
 	);
 };
 
-export default DeleteTriviaModal;
+export default DeleteReviewModal;

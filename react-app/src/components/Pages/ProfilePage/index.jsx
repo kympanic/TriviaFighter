@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAllTriviasPackagesThunk } from "../../../store/triviapackage";
 import { getAllUsersThunk } from "../../../store/users";
 import AddTriviaButton from "./AddTriviaButton";
 import TriviaEditButtons from "./TriviaEditButtons";
+import ReviewEditButtons from "./ReviewEditButtons";
 import { getAllReviewsThunk } from "../../../store/reviews";
 import "./profilepage.css";
 
@@ -110,7 +111,10 @@ const ProfilePage = () => {
 					</div>
 					<div className="profilepage-comments-container">
 						{profileReviews.map((review) => (
-							<div className="profilepage-comments-components">
+							<div
+								key={review.id}
+								className="profilepage-comments-components"
+							>
 								<div className="profilepage-comments-info">
 									<img
 										src={review.trivia_package.imageUrl}
@@ -125,6 +129,14 @@ const ProfilePage = () => {
 									<p id="profilepage-comment">
 										{review.body}
 									</p>
+								</div>
+								<div>
+									{sessionUser.id === id && (
+										<ReviewEditButtons
+											review={review}
+											sessionUser={sessionUser}
+										/>
+									)}
 								</div>
 							</div>
 						))}
