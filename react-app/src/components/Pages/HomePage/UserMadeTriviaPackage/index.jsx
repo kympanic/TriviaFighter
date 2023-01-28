@@ -7,9 +7,9 @@ const UserMadeTriviaPackage = ({ triviapackage }) => {
 		e.target.src = placeHolderImg;
 	};
 	return (
-		<div className="usermade-trivia-container">
+		<div className="usermade-trivia-card">
 			{triviapackage && (
-				<div className="usermade-trivia-packages">
+				<div>
 					<img
 						className="homepage-usermade-trivia-img"
 						src={triviapackage.imageUrl}

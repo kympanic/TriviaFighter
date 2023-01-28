@@ -14,7 +14,7 @@ const PremadeTriviaPackage = ({ category }) => {
 	// console.log(category, "this is the category");
 
 	return (
-		<div className="premade-trivia-container">
+		<div className="premade-trivia-card">
 			{category && (
 				<div>
 					<PremadeGameName category={category} />

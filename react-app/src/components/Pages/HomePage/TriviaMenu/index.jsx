@@ -15,8 +15,6 @@ const TriviaMenu = () => {
 		dispatch(getAllTriviasPackagesThunk());
 	}, [dispatch]);
 
-	//placeholder. Put real categories that are in the external api
-
 	//numbers for the different categories
 	//general knowledge - 9
 	//television - 14
@@ -39,18 +37,20 @@ const TriviaMenu = () => {
 				))}
 			</div>
 			<div>
+				<h1>SearchBar place holder</h1>
+			</div>
+			<div>
 				<h1>Trivia Made by the Community</h1>
 			</div>
-			{allUserTriviaPackages &&
-				allUserTriviaPackages.map((triviapackage) => (
-					<UserMadeTriviaPackage
-						key={triviapackage.id}
-						triviapackage={triviapackage}
-					/>
-				))}
-			{/* <div className="usermade-trivia-container">
-				<UserMadeTriviaPackage />
-			</div> */}
+			<div className="usermade-trivia-container">
+				{allUserTriviaPackages &&
+					allUserTriviaPackages.map((triviapackage) => (
+						<UserMadeTriviaPackage
+							key={triviapackage.id}
+							triviapackage={triviapackage}
+						/>
+					))}
+			</div>
 		</div>
 	);
 };
