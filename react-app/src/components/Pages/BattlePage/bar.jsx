@@ -1,14 +1,14 @@
-import "./bar.css";
+import styles from "./styles.module.css";
 
 const Bar = ({ label, value, maxValue }) => {
 	console.log(value, "this is the value");
 	console.log(maxValue, "this is the max value");
 	return (
-		<div className="main">
-			<div className="label">{label}</div>
-			<div className="max">
+		<div className={styles.main}>
+			<div className={styles.label}>{label}</div>
+			<div className={styles.max}>
 				<div
-					className="value"
+					className={styles.value}
 					style={{ width: `${(value / maxValue) * 100}%` }}
 				></div>
 			</div>

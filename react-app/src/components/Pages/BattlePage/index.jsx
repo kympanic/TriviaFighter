@@ -1,25 +1,40 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Bar from "./bar";
 import "./battlepage.css";
+import Menu from "./Menu";
+import { useSelector } from "react-redux";
 const BattlePage = () => {
 	const location = useLocation();
 	const triviaData = location.state.triviaData;
 	const player1Data = location.state.player1Data;
 	const player2Data = location.state.player2Data;
-
-	const selectedTriviaData = Object.values(triviaData.results);
-
-	console.log(selectedTriviaData, "this is the trivia data");
-	console.log(player1Data, "this is the player 1 data");
-	console.log(player2Data, "this is the player 2 data");
-
 	const [player1Health, setPlayer1Health] = useState(player1Data.maxHealth);
 	const [player2Health, setPlayer2Health] = useState(player2Data.maxHealth);
 
-	console.log(player1Health, "this is the player 1 health");
-	console.log(player2Health, "this is the player 2 health");
+	console.log(triviaData, "this is the trivia data");
+	const getRandomInt = (max) => {
+		return Math.floor(Math.random() * Math.floor(max));
+	};
+
+	const selectedTriviaData = Object.values(triviaData?.results);
+	const arrayOfQuestions = selectedTriviaData.map((trivia) => {
+		return {
+			question: trivia?.question,
+			correct_answer: trivia?.correct_answer,
+			incorrect_answers: trivia.incorrect_answers,
+			// incorrect_answer2: trivia.incorrect_answers[1],
+			// incorrect_answer3: trivia.incorrect_answers[2],
+		};
+	});
+
+	// console.log(arrayOfQuestions, "these are all the questions");
+	// console.log(selectedTriviaData, "this is the trivia data");
+	// console.log(player1Data, "this is the player 1 data");
+	// console.log(player2Data, "this is the player 2 data");
+	// console.log(player1Health, "this is the player 1 health");
+	// console.log(player2Health, "this is the player 2 health");
 	return (
 		<div className="battlepage-main-container">
 			<div className="player-container">
@@ -55,6 +70,9 @@ const BattlePage = () => {
 						/>
 					</div>
 				</div>
+			</div>
+			<div>
+				<Menu arrayOfQuestions={arrayOfQuestions} />
 			</div>
 		</div>
 	);

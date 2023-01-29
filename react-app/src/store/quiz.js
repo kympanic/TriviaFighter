@@ -1,4 +1,12 @@
 // src/Reducer.js
+
+// export const addIndex = (itemId) => {
+// 	return {
+// 		type: ADD_ITEM,
+// 		itemId,
+// 	};
+// };
+
 const initState = {
 	index: 0,
 };

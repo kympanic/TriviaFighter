@@ -69,7 +69,7 @@ const OptionsPage = () => {
 					<h1>Player 2 Box Info</h1>
 					{player2Stats &&
 						player2Stats.map((player) => (
-							<div className="ind-player-info">
+							<div key={player.id} className="ind-player-info">
 								<p>{player.name}</p>
 								<img
 									className="optionspage-player-img"
