@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import "./menu.css";
 const Menu = ({ arrayOfQuestions, setSequence, turn }) => {
-	const dispatch = useDispatch;
 	const [questionIndex, setQuestionIndex] = useState(0);
 	const [answerSelected, setAnswerSelected] = useState(false);
 	const [selectedAnswer, setSelectedAnswer] = useState(null);

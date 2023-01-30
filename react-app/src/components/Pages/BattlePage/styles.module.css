@@ -58,11 +58,13 @@
 .player1Sprite img {
 	max-height: 25vh;
 	min-height: 150px;
+	border-radius: 50%;
 }
 
 .player2Sprite img {
 	max-height: 25vh;
 	min-height: 150px;
+	border-radius: 50%;
 }
 .player1Sprite .attack {
 	transition: 0.1s;

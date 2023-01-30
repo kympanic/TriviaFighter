@@ -15,8 +15,7 @@ const BattlePage = () => {
 	const [sequence, setSequence] = useState({});
 	const player1Data = location.state.player1Data;
 	const player2Data = location.state.player2Data;
-	// const [player1Health, setPlayer1Health] = useState(player1Data.maxHealth);
-	// const [player2Health, setPlayer2Health] = useState(player2Data.maxHealth);
+
 	const {
 		turn,
 		inSequence,
@@ -27,22 +26,20 @@ const BattlePage = () => {
 		player2Animation,
 	} = useBattleSequence(sequence);
 
-	console.log(triviaData, "this is the trivia data");
-	const getRandomInt = (max) => {
-		return Math.floor(Math.random() * Math.floor(max));
-	};
-
 	const selectedTriviaData = Object.values(triviaData?.results);
 	const arrayOfQuestions = selectedTriviaData.map((trivia) => {
 		return {
 			question: trivia?.question,
 			correct_answer: trivia?.correct_answer,
 			incorrect_answers: trivia.incorrect_answers,
-			// incorrect_answer2: trivia.incorrect_answers[1],
-			// incorrect_answer3: trivia.incorrect_answers[2],
 		};
 	});
 
+	console.log(
+		inSequence,
+		"this should be constanting going from false to true, true to false"
+	);
+	// console.log(triviaData, "this is the trivia data");
 	// console.log(arrayOfQuestions, "these are all the questions");
 	// console.log(selectedTriviaData, "this is the trivia data");
 	// console.log(player1Data, "this is the player 1 data");
