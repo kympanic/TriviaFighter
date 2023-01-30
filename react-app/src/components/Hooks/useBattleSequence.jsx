@@ -19,8 +19,8 @@ export const useBattleSequence = (sequence) => {
 		new Promise((resolve) => {
 			setTimeout(() => {
 				resolve();
-			});
-		}, ms);
+			}, ms);
+		});
 
 	useEffect(() => {
 		const { mode, turn } = sequence;
@@ -62,6 +62,7 @@ export const useBattleSequence = (sequence) => {
 						setAnnouncerMessage(
 							`${receiver.name} was much wowed by your knowledge! Good job!`
 						);
+						await wait(1000);
 						turn === 0
 							? setPlayer2Health((health) =>
 									health - damage > 0 ? health - damage : 0
@@ -69,11 +70,10 @@ export const useBattleSequence = (sequence) => {
 							: setPlayer1Health((health) =>
 									health - damage > 0 ? health - damage : 0
 							  );
-						await wait(2000);
+						await wait(500);
 
 						setAnnouncerMessage(`Now it's ${receiver.name} turn!`);
-
-						await wait(1500);
+						await wait(1000);
 
 						setTurn(turn === 0 ? 1 : 0);
 						setInSequence(false);

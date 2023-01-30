@@ -1,10 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Bar from "./Bar/bar";
 import Menu from "./Menu";
 import Announcer from "./Announcer";
-import { useSelector } from "react-redux";
 import "./battlepage.css";
 import styles from "./styles.module.css";
 import { useBattleSequence } from "../../Hooks/useBattleSequence";
@@ -68,9 +67,7 @@ const BattlePage = () => {
 					</div>
 				</div>
 
-				<div className={styles.gameHeader}>
-					{player1Data.name} vs {player2Data.name}
-				</div>
+				<div className={styles.gameHeader}>Fight!</div>
 
 				<div className="player2-summary">
 					<h2>Player 2</h2>
@@ -100,7 +97,7 @@ const BattlePage = () => {
 						}
 					/>
 				</div>
-				{/* {!inSequence && turn === 0 && ( */}
+				{/* {!inSequence && ( */}
 				<div className={styles.hudChild}>
 					<Menu
 						arrayOfQuestions={arrayOfQuestions}
