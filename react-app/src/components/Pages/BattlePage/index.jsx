@@ -11,9 +11,10 @@ import { useBattleSequence } from "../../Hooks/useBattleSequence";
 const BattlePage = () => {
 	const location = useLocation();
 	const triviaData = location.state.triviaData;
-	const [sequence, setSequence] = useState({});
 	const player1Data = location.state.player1Data;
 	const player2Data = location.state.player2Data;
+	const [sequence, setSequence] = useState({});
+	const [questionIndex, setQuestionIndex] = useState(0);
 
 	const {
 		turn,
@@ -97,15 +98,17 @@ const BattlePage = () => {
 						}
 					/>
 				</div>
-				{/* {!inSequence && ( */}
-				<div className={styles.hudChild}>
-					<Menu
-						arrayOfQuestions={arrayOfQuestions}
-						setSequence={setSequence}
-						turn={turn}
-					/>
-				</div>
-				{/* )} */}
+				{!inSequence && (
+					<div className={styles.hudChild}>
+						<Menu
+							arrayOfQuestions={arrayOfQuestions}
+							setSequence={setSequence}
+							turn={turn}
+							setQuestionIndex={setQuestionIndex}
+							questionIndex={questionIndex}
+						/>
+					</div>
+				)}
 			</div>
 		</div>
 	);

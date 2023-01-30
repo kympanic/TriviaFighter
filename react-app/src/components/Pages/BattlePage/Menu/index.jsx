@@ -2,8 +2,13 @@ import { useState } from "react";
 // import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import "./menu.css";
-const Menu = ({ arrayOfQuestions, setSequence, turn }) => {
-	const [questionIndex, setQuestionIndex] = useState(0);
+const Menu = ({
+	arrayOfQuestions,
+	setSequence,
+	turn,
+	questionIndex,
+	setQuestionIndex,
+}) => {
 	// const [answerSelected, setAnswerSelected] = useState(false);
 	// const [selectedAnswer, setSelectedAnswer] = useState(null);
 	const [questions, setQuestions] = useState([]);
@@ -60,16 +65,17 @@ const Menu = ({ arrayOfQuestions, setSequence, turn }) => {
 		// setAnswerSelected(true);
 		// setSelectedAnswer(e.target.textContent);
 		// console.log(e.target.textContent, "AHHHH");
+		setQuestionIndex(questionIndex + 1);
 		if (e.target.textContent === question.correct_answer) {
 			setSequence({ mode: "isCorrect", turn });
-			if (questionIndex + 1 <= arrayOfQuestions.length) {
-				setQuestionIndex(questionIndex + 1);
-			}
+			// if (questionIndex + 1 <= arrayOfQuestions.length) {
+			// 	setQuestionIndex(questionIndex + 1);
+			// }
 		} else {
 			setSequence({ mode: "isIncorrect", turn });
-			if (questionIndex + 1 <= arrayOfQuestions.length) {
-				setQuestionIndex(questionIndex + 1);
-			}
+			// if (questionIndex + 1 <= arrayOfQuestions.length) {
+			// 	setQuestionIndex(questionIndex + 1);
+			// }
 		}
 	};
 

@@ -63,6 +63,7 @@ export const useBattleSequence = (sequence) => {
 							`${receiver.name} was much wowed by your knowledge! Good job!`
 						);
 						await wait(1000);
+
 						turn === 0
 							? setPlayer2Health((health) =>
 									health - damage > 0 ? health - damage : 0
