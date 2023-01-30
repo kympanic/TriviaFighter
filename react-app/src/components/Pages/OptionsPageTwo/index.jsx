@@ -1,16 +1,14 @@
 import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { player1Stats } from "./player1characters";
-import { player2Stats } from "./player2characters";
-import "./options.css";
+import { player1Stats } from "../OptionsPage/player1characters";
+import { player2Stats } from "../OptionsPage/player2characters";
+import "../OptionsPage/options.css";
 
-const OptionsPage = () => {
+const OptionsPageTwo = () => {
 	const history = useHistory();
 	const location = useLocation();
-	const category = location.state.category;
-	const difficulty = location.state.difficulty;
-	const [triviaData, setTriviaData] = useState({});
+	const triviaData = location.state.triviaData;
 	const [player1Data, setPlayer1Data] = useState({});
 	const [player2Data, setPlayer2Data] = useState({});
 
@@ -21,26 +19,12 @@ const OptionsPage = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
 		history.push({
 			pathname: "/gamebattle",
 			state: { triviaData, player1Data, player2Data },
 		});
 	};
 
-	// renders once and not again unless component changes
-	useEffect(() => {
-		getTriviaDataFetch();
-		// eslint-disable-next-line
-	}, []);
-
-	const getTriviaDataFetch = async () => {
-		const response = await fetch(
-			`https://opentdb.com/api.php?amount=20&category=${category}&difficulty=${difficulty.toLowerCase()}&type=multiple`
-		);
-		const jsonData = await response.json();
-		setTriviaData(jsonData);
-	};
 	console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
 	console.log(player1Data, "this is the player one data");
 	console.log(player2Data, "this is the player two data");
@@ -65,11 +49,6 @@ const OptionsPage = () => {
 								</button>
 							</div>
 						))}
-				</div>
-				<div>
-					{triviaData.length > 0 && (
-						<div>{triviaData[0].category}</div>
-					)}
 				</div>
 				<div>
 					<h1>Player 2 Box Info</h1>
@@ -108,4 +87,4 @@ const OptionsPage = () => {
 	);
 };
 
-export default OptionsPage;
+export default OptionsPageTwo;

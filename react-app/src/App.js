@@ -10,6 +10,7 @@ import HomePage from "./components/Pages/HomePage";
 import ProfilePage from "./components/Pages/ProfilePage";
 import AddTriviaPage from "./components/Pages/AddTriviaPage";
 import OptionsPage from "./components/Pages/OptionsPage";
+import OptionsPageTwo from "./components/Pages/OptionsPageTwo";
 import BattlePage from "./components/Pages/BattlePage";
 import GameOverPage from "./components/Pages/GameOverPage";
 import ResultsPage from "./components/Pages/ResultsPage";
@@ -43,11 +44,17 @@ function App() {
 				<ProtectedRoute path="/profile/:userId" exact={true}>
 					<ProfilePage />
 				</ProtectedRoute>
-				<ProtectedRoute path="/triviapackage/:triviapackageId">
+				<ProtectedRoute
+					path="/triviapackage/:triviapackageId"
+					exact={true}
+				>
 					<AddTriviaPage />
 				</ProtectedRoute>
-				<ProtectedRoute path="/gameoptions">
+				<ProtectedRoute path="/gameoptions" exact={true}>
 					<OptionsPage />
+				</ProtectedRoute>
+				<ProtectedRoute path="/gameoptionstwo" exact={true}>
+					<OptionsPageTwo />
 				</ProtectedRoute>
 				<ProtectedRoute path="/gamebattle" exact={true}>
 					<BattlePage />
@@ -55,7 +62,7 @@ function App() {
 				<ProtectedRoute path="/gameover" exact={true}>
 					<GameOverPage />
 				</ProtectedRoute>
-				<ProtectedRoute path="/results">
+				<ProtectedRoute path="/results" exact={true}>
 					<ResultsPage />
 				</ProtectedRoute>
 				<Route path="/" exact={true}>

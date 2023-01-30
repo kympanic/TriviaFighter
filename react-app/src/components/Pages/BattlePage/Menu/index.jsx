@@ -2,15 +2,16 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import "./menu.css";
-const Menu = ({ arrayOfQuestions }) => {
+const Menu = ({ arrayOfQuestions, onCorrect, onIncorrect }) => {
 	const dispatch = useDispatch;
-	const questionIndex = useSelector((state) => state.quiz.index);
+	const [questionIndex, setQuestionIndex] = useState(0);
 	const [answerSelected, setAnswerSelected] = useState(false);
 	const [selectedAnswer, setSelectedAnswer] = useState(null);
 	const [questions, setQuestions] = useState([]);
 	const [options, setOptions] = useState([]);
+	// const [className, setClassName] = useState("option");
 
-	console.log(arrayOfQuestions, "this is being passed to the menu componet");
+	// console.log(arrayOfQuestions, "this is being passed to the menu componet");
 	//function to get the answers and correct answers in an array mixed up
 	const getRandomInt = (max) => {
 		return Math.floor(Math.random() * Math.floor(max));
@@ -38,7 +39,8 @@ const Menu = ({ arrayOfQuestions }) => {
 	}, [arrayOfQuestions]);
 
 	const question = questions[questionIndex];
-	console.log(question, "this is the question being set");
+
+	//Mixing correct answers and incorrect answers into options
 	useEffect(() => {
 		if (!question) {
 			return;
@@ -56,13 +58,17 @@ const Menu = ({ arrayOfQuestions }) => {
 		setAnswerSelected(true);
 		setSelectedAnswer(e.target.textContent);
 		if (e.target.textContent === question.correct_answer) {
-			window.alert("you did some damage!");
+			onCorrect();
+		} else {
+			onIncorrect();
 		}
+
 		if (questionIndex + 1 <= arrayOfQuestions.length) {
 			setTimeout(() => {
 				setAnswerSelected(false);
 				setSelectedAnswer(null);
-			}, 2000);
+				setQuestionIndex(questionIndex + 1);
+			}, 3000);
 		}
 	};
 
@@ -77,6 +83,7 @@ const Menu = ({ arrayOfQuestions }) => {
 						{options.map((option, i) => (
 							<div
 								key={i}
+								// className={getClass(option)}
 								className="option"
 								onClick={handleItemClick}
 							>

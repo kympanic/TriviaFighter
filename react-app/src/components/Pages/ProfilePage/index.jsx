@@ -6,6 +6,7 @@ import { getAllUsersThunk } from "../../../store/users";
 import AddTriviaButton from "./AddTriviaButton";
 import TriviaEditButtons from "./TriviaEditButtons";
 import ReviewEditButtons from "./ReviewEditButtons";
+import ProfilePlayBtn from "./ProfilePlayBtn";
 import { getAllReviewsThunk } from "../../../store/reviews";
 import "./profilepage.css";
 
@@ -28,10 +29,10 @@ const ProfilePage = () => {
 		return review.userId === id;
 	});
 
-	console.log(
-		profileTriviaPackages,
-		"this is the profile trivia packages I need to work with"
-	);
+	// console.log(
+	// 	profileTriviaPackages,
+	// 	"this is the profile trivia packages I need to work with"
+	// );
 
 	useEffect(() => {
 		dispatch(getAllTriviasPackagesThunk());
@@ -87,7 +88,7 @@ const ProfilePage = () => {
 										Difficulty: {triviapackage.difficulty}
 									</p>
 									{sessionUser.id === id &&
-										triviapackage.trivias.length < 14 &&
+										triviapackage.trivias.length <= 14 &&
 										triviapackage.trivias.length >= 1 && (
 											<p>
 												You need{" "}
@@ -105,9 +106,9 @@ const ProfilePage = () => {
 									)}
 									{sessionUser.id !== id &&
 										triviapackage.trivias.length >= 14 && (
-											<div>
-												<button>Play</button>
-											</div>
+											<ProfilePlayBtn
+												trivias={triviapackage.trivias}
+											/>
 										)}
 								</div>
 							))}

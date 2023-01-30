@@ -86,8 +86,6 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 		);
 	};
 
-	console.log(triviaData, "this is not working now?");
-
 	return (
 		<div>
 			<h1>Add Trivia</h1>

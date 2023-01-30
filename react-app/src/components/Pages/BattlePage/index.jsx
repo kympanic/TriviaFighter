@@ -1,17 +1,31 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Bar from "./bar";
-import "./battlepage.css";
+import Bar from "./Bar/bar";
 import Menu from "./Menu";
+import Announcer from "./Announcer";
 import { useSelector } from "react-redux";
+import "./battlepage.css";
+import styles from "./styles.module.css";
+import { useBattleSequence } from "../../Hooks/useBattleSequence";
+
 const BattlePage = () => {
 	const location = useLocation();
 	const triviaData = location.state.triviaData;
+	const [sequence, setSequence] = useState({});
 	const player1Data = location.state.player1Data;
 	const player2Data = location.state.player2Data;
-	const [player1Health, setPlayer1Health] = useState(player1Data.maxHealth);
-	const [player2Health, setPlayer2Health] = useState(player2Data.maxHealth);
+	// const [player1Health, setPlayer1Health] = useState(player1Data.maxHealth);
+	// const [player2Health, setPlayer2Health] = useState(player2Data.maxHealth);
+	const {
+		turn,
+		inSequence,
+		player1Health,
+		player2Health,
+		announcerMessage,
+		player1Animation,
+		player2Animation,
+	} = useBattleSequence(sequence);
 
 	console.log(triviaData, "this is the trivia data");
 	const getRandomInt = (max) => {
@@ -54,6 +68,13 @@ const BattlePage = () => {
 						/>
 					</div>
 				</div>
+
+				<div className={styles.characters}>
+					<div className={styles.gameHeader}>
+						{player1Data.name} vs {player2Data.name}
+					</div>
+				</div>
+
 				<div className="player2-summary">
 					<h2>Player 2</h2>
 					<img
@@ -71,8 +92,26 @@ const BattlePage = () => {
 					</div>
 				</div>
 			</div>
-			<div>
-				<Menu arrayOfQuestions={arrayOfQuestions} />
+			<div className={styles.hud}>
+				<div className={styles.hudChild}>
+					<Announcer
+						message={
+							announcerMessage ||
+							`Player 1, what is the correct answer?`
+						}
+					/>
+				</div>
+				<div className={styles.hudChild}>
+					<Menu
+						arrayOfQuestions={arrayOfQuestions}
+						onCorrect={() =>
+							setSequence({ turn, mode: "isCorrect" })
+						}
+						onIncorrect={() =>
+							setSequence({ turn, mode: "isIncorrect" })
+						}
+					/>
+				</div>
 			</div>
 		</div>
 	);

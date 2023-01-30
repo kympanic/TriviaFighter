@@ -1,4 +1,5 @@
 import "../homepage.css";
+import ProfilePlayBtn from "../../ProfilePage/ProfilePlayBtn";
 
 const UserMadeTriviaPackage = ({ triviapackage }) => {
 	const placeHolderImg =
@@ -19,6 +20,7 @@ const UserMadeTriviaPackage = ({ triviapackage }) => {
 					<p>{triviapackage.name}</p>
 					<p>{triviapackage.category}</p>
 					<p>{triviapackage.difficulty}</p>
+					<ProfilePlayBtn trivias={triviapackage.trivias} />
 				</div>
 			)}
 		</div>
