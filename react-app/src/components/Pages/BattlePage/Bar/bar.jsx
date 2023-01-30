@@ -1,8 +1,7 @@
 import styles from "./styles.module.css";
 
+//component that dynamically changes the style depending on hp value.
 const Bar = ({ label, value, maxValue }) => {
-	// console.log(value, "this is the value");
-	// console.log(maxValue, "this is the max value");
 	return (
 		<div className={styles.main}>
 			<div className={styles.label}>{label}</div>

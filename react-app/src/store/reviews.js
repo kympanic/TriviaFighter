@@ -37,31 +37,31 @@ export const getReviewsByUserIdThunk = (userId) => async (dispatch) => {
 	}
 };
 
-// CREATE A REVIEW BASED ON TRIVIAPACKAGE ID
-// export const createReviewThunk = (data) => async (dispatch) => {
-// 	const newReview = JSON.stringify(data);
+//CREATE A REVIEW
+export const createReviewThunk = (data) => async (dispatch) => {
+	const newReview = JSON.stringify(data);
 
-// 	const response = await fetch(`/api/products/${data.product_id}/reviews`, {
-// 		method: "POST",
-// 		headers: {
-// 			"Content-Type": "application/json",
-// 		},
-// 		body: newReview,
-// 	});
+	const response = await fetch(`/api/reviews`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: newReview,
+	});
 
-// 	if (response.ok) {
-// 		const data = await response.json();
-// 		dispatch(loadReviews(data));
-// 		return null;
-// 	} else if (response.status < 500) {
-// 		const data = await response.json();
-// 		if (data.errors) {
-// 			return data.errors;
-// 		}
-// 	} else {
-// 		return ["An error occurred. Please try again."];
-// 	}
-// };
+	if (response.ok) {
+		const data = await response.json();
+		dispatch(loadReviews(data));
+		return null;
+	} else if (response.status < 500) {
+		const data = await response.json();
+		if (data.errors) {
+			return data.errors;
+		}
+	} else {
+		return ["An error occurred. Please try again."];
+	}
+};
 
 // EDIT A REVIEW
 export const editReviewThunk = (review) => async (dispatch) => {

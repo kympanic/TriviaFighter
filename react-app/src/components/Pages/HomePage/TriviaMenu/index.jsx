@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PremadeTriviaPackage from "../PremadeTriviaPackage";
 import UserMadeTriviaPackage from "../UserMadeTriviaPackage";
@@ -9,12 +9,13 @@ const TriviaMenu = () => {
 	const allUserTriviaPackages = useSelector((state) =>
 		Object.values(state.triviapackages)
 	);
-
 	const completedTriviaPackages = allUserTriviaPackages.filter(
 		(triviapackage) => {
 			return triviapackage.trivias.length >= 14;
 		}
 	);
+	const [query, setQuery] = useState("");
+
 	useEffect(() => {
 		dispatch(getAllTriviasPackagesThunk());
 	}, [dispatch]);
@@ -43,19 +44,46 @@ const TriviaMenu = () => {
 				))}
 			</div>
 			<div>
-				<h1>SearchBar place holder</h1>
+				<h1>Trivia Made by the Community</h1>
 			</div>
 			<div>
-				<h1>Trivia Made by the Community</h1>
+				<input
+					placeholder="Enter Post Title"
+					onChange={(event) => setQuery(event.target.value)}
+				/>
 			</div>
 			<div className="usermade-trivia-container">
 				{completedTriviaPackages &&
-					completedTriviaPackages.map((triviapackage) => (
-						<UserMadeTriviaPackage
-							key={triviapackage.id}
-							triviapackage={triviapackage}
-						/>
-					))}
+					completedTriviaPackages
+						.filter((triviapackage) => {
+							if (query === "") {
+								return triviapackage;
+							} else if (
+								triviapackage.name
+									.toLowerCase()
+									.includes(query.toLowerCase())
+							) {
+								return triviapackage;
+							} else if (
+								triviapackage.difficulty
+									.toLowerCase()
+									.includes(query.toLowerCase())
+							) {
+								return triviapackage;
+							} else if (
+								triviapackage.category
+									.toLowerCase()
+									.includes(query.toLowerCase())
+							) {
+								return triviapackage;
+							}
+						})
+						.map((triviapackage, index) => (
+							<UserMadeTriviaPackage
+								key={triviapackage.id}
+								triviapackage={triviapackage}
+							/>
+						))}
 			</div>
 		</div>
 	);

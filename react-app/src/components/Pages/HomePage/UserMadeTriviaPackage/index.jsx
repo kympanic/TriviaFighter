@@ -1,5 +1,6 @@
-import "../homepage.css";
+import { useState } from "react";
 import ProfilePlayBtn from "../../ProfilePage/ProfilePlayBtn";
+import "../homepage.css";
 
 const UserMadeTriviaPackage = ({ triviapackage }) => {
 	const placeHolderImg =
