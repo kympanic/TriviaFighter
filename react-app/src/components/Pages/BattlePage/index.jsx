@@ -37,10 +37,12 @@ const BattlePage = () => {
 	});
 
 	if (player1Health === 0 || player2Health === 0) {
-		history.push({
-			pathname: "/gameover",
-			state: { triviaData },
-		});
+		setTimeout(() => {
+			history.push({
+				pathname: "/gameover",
+				state: { triviaData },
+			});
+		}, 1000);
 	}
 	// console.log(triviaData, "this is the trivia data");
 	// console.log(arrayOfQuestions, "these are all the questions");
