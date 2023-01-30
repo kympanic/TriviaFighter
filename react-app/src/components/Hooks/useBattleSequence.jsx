@@ -20,6 +20,7 @@ export const useBattleSequence = (sequence) => {
 			setTimeout(() => {
 				resolve();
 			}, ms);
+			return () => clearTimeout();
 		});
 
 	useEffect(() => {

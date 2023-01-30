@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { useState } from "react";
 import Bar from "./Bar/bar";
 import Menu from "./Menu";
@@ -9,6 +9,7 @@ import styles from "./styles.module.css";
 import { useBattleSequence } from "../../Hooks/useBattleSequence";
 
 const BattlePage = () => {
+	const history = useHistory();
 	const location = useLocation();
 	const triviaData = location.state.triviaData;
 	const player1Data = location.state.player1Data;
@@ -35,10 +36,12 @@ const BattlePage = () => {
 		};
 	});
 
-	console.log(
-		inSequence,
-		"this should be constanting going from false to true, true to false"
-	);
+	if (player1Health === 0 || player2Health === 0) {
+		history.push({
+			pathname: "/gameover",
+			state: { triviaData },
+		});
+	}
 	// console.log(triviaData, "this is the trivia data");
 	// console.log(arrayOfQuestions, "these are all the questions");
 	// console.log(selectedTriviaData, "this is the trivia data");
