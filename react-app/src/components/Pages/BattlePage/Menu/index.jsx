@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import "./menu.css";
-const Menu = ({ arrayOfQuestions, onCorrect, onIncorrect }) => {
+const Menu = ({ arrayOfQuestions, setSequence, turn }) => {
 	const dispatch = useDispatch;
 	const [questionIndex, setQuestionIndex] = useState(0);
 	const [answerSelected, setAnswerSelected] = useState(false);
@@ -58,17 +58,13 @@ const Menu = ({ arrayOfQuestions, onCorrect, onIncorrect }) => {
 		setAnswerSelected(true);
 		setSelectedAnswer(e.target.textContent);
 		if (e.target.textContent === question.correct_answer) {
-			onCorrect();
+			setSequence({ mode: "isCorrect", turn });
 		} else {
-			onIncorrect();
+			setSequence({ mode: "isIncorrect", turn });
 		}
 
 		if (questionIndex + 1 <= arrayOfQuestions.length) {
-			setTimeout(() => {
-				setAnswerSelected(false);
-				setSelectedAnswer(null);
-				setQuestionIndex(questionIndex + 1);
-			}, 3000);
+			setQuestionIndex(questionIndex + 1);
 		}
 	};
 
@@ -83,7 +79,6 @@ const Menu = ({ arrayOfQuestions, onCorrect, onIncorrect }) => {
 						{options.map((option, i) => (
 							<div
 								key={i}
-								// className={getClass(option)}
 								className="option"
 								onClick={handleItemClick}
 							>

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 .user,
-.opponent {
+.player2 {
 	gap: 10px;
 	display: flex;
 	flex-direction: column;
@@ -55,6 +55,15 @@
 	transition: 0.5s;
 }
 
+.player1Sprite img {
+	max-height: 25vh;
+	min-height: 150px;
+}
+
+.player2Sprite img {
+	max-height: 25vh;
+	min-height: 150px;
+}
 .player1Sprite .attack {
 	transition: 0.1s;
 	transform: translateX(100px);
@@ -62,12 +71,6 @@
 .player2Sprite .attack {
 	transition: 0.1s;
 	transform: translateX(-100px);
-}
-
-.magic {
-	transition: 0.2s;
-	transform: translateY(-25px);
-	animation: shake 0.5s infinite;
 }
 
 .damage {

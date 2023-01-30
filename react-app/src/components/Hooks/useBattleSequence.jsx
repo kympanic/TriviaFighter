@@ -58,6 +58,7 @@ export const useBattleSequence = (sequence) => {
 						turn === 0
 							? setPlayer2Animation("static")
 							: setPlayer1Animation("static");
+
 						setAnnouncerMessage(
 							`${receiver.name} was much wowed by your knowledge! Good job!`
 						);
@@ -71,6 +72,7 @@ export const useBattleSequence = (sequence) => {
 						await wait(2000);
 
 						setAnnouncerMessage(`Now it's ${receiver.name} turn!`);
+
 						await wait(1500);
 
 						setTurn(turn === 0 ? 1 : 0);
@@ -105,7 +107,7 @@ export const useBattleSequence = (sequence) => {
 							? setPlayer1Health((health) =>
 									health - damage > 0 ? health - damage : 0
 							  )
-							: setPlayer2Health((h) =>
+							: setPlayer2Health((health) =>
 									health - damage > 0 ? health - damage : 0
 							  );
 						await wait(2500);

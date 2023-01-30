@@ -54,11 +54,13 @@ const BattlePage = () => {
 			<div className="player-container">
 				<div className="player1-summary">
 					<h2>Player 1</h2>
-					<img
-						className="battle-player-img"
-						src={player1Data.img}
-						alt={player1Data.name}
-					/>
+					<div className={styles.player1Sprite}>
+						<img
+							className={styles[player1Animation]}
+							src={player1Data.img}
+							alt={player1Data.name}
+						/>
+					</div>
 					<h3>{player1Data.name}</h3>
 					<div>
 						<Bar
@@ -69,19 +71,19 @@ const BattlePage = () => {
 					</div>
 				</div>
 
-				<div className={styles.characters}>
-					<div className={styles.gameHeader}>
-						{player1Data.name} vs {player2Data.name}
-					</div>
+				<div className={styles.gameHeader}>
+					{player1Data.name} vs {player2Data.name}
 				</div>
 
 				<div className="player2-summary">
 					<h2>Player 2</h2>
-					<img
-						className="battle-player-img"
-						src={player2Data.img}
-						alt={player2Data.name}
-					/>
+					<div className={styles.player2Sprite}>
+						<img
+							className={styles[player2Animation]}
+							src={player2Data.img}
+							alt={player2Data.name}
+						/>
+					</div>
 					<h3>{player2Data.name}</h3>
 					<div>
 						<Bar
@@ -97,21 +99,19 @@ const BattlePage = () => {
 					<Announcer
 						message={
 							announcerMessage ||
-							`Player 1, what is the correct answer?`
+							`It's Trivia Time! Player One what is the answer to this question?`
 						}
 					/>
 				</div>
+				{/* {!inSequence && turn === 0 && ( */}
 				<div className={styles.hudChild}>
 					<Menu
 						arrayOfQuestions={arrayOfQuestions}
-						onCorrect={() =>
-							setSequence({ turn, mode: "isCorrect" })
-						}
-						onIncorrect={() =>
-							setSequence({ turn, mode: "isIncorrect" })
-						}
+						setSequence={setSequence}
+						turn={turn}
 					/>
 				</div>
+				{/* )} */}
 			</div>
 		</div>
 	);
