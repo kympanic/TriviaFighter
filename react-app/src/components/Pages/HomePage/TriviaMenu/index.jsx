@@ -10,10 +10,16 @@ const TriviaMenu = () => {
 		Object.values(state.triviapackages)
 	);
 
-	console.log(allUserTriviaPackages, "woah");
+	const completedTriviaPackages = allUserTriviaPackages.filter(
+		(triviapackage) => {
+			return triviapackage.trivias.length >= 14;
+		}
+	);
 	useEffect(() => {
 		dispatch(getAllTriviasPackagesThunk());
 	}, [dispatch]);
+
+	console.log(completedTriviaPackages, "this is the completed trivias");
 
 	//numbers for the different categories
 	//general knowledge - 9
@@ -43,8 +49,8 @@ const TriviaMenu = () => {
 				<h1>Trivia Made by the Community</h1>
 			</div>
 			<div className="usermade-trivia-container">
-				{allUserTriviaPackages &&
-					allUserTriviaPackages.map((triviapackage) => (
+				{completedTriviaPackages &&
+					completedTriviaPackages.map((triviapackage) => (
 						<UserMadeTriviaPackage
 							key={triviapackage.id}
 							triviapackage={triviapackage}
