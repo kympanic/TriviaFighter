@@ -33,9 +33,9 @@ const TriviaMenu = () => {
 	const premadeCategories = [9, 14, 15, 21, 23, 26, 27];
 
 	return (
-		<div>
-			<div>
-				<h1>PreMade Trivia. Play Right Away!</h1>
+		<div className="main-trivia-container">
+			<div className="triviapackage-title-container">
+				<h1>AI GENERATED TRIVIA</h1>
 			</div>
 			<div className="premade-trivia-container">
 				{premadeCategories.map((option) => (

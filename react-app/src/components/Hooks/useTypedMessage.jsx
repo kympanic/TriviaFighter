@@ -11,7 +11,7 @@ export const useTypedMessage = (message) => {
 				let visibleMessage = "";
 
 				for (let i = 0; i < message.length; i++) {
-					await wait(40);
+					await wait(20);
 					visibleMessage = visibleMessage + message[i];
 					setTypedMessage(visibleMessage);
 				}

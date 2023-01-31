@@ -1,11 +1,10 @@
 .profilepage-main-container {
 	margin-top: 87px;
-
 	display: flex;
 	justify-content: center;
 	text-align: center;
-	border: 2px solid black;
-	background-color: antiquewhite;
+	background-color: #faf7f0;
+	width: 100%;
 }
 
 /* Profile Header*/
@@ -18,21 +17,53 @@
 /* Profile Card */
 
 .profilecard-img {
-	height: 300px;
+	height: 200px;
 	border-radius: 50%;
 }
 .profilepage-info-container {
-	height: 500px;
-	border: 2px solid blue;
-	width: 300px;
+	height: 350px;
+	border: 2px solid lavender;
+	width: 200px;
 	background-color: white;
 	position: relative;
-	bottom: 150px;
+	bottom: 200px;
 	left: 60px;
+	z-index: 4;
+}
+
+/*Trivia Add Button Section*/
+.create-triviabtn-container {
+	height: 150px;
+}
+.add-trivia-btn {
+	height: 60px;
+	width: 230px;
+	margin-top: 3%;
+	position: relative;
+	right: 25%;
+	font-size: 19px;
+	background-color: #cdfcf6;
+	border-radius: 22px;
+	border: none;
+}
+#triviapackage-title-txt {
+	font-size: 45px;
+	margin-bottom: 3%;
+}
+
+/*Triviapackages Section*/
+.profilepage-content-container {
+	position: relative;
+	bottom: 357px;
+	z-index: 0;
+	background-color: white;
+	max-height: 1400px;
+	width: 1650px;
+	padding-bottom: 40px;
 }
 
 .profilepage-triviapackage-img {
-	height: 200px;
+	height: 150px;
 	border-radius: 50%;
 }
 
@@ -43,6 +74,12 @@
 	flex-wrap: wrap;
 	padding: 20px;
 	margin: 20px;
+	border-radius: 20px;
+	max-height: 1000px;
+	overflow: auto;
+	background-color: #bccef8;
+	margin-right: 4%;
+	margin-left: 4%;
 }
 
 .profilepage-triviapackage-card {
@@ -50,19 +87,22 @@
 	border: black 2px solid;
 	border-radius: 20px;
 	padding: 30px;
-	max-width: 220px;
+	width: 300px;
+	height: 350px;
+	background-color: white;
 }
 
+/*Comments Section*/
 .profilepage-comments-container {
 	display: flex;
 	flex-direction: column;
 	padding-top: 40px;
 }
 
-.profilepage-profile-img {
+/* .profilepage-profile-img {
 	height: 100px;
 	border-radius: 50%;
-}
+} */
 .profilepage-review-img {
 	height: 100px;
 	border-radius: 50%;

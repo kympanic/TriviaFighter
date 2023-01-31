@@ -1,20 +1,22 @@
 .navigation-main {
-	height: 84px;
+	height: 70px;
 	list-style: none;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 2px;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 10;
-	background-color: #ccccff;
+	z-index: 999;
+	background-color: white;
+	border-bottom: #bccef8 2px solid;
 }
 
 .navbar-link {
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 22px;
+	text-decoration: none;
 }
 
 a:link {

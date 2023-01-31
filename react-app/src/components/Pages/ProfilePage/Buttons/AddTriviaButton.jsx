@@ -5,9 +5,12 @@ const AddTriviaButton = ({ sessionUser }) => {
 	const [isOpenAddTriviaPackage, setIsOpenAddTriviaPackage] = useState(false);
 
 	return (
-		<div>
-			<button onClick={() => setIsOpenAddTriviaPackage(true)}>
-				Create Trivia!
+		<div className="create-triviabtn-container">
+			<button
+				className="add-trivia-btn"
+				onClick={() => setIsOpenAddTriviaPackage(true)}
+			>
+				Create Trivia Package
 			</button>
 			{isOpenAddTriviaPackage && (
 				<AddTriviaPackageModal

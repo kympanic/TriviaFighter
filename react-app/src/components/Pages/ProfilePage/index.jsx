@@ -48,9 +48,11 @@ const ProfilePage = () => {
 						{sessionUser.id === id ? (
 							<AddTriviaButton sessionUser={sessionUser} />
 						) : (
-							<></>
+							<div className="create-triviabtn-container"></div>
 						)}
-						<h1>My Trivia Packages</h1>
+						<h1 id="triviapackage-title-txt">
+							Featured Trivia Packages
+						</h1>
 						<div className="profilepage-triviapackage-menu">
 							{profileTriviaPackages &&
 								profileTriviaPackages.map((triviapackage) => (
