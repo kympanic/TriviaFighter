@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { player1Stats } from "../OptionsPage/player1characters";
 import { player2Stats } from "../OptionsPage/player2characters";
 import "../OptionsPage/options.css";
@@ -24,10 +24,6 @@ const OptionsPageTwo = () => {
 			state: { triviaData, player1Data, player2Data },
 		});
 	};
-
-	console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
-	console.log(player1Data, "this is the player one data");
-	console.log(player2Data, "this is the player two data");
 
 	return (
 		<div className="optionspage-container">

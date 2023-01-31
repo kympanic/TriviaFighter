@@ -24,3 +24,15 @@
 	border-radius: 20px;
 	margin: 40px;
 }
+
+.homepage-search-container {
+	height: 75px;
+}
+
+.homepage-searchbar {
+	margin-top: 30px;
+	width: 600px;
+	height: 55px;
+	font-size: 25px;
+	border-radius: 10px;
+}

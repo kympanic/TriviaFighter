@@ -1,6 +1,7 @@
 .optionspage-container {
 	display: flex;
 	flex-direction: column;
+	margin-top: 100px;
 }
 
 .optionspage-title {

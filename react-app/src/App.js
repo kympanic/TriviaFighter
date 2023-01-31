@@ -13,9 +13,8 @@ import OptionsPage from "./components/Pages/OptionsPage";
 import OptionsPageTwo from "./components/Pages/OptionsPageTwo";
 import BattlePage from "./components/Pages/BattlePage";
 import GameOverPage from "./components/Pages/GameOverPage";
-import ResultsPage from "./components/Pages/ResultsPage";
 import NotFoundPage from "./components/Pages/NotFoundPage";
-
+import GameFaqsPage from "./components/Pages/GameFaqsPage";
 function App() {
 	const [loaded, setLoaded] = useState(false);
 	const dispatch = useDispatch();
@@ -62,12 +61,12 @@ function App() {
 				<ProtectedRoute path="/gameover" exact={true}>
 					<GameOverPage />
 				</ProtectedRoute>
-				<ProtectedRoute path="/results" exact={true}>
-					<ResultsPage />
-				</ProtectedRoute>
-				<Route path="/" exact={true}>
-					<HomePage />
+				<Route path="/gamefaqs" exact={true}>
+					<GameFaqsPage />
 				</Route>
+				<ProtectedRoute path="/" exact={true}>
+					<HomePage />
+				</ProtectedRoute>
 				<Route path="">
 					<NotFoundPage />
 				</Route>

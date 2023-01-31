@@ -46,9 +46,7 @@ const AddReviewModal = ({ setIsOpen, id }) => {
 			<div className={styles.centered}>
 				<div className={styles.modal}>
 					<div className={styles.modalHeader}>
-						<h5 className={styles.heading}>
-							Create your Trivia Package!
-						</h5>
+						<h5 className={styles.heading}>Add a Review!</h5>
 					</div>
 					<button
 						className={styles.closeBtn}

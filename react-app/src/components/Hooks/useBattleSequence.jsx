@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { triviaCorrect } from "../Pages/BattlePage/DamageCalculator";
 import { triviaIncorrect } from "../Pages/BattlePage/DamageCalculator";
+import { wait } from "../Helpers";
 export const useBattleSequence = (sequence) => {
 	const location = useLocation();
 	const [turn, setTurn] = useState(0);
@@ -14,14 +15,6 @@ export const useBattleSequence = (sequence) => {
 	const player2Data = location.state.player2Data;
 	const [player1Health, setPlayer1Health] = useState(player1Data.maxHealth);
 	const [player2Health, setPlayer2Health] = useState(player2Data.maxHealth);
-
-	const wait = (ms) =>
-		new Promise((resolve) => {
-			setTimeout(() => {
-				resolve();
-			}, ms);
-			return () => clearTimeout();
-		});
 
 	useEffect(() => {
 		const { mode, turn } = sequence;

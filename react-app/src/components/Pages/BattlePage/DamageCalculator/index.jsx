@@ -1,3 +1,4 @@
+//Helper function to calculate damage - No calculations yet
 export const triviaCorrect = ({ attacker, receiver }) => {
 	const receivedDamage = 30;
 	const finalDamage = receivedDamage;

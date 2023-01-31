@@ -4,6 +4,7 @@
 }
 
 .battlepage-main-container {
+	margin-top: 88px;
 	display: flex;
 	justify-content: space-between;
 	background: linear-gradient(
@@ -38,7 +39,6 @@
 }
 
 .player-container {
-	border: 2px solid black;
 	height: 550px;
 	margin-top: 2%;
 	width: 100%;

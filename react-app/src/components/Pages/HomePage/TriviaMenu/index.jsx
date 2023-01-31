@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import PremadeTriviaPackage from "../PremadeTriviaPackage";
 import UserMadeTriviaPackage from "../UserMadeTriviaPackage";
 import { getAllTriviasPackagesThunk } from "../../../../store/triviapackage";
+import "../homepage.css";
 
 const TriviaMenu = () => {
 	const dispatch = useDispatch();
@@ -46,9 +47,10 @@ const TriviaMenu = () => {
 			<div>
 				<h1>Trivia Made by the Community</h1>
 			</div>
-			<div>
+			<div className="homepage-search-container">
 				<input
-					placeholder="Enter Post Title"
+					className="homepage-searchbar"
+					placeholder="Search by name, category, or difficulty"
 					onChange={(event) => setQuery(event.target.value)}
 				/>
 			</div>

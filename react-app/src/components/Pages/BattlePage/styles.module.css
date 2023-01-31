@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-.user,
-.player2 {
-	gap: 10px;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	padding: 25px;
-	box-sizing: border-box;
-}
 .hud {
 	gap: 25px;
 	width: 100%;
@@ -20,33 +11,10 @@
 	height: 200px;
 }
 .gameHeader {
-	font-size: 20px;
+	font-size: 25px;
 	color: black;
 	font-family: "Press Start 2P";
-}
-.summary {
-	display: flex;
-	align-items: flex-end;
-	justify-content: flex-start;
-}
-.opponent .summary {
-	align-items: flex-start;
-	justify-content: flex-end;
-}
-.characters {
-	width: 100%;
-	text-align: center;
-}
-.gameImages {
-	display: flex;
-	justify-content: space-between;
-	padding: 25px;
-	box-sizing: border-box;
-}
-
-.characters .gameImages img {
-	max-height: 25vh;
-	min-height: 150px;
+	margin-top: 15%;
 }
 
 .static {

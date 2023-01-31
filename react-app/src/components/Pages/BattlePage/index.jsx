@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { Redirect, useHistory, useLocation } from "react-router-dom";
 import { useState } from "react";
 import Bar from "./Bar/bar";
 import Menu from "./Menu";
@@ -7,7 +7,10 @@ import Announcer from "./Announcer";
 import "./battlepage.css";
 import styles from "./styles.module.css";
 import { useBattleSequence } from "../../Hooks/useBattleSequence";
-
+import { useEffect } from "react";
+import { wait } from "../../Helpers";
+import { player2Stats } from "../OptionsPage/player2characters";
+import { player1Stats } from "../OptionsPage/player1characters";
 const BattlePage = () => {
 	const history = useHistory();
 	const location = useLocation();
@@ -16,6 +19,7 @@ const BattlePage = () => {
 	const player2Data = location.state.player2Data;
 	const [sequence, setSequence] = useState({});
 	const [questionIndex, setQuestionIndex] = useState(0);
+	const [winner, setWinner] = useState();
 
 	const {
 		turn,
@@ -36,14 +40,19 @@ const BattlePage = () => {
 		};
 	});
 
-	if (player1Health === 0 || player2Health === 0) {
-		setTimeout(() => {
-			history.push({
-				pathname: "/gameover",
-				state: { triviaData },
-			});
-		}, 1000);
-	}
+	useEffect(() => {
+		if (player1Health === 0 || player2Health === 0) {
+			(async () => {
+				await wait(1550);
+				setWinner(player1Health === 0 ? player2Data : player1Data);
+				history.push({
+					pathname: "/gameover",
+					state: { triviaData, winner },
+				});
+			})();
+		}
+	}, [player1Health, player2Health, winner]);
+
 	// console.log(triviaData, "this is the trivia data");
 	// console.log(arrayOfQuestions, "these are all the questions");
 	// console.log(selectedTriviaData, "this is the trivia data");
@@ -95,14 +104,26 @@ const BattlePage = () => {
 				</div>
 			</div>
 			<div className={styles.hud}>
-				<div className={styles.hudChild}>
-					<Announcer
-						message={
-							announcerMessage ||
-							`It's Trivia Time! Player One what is the answer to this question?`
-						}
-					/>
-				</div>
+				{player1Health === 0 || player2Health === 0 ? (
+					<div className={styles.hudChild}>
+						<Announcer
+							message={
+								player1Health === 0
+									? `${player1Data.name} got knocked out!`
+									: `${player2Data.name} got knocked out!`
+							}
+						/>
+					</div>
+				) : (
+					<div className={styles.hudChild}>
+						<Announcer
+							message={
+								announcerMessage ||
+								`Woohoo! It's time for a Trivia Battle! Player One what is the answer to this question?`
+							}
+						/>
+					</div>
+				)}
 				{!inSequence && (
 					<div className={styles.hudChild}>
 						<Menu

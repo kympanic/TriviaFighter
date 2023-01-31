@@ -1,0 +1,39 @@
+.navigation-main {
+	height: 84px;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2px;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	background-color: #ccccff;
+}
+
+.navbar-link {
+	text-decoration: none;
+	font-size: 20px;
+}
+
+a:link {
+	text-decoration: none;
+	color: black;
+}
+
+.active {
+	color: black;
+}
+
+#logo-nav {
+	margin-left: 3%;
+}
+
+#logout-btn-container {
+	margin-right: 3%;
+}
+
+#demo-btn-container {
+	margin-right: 3%;
+}
