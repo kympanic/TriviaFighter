@@ -6,7 +6,7 @@ const ProfileCard = ({ profileUser, triviapackages }) => {
 	return (
 		<div className="profilepage-info-container">
 			<img
-				className="profilepage-profile-img"
+				className="profilecard-img"
 				src={profileUser.profileImg}
 				alt={profileUser.username}
 			/>

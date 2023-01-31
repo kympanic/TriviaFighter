@@ -1,16 +1,34 @@
 .profilepage-main-container {
 	margin-top: 87px;
-	margin-left: 8%;
-	margin-right: 8%;
+
 	display: flex;
 	justify-content: center;
 	text-align: center;
 	border: 2px solid black;
+	background-color: antiquewhite;
 }
 
-.profilepage-profile-img {
-	height: 200px;
+/* Profile Header*/
+.profilepage-header-container {
+	background-image: url("https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/aesthetic-purple-smoke-banner-background+(1).jpg");
+	height: 250px;
+	width: 100%;
+	background-size: cover;
+}
+/* Profile Card */
+
+.profilecard-img {
+	height: 300px;
 	border-radius: 50%;
+}
+.profilepage-info-container {
+	height: 500px;
+	border: 2px solid blue;
+	width: 300px;
+	background-color: white;
+	position: relative;
+	bottom: 150px;
+	left: 60px;
 }
 
 .profilepage-triviapackage-img {

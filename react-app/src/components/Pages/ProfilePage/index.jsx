@@ -39,9 +39,7 @@ const ProfilePage = () => {
 		<div className="profilepage-main-container">
 			{sessionUser && profileUser && profileTriviaPackages && (
 				<div>
-					<div className="profilepage-header-container">
-						<h1>This is the profile page</h1>
-					</div>
+					<div className="profilepage-header-container"></div>
 					<ProfileCard
 						profileUser={profileUser}
 						triviapackages={profileTriviaPackages}
