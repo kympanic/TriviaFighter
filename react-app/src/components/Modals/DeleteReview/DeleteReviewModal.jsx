@@ -5,7 +5,6 @@ import { deleteReviewThunk } from "../../../store/reviews";
 
 const DeleteReviewModal = ({ setIsOpen, review }) => {
 	const dispatch = useDispatch();
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setIsOpen(false);

@@ -1,8 +1,8 @@
 import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { player1Stats } from "./player1characters";
-import { player2Stats } from "./player2characters";
+import { player1Stats } from "../../Helpers";
+import { player2Stats } from "../../Helpers";
 import "./options.css";
 
 const OptionsPage = () => {
@@ -36,14 +36,15 @@ const OptionsPage = () => {
 
 	const getTriviaDataFetch = async () => {
 		const response = await fetch(
-			`https://opentdb.com/api.php?amount=20&category=${category}&difficulty=${difficulty.toLowerCase()}&type=multiple`
+			`https://opentdb.com/api.php?amount=15&category=${category}&difficulty=${difficulty.toLowerCase()}&type=multiple`
 		);
 		const jsonData = await response.json();
 		setTriviaData(jsonData);
 	};
-	console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
-	console.log(player1Data, "this is the player one data");
-	console.log(player2Data, "this is the player two data");
+
+	// console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
+	// console.log(player1Data, "this is the player one data");
+	// console.log(player2Data, "this is the player two data");
 
 	return (
 		<div className="optionspage-container">

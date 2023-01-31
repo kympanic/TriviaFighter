@@ -1,10 +1,8 @@
-import React from "react";
-import { useHistory, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { player1Stats } from "../OptionsPage/player1characters";
-import { player2Stats } from "../OptionsPage/player2characters";
+import { useHistory, useLocation } from "react-router-dom";
+import { player1Stats } from "../../Helpers";
+import { player2Stats } from "../../Helpers";
 import "../OptionsPage/options.css";
-
 const OptionsPageTwo = () => {
 	const history = useHistory();
 	const location = useLocation();

@@ -1,6 +1,6 @@
 import { useState } from "react";
-// import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { getRandomInt } from "../../../Helpers";
 import "./menu.css";
 const Menu = ({
 	arrayOfQuestions,
@@ -9,17 +9,11 @@ const Menu = ({
 	questionIndex,
 	setQuestionIndex,
 }) => {
-	// const [answerSelected, setAnswerSelected] = useState(false);
-	// const [selectedAnswer, setSelectedAnswer] = useState(null);
 	const [questions, setQuestions] = useState([]);
 	const [options, setOptions] = useState([]);
+	// const [answerSelected, setAnswerSelected] = useState(false);
+	// const [selectedAnswer, setSelectedAnswer] = useState(null);
 	// const [className, setClassName] = useState("option");
-
-	// console.log(arrayOfQuestions, "this is being passed to the menu componet");
-	//function to get the answers and correct answers in an array mixed up
-	const getRandomInt = (max) => {
-		return Math.floor(Math.random() * Math.floor(max));
-	};
 
 	//decode the questions and answers coming from the api bc it comes out with messy quotes
 	const decodeHTML = function (html) {

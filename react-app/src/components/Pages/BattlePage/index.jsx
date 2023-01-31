@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { useState } from "react";
 import Bar from "./Bar/bar";
 import Menu from "./Menu";
@@ -9,8 +9,7 @@ import styles from "./styles.module.css";
 import { useBattleSequence } from "../../Hooks/useBattleSequence";
 import { useEffect } from "react";
 import { wait } from "../../Helpers";
-import { player2Stats } from "../OptionsPage/player2characters";
-import { player1Stats } from "../OptionsPage/player1characters";
+
 const BattlePage = () => {
 	const history = useHistory();
 	const location = useLocation();
@@ -51,6 +50,7 @@ const BattlePage = () => {
 				});
 			})();
 		}
+		// eslint-disable-next-line
 	}, [player1Health, player2Health, winner]);
 
 	// console.log(triviaData, "this is the trivia data");

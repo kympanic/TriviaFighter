@@ -1,27 +1,24 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getAllTriviasPackagesThunk } from "../../../store/triviapackage";
 import { getAllUsersThunk } from "../../../store/users";
-import AddTriviaButton from "./AddTriviaButton";
-import TriviaEditButtons from "./TriviaEditButtons";
-import ReviewEditButtons from "./ReviewEditButtons";
-import ProfilePlayBtn from "./ProfilePlayBtn";
 import { getAllReviewsThunk } from "../../../store/reviews";
+import AddTriviaButton from "./AddTriviaButton";
+import ReviewSection from "./ReviewSection";
+import TriviaSection from "./TriviaSection";
 import "./profilepage.css";
 
 const ProfilePage = () => {
 	const { userId } = useParams();
 	const id = parseInt(userId);
 	const dispatch = useDispatch();
-	const history = useHistory();
 	const profileUser = useSelector((state) => state?.users[userId]);
 	const sessionUser = useSelector((state) => state.session.user);
 	const allTriviaPackages = useSelector((state) =>
 		Object.values(state.triviapackages)
 	);
 	const allReviews = useSelector((state) => Object.values(state.reviews));
-
 	const profileTriviaPackages = allTriviaPackages.filter((triviaPackage) => {
 		return triviaPackage.userId === id;
 	});
@@ -29,22 +26,13 @@ const ProfilePage = () => {
 		return review.userId === id;
 	});
 
-	// console.log(
-	// 	profileTriviaPackages,
-	// 	"this is the profile trivia packages I need to work with"
-	// );
-
 	useEffect(() => {
 		dispatch(getAllTriviasPackagesThunk());
 		dispatch(getAllUsersThunk());
 		dispatch(getAllReviewsThunk());
 	}, [dispatch]);
 
-	const placeHolderImg =
-		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/defaulttriviaimage.jpg";
-	const onImageError = (e) => {
-		e.target.src = placeHolderImg;
-	};
+	// console.log(profileReviews.length, "THIS IS THE LENGTH");
 
 	return (
 		<div className="profilepage-main-container">
@@ -71,88 +59,75 @@ const ProfilePage = () => {
 						)}
 						<h1>My Trivia Packages</h1>
 						<div className="profilepage-triviapackage-menu">
-							{profileTriviaPackages.map((triviapackage) => (
-								<div
-									key={triviapackage.name}
-									className="profilepage-triviapackage-card"
-								>
-									<img
-										className="profilepage-triviapackage-img"
-										src={triviapackage.imageUrl}
-										alt={triviapackage.name}
-										onError={onImageError}
+							{profileTriviaPackages &&
+								profileTriviaPackages.map((triviapackage) => (
+									<TriviaSection
+										triviapackage={triviapackage}
+										id={id}
+										sessionUser={sessionUser}
 									/>
-									<p>{triviapackage.name}</p>
-									<p>Category: {triviapackage.category}</p>
-									<p>
-										Difficulty: {triviapackage.difficulty}
-									</p>
-									{sessionUser.id === id &&
-										triviapackage.trivias.length <= 14 &&
-										triviapackage.trivias.length >= 1 && (
-											<p>
-												You need{" "}
-												{14 -
-													triviapackage.trivias
-														.length}{" "}
-												more trivia questions!
-											</p>
-										)}
-									{sessionUser.id === id && (
-										<TriviaEditButtons
-											triviapackage={triviapackage}
-											sessionUser={sessionUser}
-										/>
-									)}
-									{sessionUser.id !== id &&
-										triviapackage.trivias.length >= 14 && (
-											<ProfilePlayBtn
-												trivias={triviapackage.trivias}
-											/>
-										)}
-								</div>
-							))}
+									// <div
+									// 	key={triviapackage.name}
+									// 	className="profilepage-triviapackage-card"
+									// >
+									// 	<img
+									// 		className="profilepage-triviapackage-img"
+									// 		src={triviapackage.imageUrl}
+									// 		alt={triviapackage.name}
+									// 		onError={onImageError}
+									// 	/>
+									// 	<p>{triviapackage.name}</p>
+									// 	<p>
+									// 		Category: {triviapackage.category}
+									// 	</p>
+									// 	<p>
+									// 		Difficulty:{" "}
+									// 		{triviapackage.difficulty}
+									// 	</p>
+									// 	{sessionUser.id === id &&
+									// 		triviapackage.trivias.length < 14 &&
+									// 		triviapackage.trivias.length >=
+									// 			1 && (
+									// 			<p>
+									// 				You need{" "}
+									// 				{14 -
+									// 					triviapackage.trivias
+									// 						.length}{" "}
+									// 				more trivia questions!
+									// 			</p>
+									// 		)}
+									// 	{sessionUser.id === id && (
+									// 		<TriviaEditButtons
+									// 			triviapackage={triviapackage}
+									// 			sessionUser={sessionUser}
+									// 		/>
+									// 	)}
+									// 	{sessionUser.id !== id &&
+									// 		triviapackage.trivias.length >=
+									// 			14 && (
+									// 			<ProfilePlayBtn
+									// 				trivias={
+									// 					triviapackage.trivias
+									// 				}
+									// 			/>
+									// 		)}
+									// </div>
+								))}
 						</div>
 					</div>
 					<div className="profilepage-reviews-title">
 						<h1>Reviews</h1>
 					</div>
 					<div className="profilepage-comments-container">
-						{profileReviews.map((review) => (
-							<div
-								key={review.id}
-								className="profilepage-comments-components"
-							>
-								<div className="profilepage-comments-info">
-									<img
-										className="review-triviapackage-img"
-										src={review.trivia_package.imageUrl}
-										alt={review.trivia_package.name}
-										onError={onImageError}
-										onClick={() =>
-											history.push(
-												`/profile/${review.trivia_package.userId}`
-											)
-										}
-									/>
-									<p>{review.trivia_package.name}</p>
-									<p>rating: {review.rating}</p>
-								</div>
-								<div className="profilepage-comments-body">
-									<p id="profilepage-comment">
-										{review.body}
-									</p>
-								</div>
-								<div>
-									{sessionUser.id === id && (
-										<ReviewEditButtons
-											review={review}
-											sessionUser={sessionUser}
-										/>
-									)}
-								</div>
-							</div>
-						))}
+						{profileReviews &&
+							profileReviews.length > 0 &&
+							profileReviews.map((review) => (
+								<ReviewSection
+									review={review}
+									sessionUser={sessionUser}
+									id={id}
+								/>
+							))}
 					</div>
 				</div>
 			)}

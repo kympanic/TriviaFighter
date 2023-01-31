@@ -10,18 +10,16 @@ const TriviaMenu = () => {
 	const allUserTriviaPackages = useSelector((state) =>
 		Object.values(state.triviapackages)
 	);
+	const [query, setQuery] = useState("");
+
 	const completedTriviaPackages = allUserTriviaPackages.filter(
 		(triviapackage) => {
 			return triviapackage.trivias.length >= 14;
 		}
 	);
-	const [query, setQuery] = useState("");
-
 	useEffect(() => {
 		dispatch(getAllTriviasPackagesThunk());
 	}, [dispatch]);
-
-	console.log(completedTriviaPackages, "this is the completed trivias");
 
 	//numbers for the different categories
 	//general knowledge - 9

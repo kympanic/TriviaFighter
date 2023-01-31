@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { triviaCorrect } from "../Pages/BattlePage/DamageCalculator";
-import { triviaIncorrect } from "../Pages/BattlePage/DamageCalculator";
+import { triviaCorrect } from "../Helpers";
+import { triviaIncorrect } from "../Helpers";
+
 import { wait } from "../Helpers";
 export const useBattleSequence = (sequence) => {
 	const location = useLocation();
@@ -122,6 +123,7 @@ export const useBattleSequence = (sequence) => {
 					break;
 			}
 		}
+		// eslint-disable-next-line
 	}, [sequence]);
 
 	return {

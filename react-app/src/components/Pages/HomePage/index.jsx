@@ -1,7 +1,7 @@
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import TriviaMenu from "./TriviaMenu";
 import { getAllUsersThunk } from "../../../store/users";
-import { useEffect } from "react";
 import "./homepage.css";
 const HomePage = () => {
 	const dispatch = useDispatch();

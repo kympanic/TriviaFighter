@@ -1,12 +1,6 @@
 import "./packageinfo.css";
-
+import { setDefaultTriviaImage } from "../../../Helpers";
 const PackageInfoSection = ({ triviapackage }) => {
-	const placeHolderImg =
-		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/defaulttriviaimage.jpg";
-	const onImageError = (e) => {
-		e.target.src = placeHolderImg;
-	};
-
 	return (
 		<div>
 			{triviapackage && (
@@ -16,7 +10,7 @@ const PackageInfoSection = ({ triviapackage }) => {
 							className="addtriviapage-triviapackage-img"
 							src={triviapackage.imageUrl}
 							alt={triviapackage.name}
-							onError={onImageError}
+							onError={setDefaultTriviaImage}
 						/>
 						<p>{triviapackage.name}</p>
 						<p>Category: {triviapackage.category}</p>
