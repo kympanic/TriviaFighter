@@ -4,9 +4,10 @@ import { useParams } from "react-router-dom";
 import { getAllTriviasPackagesThunk } from "../../../store/triviapackage";
 import { getAllUsersThunk } from "../../../store/users";
 import { getAllReviewsThunk } from "../../../store/reviews";
-import AddTriviaButton from "./AddTriviaButton";
+import AddTriviaButton from "./Buttons/AddTriviaButton";
 import ReviewSection from "./ReviewSection";
 import TriviaSection from "./TriviaSection";
+import ProfileCard from "./ProfileCard";
 import "./profilepage.css";
 
 const ProfilePage = () => {
@@ -41,16 +42,10 @@ const ProfilePage = () => {
 					<div className="profilepage-header-container">
 						<h1>This is the profile page</h1>
 					</div>
-					<div className="profilepage-info-container">
-						<img
-							className="profilepage-profile-img"
-							src={profileUser.profileImg}
-							alt={profileUser.username}
-						/>
-						<p>{profileUser.username}</p>
-						<p>{profileUser.email}</p>
-						<p>average rating</p>
-					</div>
+					<ProfileCard
+						profileUser={profileUser}
+						triviapackages={profileTriviaPackages}
+					/>
 					<div className="profilepage-content-container">
 						{sessionUser.id === id ? (
 							<AddTriviaButton sessionUser={sessionUser} />
@@ -66,52 +61,6 @@ const ProfilePage = () => {
 										id={id}
 										sessionUser={sessionUser}
 									/>
-									// <div
-									// 	key={triviapackage.name}
-									// 	className="profilepage-triviapackage-card"
-									// >
-									// 	<img
-									// 		className="profilepage-triviapackage-img"
-									// 		src={triviapackage.imageUrl}
-									// 		alt={triviapackage.name}
-									// 		onError={onImageError}
-									// 	/>
-									// 	<p>{triviapackage.name}</p>
-									// 	<p>
-									// 		Category: {triviapackage.category}
-									// 	</p>
-									// 	<p>
-									// 		Difficulty:{" "}
-									// 		{triviapackage.difficulty}
-									// 	</p>
-									// 	{sessionUser.id === id &&
-									// 		triviapackage.trivias.length < 14 &&
-									// 		triviapackage.trivias.length >=
-									// 			1 && (
-									// 			<p>
-									// 				You need{" "}
-									// 				{14 -
-									// 					triviapackage.trivias
-									// 						.length}{" "}
-									// 				more trivia questions!
-									// 			</p>
-									// 		)}
-									// 	{sessionUser.id === id && (
-									// 		<TriviaEditButtons
-									// 			triviapackage={triviapackage}
-									// 			sessionUser={sessionUser}
-									// 		/>
-									// 	)}
-									// 	{sessionUser.id !== id &&
-									// 		triviapackage.trivias.length >=
-									// 			14 && (
-									// 			<ProfilePlayBtn
-									// 				trivias={
-									// 					triviapackage.trivias
-									// 				}
-									// 			/>
-									// 		)}
-									// </div>
 								))}
 						</div>
 					</div>

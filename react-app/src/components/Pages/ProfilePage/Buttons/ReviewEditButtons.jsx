@@ -1,8 +1,8 @@
 import { useState } from "react";
-import EditReviewModal from "../../Modals/EditReview/EditReviewModal";
-import DeleteReviewModal from "../../Modals/DeleteReview/DeleteReviewModal";
-import styles from "../../Modals/App.module.css";
-import "./profilepage.css";
+import EditReviewModal from "../../../Modals/EditReview/EditReviewModal";
+import DeleteReviewModal from "../../../Modals/DeleteReview/DeleteReviewModal";
+import styles from "../../../Modals/App.module.css";
+import "../profilepage.css";
 
 const ReviewEditButtons = ({ sessionUser, review }) => {
 	const [isOpenDeleteReview, setIsOpenDeleteReview] = useState(false);

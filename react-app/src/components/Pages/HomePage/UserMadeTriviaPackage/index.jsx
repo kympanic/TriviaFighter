@@ -1,4 +1,4 @@
-import ProfilePlayBtn from "../../ProfilePage/ProfilePlayBtn";
+import ProfilePlayBtn from "../../ProfilePage/Buttons/ProfilePlayBtn";
 import "../homepage.css";
 
 const UserMadeTriviaPackage = ({ triviapackage }) => {

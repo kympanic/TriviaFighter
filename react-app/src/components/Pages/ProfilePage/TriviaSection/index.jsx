@@ -1,5 +1,5 @@
-import TriviaEditButtons from "../TriviaEditButtons";
-import ProfilePlayBtn from "../ProfilePlayBtn";
+import TriviaEditButtons from "../Buttons/TriviaEditButtons";
+import ProfilePlayBtn from "../Buttons/ProfilePlayBtn";
 import { setDefaultTriviaImage } from "../../../Helpers";
 const TriviaSection = ({ triviapackage, sessionUser, id }) => {
 	return (

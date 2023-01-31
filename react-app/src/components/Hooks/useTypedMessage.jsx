@@ -1,15 +1,8 @@
 import { useEffect } from "react";
 import { useState } from "react";
-
+import { wait } from "../Helpers";
 export const useTypedMessage = (message) => {
 	const [typedMessage, setTypedMessage] = useState("");
-
-	const wait = (ms) =>
-		new Promise((resolve) => {
-			setTimeout(() => {
-				resolve();
-			});
-		}, ms);
 
 	useEffect(() => {
 		setTypedMessage("");

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import DeleteTriviaPackageModal from "../../Modals/DeleteTriviaPackage/DeleteTriviaPackageModal";
-import EditTriviaPackageModal from "../../Modals/EditTriviaPackage/EditTriviaPackageModal";
+import DeleteTriviaPackageModal from "../../../Modals/DeleteTriviaPackage/DeleteTriviaPackageModal";
+import EditTriviaPackageModal from "../../../Modals/EditTriviaPackage/EditTriviaPackageModal";
 
 const TriviaEditButtons = ({ sessionUser, triviapackage }) => {
 	const history = useHistory();
