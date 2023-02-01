@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-
+import "../profilepage.css";
 const ProfilePlayBtn = ({ trivias }) => {
 	const history = useHistory();
 
@@ -23,7 +23,13 @@ const ProfilePlayBtn = ({ trivias }) => {
 	};
 
 	return (
-		<div>{triviaData && <button onClick={handleSubmit}>Play</button>}</div>
+		<div>
+			{triviaData && (
+				<button className="play-btn" onClick={handleSubmit}>
+					Play
+				</button>
+			)}
+		</div>
 	);
 };
 

@@ -13,11 +13,11 @@
 	width: 100%;
 	background-size: cover;
 }
-/* Profile Card */
 
+/* Profile Card */
 .profilepage-profilecard-container {
 	height: 350px;
-	border: 2px solid lavender;
+	border: 3px solid lavender;
 	width: 250px;
 	background-color: white;
 	position: relative;
@@ -29,6 +29,7 @@
 	align-items: center;
 }
 .profilecard-img {
+	padding-top: 10px;
 	height: 200px;
 	width: 200px;
 	border-radius: 50%;
@@ -56,11 +57,11 @@
 	color: #bccef8;
 	margin-left: 4px;
 }
+
 /*Trivia Add Button Section*/
 .create-triviabtn-container {
 	height: 150px;
 }
-
 .add-trivia-btn {
 	height: 60px;
 	width: 280px;
@@ -79,7 +80,6 @@
 	-webkit-user-select: none;
 	touch-action: manipulation;
 }
-
 .add-trivia-btn:before {
 	content: "";
 	background: linear-gradient(
@@ -107,7 +107,6 @@
 	transition: opacity 0.3s ease-in-out;
 	border-radius: 10px;
 }
-
 @keyframes glowing-button-85 {
 	0% {
 		background-position: 0 0;
@@ -119,7 +118,6 @@
 		background-position: 0 0;
 	}
 }
-
 .add-trivia-btn:after {
 	z-index: -1;
 	content: "";
@@ -131,7 +129,6 @@
 	top: 0;
 	border-radius: 10px;
 }
-
 #triviapackage-title-txt {
 	font-size: 45px;
 	margin-bottom: 3%;
@@ -141,14 +138,13 @@
 /*Triviapackages Section*/
 .profilepage-content-container {
 	position: relative;
-	bottom: 357px;
 	z-index: 0;
 	background-color: white;
 	max-height: 1400px;
 	width: 1650px;
 	padding-bottom: 40px;
+	bottom: 355px;
 }
-
 .profilepage-triviapackage-menu {
 	display: flex;
 	text-align: center;
@@ -163,38 +159,101 @@
 	margin-right: 4%;
 	margin-left: 4%;
 }
-
 .profilepage-triviapackage-card {
 	margin: 30px;
 	border: black 2px solid;
 	border-radius: 15px;
 	padding: 30px;
 	width: 300px;
-	height: 350px;
+	height: 360px;
 	background-color: white;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-
 .profilepage-triviapackage-img {
 	height: 150px;
 	width: 150px;
 	border-radius: 50%;
 	margin-bottom: 6%;
+	cursor: pointer;
+}
+
+.profilepage-triviapackage-img:hover {
+	transform: scale(1.2);
+}
+.triviacard-title-text {
+	font-size: 20px;
+}
+.triviacard-text {
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+.trivia-editbtns-container {
+	margin-top: 3%;
+	width: 300px;
+	height: 100px;
+}
+
+.trivia-add-btn {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: none;
+	background-color: #77dd77;
+	margin-right: 2%;
+	cursor: pointer;
+}
+.trivia-add-btn:hover {
+	background-color: white;
+	border: #77dd77 2px solid;
+	transform: translate(-4px, 4px);
+}
+
+.trivia-edit-btn {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: none;
+	background-color: #66d3fa;
+	margin-right: 2%;
+	cursor: pointer;
+}
+.trivia-edit-btn:hover {
+	background-color: white;
+	border: #66d3fa 2px solid;
+	transform: translate(-2px, 4px);
+}
+
+.trivia-delete-btn {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: none;
+	background-color: palevioletred;
+	cursor: pointer;
+}
+.trivia-delete-btn:hover {
+	background-color: white;
+	border: palevioletred 2px solid;
+	transform: translate(2px, 4px);
 }
 
 /*Comments Section*/
+.profilepage-reviews-title {
+	position: relative;
+	background-color: white;
+	bottom: 300px;
+}
 .profilepage-comments-container {
+	position: relative;
+	bottom: 300px;
 	display: flex;
 	flex-direction: column;
-	padding-top: 40px;
+	max-height: 1020px;
+	overflow: auto;
+	background-color: white;
 }
-
-/* .profilepage-profile-img {
-	height: 100px;
-	border-radius: 50%;
-} */
 .profilepage-review-img {
 	height: 100px;
 	border-radius: 50%;
@@ -217,11 +276,12 @@
 
 .profilepage-comments-components {
 	display: flex;
+	justify-content: space-around;
+
 	width: 100%;
-	justify-content: flex-start;
+	/* justify-content: flex-start; */
 	border-bottom: palevioletred 3px solid;
 }
-
 .profilepage-comments-info {
 	padding-top: 30px;
 	padding-right: 50px;
@@ -237,12 +297,32 @@
 
 #profilepage-comment {
 	font-size: larger;
-
+	text-align: center;
 	height: 100px;
 	width: 900px;
 	overflow: hidden;
+	border: 4px solid #faf7f0;
+	border-radius: 10px;
 }
 
 .review-editbtns-container {
-	margin-top: 80%;
+	padding-bottom: 10px;
+}
+
+.play-btn {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: none;
+	background-color: #77dd77;
+	margin-right: 2%;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 5%;
+}
+.play-btn:hover {
+	border: #77dd77 2px solid;
+	transform: scale(1.2);
+	font-size: 18px;
 }

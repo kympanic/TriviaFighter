@@ -8,7 +8,7 @@ const HomePage = () => {
 
 	useEffect(() => {
 		dispatch(getAllUsersThunk());
-	});
+	}, [dispatch]);
 	return (
 		<div className="homepage-main-container">
 			<div className="homepage-header-container"></div>

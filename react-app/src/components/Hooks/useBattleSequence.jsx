@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { triviaCorrect } from "../Helpers";
 import { triviaIncorrect } from "../Helpers";
-
 import { wait } from "../Helpers";
+
 export const useBattleSequence = (sequence) => {
 	const location = useLocation();
 	const [turn, setTurn] = useState(0);
@@ -55,7 +55,7 @@ export const useBattleSequence = (sequence) => {
 							: setPlayer1Animation("static");
 
 						setAnnouncerMessage(
-							`${receiver.name} was much wowed by your knowledge! Good job!`
+							`${receiver.name} was much wowed by your knowledge!`
 						);
 						await wait(1000);
 
@@ -97,7 +97,7 @@ export const useBattleSequence = (sequence) => {
 							? setPlayer1Animation("static")
 							: setPlayer2Animation("static");
 						setAnnouncerMessage(
-							`${receiver.name} took your wrong answer and hit you over the head!`
+							`The confusion did damage to ${attacker.name}!`
 						);
 						turn === 0
 							? setPlayer1Health((health) =>

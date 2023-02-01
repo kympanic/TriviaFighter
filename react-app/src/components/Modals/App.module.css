@@ -16,3 +16,32 @@
 	transform: translateY(-5px);
 	box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
 }
+
+.editBtn {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: none;
+	background-color: #66d3fa;
+	margin-right: 2%;
+	cursor: pointer;
+}
+.editBtn:hover {
+	background-color: white;
+	border: #66d3fa 2px solid;
+	transform: translate(-2px, 4px);
+}
+.deleteBtn {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: none;
+	background-color: palevioletred;
+	cursor: pointer;
+}
+
+.deleteBtn:hover {
+	background-color: white;
+	border: palevioletred 2px solid;
+	transform: translate(2px, 4px);
+}

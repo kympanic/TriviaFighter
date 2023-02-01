@@ -14,7 +14,7 @@ const TriviaMenu = () => {
 
 	const completedTriviaPackages = allUserTriviaPackages.filter(
 		(triviapackage) => {
-			return triviapackage.trivias.length >= 14;
+			return triviapackage?.trivias?.length >= 14;
 		}
 	);
 	useEffect(() => {
@@ -43,7 +43,7 @@ const TriviaMenu = () => {
 				))}
 			</div>
 			<div>
-				<h1>Trivia Made by the Community</h1>
+				<h1>Made by the Community</h1>
 			</div>
 			<div className="homepage-search-container">
 				<input

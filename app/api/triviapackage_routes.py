@@ -30,7 +30,7 @@ def get_all_triviapackages():
 def get_trivia_package(id):
     selected_trivia_package = TriviaPackage.query.get(id)
 
-    res = {selected_trivia_package.id: selected_trivia_package.to_dict()}
+    res = selected_trivia_package.to_dict()
 
     return res
 

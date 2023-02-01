@@ -52,7 +52,7 @@ const Menu = ({
 		setOptions(answers);
 	}, [question]);
 
-	console.log(questionIndex, "this is the index");
+	// console.log(questionIndex, "this is the index");
 
 	const handleItemClick = (e) => {
 		e.preventDefault();
@@ -62,22 +62,16 @@ const Menu = ({
 		setQuestionIndex(questionIndex + 1);
 		if (e.target.textContent === question.correct_answer) {
 			setSequence({ mode: "isCorrect", turn });
-			// if (questionIndex + 1 <= arrayOfQuestions.length) {
-			// 	setQuestionIndex(questionIndex + 1);
-			// }
 		} else {
 			setSequence({ mode: "isIncorrect", turn });
-			// if (questionIndex + 1 <= arrayOfQuestions.length) {
-			// 	setQuestionIndex(questionIndex + 1);
-			// }
 		}
 	};
 
 	return (
 		<div>
 			{options.length > 0 && (
-				<div>
-					<div>
+				<div className="options-container">
+					<div className="question">
 						<h2>{question.question}</h2>
 					</div>
 					<div className="main">

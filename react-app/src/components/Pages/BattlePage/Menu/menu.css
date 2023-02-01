@@ -1,17 +1,27 @@
 .main {
 	box-sizing: border-box;
 	border-radius: 10px;
-	height: 100%;
+	height: 230px;
 
 	gap: 10px;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
+	background: white;
+	height: 144px;
 }
-/* .main > :first-child {
-	grid-column-start: 1;
-	grid-column-end: 3;
-} */
+
+.options-container {
+	background-color: white;
+	border: 4px solid palevioletred;
+	padding: 10px;
+	height: 230px;
+	border-radius: 10px;
+	text-align: center;
+}
+.question {
+	margin-bottom: 2%;
+}
 .option {
 	display: flex;
 	border-radius: 5px;
@@ -35,9 +45,6 @@
 	display: flex;
 	border-radius: 5px;
 	border: 1px solid black;
-
-	background-color: green;
-
 	align-items: center;
 	justify-content: center;
 	color: white;

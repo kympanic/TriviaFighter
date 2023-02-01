@@ -64,7 +64,7 @@ const BattlePage = () => {
 		<div className="battlepage-main-container">
 			<div className="player-container">
 				<div className="player1-summary">
-					<h2>Player 1</h2>
+					<h2 className="playertitle-text">Player 1</h2>
 					<div className={styles.player1Sprite}>
 						<img
 							className={styles[player1Animation]}
@@ -72,8 +72,8 @@ const BattlePage = () => {
 							alt={player1Data.name}
 						/>
 					</div>
-					<h3>{player1Data.name}</h3>
-					<div>
+					<h3 className="player-name-text">{player1Data.name}</h3>
+					<div className="bar-container">
 						<Bar
 							label="HP"
 							maxValue={player1Data.maxHealth}
@@ -85,7 +85,7 @@ const BattlePage = () => {
 				<div className={styles.gameHeader}>Fight!</div>
 
 				<div className="player2-summary">
-					<h2>Player 2</h2>
+					<h2 className="playertitle-text">Player 2</h2>
 					<div className={styles.player2Sprite}>
 						<img
 							className={styles[player2Animation]}
@@ -93,8 +93,8 @@ const BattlePage = () => {
 							alt={player2Data.name}
 						/>
 					</div>
-					<h3>{player2Data.name}</h3>
-					<div>
+					<h3 className="player-name-text">{player2Data.name}</h3>
+					<div className="bar-container">
 						<Bar
 							label="HP"
 							maxValue={player2Data.maxHealth}

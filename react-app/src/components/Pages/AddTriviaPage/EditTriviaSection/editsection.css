@@ -6,3 +6,24 @@
 	text-align: center;
 	margin-top: 10px;
 }
+
+.triviaquestion-container {
+	margin-top: 4%;
+	height: 140px;
+	margin-right: 4%;
+	background-color: #bccef8;
+}
+
+.question-answer-container {
+	border: 2px solid #bccef8;
+
+	max-height: 50px;
+	overflow: auto;
+	background-color: white;
+}
+
+.question-btns-container {
+	margin-top: 2%;
+	display: flex;
+	justify-content: space-around;
+}

@@ -1,26 +1,43 @@
 import ProfilePlayBtn from "../../ProfilePage/Buttons/ProfilePlayBtn";
 import "../homepage.css";
+import { useState } from "react";
+import TriviaDescription from "../../../Modals/TriviaDescription/TriviaDescription";
 
 const UserMadeTriviaPackage = ({ triviapackage }) => {
+	const [isOpenDescription, setIsOpenDescription] = useState(false);
 	const placeHolderImg =
 		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/defaulttriviaimage.jpg";
 	const onImageError = (e) => {
 		e.target.src = placeHolderImg;
 	};
+
 	return (
 		<div className="usermade-trivia-card">
 			{triviapackage && (
 				<div>
 					<img
+						onClick={() => setIsOpenDescription(true)}
 						className="homepage-usermade-trivia-img"
 						src={triviapackage.imageUrl}
 						alt="triviapackage.name"
 						onError={onImageError}
 					/>
-					<p>{triviapackage.name}</p>
-					<p>{triviapackage.category}</p>
-					<p>{triviapackage.difficulty}</p>
+					<p className="usermade-trivia-title">
+						{triviapackage.name}
+					</p>
+					<p className="usermade-trivia-text">
+						{triviapackage.category}
+					</p>
+					<p className="usermade-trivia-text">
+						{triviapackage.difficulty}
+					</p>
 					<ProfilePlayBtn trivias={triviapackage.trivias} />
+					{isOpenDescription && (
+						<TriviaDescription
+							setIsOpen={setIsOpenDescription}
+							triviapackage={triviapackage}
+						/>
+					)}
 				</div>
 			)}
 		</div>

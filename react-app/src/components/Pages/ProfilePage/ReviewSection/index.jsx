@@ -21,8 +21,6 @@ const ReviewSection = ({ review, sessionUser, id }) => {
 			</div>
 			<div className="profilepage-comments-body">
 				<p id="profilepage-comment">{review.body}</p>
-			</div>
-			<div>
 				{sessionUser.id === id && (
 					<ReviewEditButtons
 						review={review}

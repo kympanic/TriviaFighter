@@ -4,7 +4,7 @@
 }
 
 .battlepage-main-container {
-	margin-top: 88px;
+	margin-top: 50px;
 	display: flex;
 	justify-content: space-between;
 	background: linear-gradient(
@@ -15,8 +15,17 @@
 		rgb(224, 147, 238) 100%
 	);
 	flex-direction: column;
+	height: 100%;
+	padding-bottom: 75px;
 }
 
+.playertitle-text {
+	margin-bottom: 20px;
+}
+.player-name-text {
+	margin-top: 5%;
+	font-size: 35px;
+}
 .player1-summary {
 	margin-left: 10%;
 	text-align: center;
@@ -44,4 +53,8 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+}
+
+.bar-container {
+	margin-top: 10%;
 }

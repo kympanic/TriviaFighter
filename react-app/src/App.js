@@ -15,6 +15,7 @@ import BattlePage from "./components/Pages/BattlePage";
 import GameOverPage from "./components/Pages/GameOverPage";
 import NotFoundPage from "./components/Pages/NotFoundPage";
 import GameFaqsPage from "./components/Pages/GameFaqsPage";
+import Footer from "./components/Footer";
 function App() {
 	const [loaded, setLoaded] = useState(false);
 	const dispatch = useDispatch();
@@ -71,6 +72,7 @@ function App() {
 					<NotFoundPage />
 				</Route>
 			</Switch>
+			<Footer />
 		</BrowserRouter>
 	);
 }

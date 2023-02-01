@@ -12,8 +12,9 @@ const TriviaEditButtons = ({ sessionUser, triviapackage }) => {
 		useState(false);
 
 	return (
-		<div>
+		<div className="trivia-editbtns-container">
 			<button
+				className="trivia-add-btn"
 				onClick={() =>
 					history.push({
 						pathname: `/triviapackage/${triviapackage.id}`,
@@ -23,10 +24,16 @@ const TriviaEditButtons = ({ sessionUser, triviapackage }) => {
 			>
 				Add Trivia
 			</button>
-			<button onClick={() => setIsOpenEditTriviaPackage(true)}>
+			<button
+				className="trivia-edit-btn"
+				onClick={() => setIsOpenEditTriviaPackage(true)}
+			>
 				Edit
 			</button>
-			<button onClick={() => setIsOpenDeleteTriviaPackage(true)}>
+			<button
+				className="trivia-delete-btn"
+				onClick={() => setIsOpenDeleteTriviaPackage(true)}
+			>
 				Delete
 			</button>
 			{isOpenDeleteTriviaPackage && (

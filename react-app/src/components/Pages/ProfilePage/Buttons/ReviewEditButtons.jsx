@@ -11,13 +11,13 @@ const ReviewEditButtons = ({ sessionUser, review }) => {
 	return (
 		<div className="review-editbtns-container">
 			<button
-				className={styles.primaryBtn}
+				className={styles.editBtn}
 				onClick={() => setIsOpenEditReview(true)}
 			>
 				Edit
 			</button>
 			<button
-				className={styles.primaryBtn}
+				className={styles.deleteBtn}
 				onClick={() => setIsOpenDeleteReview(true)}
 			>
 				Delete

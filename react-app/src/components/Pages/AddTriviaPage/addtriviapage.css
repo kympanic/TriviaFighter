@@ -2,14 +2,17 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-top: 40px;
+	background-color: #faf7f0;
 }
 
 .addtriviapage-content-container {
 	display: flex;
 	justify-content: space-between;
-	border-left: 2px solid plum;
-	border-right: 2px solid plum;
+	padding: 30px;
 	width: 150vh;
+	background-color: white;
+	border-radius: 40px;
 }
 
 .add-trivia-page-header-container {
@@ -21,7 +24,7 @@
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	border-left: 3px solid plum;
+
 	border-right: 3px solid plum;
 	padding-left: 5%;
 	padding-right: 5%;
@@ -29,4 +32,13 @@
 
 .add-trivia-page-info-container {
 	padding: 5%;
+}
+
+.add-trivia-page-edit-container {
+	display: flex;
+	text-align: center;
+}
+
+.add-triviapage-title-text {
+	font-size: 60px;
 }

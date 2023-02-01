@@ -20,8 +20,8 @@ const PremadeTriviaPackage = ({ category }) => {
 				<div>
 					<PremadeGameName category={category} />
 					<PremadeGameImg category={category} />
-					<form>
-						<label>difficulty</label>
+					<form className="premade-difficulty-form">
+						<label>Difficulty: </label>
 						<select value={difficulty} onChange={updateDifficulty}>
 							<option value="--">--</option>
 							<option value="Easy">EASY</option>

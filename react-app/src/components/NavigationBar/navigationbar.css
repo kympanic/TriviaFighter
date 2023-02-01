@@ -10,22 +10,19 @@
 	width: 100%;
 	z-index: 999;
 	background-color: white;
-	border-bottom: #bccef8 2px solid;
+	border-bottom: #738bc3 4px solid;
 }
 
 .navbar-link {
 	text-decoration: none;
 	font-size: 22px;
 	text-decoration: none;
+	padding: 10px;
+	border-radius: 20px;
 }
 
 a:link {
 	text-decoration: none;
-	color: black;
-}
-
-.active {
-	color: black;
 }
 
 #logo-nav {
@@ -38,4 +35,17 @@ a:link {
 
 #demo-btn-container {
 	margin-right: 3%;
+}
+
+a {
+	box-shadow: inset 0 0 0 0 #738bc3;
+	color: #738bc3;
+	margin: 0 -0.25rem;
+	padding: 0 0.25rem;
+	transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+a:hover {
+	box-shadow: inset 100px 0 0 0 #738bc3;
+	color: white;
+	padding: 3px;
 }

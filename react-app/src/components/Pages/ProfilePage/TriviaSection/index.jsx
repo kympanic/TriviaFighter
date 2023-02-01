@@ -1,8 +1,12 @@
+import { useState } from "react";
 import TriviaEditButtons from "../Buttons/TriviaEditButtons";
 import ProfilePlayBtn from "../Buttons/ProfilePlayBtn";
+import TriviaDescription from "../../../Modals/TriviaDescription/TriviaDescription";
 import { setDefaultTriviaImage } from "../../../Helpers";
 import "../profilepage.css";
 const TriviaSection = ({ triviapackage, sessionUser, id }) => {
+	const [isOpenDescription, setIsOpenDescription] = useState(false);
+
 	return (
 		<div className="profilepage-triviapackage-card">
 			<img
@@ -10,18 +14,16 @@ const TriviaSection = ({ triviapackage, sessionUser, id }) => {
 				src={triviapackage.imageUrl}
 				alt={triviapackage.name}
 				onError={setDefaultTriviaImage}
+				onClick={() => setIsOpenDescription(true)}
 			/>
-			<p>{triviapackage.name}</p>
-			<p>Category: {triviapackage.category}</p>
-			<p>Difficulty: {triviapackage.difficulty}</p>
-			{sessionUser.id === id &&
-				triviapackage.trivias.length < 14 &&
-				triviapackage.trivias.length >= 1 && (
-					<p>
-						You need {14 - triviapackage.trivias.length} more trivia
-						questions!
-					</p>
-				)}
+			<p className="triviacard-title-text">{triviapackage.name}</p>
+			<p className="triviacard-text">
+				Category: {triviapackage.category}
+			</p>
+			<p className="triviacard-text">
+				Difficulty: {triviapackage.difficulty}
+			</p>
+			<p className="triviacard-text">Rating: {triviapackage.avgRating}</p>
 			{sessionUser.id === id && (
 				<TriviaEditButtons
 					triviapackage={triviapackage}
@@ -30,6 +32,12 @@ const TriviaSection = ({ triviapackage, sessionUser, id }) => {
 			)}
 			{sessionUser.id !== id && triviapackage.trivias.length >= 14 && (
 				<ProfilePlayBtn trivias={triviapackage.trivias} />
+			)}
+			{isOpenDescription && (
+				<TriviaDescription
+					setIsOpen={setIsOpenDescription}
+					triviapackage={triviapackage}
+				/>
 			)}
 		</div>
 	);

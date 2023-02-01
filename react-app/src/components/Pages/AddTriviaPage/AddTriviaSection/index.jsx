@@ -108,7 +108,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 							name="question"
 							value={question}
 							onChange={updateQuestion}
-							maxLength={250}
+							maxLength={170}
 						/>
 					</div>
 				</div>
@@ -120,6 +120,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 							type="text"
 							name="correctAnswer"
 							value={correctAnswer}
+							maxLength={60}
 							onChange={updateCorrectAnswer}
 						/>
 					</div>
@@ -132,6 +133,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 							type="text"
 							name="incorrectAnswer1"
 							value={incorrectAnswer1}
+							maxLength={60}
 							onChange={updateIncorrectAnswer1}
 						/>
 					</div>
@@ -144,6 +146,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 							type="text"
 							name="incorrectAnswer2"
 							value={incorrectAnswer2}
+							maxLength={60}
 							onChange={updateIncorrectAnswer2}
 						/>
 					</div>
@@ -156,6 +159,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 							type="text"
 							name="incorrectAnswer3"
 							value={incorrectAnswer3}
+							maxLength={60}
 							onChange={updateIncorrectAnswer3}
 						/>
 					</div>
