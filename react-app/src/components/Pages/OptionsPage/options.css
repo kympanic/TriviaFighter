@@ -1,16 +1,23 @@
 .optionspage-container {
 	display: flex;
 	flex-direction: column;
-	margin-top: 100px;
+	margin-top: 50px;
+	text-align: center;
+	height: 1150px;
+	background-color: transparent;
+	background-image: url("https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/5169796.jpg");
 }
 
 .optionspage-title {
+	margin-top: 75px;
 	text-align: center;
 }
 
 .optionspage-player-img {
-	height: 200px;
+	height: 150px;
+	width: 150px;
 	border-radius: 50%;
+	margin-bottom: 20px;
 }
 
 .player-boxes-container {
@@ -26,4 +33,184 @@
 .ind-player-info {
 	display: flex;
 	flex-direction: column;
+	margin-top: 30px;
+	align-items: center;
+	border: 2px solid #bccef8;
+	height: 280px;
+	width: 200px;
+	padding-top: 10px;
+	border-radius: 20px;
+	background-color: #faf7f0;
+	cursor: pointer;
+}
+
+.ind-player-info:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+}
+
+.char-player-name {
+	font-size: 20px;
+}
+.selected-char-img {
+	height: 400px;
+}
+
+.player1-cancel-char-btn {
+	margin-top: 50px;
+	height: 70px;
+	width: 200px;
+	border-radius: 30px;
+	border: none;
+	background-color: blue;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
+.player2-cancel-char-btn {
+	margin-top: 50px;
+	height: 70px;
+	width: 200px;
+	border-radius: 30px;
+	border: none;
+	background-color: red;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
+.player1-cancel-char-btn:hover {
+	color: blue;
+	background-color: white;
+}
+.player2-cancel-char-btn:hover {
+	color: red;
+	background-color: white;
+}
+
+.description-box {
+	padding: 20px;
+	margin-top: 30px;
+	border: 3px solid blue;
+	width: 500px;
+	background-color: white;
+	border-radius: 20px;
+}
+
+.player2-description-box {
+	padding: 20px;
+	margin-top: 30px;
+	border: 3px solid red;
+	width: 500px;
+	background-color: white;
+	border-radius: 20px;
+}
+
+.fight-btn {
+	height: 60px;
+	width: 280px;
+	font-size: 19px;
+	margin-top: 60%;
+	padding: 0.6em 2em;
+	border: none;
+	outline: none;
+	color: rgb(255, 255, 255);
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+.fight-btn:before {
+	content: "";
+	background: linear-gradient(
+		45deg,
+		#ff0000,
+		#ff7300,
+		#fffb00,
+		#48ff00,
+		#00ffd5,
+		#002bff,
+		#7a00ff,
+		#ff00c8,
+		#ff0000
+	);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing-button-85 20s linear infinite;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+}
+@keyframes glowing-button-85 {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.player-choose-text {
+	font-size: 30px;
+	margin-top: 80px;
+}
+
+.backtohome-btn {
+	margin-top: 100%;
+	height: 50px;
+	width: 200px;
+	border: none;
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 20px;
+	background-color: #98a8f8;
+	color: white;
+	cursor: pointer;
+}
+
+.backtohome-btn:hover {
+	color: #98a9f8;
+	background-color: white;
+}
+
+.select-char-btn {
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	border: none;
+	background-color: darkblue;
+	color: white;
+}
+
+.select-char-btn:active {
+	background-color: darkblue;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+.select-char-btn2 {
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	border: none;
+	background-color: darkred;
+	color: white;
+}
+
+.select-char-btn2:active {
+	background-color: darkred;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
 }

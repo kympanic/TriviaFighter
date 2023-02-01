@@ -97,7 +97,7 @@ export const useBattleSequence = (sequence) => {
 							? setPlayer1Animation("static")
 							: setPlayer2Animation("static");
 						setAnnouncerMessage(
-							`The confusion did damage to ${attacker.name}!`
+							`${attacker.name} hurt itself in its confusion!`
 						);
 						turn === 0
 							? setPlayer1Health((health) =>

@@ -13,7 +13,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 	const [incorrectAnswer1, setIncorrectAnswer1] = useState("");
 	const [incorrectAnswer2, setIncorrectAnswer2] = useState("");
 	const [incorrectAnswer3, setIncorrectAnswer3] = useState("");
-	const [triviaData, setTriviaData] = useState(null);
+	const [triviaData, setTriviaData] = useState({});
 
 	const updateQuestion = (e) => {
 		setQuestion(e.target.value);
@@ -69,21 +69,32 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 		);
 		const jsonData = await response.json();
 		setTriviaData(jsonData);
-		setCorrectAnswer(
-			triviaData?.results[0]?.correct_answer.replace(/&amp;/gi, "&")
-		);
-		setIncorrectAnswer1(
-			triviaData?.results[0]?.incorrect_answers[0].replace(/&amp;/gi, "&")
-		);
-		setIncorrectAnswer2(
-			triviaData?.results[0]?.incorrect_answers[1].replace(/&amp;/gi, "&")
-		);
-		setIncorrectAnswer3(
-			triviaData?.results[0]?.incorrect_answers[2].replace(/&amp;/gi, "&")
-		);
-		setQuestion(
-			triviaData?.results[0]?.question.replace(/&#039;|&quot;|car/gi, "")
-		);
+		if (Object.keys(triviaData).length > 0) {
+			setCorrectAnswer(
+				triviaData?.results[0]?.correct_answer.replace(/&amp;/gi, "&")
+			);
+			setIncorrectAnswer1(
+				triviaData?.results[0]?.incorrect_answers[0].replace(
+					/&amp;/gi,
+					"&"
+				)
+			);
+			setIncorrectAnswer2(
+				triviaData?.results[0]?.incorrect_answers[1].replace(
+					/&amp;/gi,
+					"&"
+				)
+			);
+			setIncorrectAnswer3(
+				triviaData?.results[0]?.incorrect_answers[2].replace(
+					/&amp;/gi,
+					"&"
+				)
+			);
+			setQuestion(
+				triviaData?.results[0]?.question.replace(/&#039;|&quot;/gi, "")
+			);
+		}
 	};
 
 	return (

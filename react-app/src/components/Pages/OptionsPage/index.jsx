@@ -51,58 +51,113 @@ const OptionsPage = () => {
 			<h1 className="optionspage-title">CHARACTER SELECT</h1>
 			<div className="player-boxes-container">
 				<div>
-					<h1>Player 1 Box Info</h1>
-					{player1Stats &&
-						player1Stats.map((player) => (
-							<div className="ind-player-info" key={player.id}>
-								<p>{player.name}</p>
+					<h1>Player 1</h1>
+					{player1Stats && Object.keys(player1Data).length > 0 ? (
+						<div>
+							<div className="selected-char-container">
+								<p>{player1Data.name}</p>
 								<img
 									className="optionspage-player-img"
-									src={player.img}
-									alt={player.name}
+									src={player1Data.img}
+									alt={player1Data.name}
 								/>
-								<button onClick={() => setPlayer1Data(player)}>
-									Select
+							</div>
+							<div>
+								<button
+									className="cancel-char-btn"
+									onClick={() => setPlayer1Data({})}
+								>
+									CANCEL
 								</button>
 							</div>
-						))}
-				</div>
-				<div>
-					{triviaData.length > 0 && (
-						<div>{triviaData[0].category}</div>
+						</div>
+					) : (
+						<div>
+							{player1Stats &&
+								player1Stats.map((player) => (
+									<div
+										className="ind-player-info"
+										key={player.id}
+									>
+										<p>{player.name}</p>
+										<img
+											className="optionspage-player-img"
+											src={player.img}
+											alt={player.name}
+										/>
+										<button
+											onClick={() =>
+												setPlayer1Data(player)
+											}
+										>
+											Select
+										</button>
+									</div>
+								))}
+						</div>
 					)}
 				</div>
 				<div>
-					<h1>Player 2 Box Info</h1>
-					{player2Stats &&
-						player2Stats.map((player) => (
-							<div key={player.id} className="ind-player-info">
-								<p>{player.name}</p>
-								<img
-									className="optionspage-player-img"
-									src={player.img}
-									alt={player.name}
-								/>
-								<button onClick={() => setPlayer2Data(player)}>
-									Select
-								</button>
-							</div>
-						))}
-				</div>
-			</div>
-			<div>
-				<div className="optionspage-btns-container">
-					{Object.keys(player1Data).length === 0 && (
-						<p>Player One Choose a Character!</p>
-					)}
-					{Object.keys(player2Data).length === 0 && (
-						<p>Player Two Choose a Character!</p>
-					)}
-					{Object.keys(player1Data).length > 0 &&
-						Object.keys(player2Data).length > 0 && (
-							<button onClick={handleSubmit}>PLAY!</button>
+					<div className="optionspage-btns-container">
+						{Object.keys(player1Data).length === 0 && (
+							<p>Player One Choose a Character!</p>
 						)}
-					<button onClick={handleCancel}>Back to Homepage</button>
+						{Object.keys(player2Data).length === 0 && (
+							<p>Player Two Choose a Character!</p>
+						)}
+						{Object.keys(player1Data).length > 0 &&
+							Object.keys(player2Data).length > 0 && (
+								<button onClick={handleSubmit}>PLAY!</button>
+							)}
+						<button onClick={handleCancel}>Back to Homepage</button>
+					</div>
+				</div>
+				<div>
+					<h1>Player 2</h1>
+					{player2Stats && Object.keys(player2Data).length > 0 ? (
+						<div>
+							<div>
+								<p>{player2Data.name}</p>
+								<img
+									className="optionspage-player-img"
+									src={player2Data.img}
+									alt={player2Data.name}
+								/>
+							</div>
+							<div>
+								<button
+									className="cancel-char-btn"
+									onClick={() => setPlayer2Data({})}
+								>
+									CANCEL
+								</button>
+							</div>
+						</div>
+					) : (
+						<div>
+							{player2Stats &&
+								player2Stats.map((player) => (
+									<div
+										className="ind-player-info"
+										key={player.id}
+									>
+										<p>{player.name}</p>
+										<img
+											className="optionspage-player-img"
+											src={player.img}
+											alt={player.name}
+										/>
+										<button
+											onClick={() =>
+												setPlayer2Data(player)
+											}
+										>
+											Select
+										</button>
+									</div>
+								))}
+						</div>
+					)}
 				</div>
 			</div>
 		</div>
