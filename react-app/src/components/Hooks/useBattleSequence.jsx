@@ -97,7 +97,7 @@ export const useBattleSequence = (sequence) => {
 							? setPlayer1Animation("static")
 							: setPlayer2Animation("static");
 						setAnnouncerMessage(
-							`${receiver.name} is not wowed by your knowledge! It's okay ${attacker.name}. You got the next one! `
+							`${receiver.name} took your wrong answer and hit you over the head!`
 						);
 						turn === 0
 							? setPlayer1Health((health) =>
@@ -106,7 +106,7 @@ export const useBattleSequence = (sequence) => {
 							: setPlayer2Health((health) =>
 									health - damage > 0 ? health - damage : 0
 							  );
-						await wait(2500);
+						await wait(2000);
 
 						setAnnouncerMessage(
 							`Now it's ${receiver.name}'s turn!`

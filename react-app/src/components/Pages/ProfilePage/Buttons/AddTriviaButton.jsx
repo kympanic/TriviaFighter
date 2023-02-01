@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddTriviaPackageModal from "../../../Modals/AddTriviaPackage/AddTriviaPackageModal";
+import "../profilepage.css";
 
 const AddTriviaButton = ({ sessionUser }) => {
 	const [isOpenAddTriviaPackage, setIsOpenAddTriviaPackage] = useState(false);

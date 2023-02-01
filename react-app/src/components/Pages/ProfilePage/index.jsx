@@ -33,8 +33,6 @@ const ProfilePage = () => {
 		dispatch(getAllReviewsThunk());
 	}, [dispatch]);
 
-	// console.log(profileReviews.length, "THIS IS THE LENGTH");
-
 	return (
 		<div className="profilepage-main-container">
 			{sessionUser && profileUser && profileTriviaPackages && (
@@ -51,12 +49,13 @@ const ProfilePage = () => {
 							<div className="create-triviabtn-container"></div>
 						)}
 						<h1 id="triviapackage-title-txt">
-							Featured Trivia Packages
+							FEATURED TRIVIA GAMES
 						</h1>
 						<div className="profilepage-triviapackage-menu">
 							{profileTriviaPackages &&
 								profileTriviaPackages.map((triviapackage) => (
 									<TriviaSection
+										key={triviapackage.name}
 										triviapackage={triviapackage}
 										id={id}
 										sessionUser={sessionUser}
@@ -72,6 +71,7 @@ const ProfilePage = () => {
 							profileReviews.length > 0 &&
 							profileReviews.map((review) => (
 								<ReviewSection
+									key={review.id}
 									review={review}
 									sessionUser={sessionUser}
 									id={id}

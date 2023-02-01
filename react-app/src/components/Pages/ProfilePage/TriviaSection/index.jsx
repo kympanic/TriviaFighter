@@ -1,12 +1,10 @@
 import TriviaEditButtons from "../Buttons/TriviaEditButtons";
 import ProfilePlayBtn from "../Buttons/ProfilePlayBtn";
 import { setDefaultTriviaImage } from "../../../Helpers";
+import "../profilepage.css";
 const TriviaSection = ({ triviapackage, sessionUser, id }) => {
 	return (
-		<div
-			key={triviapackage.name}
-			className="profilepage-triviapackage-card"
-		>
+		<div className="profilepage-triviapackage-card">
 			<img
 				className="profilepage-triviapackage-img"
 				src={triviapackage.imageUrl}

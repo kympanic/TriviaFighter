@@ -42,7 +42,7 @@ const BattlePage = () => {
 	useEffect(() => {
 		if (player1Health === 0 || player2Health === 0) {
 			(async () => {
-				await wait(1550);
+				await wait(2000);
 				setWinner(player1Health === 0 ? player2Data : player1Data);
 				history.push({
 					pathname: "/gameover",
