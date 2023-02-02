@@ -1,16 +1,13 @@
 import styles from "./Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createReviewThunk } from "../../../store/reviews";
 
-const AddReviewModal = ({ setIsOpen, id }) => {
+const AddReviewModal = ({ setIsOpen, id, setIsOpenReviewBtn }) => {
 	const dispatch = useDispatch();
-	const history = useHistory();
 	const sessionUserId = useSelector((state) => state.session.user.id);
 
-	// const [imageLoading, setImageLoading] = useState(false);
 	const [errors, setErrors] = useState([]);
 	const [body, setBody] = useState("");
 	const [rating, setRating] = useState("");
@@ -30,15 +27,9 @@ const AddReviewModal = ({ setIsOpen, id }) => {
 			setErrors(data);
 		} else {
 			setIsOpen(false);
-			history.push("/");
+			setIsOpenReviewBtn(false);
 		}
 	};
-
-	// const updateImage = (e) => {
-	// 	const file = e.target.files[0];
-	// 	setImage(file);
-	// 	console.log(image, "did this update");
-	// };
 
 	return (
 		<>

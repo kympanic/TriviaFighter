@@ -9,6 +9,7 @@ import AddTriviaButton from "./Buttons/AddTriviaButton";
 import ReviewSection from "./ReviewSection";
 import TriviaSection from "./TriviaSection";
 import ProfileCard from "./ProfileCard";
+import GameHistory from "./GameHistory";
 import "./profilepage.css";
 
 const ProfilePage = () => {
@@ -17,6 +18,7 @@ const ProfilePage = () => {
 	const dispatch = useDispatch();
 	const profileUser = useSelector((state) => state?.users[userId]);
 	const sessionUser = useSelector((state) => state.session.user);
+	const gameDatas = useSelector((state) => Object.values(state.gamedatas));
 	const allTriviaPackages = useSelector((state) =>
 		Object.values(state.triviapackages)
 	);
@@ -43,6 +45,11 @@ const ProfilePage = () => {
 					<ProfileCard
 						profileUser={profileUser}
 						triviapackages={profileTriviaPackages}
+					/>
+					<GameHistory
+						gameDatas={gameDatas}
+						profileUser={profileUser}
+						alltrivia={allTriviaPackages}
 					/>
 					<div className="profilepage-content-container">
 						{sessionUser.id === id ? (

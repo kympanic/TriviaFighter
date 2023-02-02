@@ -44,9 +44,6 @@ const SignUpForm = () => {
 	const updateRepeatPassword = (e) => {
 		setRepeatPassword(e.target.value);
 	};
-	const updateImg = (e) => {
-		setProfileImg(e.target.value);
-	};
 
 	if (user) {
 		return <Redirect to="/" />;
@@ -79,15 +76,7 @@ const SignUpForm = () => {
 						value={email}
 					></input>
 				</div>
-				{/* <div>
-					<label>Profile Image</label>
-					<input
-						type="url"
-						name="iprofileImg"
-						onChange={updateImg}
-						value={profileImg}
-					></input>
-				</div> */}
+
 				<div>
 					<label>Password</label>
 					<input
