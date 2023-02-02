@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAllTriviasPackagesThunk } from "../../../store/triviapackage";
@@ -11,7 +11,6 @@ import TriviaSection from "./TriviaSection";
 import ProfileCard from "./ProfileCard";
 import GameHistory from "./GameHistory";
 import "./profilepage.css";
-
 const ProfilePage = () => {
 	const { userId } = useParams();
 	const id = parseInt(userId);

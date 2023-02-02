@@ -23,10 +23,11 @@
 	margin-right: 35%;
 	height: 70px;
 	border-radius: 50px;
-	position: relative;
-	bottom: 40px;
+	position: absolute;
+	top: 390px;
 	font-size: 30px;
 	z-index: 1;
+	width: 600px;
 }
 
 /*TriviaCard Section*/
@@ -36,7 +37,6 @@
 	margin-right: 8%;
 	background-color: white;
 	position: relative;
-	bottom: 80px;
 }
 .triviapackage-title-container {
 	margin-top: 90px;
