@@ -37,7 +37,8 @@ def seed():
 def undo():
     undo_reviews()
     undo_trivias()
+    undo_gamedatas()
     undo_trivia_packages()
     undo_users()
-    undo_gamedatas
+
     # Add other undo functions here
