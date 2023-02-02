@@ -46,7 +46,7 @@ const BattlePage = () => {
 				setWinner(player1Health === 0 ? player2Data : player1Data);
 				history.push({
 					pathname: "/gameover",
-					state: { triviaData, winner },
+					state: { triviaData, winner, player1Data, player2Data },
 				});
 			})();
 		}

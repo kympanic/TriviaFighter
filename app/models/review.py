@@ -27,6 +27,3 @@ class Review(db.Model):
             'trivia_package': self.trivia_package.to_dict_basic(),
             'user': self.user.to_dict_basic()
         }
-
-    def __repr__(self):
-        return f"<Product id: {self.id}, description: {self.description}, user_id: {self.user_id}>"

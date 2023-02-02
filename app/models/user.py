@@ -20,7 +20,8 @@ class User(db.Model, UserMixin):
     trivias = db.relationship('Trivia', back_populates='user', cascade='all,delete')
     trivia_packages = db.relationship('TriviaPackage', back_populates='user', cascade='all,delete')
     reviews = db.relationship('Review', back_populates='user', cascade="all,delete")
-
+    gamedata = db.relationship('GameData', back_populates='user', cascade='all,delete')
+   
     @property
     def password(self):
         return self.hashed_password

@@ -10,6 +10,7 @@ from .api.auth_routes import auth_routes
 from .api.trivia_routes import trivia_routes
 from .api.triviapackage_routes import triviapackage_routes
 from .api.review_routes import review_routes
+from .api.gamedata_routes import gamedata_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -34,6 +35,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(trivia_routes, url_prefix="/api/trivias")
 app.register_blueprint(triviapackage_routes, url_prefix="/api/triviapackages")
 app.register_blueprint(review_routes, url_prefix="/api/reviews")
+app.register_blueprint(gamedata_routes,url_prefix="/api/gamedatas")
 db.init_app(app)
 Migrate(app, db)
 

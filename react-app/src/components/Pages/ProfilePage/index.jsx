@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getAllTriviasPackagesThunk } from "../../../store/triviapackage";
 import { getAllUsersThunk } from "../../../store/users";
 import { getAllReviewsThunk } from "../../../store/reviews";
+import { getAllGameDatasThunk } from "../../../store/gamedatas";
 import AddTriviaButton from "./Buttons/AddTriviaButton";
 import ReviewSection from "./ReviewSection";
 import TriviaSection from "./TriviaSection";
@@ -31,6 +32,7 @@ const ProfilePage = () => {
 		dispatch(getAllTriviasPackagesThunk());
 		dispatch(getAllUsersThunk());
 		dispatch(getAllReviewsThunk());
+		dispatch(getAllGameDatasThunk());
 	}, [dispatch]);
 
 	return (
@@ -64,7 +66,11 @@ const ProfilePage = () => {
 						</div>
 					</div>
 					<div className="profilepage-reviews-title">
-						<h1>Reviews</h1>
+						{profileReviews.length > 0 ? (
+							<h1>Reviews</h1>
+						) : (
+							<h1>No Reviews Yet!</h1>
+						)}
 					</div>
 					<div className="profilepage-comments-container">
 						{profileReviews &&

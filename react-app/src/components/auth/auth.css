@@ -22,3 +22,26 @@
 	transform: scale(1.2);
 	color: white;
 }
+
+.signup-form-container {
+	height: 1000px;
+	max-width: 100%;
+	border: 2px solid red;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	background-image: url("https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/aesthetic-purple-smoke-banner-background+(1).jpg");
+	text-align: center;
+	align-items: center;
+}
+
+.signup-form {
+	border: 2px solid green;
+	height: 600px;
+	width: 800px;
+	background-color: white;
+}
+
+.signup-form-title {
+	margin-top: 200px;
+}

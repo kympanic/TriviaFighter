@@ -13,12 +13,19 @@ const ProfileCard = ({ profileUser, triviapackages }) => {
 		averageRatingsArray?.length
 	).toFixed(2);
 
+	const profilePlaceholderImg =
+		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/kitsunelogoorsplash.jpg";
+
+	const onProfileImgError = (e) => {
+		e.target.src = profilePlaceholderImg;
+	};
 	return (
 		<div className="profilepage-profilecard-container">
 			<img
 				className="profilecard-img"
 				src={profileUser.profileImg}
 				alt={profileUser.username}
+				onError={onProfileImgError}
 			/>
 
 			<p className="profilepage-username-text">{profileUser.username}</p>
@@ -27,9 +34,13 @@ const ProfileCard = ({ profileUser, triviapackages }) => {
 				<p className="profilepage-email-text">{profileUser.email}</p>
 			</div>
 			<div className="average-rating-section">
-				<p className="profilepage-rating-text">
-					Rating: {averageRatings}
-				</p>
+				{averageRatingsArray.length > 0 ? (
+					<p className="profilepage-rating-text">
+						Rating: {averageRatings}
+					</p>
+				) : (
+					<p>No Rating Yet</p>
+				)}
 				<FontAwesomeIcon className="header-star-icon" icon={faStar} />
 			</div>
 		</div>

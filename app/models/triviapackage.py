@@ -19,7 +19,7 @@ class TriviaPackage (db.Model):
     user = db.relationship('User', back_populates='trivia_packages')
     trivias = db.relationship('Trivia', back_populates ='trivia_package', cascade='all,delete')
     reviews = db.relationship('Review', back_populates='trivia_package', cascade='all,delete')
-
+    gamedata = db.relationship('GameData', back_populates='trivia_package')
 
 
 
@@ -48,7 +48,6 @@ class TriviaPackage (db.Model):
             'imageUrl': self.image_url,
             'user': self.user.to_dict_basic(),
             'trivias': [trivia.to_dict_basic() for trivia in self.trivias],
-            # 'reviews':[review.to_dict() for review in self.reviews]
         }
 
     def to_dict_basic(self):

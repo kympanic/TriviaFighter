@@ -23,7 +23,13 @@ const NavigationBar = () => {
 		<nav>
 			<ul className="navigation-main">
 				<li className="navbar-link" id="logo-nav">
-					Logo Placeholder
+					<NavLink to="/" exact={true} activeClassName="active">
+						<img
+							className="navbar-logo-img"
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/logo.jpg"
+							alt="trivia-fighter"
+						/>
+					</NavLink>
 				</li>
 				<li className="navbar-link">
 					<NavLink to="/" exact={true} activeClassName="active">

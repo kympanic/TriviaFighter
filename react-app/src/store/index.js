@@ -5,6 +5,7 @@ import trivias from "./trivia";
 import triviapackages from "./triviapackage";
 import users from "./users";
 import reviews from "./reviews";
+import gamedatas from "./gamedatas";
 
 const rootReducer = combineReducers({
 	session,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
 	triviapackages,
 	users,
 	reviews,
+	gamedatas,
 });
 
 let enhancer;

@@ -35,6 +35,8 @@ a:link {
 
 #demo-btn-container {
 	margin-right: 3%;
+	height: 40px;
+	width: 100px;
 }
 
 a {
@@ -47,5 +49,29 @@ a {
 a:hover {
 	box-shadow: inset 100px 0 0 0 #738bc3;
 	color: white;
-	padding: 3px;
+}
+
+.navbar-logo-img {
+	height: 70px;
+	margin-top: 5px;
+	width: auto;
+	border-radius: 50%;
+}
+
+.demo-login-btn {
+	width: 100%;
+	border: none;
+	height: 100%;
+	color: white;
+	font-size: 22px;
+	background-color: #738bc3;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.demo-login-btn:hover {
+	transform: scale(1.2);
+	color: #738bc3;
+	border: 2px solid #738bc3;
+	background-color: white;
 }
