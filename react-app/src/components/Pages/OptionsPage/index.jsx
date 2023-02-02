@@ -55,16 +55,22 @@ const OptionsPage = () => {
 					{player1Stats && Object.keys(player1Data).length > 0 ? (
 						<div>
 							<div className="selected-char-container">
-								<p>{player1Data.name}</p>
+								<p className="selected-char-name">
+									{player1Data.name}
+								</p>
 								<img
-									className="optionspage-player-img"
+									className="selected-char-img"
 									src={player1Data.img}
 									alt={player1Data.name}
 								/>
+
+								<div className="description-box">
+									<p>{player1Data.description}</p>
+								</div>
 							</div>
 							<div>
 								<button
-									className="cancel-char-btn"
+									className="player1-cancel-char-btn"
 									onClick={() => setPlayer1Data({})}
 								>
 									CANCEL
@@ -79,13 +85,16 @@ const OptionsPage = () => {
 										className="ind-player-info"
 										key={player.id}
 									>
-										<p>{player.name}</p>
+										<p className="char-player-name">
+											{player.name}
+										</p>
 										<img
 											className="optionspage-player-img"
 											src={player.img}
 											alt={player.name}
 										/>
 										<button
+											className="select-char-btn"
 											onClick={() =>
 												setPlayer1Data(player)
 											}
@@ -100,16 +109,34 @@ const OptionsPage = () => {
 				<div>
 					<div className="optionspage-btns-container">
 						{Object.keys(player1Data).length === 0 && (
-							<p>Player One Choose a Character!</p>
+							<p className="player-choose-text">
+								Player One Choose a Character
+							</p>
 						)}
 						{Object.keys(player2Data).length === 0 && (
-							<p>Player Two Choose a Character!</p>
+							<p className="player-choose-text">
+								Player Two Choose a Character
+							</p>
 						)}
 						{Object.keys(player1Data).length > 0 &&
 							Object.keys(player2Data).length > 0 && (
-								<button onClick={handleSubmit}>PLAY!</button>
+								<div>
+									<button
+										className="fight-btn"
+										onClick={handleSubmit}
+									>
+										FIGHT
+									</button>
+								</div>
 							)}
-						<button onClick={handleCancel}>Back to Homepage</button>
+					</div>
+					<div>
+						<button
+							className="backtohome-btn"
+							onClick={handleCancel}
+						>
+							BACK TO HOME
+						</button>
 					</div>
 				</div>
 				<div>
@@ -119,14 +146,17 @@ const OptionsPage = () => {
 							<div>
 								<p>{player2Data.name}</p>
 								<img
-									className="optionspage-player-img"
+									className="selected-char-img"
 									src={player2Data.img}
 									alt={player2Data.name}
 								/>
+								<div className="player2-description-box">
+									<p>{player2Data.description}</p>
+								</div>
 							</div>
 							<div>
 								<button
-									className="cancel-char-btn"
+									className="player2-cancel-char-btn"
 									onClick={() => setPlayer2Data({})}
 								>
 									CANCEL
@@ -141,13 +171,16 @@ const OptionsPage = () => {
 										className="ind-player-info"
 										key={player.id}
 									>
-										<p>{player.name}</p>
+										<p className="char-player-name">
+											{player.name}
+										</p>
 										<img
 											className="optionspage-player-img"
 											src={player.img}
 											alt={player.name}
 										/>
 										<button
+											className="select-char-btn2"
 											onClick={() =>
 												setPlayer2Data(player)
 											}

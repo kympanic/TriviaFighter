@@ -68,7 +68,9 @@ export const useBattleSequence = (sequence) => {
 							  );
 						await wait(500);
 
-						setAnnouncerMessage(`Now it's ${receiver.name} turn!`);
+						setAnnouncerMessage(
+							`Now it's ${receiver.name}'s turn!`
+						);
 						await wait(1000);
 
 						setTurn(turn === 0 ? 1 : 0);
