@@ -81,7 +81,7 @@ const ProfilePage = () => {
 					</div>
 					<div className="profilepage-comments-container">
 						{profileReviews &&
-							profileReviews.length > 0 &&
+							profileReviews &&
 							profileReviews.map((review) => (
 								<ReviewSection
 									key={review.id}

@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { setDefaultTriviaImage } from "../../../Helpers";
 import ReviewEditButtons from "../Buttons/ReviewEditButtons";
+
 const ReviewSection = ({ review, sessionUser, id }) => {
 	const history = useHistory();
 

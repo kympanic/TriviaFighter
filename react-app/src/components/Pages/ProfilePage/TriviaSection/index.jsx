@@ -4,6 +4,7 @@ import ProfilePlayBtn from "../Buttons/ProfilePlayBtn";
 import TriviaDescription from "../../../Modals/TriviaDescription/TriviaDescription";
 import { setDefaultTriviaImage } from "../../../Helpers";
 import "../profilepage.css";
+
 const TriviaSection = ({ triviapackage, sessionUser, id }) => {
 	const [isOpenDescription, setIsOpenDescription] = useState(false);
 
