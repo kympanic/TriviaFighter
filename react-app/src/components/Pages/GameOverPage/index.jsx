@@ -87,9 +87,15 @@ const GameOverPage = () => {
 					</div>
 				)}
 			<div className="gameover-home-btn-container">
-				<button className="gameover-btn" onClick={homeSubmit}>
-					LOG DATA
-				</button>
+				{winner ? (
+					<button className="gameover-btn" onClick={homeSubmit}>
+						LOG DATA
+					</button>
+				) : (
+					<div>
+						<h2 className="btn-load-text">...LOADING...</h2>
+					</div>
+				)}
 			</div>
 		</div>
 	);

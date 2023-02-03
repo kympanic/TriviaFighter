@@ -10,7 +10,6 @@ import { useBattleSequence } from "../../Hooks/useBattleSequence";
 import { useEffect } from "react";
 import { wait } from "../../Helpers";
 import ReactHowler from "react-howler";
-
 const BattlePage = () => {
 	const history = useHistory();
 	const location = useLocation();
