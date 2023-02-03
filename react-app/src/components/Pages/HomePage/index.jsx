@@ -5,6 +5,7 @@ import TriviaMenu from "./TriviaMenu";
 import InformationSection from "./InformationSection";
 import SpashPage from "../SplashPage";
 import "./homepage.css";
+import InformationSectionThree from "./InformationSection/sectionThree";
 
 const HomePage = () => {
 	const sessionUser = useSelector((state) => state.session.user);
@@ -26,6 +27,7 @@ const HomePage = () => {
 					<div className="homepage-triviacard-container">
 						<TriviaMenu />
 					</div>
+					<InformationSectionThree />
 				</div>
 			) : (
 				<div>

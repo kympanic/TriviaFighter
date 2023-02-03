@@ -56,7 +56,7 @@ const data = [
 	},
 	{
 		question: "How can I create my own trivia?",
-		answer: "First start by clicking the create trivia package button and enter the options for your trivia package. Once created, the game will show up in your list of trivia packages. Here you can add trivia questions to your game, or edit/delete your trivia package if you made a mistake. Once you're trivia package has a minimum of 14 questions, it will show up on the homescreen for you to play! ",
+		answer: "First start by clicking the create trivia package button and enter the options for your trivia package. Once created, the game will show up in your list of trivia packages. Here you can add trivia questions to your game, or edit/delete your trivia package if you made a mistake. Once you're trivia package has a minimum of 14 questions, it will show up on the homepage for anyone to play! ",
 	},
 	{
 		question: "I don't want to create all those questions",

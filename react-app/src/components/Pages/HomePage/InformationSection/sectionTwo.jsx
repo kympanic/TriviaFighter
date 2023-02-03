@@ -18,8 +18,8 @@ const InformationSectionTwo = () => {
 					Search by name,category, or difficulty and click PLAY!
 				</p>
 				<p className="info-p2">
-					Don't see what you're looking for? Create your own TRIVIA
-					PACKAGE for others to PLAY
+					Feeling smart and creative? Create your own TRIVIA PACKAGE
+					for others to PLAY
 				</p>
 				<button onClick={handleClick} className="info-button2">
 					CREATE
