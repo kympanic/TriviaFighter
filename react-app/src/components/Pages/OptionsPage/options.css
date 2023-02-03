@@ -4,6 +4,7 @@
 	margin-top: 50px;
 	text-align: center;
 	height: 1150px;
+	background-size: cover;
 	background-color: transparent;
 	background-image: url("https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/5169796.jpg");
 }

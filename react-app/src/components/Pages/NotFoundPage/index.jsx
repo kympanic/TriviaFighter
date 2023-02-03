@@ -1,8 +1,9 @@
-import React from "react";
+import "./notfoundpage.css";
 
 const NotFoundPage = () => {
 	return (
-		<div>
+		<div className="notfound-container">
+			<img src="" alt="" />
 			<h1>PAGE NOT FOUND</h1>
 		</div>
 	);

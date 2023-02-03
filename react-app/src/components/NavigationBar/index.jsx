@@ -7,7 +7,7 @@ import "./navigationbar.css";
 const NavigationBar = () => {
 	const dispatch = useDispatch();
 	const sessionUser = useSelector((state) => state.session.user);
-	const demoUser1 = useSelector((state) => state.users[1]);
+	const demoUser1 = useSelector((state) => state?.users[1]);
 
 	const demoUser = {
 		email: demoUser1?.email,
@@ -33,7 +33,7 @@ const NavigationBar = () => {
 				</li>
 				<li className="navbar-link">
 					<NavLink to="/" exact={true} activeClassName="active">
-						Home
+						HOME
 					</NavLink>
 				</li>
 				<li className="navbar-link">
@@ -42,7 +42,7 @@ const NavigationBar = () => {
 						exact={true}
 						activeClassName="active"
 					>
-						GameFaq
+						GAMEFAQ
 					</NavLink>
 				</li>
 				{sessionUser ? (
@@ -53,7 +53,7 @@ const NavigationBar = () => {
 								exact={true}
 								activeClassName="active"
 							>
-								Profile
+								PROFILE
 							</NavLink>
 						</li>
 						<li className="navbar-link" id="logout-btn-container">
@@ -68,7 +68,7 @@ const NavigationBar = () => {
 								exact={true}
 								activeClassName="active"
 							>
-								Login
+								LOGIN
 							</NavLink>
 						</li>
 						<li className="navbar-link">
@@ -77,7 +77,7 @@ const NavigationBar = () => {
 								exact={true}
 								activeClassName="active"
 							>
-								Sign Up
+								SIGNUP
 							</NavLink>
 						</li>
 						<li className="navbar-link" id="demo-btn-container">
@@ -85,7 +85,7 @@ const NavigationBar = () => {
 								className="demo-login-btn"
 								onClick={handleClick}
 							>
-								Demo
+								DEMO
 							</button>
 						</li>
 					</>

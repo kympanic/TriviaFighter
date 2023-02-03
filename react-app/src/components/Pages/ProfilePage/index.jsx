@@ -59,17 +59,27 @@ const ProfilePage = () => {
 						<h1 id="triviapackage-title-txt">
 							FEATURED TRIVIA GAMES
 						</h1>
-						<div className="profilepage-triviapackage-menu">
-							{profileTriviaPackages &&
-								profileTriviaPackages.map((triviapackage) => (
-									<TriviaSection
-										key={triviapackage.name}
-										triviapackage={triviapackage}
-										id={id}
-										sessionUser={sessionUser}
-									/>
-								))}
-						</div>
+						{profileTriviaPackages.length > 0 ? (
+							<div className="profilepage-triviapackage-menu">
+								{profileTriviaPackages &&
+									profileTriviaPackages.map(
+										(triviapackage) => (
+											<TriviaSection
+												key={triviapackage.name}
+												triviapackage={triviapackage}
+												id={id}
+												sessionUser={sessionUser}
+											/>
+										)
+									)}
+							</div>
+						) : (
+							<div className="no-packages-container">
+								<h1 className="no-packages-text">
+									NO TRIVIA PACKAGES YET
+								</h1>
+							</div>
+						)}
 					</div>
 					<div className="profilepage-reviews-title">
 						{profileReviews.length > 0 ? (

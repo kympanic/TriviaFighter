@@ -16,6 +16,7 @@ import GameOverPage from "./components/Pages/GameOverPage";
 import NotFoundPage from "./components/Pages/NotFoundPage";
 import GameFaqsPage from "./components/Pages/GameFaqsPage";
 import Footer from "./components/Footer";
+import { getAllUsersThunk } from "./store/users";
 function App() {
 	const [loaded, setLoaded] = useState(false);
 	const dispatch = useDispatch();
@@ -23,6 +24,7 @@ function App() {
 	useEffect(() => {
 		(async () => {
 			await dispatch(authenticate());
+			await dispatch(getAllUsersThunk());
 			setLoaded(true);
 		})();
 	}, [dispatch]);

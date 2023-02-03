@@ -1,6 +1,8 @@
-/* .addtrivia-form-container {
-	
-} */
+.addtrivia-form-container {
+	height: 800px;
+	display: flex;
+	flex-direction: column;
+}
 
 .form-ind-sections {
 	padding-top: 5%;
@@ -13,15 +15,27 @@
 	font-size: 20px;
 	text-align: center;
 }
+#question-input:focus {
+	border: 2px solid #12c2e9;
+}
 
 .text-input-fields {
 	width: 400px;
-	height: 25px;
+	height: 40px;
+	border: none;
+	border-bottom: 2px solid black;
+	cursor: pointer;
+	font-size: 20px;
 }
 
+.text-input-fields:focus {
+	background: #fff;
+
+	border-bottom: 2px solid #12c2e9;
+}
 .generate-button-container {
 	padding-top: 8%;
-
+	margin-top: 17%;
 	height: 70px;
 }
 
@@ -36,8 +50,13 @@
 	width: 200px;
 	border-radius: 20px;
 	border: none;
-	background-color: palevioletred;
+	background-color: #66d3fa;
 	color: white;
+	cursor: pointer;
+}
+
+#addtrivia-generate-btn:hover {
+	transform: scale(1.2);
 }
 
 #addtrivia-submit-btn {
@@ -45,6 +64,15 @@
 	width: 200px;
 	border-radius: 20px;
 	border: none;
-	background-color: slateblue;
+	background-color: #77dd77;
 	color: white;
+	cursor: pointer;
+}
+
+#addtrivia-submit-btn:hover {
+	transform: scale(1.2);
+}
+
+.labels {
+	font-weight: bolder;
 }

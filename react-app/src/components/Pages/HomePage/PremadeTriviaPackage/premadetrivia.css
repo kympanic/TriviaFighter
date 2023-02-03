@@ -11,15 +11,23 @@
 	flex-wrap: wrap;
 	padding: 20px;
 	position: relative;
+	background: rgb(255, 255, 255);
+	background: rgb(255, 255, 255);
+	background: radial-gradient(
+		circle,
+		rgba(255, 255, 255, 1) 50%,
+		rgba(18, 194, 233, 1) 100%
+	);
 }
 
 .premade-trivia-card {
 	padding: 30px;
-	border: 3px solid palevioletred;
+	border: 3px solid #12c2e9;
 	margin: 40px;
 	border-radius: 20px;
 	height: 270px;
 	width: 230px;
+	background-color: #faf7f0;
 }
 
 .premade-difficulty-form {

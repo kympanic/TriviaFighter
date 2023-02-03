@@ -3,7 +3,7 @@
 	flex-direction: column;
 	align-items: center;
 	margin-top: 40px;
-	background-color: #faf7f0;
+	background-color: white;
 	padding-bottom: 40px;
 }
 
@@ -12,23 +12,26 @@
 	justify-content: space-between;
 	padding: 30px;
 	width: 150vh;
-	background-color: white;
+	background: rgb(255, 255, 255);
+	background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
 	border-radius: 40px;
 }
 
 .add-trivia-page-header-container {
 	padding-top: 50px;
-	margin-bottom: 80px;
+	margin-bottom: 40px;
 }
 
 .add-trivia-page-form-container {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-
-	border-right: 3px solid plum;
+	background-color: white;
+	border-right: 20px solid rgb(49, 49, 49);
 	padding-left: 5%;
-	padding-right: 5%;
+	padding-right: 2%;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
 }
 
 .add-trivia-page-info-container {
@@ -38,6 +41,12 @@
 .add-trivia-page-edit-container {
 	display: flex;
 	text-align: center;
+	border-left: 15px solid rgb(49, 49, 49);
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: white;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
 }
 
 .add-triviapage-title-text {

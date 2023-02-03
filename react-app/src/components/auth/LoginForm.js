@@ -31,14 +31,19 @@ const LoginForm = () => {
 	}
 
 	return (
-		<div className="login-form-container">
-			<form onSubmit={onLogin}>
+		<div className="login-signup-main">
+			<img
+				className="login-img"
+				src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/7-01.jpg"
+				alt="gorillavsgodzilla"
+			/>
+			<form className="login-signup-form" onSubmit={onLogin}>
 				<div>
 					{errors.map((error, ind) => (
 						<div key={ind}>{error}</div>
 					))}
 				</div>
-				<div>
+				<div className="input-group">
 					<label htmlFor="email">Email</label>
 					<input
 						name="email"
@@ -48,7 +53,7 @@ const LoginForm = () => {
 						onChange={updateEmail}
 					/>
 				</div>
-				<div>
+				<div className="input-group">
 					<label htmlFor="password">Password</label>
 					<input
 						name="password"
@@ -57,7 +62,11 @@ const LoginForm = () => {
 						value={password}
 						onChange={updatePassword}
 					/>
-					<button type="submit">Login</button>
+				</div>
+				<div>
+					<button className="login-signup-btn" type="submit">
+						LOGIN
+					</button>
 				</div>
 			</form>
 		</div>

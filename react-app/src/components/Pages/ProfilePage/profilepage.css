@@ -8,7 +8,7 @@
 
 /* Profile Header*/
 .profilepage-header-container {
-	background-image: url("https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/aesthetic-purple-smoke-banner-background+(1).jpg");
+	background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
 	height: 450px;
 	width: 100%;
 	background-size: cover;
@@ -17,7 +17,7 @@
 /* Profile Card */
 .profilepage-profilecard-container {
 	height: 350px;
-	border: 3px solid lavender;
+	border: 3px solid #12c2e9;
 	width: 250px;
 	background-color: white;
 	position: absolute;
@@ -54,7 +54,7 @@
 
 .header-star-icon {
 	margin-top: 2px;
-	color: #bccef8;
+	color: #f64f59;
 	margin-left: 4px;
 }
 
@@ -154,7 +154,7 @@
 	border-radius: 20px;
 	max-height: 1000px;
 	overflow: auto;
-	background-color: #bccef8;
+	background-color: #12c2e9;
 	margin-right: 4%;
 	margin-left: 4%;
 }
@@ -214,13 +214,13 @@
 	height: 70px;
 	border-radius: 50%;
 	border: none;
-	background-color: #66d3fa;
+	background-color: #c471ed;
 	margin-right: 2%;
 	cursor: pointer;
 }
 .trivia-edit-btn:hover {
 	background-color: white;
-	border: #66d3fa 2px solid;
+	border: #c471ed 2px solid;
 	transform: translate(-2px, 4px);
 }
 
@@ -229,12 +229,12 @@
 	height: 70px;
 	border-radius: 50%;
 	border: none;
-	background-color: palevioletred;
+	background-color: #f64f59;
 	cursor: pointer;
 }
 .trivia-delete-btn:hover {
 	background-color: white;
-	border: palevioletred 2px solid;
+	border: #f64f59 2px solid;
 	transform: translate(2px, 4px);
 }
 
@@ -278,7 +278,7 @@
 
 	width: 100%;
 	/* justify-content: flex-start; */
-	border-bottom: palevioletred 3px solid;
+	border-bottom: #12c2e9 3px solid;
 }
 .profilepage-comments-info {
 	padding-top: 30px;
@@ -323,4 +323,17 @@
 	border: #77dd77 2px solid;
 	transform: scale(1.2);
 	font-size: 18px;
+}
+
+.no-packages-container {
+	border: 2px solid #12c2e9;
+	height: 140px;
+	display: flex;
+	justify-content: center;
+	background-color: #12c2e9;
+}
+
+.no-packages-text {
+	color: white;
+	margin-top: 3%;
 }

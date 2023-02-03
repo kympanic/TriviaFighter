@@ -50,15 +50,19 @@ const SignUpForm = () => {
 	}
 
 	return (
-		<div className="signup-form-container">
-			<h3 className="signup-form-title">Enter your information below</h3>
-			<form className="signup-form" onSubmit={onSignUp}>
+		<div className="login-signup-main">
+			<img
+				className="signup-img"
+				src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/sushifight.jpg"
+				alt="gorillavsgodzilla"
+			/>
+			<form className="login-signup-form" onSubmit={onSignUp}>
 				<div>
 					{errors.map((error, ind) => (
 						<div key={ind}>{error}</div>
 					))}
 				</div>
-				<div>
+				<div className="input-group">
 					<label>User Name</label>
 					<input
 						type="text"
@@ -67,7 +71,7 @@ const SignUpForm = () => {
 						value={username}
 					></input>
 				</div>
-				<div>
+				<div className="input-group">
 					<label>Email</label>
 					<input
 						type="text"
@@ -76,8 +80,7 @@ const SignUpForm = () => {
 						value={email}
 					></input>
 				</div>
-
-				<div>
+				<div className="input-group">
 					<label>Password</label>
 					<input
 						type="password"
@@ -86,7 +89,7 @@ const SignUpForm = () => {
 						value={password}
 					></input>
 				</div>
-				<div>
+				<div className="input-group">
 					<label>Repeat Password</label>
 					<input
 						type="password"
@@ -96,7 +99,11 @@ const SignUpForm = () => {
 						required={true}
 					></input>
 				</div>
-				<button type="submit">Sign Up</button>
+				<div>
+					<button className="login-signup-btn" type="submit">
+						Sign Up
+					</button>
+				</div>
 			</form>
 		</div>
 	);

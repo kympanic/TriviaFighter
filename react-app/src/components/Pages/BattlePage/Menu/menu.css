@@ -2,7 +2,6 @@
 	box-sizing: border-box;
 	border-radius: 10px;
 	height: 230px;
-
 	gap: 10px;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
@@ -13,7 +12,7 @@
 
 .options-container {
 	background-color: white;
-	border: 4px solid palevioletred;
+	border: 4px solid #f64f59;
 	padding: 10px;
 	height: 230px;
 	border-radius: 10px;
@@ -27,7 +26,7 @@
 	border-radius: 5px;
 	border: 1px solid black;
 
-	background-color: palevioletred;
+	background-color: #f64f59;
 
 	align-items: center;
 	justify-content: center;
@@ -38,30 +37,5 @@
 }
 
 .option:hover {
-	background-color: rgba(24, 161, 203, 1);
-}
-
-.correct {
-	display: flex;
-	border-radius: 5px;
-	border: 1px solid black;
-	align-items: center;
-	justify-content: center;
-	color: white;
-	font-size: 24px;
-
-	cursor: pointer;
-}
-
-.incorrect {
-	background-color: rgb(206, 58, 58);
-	align-items: center;
-	justify-content: center;
-	color: white;
-	font-size: 24px;
-
-	cursor: pointer;
-	display: flex;
-	border-radius: 5px;
-	border: 1px solid black;
+	background-color: #c471ed;
 }

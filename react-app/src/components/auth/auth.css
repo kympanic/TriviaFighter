@@ -1,9 +1,102 @@
-.login-form-container {
-	margin-top: 500px;
-	border: 2px solid green;
+/* Login and Signup Form Page */
+.login-signup-main {
+	height: 100vh;
+	width: 100vw;
+	text-align: center;
+	background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.login-signup-form {
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+	max-width: 615px;
+	padding-bottom: 66px;
+	padding-top: 46px;
+	text-align: center;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	max-height: 500px;
+	z-index: 3;
+	margin-top: 10%;
 }
 
-.logout-btn-container {
+.input-group {
+	margin-bottom: 26px;
+}
+.input-group:nth-last-child(-n + 2) {
+	margin-bottom: 50px;
+}
+.input-group > label,
+.input-group > input {
+	font-family: "Roboto", sans-serif;
+	max-width: 420px;
+	text-align: left;
+	width: 80%;
+}
+.input-group > label {
+	color: #676767;
+	display: inline-block;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+.input-group > input {
+	background: #f2f2f5;
+	border-radius: 4px;
+	border: 1px solid #e5e5e5;
+	color: #676767;
+	font-size: 16px;
+	height: 40px;
+	outline: 0;
+	padding: 0 15px;
+	transition: all 0.3s;
+}
+.input-group > input:focus {
+	background: #fff;
+
+	border: 2px solid #12c2e9;
+}
+.input-group > input::placeholder {
+	color: #c4c4c4;
+	font-size: 16px;
+}
+
+.login-signup-btn {
+	border-radius: 5px;
+	border: none;
+	color: white;
+	cursor: pointer;
+	font-family: "Open Sans", sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	max-width: 420px;
+	padding: 10px 0;
+	width: 80%;
+	background-color: #12c2e9;
+}
+.login-img {
+	height: 300px;
+	border-radius: 50%;
+	z-index: 1;
+	position: absolute;
+	top: 17%;
+}
+
+.signup-img {
+	height: 300px;
+	border-radius: 50%;
+	z-index: 1;
+	position: absolute;
+	top: 10%;
+}
+
+/* Logout button */
+.main .logout-btn-container {
 	width: 100px;
 	height: 30px;
 	text-align: center;
@@ -13,35 +106,14 @@
 	border: none;
 	height: 100%;
 	font-size: 22px;
-	background-color: palevioletred;
+	background-color: #f64f59;
+	padding: 7px;
 	border-radius: 20px;
 	cursor: pointer;
+	color: white;
 }
 
 .logout-btn:hover {
 	transform: scale(1.2);
 	color: white;
-}
-
-.signup-form-container {
-	height: 1000px;
-	max-width: 100%;
-	border: 2px solid red;
-	background-size: cover;
-	display: flex;
-	flex-direction: column;
-	background-image: url("https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/aesthetic-purple-smoke-banner-background+(1).jpg");
-	text-align: center;
-	align-items: center;
-}
-
-.signup-form {
-	border: 2px solid green;
-	height: 600px;
-	width: 800px;
-	background-color: white;
-}
-
-.signup-form-title {
-	margin-top: 200px;
 }

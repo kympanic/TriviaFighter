@@ -21,7 +21,9 @@ const GameHistory = ({ gameDatas, profileUser, alltrivia }) => {
 					) : (
 						<div>
 							<div>
-								<h2>Game History</h2>
+								<h2 className="gamehistory-text">
+									Game History
+								</h2>
 								<div className="gamehistory-data-container">
 									{selectedDatas.map((data) => (
 										<div className="individual-gamedata-container">

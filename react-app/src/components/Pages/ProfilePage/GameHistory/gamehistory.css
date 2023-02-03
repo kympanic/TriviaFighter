@@ -12,7 +12,7 @@
 }
 
 .gamehistory-data-container {
-	border: 2px solid #98a8f8;
+	border: 2px solid #c471ed;
 	border-radius: 20px;
 	background-color: #faf7f0;
 	width: 280px;
@@ -33,16 +33,16 @@
 	border: none;
 	border-radius: 20px;
 	font-size: 20px;
-	background-color: #98a8f8;
+	background-color: #12c2e9;
 	color: white;
 	cursor: pointer;
 }
 
 .gamedata-open-btn:hover {
 	transform: scale(1.2);
-	color: #98a8f8;
+	color: #12c2e9;
 	background-color: white;
-	border: 3px solid #98a8f8;
+	border: 3px solid #12c2e9;
 }
 
 .gamedata-close-btn {
@@ -50,10 +50,14 @@
 	border-radius: 10px;
 	width: 100px;
 	border: none;
-	background-color: palevioletred;
+	background-color: #f64f59;
 	color: white;
 }
 
 .gamedata-close-btn:hover {
 	transform: translateY(-5px);
+}
+
+.gamehistory-text {
+	color: white;
 }

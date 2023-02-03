@@ -9,15 +9,17 @@
 
 .triviaquestion-container {
 	margin-top: 4%;
-	height: 140px;
+	height: 170px;
 	margin-right: 4%;
-	background-color: #bccef8;
+	background-color: white;
+	border: 3px solid black;
+	border-radius: 5px;
 }
 
 .question-answer-container {
-	border: 2px solid #bccef8;
-
-	max-height: 50px;
+	border-bottom: 3px solid black;
+	padding: 10px;
+	max-height: 90px;
 	overflow: auto;
 	background-color: white;
 }

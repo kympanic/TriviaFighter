@@ -111,7 +111,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 					))}
 				</div>
 				<div className="form-ind-sections">
-					<label>Question: </label>
+					<label className="labels">QUESTION</label>
 					<div>
 						<textarea
 							id="question-input"
@@ -124,7 +124,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 					</div>
 				</div>
 				<div className="form-ind-sections">
-					<label>Answer: </label>
+					<label className="labels">ANSWER</label>
 					<div>
 						<input
 							className="text-input-fields"
@@ -137,7 +137,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 					</div>
 				</div>
 				<div className="form-ind-sections">
-					<label>Incorrect Answer 1</label>
+					<label className="labels">INCORRECT ANSWER</label>
 					<div>
 						<input
 							className="text-input-fields"
@@ -150,7 +150,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 					</div>
 				</div>
 				<div className="form-ind-sections">
-					<label>Incorrect Answer 2</label>
+					<label className="labels">INCORRECT ANSWER</label>
 					<div>
 						<input
 							className="text-input-fields"
@@ -163,7 +163,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 					</div>
 				</div>
 				<div className="form-ind-sections">
-					<label>Incorrect Answer 3</label>
+					<label className="labels">INCORRECT ANSWER</label>
 					<div>
 						<input
 							className="text-input-fields"

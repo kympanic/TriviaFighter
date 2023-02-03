@@ -1,5 +1,5 @@
 .main {
-	height: 260px;
+	height: 259px;
 	padding: 25px;
 	border-radius: 10px;
 	box-sizing: border-box;
@@ -10,7 +10,7 @@
 	align-items: center;
 	justify-content: center;
 
-	background-color: #98a8f8;
+	background-color: #12c2e9;
 }
 .message {
 	text-align: center;

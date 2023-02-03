@@ -1,3 +1,23 @@
-.footer-container {
-	height: 200px;
+.main {
+	border-top: 4px solid #12c2e9;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+}
+
+.links-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.footer-link {
+	padding-top: 15px;
+	font-size: 20px;
+	color: #12c2e9;
+}
+
+.footer-text {
+	padding-bottom: 10px;
 }

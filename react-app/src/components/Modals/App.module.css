@@ -22,13 +22,13 @@
 	height: 70px;
 	border-radius: 50%;
 	border: none;
-	background-color: #66d3fa;
+	background-color: #c471ed;
 	margin-right: 2%;
 	cursor: pointer;
 }
 .editBtn:hover {
 	background-color: white;
-	border: #66d3fa 2px solid;
+	border: #c471ed 2px solid;
 	transform: translate(-2px, 4px);
 }
 .deleteBtn {
@@ -36,12 +36,12 @@
 	height: 70px;
 	border-radius: 50%;
 	border: none;
-	background-color: palevioletred;
+	background-color: #f54f59;
 	cursor: pointer;
 }
 
 .deleteBtn:hover {
 	background-color: white;
-	border: palevioletred 2px solid;
+	border: #f54f59 2px solid;
 	transform: translate(2px, 4px);
 }
