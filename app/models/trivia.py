@@ -42,4 +42,5 @@ class Trivia (db.Model):
             'incorrectAnswer2' : self.incorrect_answer2,
             'incorrectAnswer3' : self.incorrect_answer3,
             'triviaPackageId': self.trivia_package_id,
+            'userId': self.user_id
         }

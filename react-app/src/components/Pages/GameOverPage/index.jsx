@@ -27,7 +27,7 @@ const GameOverPage = () => {
 
 	// console.log(date, "this is the date");
 	// console.log(player1Data, player2Data);
-	// console.log(triviaData, "wow");
+	console.log(triviaData, "wow");
 	// console.log(triviaData.results[0].triviaPackageId, "hmm?");
 	// console.log(winner, "THIS IS THE WINNER DATA");
 	const homeSubmit = async (e) => {
@@ -52,43 +52,46 @@ const GameOverPage = () => {
 	return (
 		<div className="gameover-main-container">
 			<div>
-				<h1 className="gameover-title">THANKS FOR PLAYING</h1>
-			</div>
-			<div>
-				<h1 className="gameover-text">GAME OVER</h1>
+				<img
+					className="gameover-img"
+					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/gameoverbackground.png"
+					alt=""
+				/>
 			</div>
 			{winner ? (
-				<div>
-					<h2 className="winner-text">{`The winner is ${winner?.name}`}</h2>
+				<div className="winner-text-container">
+					<h1 className="winner-text">{`The winner is ${winner?.name}`}</h1>
 				</div>
 			) : (
 				<div>
-					<h2 className="winner-text">...Loading...</h2>
+					<h2 className="winner-text">...LOADING...</h2>
 				</div>
 			)}
 
-			{triviaData && triviaData.results[0]?.triviaPackageId && (
-				<div className="gameover-review-container">
-					{isOpenReviewBtn && (
-						<button
-							className="gameover-review-btn"
-							onClick={handleReviewClick}
-						>
-							Add Review
-						</button>
-					)}
-					{isOpenAddReview && (
-						<AddReviewModal
-							setIsOpen={setIsOpenAddReview}
-							setIsOpenReviewBtn={setIsOpenReviewBtn}
-							id={triviaData.results[0].triviaPackageId}
-						/>
-					)}
-				</div>
-			)}
+			{triviaData &&
+				triviaData.results[0]?.triviaPackageId &&
+				userId !== triviaData.results[0]?.userId && (
+					<div className="gameover-review-container">
+						{isOpenReviewBtn && (
+							<button
+								className="gameover-btn"
+								onClick={handleReviewClick}
+							>
+								ADD REVIEW
+							</button>
+						)}
+						{isOpenAddReview && (
+							<AddReviewModal
+								setIsOpen={setIsOpenAddReview}
+								setIsOpenReviewBtn={setIsOpenReviewBtn}
+								id={triviaData.results[0].triviaPackageId}
+							/>
+						)}
+					</div>
+				)}
 			<div className="gameover-home-btn-container">
-				<button className="gameover-home-btn" onClick={homeSubmit}>
-					Return to Home
+				<button className="gameover-btn" onClick={homeSubmit}>
+					LOG DATA
 				</button>
 			</div>
 		</div>

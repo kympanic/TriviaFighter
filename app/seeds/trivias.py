@@ -6,7 +6,7 @@ def seed_trivias():
     trivia1 = Trivia(
       question="A carnivorous animal eats flesh, what does a nucivorous animal eat?", correct_answer="Nuts", incorrect_answer1="Nothing", incorrect_answer2="Fruit",incorrect_answer3="Seaweed", user_id=1, trivia_package_id=2 )
     trivia2 = Trivia(
-      question="What is the common term for bovine spongiform encephalopathy (BSE)??", correct_answer="Mad Cow disease", incorrect_answer1="Weil's disease", incorrect_answer2="Milk fever",incorrect_answer3="Wrong answer3", user_id=1, trivia_package_id=2 )
+      question="What is the common term for bovine spongiform encephalopathy (BSE)??", correct_answer="Mad Cow disease", incorrect_answer1="Weil's disease", incorrect_answer2="Milk fever",incorrect_answer3="Weiss Disease", user_id=1, trivia_package_id=2 )
     trivia3 = Trivia(
       question="What are rhinos horn made of??", correct_answer="Keratin", incorrect_answer1="Bone", incorrect_answer2="Ivory",incorrect_answer3="Skin", user_id=1, trivia_package_id=2 )
     trivia4 = Trivia(

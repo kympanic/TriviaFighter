@@ -9,7 +9,6 @@ const OptionsPageTwo = () => {
 	const triviaData = location.state.triviaData;
 	const [player1Data, setPlayer1Data] = useState({});
 	const [player2Data, setPlayer2Data] = useState({});
-	console.log(Object.keys(player1Data).length, "this is the data");
 	const handleCancel = (e) => {
 		e.preventDefault();
 		history.push("/");

@@ -1,74 +1,76 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-
 .gameover-main-container {
-	border: 2px solid black;
 	height: 1000px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
 	margin-top: 20px;
+	justify-content: center;
+	background: rgb(18, 194, 233);
+	background: linear-gradient(
+		93deg,
+		rgba(18, 194, 233, 1) 30%,
+		rgba(246, 79, 89, 1) 70%
+	);
+}
+.gameover-img {
+	height: 500px;
+	width: 500px;
+	border-radius: 50%;
 }
 
-.gameover-title {
-	margin-top: 5%;
-	font-size: 40px;
-	font-family: "Press Start 2P";
-}
-
-.gameover-text {
-	margin-top: 10%;
-	font-family: "Press Start 2P";
-	font-size: 100px;
-}
-
-.gameover-review-btn {
-	margin: 20px 10px;
+/* BUTTONS */
+.gameover-btn {
+	margin-top: 20px;
+	width: 150px;
+	height: 50px;
 	cursor: pointer;
-	font-weight: 500;
-	padding: 13px 25px;
-	border-radius: 15px;
-	font-size: 0.8rem;
 	border: none;
 	color: white;
-	background: #02385a;
-	transition: all 0.25s ease;
-	z-index: 0;
-	width: 200px;
+	background-color: #1fd1f9;
+	background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+	transition: 500ms;
+	position: relative;
 }
 
-.gameover-review-btn:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+.gameover-btn:before,
+.gameover-btn:after {
+	z-index: -1;
+	content: "";
+	position: absolute;
+	width: 75px;
+	height: 0px;
+	background: transparent;
+	transition: 500ms;
 }
 
-.gameover-home-btn {
-	margin: 20px 10px;
-	cursor: pointer;
-	font-weight: 500;
-	padding: 13px 25px;
-	border-radius: 15px;
-	font-size: 0.8rem;
-	border: none;
-	color: white;
-	background: #02385a;
-	transition: all 0.25s ease;
-	z-index: 0;
-	width: 200px;
+.gameover-btn:before {
+	transform: translateX(-50px) translateY(27px);
+	box-shadow: 5px 5px 16px #ca61ff;
 }
 
-.gameover-home-btn:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+.gameover-btn:after {
+	transform: translateX(-25px) translateY(27px);
+	box-shadow: -5px 5px 16px #1fd1f9;
 }
 
-.gameover-home-btn-container {
-	margin-top: 50px;
+.gameover-btn:hover:before,
+.gameover-btn:hover:after {
+	height: 5px;
+}
+
+.gameover-btn:hover {
+	box-shadow: inset 0px 5px 10px rgba(255, 255, 255, 0.4);
+}
+
+.gameover-btn:focus {
+	outline: none;
 }
 
 .winner-text {
-	font-family: "Press Start 2P";
-	margin-top: 5%;
+	margin-top: 20px;
+	font-size: 40px;
+	color: white;
 }
 
 .gameover-review-container {

@@ -60,5 +60,4 @@ class TriviaPackage (db.Model):
             'difficulty': self.difficulty,
             'imageUrl': self.image_url,
             'trivias': [trivia.to_dict_basic() for trivia in self.trivias],
-            # 'reviews':[review.to_dict_() for review in self.reviews]
         }

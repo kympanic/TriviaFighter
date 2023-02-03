@@ -72,7 +72,7 @@ const data = [
 	},
 	{
 		question: "How do I add a review?",
-		answer: "A user can only add a review after playing a user made trivia game. (You can not add a review for a ai generated trivia package) Once a game is completed, you can add one review to the game you played. Help the community by answering honestly of what you thought of the game! ",
+		answer: "A user can only add a review after playing a user made trivia game. (You can not add a review for a ai generated trivia package) Once a game is completed, you can add one review to the game you played. Remember, you can not add a comment/review to any games you personally have created. Help the community by answering honestly of what you thought of the game! ",
 	},
 ];
 export default GameFaqsPage;

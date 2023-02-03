@@ -37,7 +37,7 @@ const EditContainer = ({ sessionUser, triviapackage }) => {
 					))}
 				</div>
 			) : (
-				<div>
+				<div className="editsection-container">
 					<h1>No trivia questions yet!</h1>
 				</div>
 			)}

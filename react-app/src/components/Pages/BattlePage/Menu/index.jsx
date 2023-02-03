@@ -52,8 +52,6 @@ const Menu = ({
 		setOptions(answers);
 	}, [question]);
 
-	// console.log(questionIndex, "this is the index");
-
 	const handleItemClick = (e) => {
 		e.preventDefault();
 		// setAnswerSelected(true);
