@@ -1,4 +1,4 @@
-import styles from "./Modal.module.css";
+import styles from "./HomeDescriptionModal.module.css";
 import { RiCloseLine } from "react-icons/ri";
 import { useHistory } from "react-router-dom";
 
@@ -20,11 +20,9 @@ const HomepageGameOptionModal = ({ setIsOpen, category, difficulty }) => {
 		<>
 			<div className={styles.darkBG} onClick={() => setIsOpen(false)} />
 			<div className={styles.centered}>
-				<div className={styles.modal}>
-					<div className={styles.modalHeader}>
-						<h5 className={styles.heading}>
-							Trivia Package Confirmation
-						</h5>
+				<div className={styles.homeDescriptionModal}>
+					<div className={styles.homeDescriptionModalHeader}>
+						<h5 className={styles.heading}></h5>
 					</div>
 					<button
 						className={styles.closeBtn}
@@ -32,8 +30,8 @@ const HomepageGameOptionModal = ({ setIsOpen, category, difficulty }) => {
 					>
 						<RiCloseLine style={{ marginBottom: "-3px" }} />
 					</button>
-					<div className={styles.modalContent}>
-						Would you like to play this game?
+					<div className={styles.homeDescriptionModalContent}>
+						WOULD YOU LIKE TO PLAY THIS GAME?
 					</div>
 					<div className={styles.modalActions}>
 						<div className={styles.actionsContainer}>
@@ -41,13 +39,13 @@ const HomepageGameOptionModal = ({ setIsOpen, category, difficulty }) => {
 								className={styles.submitBtn}
 								onClick={handleSubmit}
 							>
-								Yes
+								PLAY
 							</button>
 							<button
 								className={styles.cancelBtn}
 								onClick={() => setIsOpen(false)}
 							>
-								Cancel
+								CANCEL
 							</button>
 						</div>
 					</div>
