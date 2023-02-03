@@ -4,12 +4,12 @@ import { useState } from "react";
 import Bar from "./Bar/bar";
 import Menu from "./Menu";
 import Announcer from "./Announcer";
-import "./battlepage.css";
-import styles from "./styles.module.css";
+import ReactHowler from "react-howler";
 import { useBattleSequence } from "../../Hooks/useBattleSequence";
 import { useEffect } from "react";
 import { wait } from "../../Helpers";
-import ReactHowler from "react-howler";
+import "./battlepage.css";
+import styles from "./styles.module.css";
 const BattlePage = () => {
 	const history = useHistory();
 	const location = useLocation();
