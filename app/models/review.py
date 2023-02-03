@@ -1,4 +1,4 @@
-from .db import db, environment, SCHEMA
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 
 
 class Review(db.Model):
@@ -10,8 +10,8 @@ class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     rating = db.Column(db.String(10), nullable=False)
     body = db.Column(db.String(255), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    trivia_package_id = db.Column(db.Integer, db.ForeignKey('triviapackages.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
+    trivia_package_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('triviapackages.id')), nullable=False)
    
     #relationships
     trivia_package = db.relationship('TriviaPackage', back_populates = 'reviews')

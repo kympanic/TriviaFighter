@@ -13,7 +13,7 @@ class TriviaPackage (db.Model):
     description= db.Column(db.String(255), nullable=False)
     difficulty = db.Column(db.String(10),nullable=False)
     image_url = db.Column(db.String(255))
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
 
     #relationships
     user = db.relationship('User', back_populates='trivia_packages')

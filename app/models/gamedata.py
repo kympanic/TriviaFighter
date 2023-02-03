@@ -1,4 +1,4 @@
-from .db import db, environment, SCHEMA
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 
 
 class GameData(db.Model):
@@ -12,8 +12,8 @@ class GameData(db.Model):
     player_two = db.Column(db.String(40),  nullable=False)
     winner = db.Column(db.String(40), nullable=False)
     playdate = db.Column(db.String(40), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    trivia_package_id = db.Column(db.Integer, db.ForeignKey('triviapackages.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
+    trivia_package_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('triviapackages.id')))
    
     #relationships
     trivia_package = db.relationship('TriviaPackage', back_populates = 'gamedata')

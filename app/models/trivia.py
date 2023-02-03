@@ -13,8 +13,8 @@ class Trivia (db.Model):
     incorrect_answer1 = db.Column(db.String(255), nullable=False)
     incorrect_answer2 = db.Column(db.String(255), nullable=False)
     incorrect_answer3 = db.Column(db.String(255), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    trivia_package_id = db.Column(db.Integer, db.ForeignKey('triviapackages.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
+    trivia_package_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('triviapackages.id')), nullable=False)
 
     #relationships
     user = db.relationship('User', back_populates = 'trivias')
