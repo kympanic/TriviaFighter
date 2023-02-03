@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import PremadeTriviaPackage from "../PremadeTriviaPackage";
 import UserMadeTriviaPackage from "../UserMadeTriviaPackage";
 import { getAllTriviasPackagesThunk } from "../../../../store/triviapackage";
+import InformationSectionTwo from "../InformationSection/sectionTwo";
 import "../homepage.css";
 
 const TriviaMenu = () => {
@@ -34,17 +35,18 @@ const TriviaMenu = () => {
 
 	return (
 		<div className="main-trivia-container">
-			<div className="triviapackage-title-container">
+			{/* <div className="triviapackage-title-container">
 				<h1 className="sample-text">SAMPLE TRIVIA GAMES</h1>
-			</div>
+			</div> */}
 			<div className="premade-trivia-container">
 				{premadeCategories.map((option) => (
 					<PremadeTriviaPackage key={option} category={option} />
 				))}
 			</div>
-			<div className="usertrivia-text-container">
+			{/* <div className="usertrivia-text-container">
 				<h1 className="usertrivia-text">USER TRIVIA GAMES</h1>
-			</div>
+			</div> */}
+			<InformationSectionTwo />
 			<div className="homepage-search-container">
 				<input
 					className="homepage-searchbar"
