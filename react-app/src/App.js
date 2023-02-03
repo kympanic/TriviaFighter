@@ -67,9 +67,9 @@ function App() {
 				<Route path="/gamefaqs" exact={true}>
 					<GameFaqsPage />
 				</Route>
-				<ProtectedRoute path="/" exact={true}>
+				<Route path="/" exact={true}>
 					<HomePage />
-				</ProtectedRoute>
+				</Route>
 				<Route path="">
 					<NotFoundPage />
 				</Route>

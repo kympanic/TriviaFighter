@@ -42,7 +42,7 @@ const TriviaMenu = () => {
 					<PremadeTriviaPackage key={option} category={option} />
 				))}
 			</div>
-			<div>
+			<div className="usertrivia-text-container">
 				<h1 className="usertrivia-text">USER TRIVIA GAMES</h1>
 			</div>
 			<div className="homepage-search-container">

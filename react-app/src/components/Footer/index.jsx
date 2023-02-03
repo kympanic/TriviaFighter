@@ -2,7 +2,7 @@ import "./footer.css";
 
 const Footer = () => {
 	return (
-		<div className="main">
+		<div className="footer-main">
 			<div className="links-container">
 				<a
 					className="footer-link"
