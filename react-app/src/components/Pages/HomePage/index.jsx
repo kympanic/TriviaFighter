@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import TriviaMenu from "./TriviaMenu";
 import { getAllUsersThunk } from "../../../store/users";
+import TriviaMenu from "./TriviaMenu";
+import InformationSection from "./InformationSection";
 import SpashPage from "../SplashPage";
 import "./homepage.css";
 
@@ -21,6 +22,7 @@ const HomePage = () => {
 						<h1 id="homepage-title-text">TRIVIA FIGHTER</h1>
 					</div>
 					<div className="homepage-headerb-container"></div>
+					<InformationSection />
 					<div className="homepage-triviacard-container">
 						<TriviaMenu />
 					</div>

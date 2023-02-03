@@ -37,7 +37,7 @@ export const triviaIncorrect = ({ attacker, receiver }) => {
 export const player1Stats = [
 	{
 		id: 1,
-		maxHealth: 50,
+		maxHealth: 100,
 		name: "Ninja Shiba",
 		img: "https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Fighter-ShibaInu.jpg",
 		description:
@@ -45,7 +45,7 @@ export const player1Stats = [
 	},
 	{
 		id: 2,
-		maxHealth: 50,
+		maxHealth: 100,
 		name: "Superhero Panda",
 		img: "https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Fighter-PandaHero.jpg",
 		description:
@@ -53,7 +53,7 @@ export const player1Stats = [
 	},
 	{
 		id: 3,
-		maxHealth: 50,
+		maxHealth: 100,
 		name: "Cyborg Mouse",
 		img: "https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Fighter-CyborgMouse.jpg",
 		description:
@@ -64,7 +64,7 @@ export const player1Stats = [
 export const player2Stats = [
 	{
 		id: 4,
-		maxHealth: 50,
+		maxHealth: 100,
 		name: "Cool Cat",
 		img: "https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/cute-cool-cat-wearing-glasses-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated_138676-4268.webp",
 		description:
@@ -72,7 +72,7 @@ export const player2Stats = [
 	},
 	{
 		id: 5,
-		maxHealth: 50,
+		maxHealth: 100,
 		name: "Angry Kangaroo",
 		img: "https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/fightingkangaroo.jpg",
 		description:
@@ -80,7 +80,7 @@ export const player2Stats = [
 	},
 	{
 		id: 6,
-		maxHealth: 50,
+		maxHealth: 100,
 		name: "Wamster Hamster",
 		img: "https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/cutehamster.jpg",
 		description:

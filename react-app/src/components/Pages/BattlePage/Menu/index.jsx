@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { getRandomInt } from "../../../Helpers";
 import "./menu.css";
+
 const Menu = ({
 	arrayOfQuestions,
 	setSequence,
@@ -11,9 +12,6 @@ const Menu = ({
 }) => {
 	const [questions, setQuestions] = useState([]);
 	const [options, setOptions] = useState([]);
-	// const [answerSelected, setAnswerSelected] = useState(false);
-	// const [selectedAnswer, setSelectedAnswer] = useState(null);
-	// const [className, setClassName] = useState("option");
 
 	//decode the questions and answers coming from the api bc it comes out with messy quotes
 	const decodeHTML = function (html) {
@@ -54,9 +52,6 @@ const Menu = ({
 
 	const handleItemClick = (e) => {
 		e.preventDefault();
-		// setAnswerSelected(true);
-		// setSelectedAnswer(e.target.textContent);
-		// console.log(e.target.textContent, "AHHHH");
 		setQuestionIndex(questionIndex + 1);
 		if (e.target.textContent === question.correct_answer) {
 			setSequence({ mode: "isCorrect", turn });
