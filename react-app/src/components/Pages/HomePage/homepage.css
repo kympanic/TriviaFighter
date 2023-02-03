@@ -68,6 +68,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	position: relative;
+	z-index: 2;
 	padding: 20px;
 	text-align: center;
 	overflow: auto;
@@ -93,19 +94,16 @@
 .premade-trivia-container {
 	max-height: 850px;
 	overflow: auto;
+	position: relative;
+	z-index: 2;
 }
 
-.usertrivia-text-container {
-	align-items: center;
-	text-align: center;
+.usermade-trivia-title {
+	margin-top: 5%;
+	font-size: 18px;
 }
-.usertrivia-text {
-	border: 4px solid #12c2e9;
-	width: 400px;
-	border-radius: 20px;
-	margin-top: 90px;
-	padding: 7px;
-	margin-left: 35%;
+.usermade-trivia-text {
+	margin-top: 4%;
 }
 
 /* Searchbar */

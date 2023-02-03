@@ -183,11 +183,41 @@ def seed_trivias():
       question="Who was named Sexiest Man Alive in 2003 by People Magazine?", correct_answer="Jude Law", incorrect_answer1="Johnny Depp", incorrect_answer2="Ben Affleck",incorrect_answer3="Brad Pitt", user_id=2, trivia_package_id=4 )
     trivia90 = Trivia(
       question="Which celebrity is known as Jenny from the block?", correct_answer="Jennifer Lopez", incorrect_answer1="Jennifer Aniston", incorrect_answer2="Jennifer Garner",incorrect_answer3="Jennifer Lawrence", user_id=2, trivia_package_id=4 )
+    trivia91 = Trivia(
+      question="How many SoulsBorne games are there?", correct_answer="6", incorrect_answer1="4", incorrect_answer2="3",incorrect_answer3="1", user_id=1, trivia_package_id=8 )
+    trivia92 = Trivia(
+      question="What is the newest From Software Game?", correct_answer="Elden Ring", incorrect_answer1="Kings Field", incorrect_answer2="Demon Souls",incorrect_answer3="Dark Souls 3", user_id=1, trivia_package_id=8 )
+    trivia93 = Trivia(
+      question="Who is the secret boss of Bloodborne?", correct_answer="Moon Presence", incorrect_answer1="Ludwig, Holy Blade", incorrect_answer2="Lady Maria",incorrect_answer3="The Doll", user_id=1, trivia_package_id=8 )
+    trivia94 = Trivia(
+      question="what are the two swords that you can get at the end of the game in demon souls?", correct_answer="demon brandt and soul brandt", incorrect_answer1="zwei hander and drake sword", incorrect_answer2="dragon sword and dragon king greataxe",incorrect_answer3="blade of mercy and boom hammer", user_id=1, trivia_package_id=8 )
+    trivia95 = Trivia(
+      question="Who is the character known as , SUNBRO", correct_answer="Solaire of Astora", incorrect_answer1="King Allant", incorrect_answer2="Ladder Smith Gilligan",incorrect_answer3="Nameless King", user_id=1, trivia_package_id=8 )
+    trivia96 = Trivia(
+      question="Who is the final boss of dark souls?", correct_answer="Gwyn", incorrect_answer1="Kalameet", incorrect_answer2="Soul of Cinder",incorrect_answer3="Gael", user_id=1, trivia_package_id=8 )
+    trivia97 = Trivia(
+      question="Who is the nameless king?", correct_answer="Faraam the God of War", incorrect_answer1="Solaire of Astora", incorrect_answer2="Ludwig, Holy Blade",incorrect_answer3="The Rock", user_id=1, trivia_package_id=8 )
+    trivia98 = Trivia(
+      question="which dragon is a boss?", correct_answer="midir", incorrect_answer1="hellkite", incorrect_answer2="gywn lefuire",incorrect_answer3="Jennifer Lawrence", user_id=1, trivia_package_id=8 )
+    trivia99 = Trivia(
+      question="who created the soulsborne series?", correct_answer="Hidetaka Miyazaki", incorrect_answer1="From Software", incorrect_answer2="Hayoa Miyizaki",incorrect_answer3="Studio Ghibli", user_id=1, trivia_package_id=8 )
+    trivia100 = Trivia(
+      question="Which ring boosts damage taken from enemy's and effects?", correct_answer="calamity ring", incorrect_answer1="havels ring", incorrect_answer2="witches ring",incorrect_answer3="blue tearstone ring", user_id=1, trivia_package_id=8 )
+    trivia101 = Trivia(
+      question="Where are you in Dar Souls?", correct_answer="lordran", incorrect_answer1="yharnam", incorrect_answer2="lothric",incorrect_answer3="smoldering lake", user_id=1, trivia_package_id=8 )
+    trivia102 = Trivia(
+      question="What anime heavily influenced dark souls?", correct_answer="Berserk", incorrect_answer1="Fairy Tale", incorrect_answer2="Naruto",incorrect_answer3="Black Butler", user_id=1, trivia_package_id=8 )
+    trivia103 = Trivia(
+      question="What game did the hollowslayer greatsword first appear in?", correct_answer="Dark Souls 2", incorrect_answer1="Dark Souls 3", incorrect_answer2="Demon Souls",incorrect_answer3="Dark Souls", user_id=1, trivia_package_id=8 )
+    trivia104 = Trivia(
+      question="What is the secret ending for Dark Souls?", correct_answer="Don't link the flame", incorrect_answer1="Link the flame", incorrect_answer2="You explode",incorrect_answer3="no secret ending", user_id=1, trivia_package_id=8 )
+    
+    
     
     db.session.add_all([trivia1,trivia2,trivia3,trivia4,trivia5,trivia6,trivia7,trivia8,trivia9,trivia10,trivia11,trivia12,trivia13,trivia14,trivia15,trivia16,trivia17,trivia18,trivia19,trivia20,trivia21,trivia22,trivia23,trivia24,trivia25,trivia26,trivia27,trivia28,trivia29,
         trivia30,trivia31,trivia32,trivia33,trivia34,trivia35,trivia36,trivia37,trivia38,trivia39,trivia40,trivia41,trivia42,trivia43,trivia44,trivia45,trivia46,trivia47,trivia48,trivia49,trivia50,trivia51,trivia52,trivia53,trivia54,trivia55,trivia56,trivia57,trivia58,trivia59,
         trivia60,trivia61,trivia62,trivia63,trivia64,trivia65,trivia66,trivia67,trivia68,trivia69,trivia70,trivia71,trivia72,trivia73,trivia74,trivia75,trivia76,trivia77,trivia78,trivia79,trivia80,trivia81,trivia82,trivia83,trivia84,trivia85,trivia86,trivia87,trivia88,trivia89,
-        trivia90])
+        trivia90,trivia91,trivia92,trivia93,trivia94,trivia95,trivia96,trivia97,trivia98,trivia99,trivia100,trivia101,trivia102,trivia103,trivia104])
 
     db.session.commit()
 
