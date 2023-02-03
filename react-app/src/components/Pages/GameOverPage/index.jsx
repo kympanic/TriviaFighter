@@ -5,6 +5,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import AddReviewModal from "../../Modals/AddReview/AddReviewModal";
 import { createGameDatasThunk } from "../../../store/gamedatas";
 import "./gameover.css";
+import ReactHowler from "react-howler";
 
 const GameOverPage = () => {
 	const location = useLocation();
@@ -17,6 +18,7 @@ const GameOverPage = () => {
 	const player2Data = location.state.player2Data;
 	const [isOpenAddReview, setIsOpenAddReview] = useState(false);
 	const [isOpenReviewBtn, setIsOpenReviewBtn] = useState(true);
+
 	let today = new Date();
 	let date =
 		today.getFullYear() +
@@ -25,11 +27,6 @@ const GameOverPage = () => {
 		"-" +
 		today.getDate();
 
-	// console.log(date, "this is the date");
-	// console.log(player1Data, player2Data);
-	console.log(triviaData, "wow");
-	// console.log(triviaData.results[0].triviaPackageId, "hmm?");
-	// console.log(winner, "THIS IS THE WINNER DATA");
 	const homeSubmit = async (e) => {
 		e.preventDefault();
 		const newGameData = {

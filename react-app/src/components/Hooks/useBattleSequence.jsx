@@ -101,6 +101,7 @@ export const useBattleSequence = (sequence) => {
 						setAnnouncerMessage(
 							`${attacker.name} hurt itself in its confusion!`
 						);
+						await wait(1000);
 						turn === 0
 							? setPlayer1Health((health) =>
 									health - damage > 0 ? health - damage : 0

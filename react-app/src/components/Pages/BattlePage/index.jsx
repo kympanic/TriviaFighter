@@ -9,6 +9,7 @@ import styles from "./styles.module.css";
 import { useBattleSequence } from "../../Hooks/useBattleSequence";
 import { useEffect } from "react";
 import { wait } from "../../Helpers";
+import ReactHowler from "react-howler";
 
 const BattlePage = () => {
 	const history = useHistory();
@@ -19,6 +20,10 @@ const BattlePage = () => {
 	const [sequence, setSequence] = useState({});
 	const [questionIndex, setQuestionIndex] = useState(0);
 	const [winner, setWinner] = useState();
+	const [playing, setPlaying] = useState(true);
+
+	const song =
+		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Cute_Background_Music_No_Copyright_(getmp3.pro).mp3";
 
 	const {
 		turn,
@@ -43,6 +48,7 @@ const BattlePage = () => {
 		if (player1Health === 0 || player2Health === 0) {
 			(async () => {
 				await wait(2000);
+				setPlaying(false);
 				setWinner(player1Health === 0 ? player2Data : player1Data);
 				history.push({
 					pathname: "/gameover",
@@ -62,6 +68,7 @@ const BattlePage = () => {
 	// console.log(player2Health, "this is the player 2 health");
 	return (
 		<div className="battlepage-main-container">
+			<ReactHowler playing={playing} src={[song]} />
 			<div className="player-container">
 				<div className="player1-summary">
 					<h2 className="playertitle-text">Player 1</h2>
