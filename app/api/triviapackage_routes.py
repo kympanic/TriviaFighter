@@ -2,7 +2,6 @@ from flask import Blueprint,request
 from ..models import TriviaPackage, db
 from app.forms import TriviaPackageForm
 from flask_login import login_required, current_user
-from app.s3_helpers import (upload_file_to_s3,allowed_file,get_unique_filename)
 from ..utils import Print
 triviapackage_routes = Blueprint('triviapackages', __name__)
 
