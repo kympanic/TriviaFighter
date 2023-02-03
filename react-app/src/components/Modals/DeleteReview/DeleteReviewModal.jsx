@@ -10,7 +10,7 @@ const DeleteReviewModal = ({ setIsOpen, review }) => {
 		e.preventDefault();
 		dispatch(deleteReviewThunk(review));
 		setIsOpen(false);
-		window.location.reload(false);
+		// window.location.reload(false);
 	};
 
 	return (
