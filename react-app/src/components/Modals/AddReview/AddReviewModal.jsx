@@ -46,8 +46,11 @@ const AddReviewModal = ({ setIsOpen, id, setIsOpenReviewBtn }) => {
 						<RiCloseLine style={{ marginBottom: "-3px" }} />
 					</button>
 					<div className={styles.modalContent}>
-						<form onSubmit={handleSubmit}>
-							<div className="errors-section">
+						<form
+							className={styles.addReviewForm}
+							onSubmit={handleSubmit}
+						>
+							<div className={styles.errors}>
 								{errors.map((error, ind) => (
 									<div className="error-body" key={ind}>
 										<ul>
@@ -58,10 +61,8 @@ const AddReviewModal = ({ setIsOpen, id, setIsOpenReviewBtn }) => {
 									</div>
 								))}
 							</div>
-							<div className={styles.inputBox}>
-								<label className={styles.inputLabel}>
-									Comment:{" "}
-								</label>
+							<div className={styles.inputGroup}>
+								<label>Comment:</label>
 								<input
 									className={styles.input}
 									type="text"
@@ -71,10 +72,8 @@ const AddReviewModal = ({ setIsOpen, id, setIsOpenReviewBtn }) => {
 									value={body}
 								/>
 							</div>
-							<div className={styles.inputBox}>
-								<label className={styles.inputLabel}>
-									Rating:{" "}
-								</label>
+							<div className={styles.inputGroup}>
+								<label>Rating:</label>
 								<select
 									className={styles.selectInput}
 									value={rating}

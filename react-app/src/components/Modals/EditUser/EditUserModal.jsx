@@ -7,7 +7,7 @@ import { editUserThunk } from "../../../store/users";
 const EditUserModal = ({ setIsOpen, sessionUser }) => {
 	const dispatch = useDispatch();
 	const [errors, setErrors] = useState([]);
-	const [username, setUsername] = useState(sessionUser.username);
+	const [username, setUsername] = useState("");
 	const [profileImg, setProfileImg] = useState("");
 
 	const handleSubmit = async (e) => {

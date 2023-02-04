@@ -52,6 +52,7 @@
 	border: none;
 	background-color: #f64f59;
 	color: white;
+	cursor: pointer;
 }
 
 .gamedata-close-btn:hover {

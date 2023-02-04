@@ -28,6 +28,7 @@
 	background-color: #f64f59;
 	color: white;
 	font-size: 30px;
+	cursor: pointer;
 }
 
 .triviapackage-profile-btn:hover {

@@ -14,13 +14,13 @@ const ReviewEditButtons = ({ sessionUser, review }) => {
 				className={styles.editBtn}
 				onClick={() => setIsOpenEditReview(true)}
 			>
-				Edit
+				EDIT
 			</button>
 			<button
 				className={styles.deleteBtn}
 				onClick={() => setIsOpenDeleteReview(true)}
 			>
-				Delete
+				DELETE
 			</button>
 			{isOpenDeleteReview && (
 				<DeleteReviewModal

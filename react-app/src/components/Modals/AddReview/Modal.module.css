@@ -6,12 +6,14 @@
 }
 
 .modal {
-	width: 500px;
-	height: 400px;
-	background-color: white;
+	margin-top: 50px;
+	width: 600px;
+	height: 620px;
+	background: white;
 	color: white;
-	z-index: 10;
-	border-radius: 16px;
+	position: relative;
+	z-index: 99;
+	border-radius: 30px;
 	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 1);
 }
 
@@ -28,20 +30,18 @@
 	padding: 10px;
 	color: #2c3e50;
 	font-weight: 500;
-	font-size: 18px;
+	font-size: 25px;
 	text-align: center;
 }
 
 .modalContent {
-	padding: 10px;
-	font-size: 14px;
-	color: #2c3e50;
+	height: 500px;
 	text-align: center;
+	background-color: #77dd77;
 	display: flex;
+	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-
-	height: 200px;
 }
 
 .modalActions {
@@ -89,15 +89,15 @@
 	border-radius: 12px;
 	font-size: 0.8rem;
 	border: none;
-	color: #fff;
-	background: #ff3e4e;
+	color: white;
+	background: #77dd77;
 	transition: all 0.25s ease;
 }
 
 .submitBtn:hover {
 	box-shadow: 0 10px 20px -10px rgba(255, 62, 78, 0.6);
 	transform: translateY(-5px);
-	background: #ff3e4e;
+	background: #77dd77;
 }
 
 .cancelBtn {
@@ -108,35 +108,90 @@
 	border-radius: 12px;
 	font-size: 0.8rem;
 	border: none;
-	color: #2c3e50;
-	background: #fcfcfc;
+	color: white;
+	background: #f64f59;
 	transition: all 0.25s ease;
+	margin-right: 50px;
 }
 
 .cancelBtn:hover {
-	box-shadow: none;
-	transform: none;
-	background: whitesmoke;
+	box-shadow: 0 10px 20px -10px rgba(255, 62, 78, 0.6);
+	transform: translateY(-5px);
 }
 
-.inputBox {
+.addReviewForm {
+	background: #fff;
+	border-radius: 15px;
+	max-width: 615px;
+	padding-bottom: 66px;
+	padding-top: 46px;
+	text-align: center;
+	width: 90%;
 	display: flex;
 	flex-direction: column;
-	background-color: white;
-	align-items: center;
+	height: 400px;
+	z-index: 3;
+	margin-top: 10%;
+	margin-bottom: 10%;
 }
-.inputLabel {
-	font-size: 20px;
+
+.inputGroup {
+	margin-bottom: 26px;
 }
-.input {
-	margin-top: 3%;
-	width: 100%;
-	height: 20px;
-	border: none;
-	border-bottom: 2px solid black;
+.inputGroup:nth-last-child(-n + 2) {
+	margin-bottom: 50px;
+}
+.inputGroup > label,
+.inputGroup > input {
+	font-family: "Roboto", sans-serif;
+	max-width: 420px;
+	text-align: left;
+	width: 80%;
+}
+.inputGroup > select {
+	font-family: "Roboto", sans-serif;
+	max-width: 450px;
+	text-align: left;
+	width: 80%;
+	background: #f2f2f5;
+	border-radius: 4px;
+	border: 1px solid #e5e5e5;
+	color: #676767;
+	font-size: 16px;
+	height: 30px;
+	outline: 0;
+	padding: 0 15px;
+	transition: all 0.3s;
+}
+
+.inputGroup > label {
+	color: #676767;
+	display: inline-block;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+.inputGroup > input {
+	background: #f2f2f5;
+	border-radius: 4px;
+	border: 1px solid #e5e5e5;
+	color: #676767;
+	font-size: 16px;
+	height: 30px;
+	outline: 0;
+	padding: 0 15px;
+	transition: all 0.3s;
+}
+.inputGroup > input:focus {
+	background: #fff;
+
+	border: 2px solid #12c2e9;
+}
+.inputGroup > input::placeholder {
+	color: #c4c4c4;
 	font-size: 16px;
 }
-.selectInput {
-	width: 100px;
-	text-align: center;
+
+.errors {
+	z-index: 5;
+	color: red;
 }

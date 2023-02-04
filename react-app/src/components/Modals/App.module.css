@@ -18,8 +18,8 @@
 }
 
 .editBtn {
-	width: 70px;
-	height: 70px;
+	width: 60px;
+	height: 60px;
 	border-radius: 50%;
 	border: none;
 	background-color: #c471ed;
@@ -32,8 +32,8 @@
 	transform: translate(-2px, 4px);
 }
 .deleteBtn {
-	width: 70px;
-	height: 70px;
+	width: 60px;
+	height: 60px;
 	border-radius: 50%;
 	border: none;
 	background-color: #f54f59;

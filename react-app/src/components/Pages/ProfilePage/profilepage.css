@@ -212,8 +212,8 @@
 }
 
 .trivia-add-btn {
-	width: 70px;
-	height: 70px;
+	width: 60px;
+	height: 60px;
 	border-radius: 50%;
 	border: none;
 	background-color: #77dd77;
@@ -227,8 +227,8 @@
 }
 
 .trivia-edit-btn {
-	width: 70px;
-	height: 70px;
+	width: 60px;
+	height: 60px;
 	border-radius: 50%;
 	border: none;
 	background-color: #c471ed;
@@ -242,8 +242,8 @@
 }
 
 .trivia-delete-btn {
-	width: 70px;
-	height: 70px;
+	width: 60px;
+	height: 60px;
 	border-radius: 50%;
 	border: none;
 	background-color: #f64f59;
@@ -272,6 +272,7 @@
 .profilepage-review-img {
 	height: 100px;
 	border-radius: 50%;
+	cursor: pointer;
 }
 
 .profilepage-review-img:hover {
@@ -353,4 +354,10 @@
 .no-packages-text {
 	color: white;
 	margin-top: 3%;
+}
+
+.review-triviapkg-title {
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 8px;
 }

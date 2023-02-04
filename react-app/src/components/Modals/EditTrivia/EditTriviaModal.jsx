@@ -57,8 +57,11 @@ const EditTriviaModal = ({ setIsOpen, trivia, sessionUser }) => {
 						<RiCloseLine style={{ marginBottom: "-3px" }} />
 					</button>
 					<div className={styles.modalContent}>
-						<form onSubmit={handleSubmit}>
-							<div className="errors-section">
+						<form
+							className={styles.editTriviaForm}
+							onSubmit={handleSubmit}
+						>
+							<div className={styles.errors}>
 								{errors.map((error, ind) => (
 									<div className="error-body" key={ind}>
 										<ul>
@@ -69,7 +72,7 @@ const EditTriviaModal = ({ setIsOpen, trivia, sessionUser }) => {
 									</div>
 								))}
 							</div>
-							<div>
+							<div className={styles.inputGroup}>
 								<label>Question: </label>
 								<input
 									type="text"
@@ -81,7 +84,7 @@ const EditTriviaModal = ({ setIsOpen, trivia, sessionUser }) => {
 									value={question}
 								/>
 							</div>
-							<div>
+							<div className={styles.inputGroup}>
 								<label>Correct Answer: </label>
 								<input
 									type="text"
@@ -93,7 +96,7 @@ const EditTriviaModal = ({ setIsOpen, trivia, sessionUser }) => {
 									value={correctAnswer}
 								/>
 							</div>
-							<div>
+							<div className={styles.inputGroup}>
 								<label>Incorrect Answer 1</label>
 								<input
 									type="text"
@@ -103,6 +106,8 @@ const EditTriviaModal = ({ setIsOpen, trivia, sessionUser }) => {
 										setIncorrectAnswer1(e.target.value)
 									}
 								/>
+							</div>
+							<div className={styles.inputGroup}>
 								<label>Incorrect Answer 2</label>
 								<input
 									type="text"
@@ -112,6 +117,8 @@ const EditTriviaModal = ({ setIsOpen, trivia, sessionUser }) => {
 										setIncorrectAnswer2(e.target.value)
 									}
 								/>
+							</div>
+							<div className={styles.inputGroup}>
 								<label>Incorrect Answer 3</label>
 								<input
 									type="text"
@@ -128,13 +135,13 @@ const EditTriviaModal = ({ setIsOpen, trivia, sessionUser }) => {
 										type="submit"
 										className={styles.submitBtn}
 									>
-										Yes
+										EDIT
 									</button>
 									<button
 										className={styles.cancelBtn}
 										onClick={() => setIsOpen(false)}
 									>
-										Cancel
+										CANCEL
 									</button>
 								</div>
 							</div>

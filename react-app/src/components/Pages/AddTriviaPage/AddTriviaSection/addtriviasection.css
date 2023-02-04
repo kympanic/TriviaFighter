@@ -40,8 +40,6 @@
 }
 
 .submit-button-container {
-	padding-top: 5%;
-
 	height: 70px;
 }
 
@@ -75,4 +73,8 @@
 
 .labels {
 	font-weight: bolder;
+}
+
+.errors-section {
+	color: red;
 }

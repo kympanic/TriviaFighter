@@ -1,6 +1,8 @@
 import { useHistory } from "react-router-dom";
 import { setDefaultTriviaImage } from "../../../Helpers";
 import ReviewEditButtons from "../Buttons/ReviewEditButtons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const ReviewSection = ({ review, sessionUser, id }) => {
 	const history = useHistory();
@@ -17,8 +19,16 @@ const ReviewSection = ({ review, sessionUser, id }) => {
 					onError={setDefaultTriviaImage}
 					className="profilepage-review-img"
 				/>
-				<p>{review.trivia_package.name}</p>
-				<p>rating: {review.rating}</p>
+				<p className="review-triviapkg-title">
+					{review.trivia_package.name}
+				</p>
+				<p>
+					rating: {review.rating}
+					<FontAwesomeIcon
+						className="header-star-icon"
+						icon={faStar}
+					/>
+				</p>
 			</div>
 			<div className="profilepage-comments-body">
 				<p id="profilepage-comment">{review.body}</p>

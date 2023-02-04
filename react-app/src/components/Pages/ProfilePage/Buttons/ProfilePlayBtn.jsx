@@ -26,7 +26,7 @@ const ProfilePlayBtn = ({ trivias }) => {
 		<div>
 			{triviaData && (
 				<button className="play-btn" onClick={handleSubmit}>
-					Play
+					PLAY
 				</button>
 			)}
 		</div>

@@ -34,9 +34,7 @@ const EditReviewModal = ({ setIsOpen, review, sessionUser }) => {
 			<div className={styles.centered}>
 				<div className={styles.modal}>
 					<div className={styles.modalHeader}>
-						<h5 className={styles.heading}>
-							Change your mind? Edit Your Review!
-						</h5>
+						<h5 className={styles.heading}>EDIT REVIEW</h5>
 					</div>
 					<button
 						className={styles.closeBtn}
@@ -45,8 +43,11 @@ const EditReviewModal = ({ setIsOpen, review, sessionUser }) => {
 						<RiCloseLine style={{ marginBottom: "-3px" }} />
 					</button>
 					<div className={styles.modalContent}>
-						<form onSubmit={handleSubmit}>
-							<div className="errors-section">
+						<form
+							className={styles.editReviewForm}
+							onSubmit={handleSubmit}
+						>
+							<div className={styles.errors}>
 								{errors.map((error, ind) => (
 									<div className="error-body" key={ind}>
 										<ul>
@@ -57,7 +58,7 @@ const EditReviewModal = ({ setIsOpen, review, sessionUser }) => {
 									</div>
 								))}
 							</div>
-							<div>
+							<div className={styles.inputGroup}>
 								<label>Comment: </label>
 								<input
 									type="text"
@@ -67,7 +68,7 @@ const EditReviewModal = ({ setIsOpen, review, sessionUser }) => {
 									value={body}
 								/>
 							</div>
-							<div>
+							<div className={styles.inputGroup}>
 								<label>Rating: </label>
 								<select
 									value={rating}
