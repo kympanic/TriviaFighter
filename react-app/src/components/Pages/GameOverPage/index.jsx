@@ -5,7 +5,6 @@ import { useHistory, useLocation } from "react-router-dom";
 import AddReviewModal from "../../Modals/AddReview/AddReviewModal";
 import { createGameDatasThunk } from "../../../store/gamedatas";
 import "./gameover.css";
-import ReactHowler from "react-howler";
 
 const GameOverPage = () => {
 	const location = useLocation();

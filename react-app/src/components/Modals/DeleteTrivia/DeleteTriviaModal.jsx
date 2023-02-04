@@ -19,7 +19,7 @@ const DeleteTriviaModal = ({ setIsOpen, trivia }) => {
 				<div className={styles.modal}>
 					<div className={styles.modalHeader}>
 						<h5 className={styles.heading}>
-							Delete Trivia Question Confirmation
+							DELETE TRIVIA CONFIRMATION
 						</h5>
 					</div>
 					<button
@@ -29,7 +29,6 @@ const DeleteTriviaModal = ({ setIsOpen, trivia }) => {
 						<RiCloseLine style={{ marginBottom: "-3px" }} />
 					</button>
 					<div className={styles.modalContent}>
-						Are you sure you want to delete this question?
 						<p>{trivia.question}</p>
 					</div>
 					<div className={styles.modalActions}>

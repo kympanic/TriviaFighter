@@ -19,7 +19,7 @@ const DeleteReviewModal = ({ setIsOpen, review }) => {
 				<div className={styles.modal}>
 					<div className={styles.modalHeader}>
 						<h5 className={styles.heading}>
-							Delete Trivia Question Confirmation
+							DELETE REVIEW CONFIRMATION
 						</h5>
 					</div>
 					<button
@@ -29,8 +29,7 @@ const DeleteReviewModal = ({ setIsOpen, review }) => {
 						<RiCloseLine style={{ marginBottom: "-3px" }} />
 					</button>
 					<div className={styles.modalContent}>
-						Are you sure you want to delete this review?
-						<p>{review.body}</p>
+						<p className={styles.reviewText}>{review.body}</p>
 					</div>
 					<div className={styles.modalActions}>
 						<div className={styles.actionsContainer}>
@@ -38,13 +37,13 @@ const DeleteReviewModal = ({ setIsOpen, review }) => {
 								className={styles.submitBtn}
 								onClick={handleSubmit}
 							>
-								Submit
+								DELETE
 							</button>
 							<button
 								className={styles.cancelBtn}
 								onClick={() => setIsOpen(false)}
 							>
-								Cancel
+								CANCEL
 							</button>
 						</div>
 					</div>

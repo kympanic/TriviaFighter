@@ -193,6 +193,7 @@
 	border: none;
 	background-color: darkblue;
 	color: white;
+	cursor: pointer;
 }
 
 .select-char-btn:active {
@@ -208,6 +209,7 @@
 	border: none;
 	background-color: darkred;
 	color: white;
+	cursor: pointer;
 }
 
 .select-char-btn2:active {

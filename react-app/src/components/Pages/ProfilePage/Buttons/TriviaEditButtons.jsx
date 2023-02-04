@@ -22,19 +22,19 @@ const TriviaEditButtons = ({ sessionUser, triviapackage }) => {
 					})
 				}
 			>
-				Add Trivia
+				TRIVIA
 			</button>
 			<button
 				className="trivia-edit-btn"
 				onClick={() => setIsOpenEditTriviaPackage(true)}
 			>
-				Edit
+				EDIT
 			</button>
 			<button
 				className="trivia-delete-btn"
 				onClick={() => setIsOpenDeleteTriviaPackage(true)}
 			>
-				Delete
+				DELETE
 			</button>
 			{isOpenDeleteTriviaPackage && (
 				<DeleteTriviaPackageModal

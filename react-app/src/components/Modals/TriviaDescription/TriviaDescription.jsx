@@ -27,7 +27,7 @@ const TriviaDescription = ({ setIsOpen, triviapackage }) => {
 								className={styles.cancelBtn}
 								onClick={() => setIsOpen(false)}
 							>
-								Close
+								CLOSE
 							</button>
 						</div>
 					</div>

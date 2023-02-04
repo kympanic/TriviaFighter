@@ -1,33 +1,30 @@
 import styles from "./Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { createReviewThunk } from "../../../store/reviews";
+import { useDispatch } from "react-redux";
+import { editUserThunk } from "../../../store/users";
 
-const AddReviewModal = ({ setIsOpen, id, setIsOpenReviewBtn }) => {
+const EditUserModal = ({ setIsOpen, sessionUser }) => {
 	const dispatch = useDispatch();
-	const sessionUserId = useSelector((state) => state.session.user.id);
-
 	const [errors, setErrors] = useState([]);
-	const [body, setBody] = useState("");
-	const [rating, setRating] = useState("");
+	const [username, setUsername] = useState("");
+	const [profileImg, setProfileImg] = useState("");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const newReview = {
-			user_id: sessionUserId,
-			body,
-			rating,
-			trivia_package_id: id,
+		const editedUser = {
+			id: sessionUser.id,
+			username,
+			email: sessionUser.email,
+			profile_img: profileImg,
 		};
+		const data = await dispatch(editUserThunk(editedUser));
 
-		const data = await dispatch(createReviewThunk(newReview));
 		if (data) {
 			setErrors(data);
 		} else {
 			setIsOpen(false);
-			setIsOpenReviewBtn(false);
 		}
 	};
 
@@ -37,7 +34,7 @@ const AddReviewModal = ({ setIsOpen, id, setIsOpenReviewBtn }) => {
 			<div className={styles.centered}>
 				<div className={styles.modal}>
 					<div className={styles.modalHeader}>
-						<h5 className={styles.heading}>Add a Review!</h5>
+						<h5 className={styles.heading}>EDIT YOUR INFO</h5>
 					</div>
 					<button
 						className={styles.closeBtn}
@@ -47,7 +44,7 @@ const AddReviewModal = ({ setIsOpen, id, setIsOpenReviewBtn }) => {
 					</button>
 					<div className={styles.modalContent}>
 						<form
-							className={styles.addReviewForm}
+							className={styles.editUserForm}
 							onSubmit={handleSubmit}
 						>
 							<div className={styles.errors}>
@@ -62,34 +59,27 @@ const AddReviewModal = ({ setIsOpen, id, setIsOpenReviewBtn }) => {
 								))}
 							</div>
 							<div className={styles.inputGroup}>
-								<label>Comment:</label>
+								<label>USERNAME </label>
 								<input
-									className={styles.input}
 									type="text"
-									name="body"
-									onChange={(e) => setBody(e.target.value)}
-									maxLength={200}
-									value={body}
+									name="username"
+									onChange={(e) =>
+										setUsername(e.target.value)
+									}
+									maxLength={30}
+									value={username}
 								/>
 							</div>
 							<div className={styles.inputGroup}>
-								<label>Rating:</label>
-								<select
-									className={styles.selectInput}
-									value={rating}
-									onChange={(e) => setRating(e.target.value)}
-								>
-									<option value="--">--</option>
-									<option value="1.0">1.0</option>
-									<option value="1.5">1.5</option>
-									<option value="2.0">2.0</option>
-									<option value="2.5">2.5</option>
-									<option value="3.0">3.0</option>
-									<option value="3.5">3.5</option>
-									<option value="4.0">4.0</option>
-									<option value="4.5">4.5</option>
-									<option value="5.0">5.0</option>
-								</select>
+								<label>PROFILE IMAGE URL </label>
+								<input
+									type="url"
+									name="profileImg"
+									onChange={(e) =>
+										setProfileImg(e.target.value)
+									}
+									placeholder="https://example.com"
+								></input>
 							</div>
 							<div className={styles.modalActions}>
 								<div className={styles.actionsContainer}>
@@ -97,14 +87,13 @@ const AddReviewModal = ({ setIsOpen, id, setIsOpenReviewBtn }) => {
 										type="submit"
 										className={styles.submitBtn}
 									>
-										Yes
+										EDIT
 									</button>
-									{/* {imageLoading && <p>Loading...</p>} */}
 									<button
 										className={styles.cancelBtn}
 										onClick={() => setIsOpen(false)}
 									>
-										Cancel
+										CANCEL
 									</button>
 								</div>
 							</div>
@@ -116,4 +105,4 @@ const AddReviewModal = ({ setIsOpen, id, setIsOpenReviewBtn }) => {
 	);
 };
 
-export default AddReviewModal;
+export default EditUserModal;

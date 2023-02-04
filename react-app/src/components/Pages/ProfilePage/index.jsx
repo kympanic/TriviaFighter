@@ -44,6 +44,7 @@ const ProfilePage = () => {
 					<ProfileCard
 						profileUser={profileUser}
 						triviapackages={profileTriviaPackages}
+						sessionUser={sessionUser}
 					/>
 					<GameHistory
 						gameDatas={gameDatas}

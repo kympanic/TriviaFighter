@@ -40,9 +40,7 @@ const EditTriviaPackageModal = ({ setIsOpen, triviapackage, sessionUser }) => {
 			<div className={styles.centered}>
 				<div className={styles.modal}>
 					<div className={styles.modalHeader}>
-						<h5 className={styles.heading}>
-							Edit Your Trivia Package!
-						</h5>
+						<h5 className={styles.heading}>EDIT TRIVIA PACKAGE</h5>
 					</div>
 					<button
 						className={styles.closeBtn}
@@ -51,8 +49,11 @@ const EditTriviaPackageModal = ({ setIsOpen, triviapackage, sessionUser }) => {
 						<RiCloseLine style={{ marginBottom: "-3px" }} />
 					</button>
 					<div className={styles.modalContent}>
-						<form onSubmit={handleSubmit}>
-							<div className="errors-section">
+						<form
+							className={styles.editTriviaPackageForm}
+							onSubmit={handleSubmit}
+						>
+							<div className={styles.errors}>
 								{errors.map((error, ind) => (
 									<div className="error-body" key={ind}>
 										<ul>
@@ -63,7 +64,7 @@ const EditTriviaPackageModal = ({ setIsOpen, triviapackage, sessionUser }) => {
 									</div>
 								))}
 							</div>
-							<div>
+							<div className={styles.inputGroup}>
 								<label>Name: </label>
 								<input
 									type="text"
@@ -76,7 +77,29 @@ const EditTriviaPackageModal = ({ setIsOpen, triviapackage, sessionUser }) => {
 									value={packageName}
 								/>
 							</div>
-							<div>
+							<div className={styles.inputGroup}>
+								<label>Description: </label>
+								<input
+									type="text"
+									name="description"
+									onChange={(e) =>
+										setDescription(e.target.value)
+									}
+									value={description}
+								></input>
+							</div>
+							<div className={styles.inputGroup}>
+								<label>Package Image Url: </label>
+								<input
+									type="url"
+									name="imageUrl"
+									onChange={(e) =>
+										setImageUrl(e.target.value)
+									}
+									placeholder="https://example.com"
+								></input>
+							</div>
+							<div className={styles.inputGroup}>
 								<label>Category: </label>
 								<select
 									onChange={(e) =>
@@ -102,7 +125,7 @@ const EditTriviaPackageModal = ({ setIsOpen, triviapackage, sessionUser }) => {
 									<option value="Animals">Animals</option>
 								</select>
 							</div>
-							<div>
+							<div className={styles.inputGroup}>
 								<label>Difficulty: </label>
 								<select
 									onChange={(e) =>
@@ -116,42 +139,19 @@ const EditTriviaPackageModal = ({ setIsOpen, triviapackage, sessionUser }) => {
 									<option value="hard">HARD</option>
 								</select>
 							</div>
-							<div>
-								<label>Description: </label>
-								<textarea
-									name="description"
-									rows="4"
-									cols="50"
-									onChange={(e) =>
-										setDescription(e.target.value)
-									}
-									value={description}
-								></textarea>
-							</div>
-							<div>
-								<label>Package Image Url: </label>
-								<input
-									type="url"
-									name="imageUrl"
-									onChange={(e) =>
-										setImageUrl(e.target.value)
-									}
-									placeholder="https://example.com"
-								></input>
-							</div>
 							<div className={styles.modalActions}>
 								<div className={styles.actionsContainer}>
 									<button
 										type="submit"
 										className={styles.submitBtn}
 									>
-										Yes
+										EDIT
 									</button>
 									<button
 										className={styles.cancelBtn}
 										onClick={() => setIsOpen(false)}
 									>
-										Cancel
+										CANCEL
 									</button>
 								</div>
 							</div>
