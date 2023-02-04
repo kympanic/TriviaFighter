@@ -31,7 +31,7 @@ const TriviaMenu = () => {
 	//celebrities - 26
 	//animals -27
 
-	const premadeCategories = [9, 14, 15, 21, 23, 26, 27];
+	const premadeCategories = [9, 14, 15, 21, 23, 27];
 
 	return (
 		<div className="main-trivia-container">

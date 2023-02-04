@@ -10,16 +10,14 @@ def seed_trivia_packages():
     triviapackage3 = TriviaPackage(
         name="History", category="History", description="Refresh your grade school history knowledge!", difficulty="Easy", user_id=1, image_url="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/historycaesar.jpg" )
     triviapackage4 = TriviaPackage(
-        name="Paparazzi", category="Celebrities", description="Easy random trivia about celebrities. MOOOOO", difficulty="Easy", user_id=2, image_url="" )
-    triviapackage5 = TriviaPackage(
         name="TV? MOOOO", category="Entertainment: Television", description="Normal level trivia for every tv enthusiast", difficulty="Medium", user_id=2, image_url="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/television.jpg" )
-    triviapackage6 = TriviaPackage(
+    triviapackage5 = TriviaPackage(
         name="Player 1 Ready", category="Entertainment: Video Games", description="Only for the hardcore gamer", difficulty="Hard", user_id=3, image_url="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/videogamefatcat.jpg" )
-    triviapackage7 = TriviaPackage(
+    triviapackage6 = TriviaPackage(
         name="Everyone and Everything", category="General Knowledge", description="Lets get it! How much do you actually know?", difficulty="Easy", user_id=3, image_url="" )
-    triviapackage8 = TriviaPackage(name="PRAISE THE SUN", category="Entertainment: Video Games", description="PRAISE THE SUN", difficulty="Medium", user_id=1, image_url="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Praisethesun.jpeg")
+    triviapackage7 = TriviaPackage(name="PRAISE THE SUN", category="Entertainment: Video Games", description="PRAISE THE SUN", difficulty="Medium", user_id=1, image_url="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Praisethesun.jpeg")
     
-    db.session.add_all([triviapackage1,triviapackage2,triviapackage3,triviapackage4,triviapackage5,triviapackage6,triviapackage7,triviapackage8])
+    db.session.add_all([triviapackage1,triviapackage2,triviapackage3,triviapackage4,triviapackage5,triviapackage6,triviapackage7])
 
     db.session.commit()
 

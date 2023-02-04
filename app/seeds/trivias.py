@@ -72,152 +72,124 @@ def seed_trivias():
     trivia34 = Trivia(
       question="What is the most common type of pitch thrown by pitchers in baseball?", correct_answer="Fastball", incorrect_answer1="Slowball", incorrect_answer2="Screwball",incorrect_answer3="Palmball", user_id=1, trivia_package_id=1 )
     trivia35 = Trivia(
-      question="By what name is Carlos Estevez better known? ", correct_answer="Charlie Sheen", incorrect_answer1="Ricky Martin", incorrect_answer2="Bruno Mars",incorrect_answer3="Joaquin Phoenix", user_id=2, trivia_package_id=4 )
+      question="From what show is the character James Doakes? ", correct_answer="Dexter", incorrect_answer1="Marvel's Daredevil", incorrect_answer2="Boardwalk Empire",incorrect_answer3="The Walking Dead", user_id=2, trivia_package_id=4 )
     trivia36 = Trivia(
-      question="Gwyneth Paltrow has a daughter named...?", correct_answer="Apple", incorrect_answer1="Lily", incorrect_answer2="French",incorrect_answer3="Dakota", user_id=2, trivia_package_id=4 )
+      question="In which year did the British television series The Bill end?", correct_answer="2010", incorrect_answer1="2001", incorrect_answer2="2018",incorrect_answer3="2005", user_id=2, trivia_package_id=4 )
     trivia37 = Trivia(
-      question="Neil Hamburger is played by which comedian?", correct_answer="Gregg Turkington", incorrect_answer1="Tim Heidecker", incorrect_answer2="Nathan Fielder",incorrect_answer3="Todd Glass", user_id=2, trivia_package_id=4 )
+      question="In Game of Thrones what is the name of Jon Snow's sword?", correct_answer="Longclaw", incorrect_answer1="Oathkeeper", incorrect_answer2="Widow's Wail",incorrect_answer3="Needle", user_id=2, trivia_package_id=4 )
     trivia38 = Trivia(
-      question="Which celebrity announced his presidency in 2015?", correct_answer="KanyeWest", incorrect_answer1="Leonardo Dicaprio", incorrect_answer2="Donald Trump",incorrect_answer3="Miley Cyrus", user_id=2, trivia_package_id=4 )
+      question="The 1985 Toyota Corolla AE86 was the hero car for what anime? ", correct_answer="Initial D", incorrect_answer1="Wangan Midnight", incorrect_answer2="Ghost in the Shell",incorrect_answer3="Ex Driver", user_id=2, trivia_package_id=4 )
     trivia39 = Trivia(
-      question="What was James Coburn's last film role before his death?", correct_answer="American Gun", incorrect_answer1="Monsters Inc", incorrect_answer2="Texas Rangers",incorrect_answer3="Snow Dogs", user_id=2, trivia_package_id=4 )
+      question="What is the name of the Flash Arrow spinoff featuring a team of characters that have appeared on both shows?", correct_answer="Legends of Tomorrow", incorrect_answer1="Heroes", incorrect_answer2="The Justice Society",incorrect_answer3="Arrow and Flash", user_id=2, trivia_package_id=4 )
     trivia40 = Trivia(
-      question="Which actress married Michael Douglas in 2000?", correct_answer="Catherine Zeta-Jones", incorrect_answer1="Ruth Jones", incorrect_answer2="Pam Ferris",incorrect_answer3="Sara Sugarman", user_id=2, trivia_package_id=4 )
+      question="Cesar Romero played which iconic Batman villain from the 1960's TV show?", correct_answer="The Joker", incorrect_answer1="The Penguin", incorrect_answer2="The Riddler",incorrect_answer3="Mr. Freeze", user_id=2, trivia_package_id=4 )
     trivia41 = Trivia(
-      question="What was the cause of Marilyn Monroes suicide?", correct_answer="Drug Overdose", incorrect_answer1="Knife Attack", incorrect_answer2="House Fire",incorrect_answer3="Gunshot", user_id=2, trivia_package_id=4 )
+      question="What is the surname of the character Daryl in AMC's show The Walking Dead?", correct_answer="Dixon", incorrect_answer1="Grimes", incorrect_answer2="Dickinson",incorrect_answer3="Dickerson", user_id=2, trivia_package_id=4 )
     trivia42 = Trivia(
-      question="Aubrey Graham is better known as", correct_answer="Drake", incorrect_answer1="Travis Scott", incorrect_answer2="Lil Wayne",incorrect_answer3="2 Chainz", user_id=2, trivia_package_id=4 )
+      question="Which WWF wrestler had the nickname The Ayatollah of Rock N Roll?", correct_answer="Chris Jericho", incorrect_answer1="Marty Jannetty", incorrect_answer2="Scott Hall",incorrect_answer3="Shawn Michaels", user_id=2, trivia_package_id=4 )
     trivia43 = Trivia(
-      question="What is the name of the ski resort in Utah that Robert Redford bought in 1968?", correct_answer="Sundance", incorrect_answer1="Woodward", incorrect_answer2="Turner",incorrect_answer3="Booker", user_id=2, trivia_package_id=4 )
+      question="Which character does voice actress Tara Strong NOT voice?", correct_answer="Bubbles (2016)", incorrect_answer1="Twilight Sparkle", incorrect_answer2="Timmy Turner",incorrect_answer3="Harley Quinn", user_id=2, trivia_package_id=4 )
     trivia44 = Trivia(
-      question="By which name is Ramon Estevez better known as?", correct_answer="Martin Sheen", incorrect_answer1="Charlie Sheen", incorrect_answer2="Ramon Sheen",incorrect_answer3="Emilio Estevez", user_id=2, trivia_package_id=4 )
+      question="Alan Reed is known for providing the voice of which character?", correct_answer="Fred Flintstone", incorrect_answer1="Bugs Bunny", incorrect_answer2="Fangface",incorrect_answer3="G.I. Joe", user_id=2, trivia_package_id=4 )
     trivia45 = Trivia(
-      question="What does film maker Dan Bell typically focus his films on?", correct_answer="Abandoned Buildings and Dead Malls", incorrect_answer1="Historic Landmarks", incorrect_answer2="Action Films",incorrect_answer3="Documentaries", user_id=2, trivia_package_id=4 )
+      question="Which of the following Autobot names in Michael Bay's movies was NOT a name for a Transformer in the original 1980's cartoon?", correct_answer="Mudflap", incorrect_answer1="Skids", incorrect_answer2="Sideswipe",incorrect_answer3="Ratchet", user_id=2, trivia_package_id=4 )
     trivia46 = Trivia(
-      question="Who voices Shrek?", correct_answer="Michael Myers", incorrect_answer1="Eddie Murphy", incorrect_answer2="Will Smith",incorrect_answer3="Tom Hanks", user_id=2, trivia_package_id=4 )
+      question="In The Big Bang Theory, what is Howard Wolowitz's nickname in World of Warcraft?", correct_answer="Wolowizard", incorrect_answer1="Sheldor", incorrect_answer2="Rajesh",incorrect_answer3="Priya", user_id=2, trivia_package_id=4 )
     trivia47 = Trivia(
-      question="From what show is the character James Doakes? ", correct_answer="Dexter", incorrect_answer1="Marvel's Daredevil", incorrect_answer2="Boardwalk Empire",incorrect_answer3="The Walking Dead", user_id=2, trivia_package_id=5 )
+      question="Which of these television shows makes everyone look under their chair?", correct_answer="Oprah", incorrect_answer1="Jimmy Fallon", incorrect_answer2="Saturday Night Live",incorrect_answer3="Dr. Phil", user_id=2, trivia_package_id=4 )
     trivia48 = Trivia(
-      question="In which year did the British television series The Bill end?", correct_answer="2010", incorrect_answer1="2001", incorrect_answer2="2018",incorrect_answer3="2005", user_id=2, trivia_package_id=5 )
+      question="In the episode of SpongeBob SquarePants,Survival of the Idiots, Spongebob called Patrick which nickname?", correct_answer="Pinhead", incorrect_answer1="Starfish", incorrect_answer2="Larry",incorrect_answer3="Dirty Dan", user_id=2, trivia_package_id=4 )
     trivia49 = Trivia(
-      question="In Game of Thrones what is the name of Jon Snow's sword?", correct_answer="Longclaw", incorrect_answer1="Oathkeeper", incorrect_answer2="Widow's Wail",incorrect_answer3="Needle", user_id=2, trivia_package_id=5 )
+      question="Which one of the following titles by Valve is not based on a Community Mod?", correct_answer="Ricochet", incorrect_answer1="Day of Defeat", incorrect_answer2="Counter-Strike",incorrect_answer3="Alien Swarm", user_id=3, trivia_package_id=5 )
     trivia50 = Trivia(
-      question="The 1985 Toyota Corolla AE86 was the hero car for what anime? ", correct_answer="Initial D", incorrect_answer1="Wangan Midnight", incorrect_answer2="Ghost in the Shell",incorrect_answer3="Ex Driver", user_id=2, trivia_package_id=5 )
+      question="When was Steam first released?", correct_answer="2003", incorrect_answer1="2000", incorrect_answer2="2010",incorrect_answer3="2012", user_id=3, trivia_package_id=5 )
     trivia51 = Trivia(
-      question="What is the name of the Flash Arrow spinoff featuring a team of characters that have appeared on both shows?", correct_answer="Legends of Tomorrow", incorrect_answer1="Heroes", incorrect_answer2="The Justice Society",incorrect_answer3="Arrow and Flash", user_id=2, trivia_package_id=5 )
+      question="What Pokemon's Base Stat Total does not change when it evolves?", correct_answer="Scyther", incorrect_answer1="Pikachu", incorrect_answer2="Sneasel",incorrect_answer3="Larvesta", user_id=3, trivia_package_id=5 )
     trivia52 = Trivia(
-      question="Cesar Romero played which iconic Batman villain from the 1960's TV show?", correct_answer="The Joker", incorrect_answer1="The Penguin", incorrect_answer2="The Riddler",incorrect_answer3="Mr. Freeze", user_id=2, trivia_package_id=5 )
+      question="How long are all the cutscenes from Metal Gear Solid 4 (PS3, 2008) combined?", correct_answer="8 hours", incorrect_answer1="2 hours", incorrect_answer2="5 hours",incorrect_answer3="30 hours", user_id=3, trivia_package_id=5 )
     trivia53 = Trivia(
-      question="What is the surname of the character Daryl in AMC's show The Walking Dead?", correct_answer="Dixon", incorrect_answer1="Grimes", incorrect_answer2="Dickinson",incorrect_answer3="Dickerson", user_id=2, trivia_package_id=5 )
+      question="In the Call Of Duty: Zombies; map Origins, where is Stamin-Up, located?", correct_answer="Generator 5", incorrect_answer1="Weapon Cache", incorrect_answer2="Control Room",incorrect_answer3="Excavation Site", user_id=3, trivia_package_id=5 )
     trivia54 = Trivia(
-      question="Which WWF wrestler had the nickname The Ayatollah of Rock N Roll?", correct_answer="Chris Jericho", incorrect_answer1="Marty Jannetty", incorrect_answer2="Scott Hall",incorrect_answer3="Shawn Michaels", user_id=2, trivia_package_id=5 )
+      question="Which of these characters was considered, but ultimately not included, for Super Smash Bros. Melee?", correct_answer="James Bond", incorrect_answer1="Diddy Kong", incorrect_answer2="Megaman",incorrect_answer3="Wave Racer", user_id=3, trivia_package_id=5 )
     trivia55 = Trivia(
-      question="Which character does voice actress Tara Strong NOT voice?", correct_answer="Bubbles (2016)", incorrect_answer1="Twilight Sparkle", incorrect_answer2="Timmy Turner",incorrect_answer3="Harley Quinn", user_id=2, trivia_package_id=5 )
+      question="Which of these Generation 1 Pokemon did NOT have an evolution in Generation 4?", correct_answer="Jynx", incorrect_answer1="Electabuzz", incorrect_answer2="Magmar",incorrect_answer3="Rhydon", user_id=3, trivia_package_id=5 )
     trivia56 = Trivia(
-      question="Alan Reed is known for providing the voice of which character?", correct_answer="Fred Flintstone", incorrect_answer1="Bugs Bunny", incorrect_answer2="Fangface",incorrect_answer3="G.I. Joe", user_id=2, trivia_package_id=5 )
+      question="Before he was a cop, what occupation was John Tanner, the main protagonist for Driver and Driver 2?", correct_answer="Racing Driver", incorrect_answer1="Taxi Driver", incorrect_answer2="Delivery Driver",incorrect_answer3="Getaway Driver", user_id=3, trivia_package_id=5 )
     trivia57 = Trivia(
-      question="Which of the following Autobot names in Michael Bay's movies was NOT a name for a Transformer in the original 1980's cartoon?", correct_answer="Mudflap", incorrect_answer1="Skids", incorrect_answer2="Sideswipe",incorrect_answer3="Ratchet", user_id=2, trivia_package_id=5 )
+      question="Which character, in the game Morenatsu, has the most possible endings to their route?", correct_answer="Shin Kuroi", incorrect_answer1="Kouya Aotsuki", incorrect_answer2="Soutarou Touno",incorrect_answer3="Torahiko Ooshima", user_id=3, trivia_package_id=5 )
     trivia58 = Trivia(
-      question="In The Big Bang Theory, what is Howard Wolowitz's nickname in World of Warcraft?", correct_answer="Wolowizard", incorrect_answer1="Sheldor", incorrect_answer2="Rajesh",incorrect_answer3="Priya", user_id=2, trivia_package_id=5 )
+      question="What device allows Tracer to manipulate her own time in the game Overwatch?", correct_answer="Chronal Accelerator", incorrect_answer1="B.L.I.N.K.", incorrect_answer2="Spacial Displacement Teleporter",incorrect_answer3="TMD", user_id=3, trivia_package_id=5 )
     trivia59 = Trivia(
-      question="Which of these television shows makes everyone look under their chair?", correct_answer="Oprah", incorrect_answer1="Jimmy Fallon", incorrect_answer2="Saturday Night Live",incorrect_answer3="Dr. Phil", user_id=2, trivia_package_id=5 )
+      question="Which of these characters in Undertale can the player NOT go on a date with?", correct_answer="Toriel", incorrect_answer1="Papyrus", incorrect_answer2="Undyne",incorrect_answer3="Alphys", user_id=3, trivia_package_id=5 )
     trivia60 = Trivia(
-      question="In the episode of SpongeBob SquarePants,Survival of the Idiots, Spongebob called Patrick which nickname?", correct_answer="Pinhead", incorrect_answer1="Starfish", incorrect_answer2="Larry",incorrect_answer3="Dirty Dan", user_id=2, trivia_package_id=5 )
+      question="In the Kingdom Hearts series, which is not an optional boss you can fight?", correct_answer="Master Yen Sid", incorrect_answer1="Sephiroth", incorrect_answer2="Julius",incorrect_answer3="Kurt Zisa", user_id=3, trivia_package_id=5 )
     trivia61 = Trivia(
-      question="Which one of the following titles by Valve is not based on a Community Mod?", correct_answer="Ricochet", incorrect_answer1="Day of Defeat", incorrect_answer2="Counter-Strike",incorrect_answer3="Alien Swarm", user_id=3, trivia_package_id=6 )
+      question="In World of Warcraft lore, who organized the creation of the Paladins?", correct_answer="Alonsus Faol", incorrect_answer1="Uther the Lightbringer", incorrect_answer2="Alexandro Mograine",incorrect_answer3="Sargeras, The Daemon Lord", user_id=3, trivia_package_id=5 )
     trivia62 = Trivia(
-      question="When was Steam first released?", correct_answer="2003", incorrect_answer1="2000", incorrect_answer2="2010",incorrect_answer3="2012", user_id=3, trivia_package_id=6 )
+      question="What is the name of the virus that infected New York in Tom Clancy's The Division?", correct_answer="Dollar Flu", incorrect_answer1="Ebola", incorrect_answer2="Red Poison",incorrect_answer3="Smallpox", user_id=3, trivia_package_id=5 )
     trivia63 = Trivia(
-      question="What Pokemon's Base Stat Total does not change when it evolves?", correct_answer="Scyther", incorrect_answer1="Pikachu", incorrect_answer2="Sneasel",incorrect_answer3="Larvesta", user_id=3, trivia_package_id=6 )
+      question="Area 51 is located in which US state?", correct_answer="Nevada", incorrect_answer1="Arizona", incorrect_answer2="New Mexico",incorrect_answer3="Utah", user_id=3, trivia_package_id=6 )
     trivia64 = Trivia(
-      question="How long are all the cutscenes from Metal Gear Solid 4 (PS3, 2008) combined?", correct_answer="8 hours", incorrect_answer1="2 hours", incorrect_answer2="5 hours",incorrect_answer3="30 hours", user_id=3, trivia_package_id=6 )
+      question="The Canadian $1 coin is colloquially known as a what?", correct_answer="Loonie", incorrect_answer1="Booolie", incorrect_answer2="Foolie",incorrect_answer3="Moodie", user_id=3, trivia_package_id=6 )
     trivia65 = Trivia(
-      question="In the Call Of Duty: Zombies; map Origins, where is Stamin-Up, located?", correct_answer="Generator 5", incorrect_answer1="Weapon Cache", incorrect_answer2="Control Room",incorrect_answer3="Excavation Site", user_id=3, trivia_package_id=6 )
+      question="What is on display in the Madame Tussaud's museum in London?", correct_answer="Wax Sculptures", incorrect_answer1="Designer clothing", incorrect_answer2="Unreleased film reels",incorrect_answer3="vintage cars", user_id=3, trivia_package_id=6 )
     trivia66 = Trivia(
-      question="Which of these characters was considered, but ultimately not included, for Super Smash Bros. Melee?", correct_answer="James Bond", incorrect_answer1="Diddy Kong", incorrect_answer2="Megaman",incorrect_answer3="Wave Racer", user_id=3, trivia_package_id=6 )
+      question="What zodiac sign is represented by a pair of scales?", correct_answer="Libra", incorrect_answer1="Aries", incorrect_answer2="Capricorn",incorrect_answer3="Sagittarius", user_id=3, trivia_package_id=6 )
     trivia67 = Trivia(
-      question="Which of these Generation 1 Pokemon did NOT have an evolution in Generation 4?", correct_answer="Jynx", incorrect_answer1="Electabuzz", incorrect_answer2="Magmar",incorrect_answer3="Rhydon", user_id=3, trivia_package_id=6 )
+      question="On a dartboard, what number is directly opposite No. 1?", correct_answer="19", incorrect_answer1="20", incorrect_answer2="12",incorrect_answer3="15", user_id=3, trivia_package_id=6 )
     trivia68 = Trivia(
-      question="Before he was a cop, what occupation was John Tanner, the main protagonist for Driver and Driver 2?", correct_answer="Racing Driver", incorrect_answer1="Taxi Driver", incorrect_answer2="Delivery Driver",incorrect_answer3="Getaway Driver", user_id=3, trivia_package_id=6 )
+      question="What was the name of the WWF professional wrestling tag team made up of the wrestlers Ax and Smash?", correct_answer="Demolition", incorrect_answer1="The Dream Team", incorrect_answer2="The Bushwackerse",incorrect_answer3="The British Bulldogs", user_id=3, trivia_package_id=6 )
     trivia69 = Trivia(
-      question="Which character, in the game Morenatsu, has the most possible endings to their route?", correct_answer="Shin Kuroi", incorrect_answer1="Kouya Aotsuki", incorrect_answer2="Soutarou Touno",incorrect_answer3="Torahiko Ooshima", user_id=3, trivia_package_id=6 )
+      question="If you are caught Goldbricking, what are you doing wrong?", correct_answer="Slacking", incorrect_answer1="Smoking", incorrect_answer2="Stealing",incorrect_answer3="Cheating", user_id=3, trivia_package_id=6 )
     trivia70 = Trivia(
-      question="What device allows Tracer to manipulate her own time in the game Overwatch?", correct_answer="Chronal Accelerator", incorrect_answer1="B.L.I.N.K.", incorrect_answer2="Spacial Displacement Teleporter",incorrect_answer3="TMD", user_id=3, trivia_package_id=6 )
+      question="What does a funambulist walk on?", correct_answer="A tight rope", incorrect_answer1="broken glass", incorrect_answer2="balls",incorrect_answer3="wires", user_id=3, trivia_package_id=6 )
     trivia71 = Trivia(
-      question="Which of these characters in Undertale can the player NOT go on a date with?", correct_answer="Toriel", incorrect_answer1="Papyrus", incorrect_answer2="Undyne",incorrect_answer3="Alphys", user_id=3, trivia_package_id=6 )
+      question="What is the Spanish word for donkey?", correct_answer="burro", incorrect_answer1="caballo", incorrect_answer2="toro",incorrect_answer3="pero", user_id=3, trivia_package_id=6 )
     trivia72 = Trivia(
-      question="In the Kingdom Hearts series, which is not an optional boss you can fight?", correct_answer="Master Yen Sid", incorrect_answer1="Sephiroth", incorrect_answer2="Julius",incorrect_answer3="Kurt Zisa", user_id=3, trivia_package_id=6 )
+      question="What machine element is located in the center of fidget spinners?", correct_answer="bearings", incorrect_answer1="axles", incorrect_answer2="gears",incorrect_answer3="belts", user_id=3, trivia_package_id=6 )
     trivia73 = Trivia(
-      question="In World of Warcraft lore, who organized the creation of the Paladins?", correct_answer="Alonsus Faol", incorrect_answer1="Uther the Lightbringer", incorrect_answer2="Alexandro Mograine",incorrect_answer3="Sargeras, The Daemon Lord", user_id=3, trivia_package_id=6 )
+      question="Who invented the first ever chocolate bar, in 1847?", correct_answer="Joseph Fry", incorrect_answer1="Andrew Johnson", incorrect_answer2="John Cadbury",incorrect_answer3="John Tyler", user_id=3, trivia_package_id=6 )
     trivia74 = Trivia(
-      question="What is the name of the virus that infected New York in Tom Clancy's The Division?", correct_answer="Dollar Flu", incorrect_answer1="Ebola", incorrect_answer2="Red Poison",incorrect_answer3="Smallpox", user_id=3, trivia_package_id=6 )
+      question="When one is envious, they are said to be what color?", correct_answer="green", incorrect_answer1="red", incorrect_answer2="blue",incorrect_answer3="yellow", user_id=3, trivia_package_id=6 )
     trivia75 = Trivia(
-      question="Area 51 is located in which US state?", correct_answer="Nevada", incorrect_answer1="Arizona", incorrect_answer2="New Mexico",incorrect_answer3="Utah", user_id=3, trivia_package_id=7 )
+      question="What is the nickname of the US state of California?", correct_answer="Golden State", incorrect_answer1="Sunshine State", incorrect_answer2="Bay State",incorrect_answer3="Treasure State", user_id=3, trivia_package_id=6 )
     trivia76 = Trivia(
-      question="The Canadian $1 coin is colloquially known as a what?", correct_answer="Loonie", incorrect_answer1="Booolie", incorrect_answer2="Foolie",incorrect_answer3="Moodie", user_id=3, trivia_package_id=7 )
+      question="Foie gras is a French delicacy typically made from what part of a duck or goose?", correct_answer="Liver", incorrect_answer1="Heart", incorrect_answer2="Stomach",incorrect_answer3="Intestines", user_id=3, trivia_package_id=6 )
     trivia77 = Trivia(
-      question="What is on display in the Madame Tussaud's museum in London?", correct_answer="Wax Sculptures", incorrect_answer1="Designer clothing", incorrect_answer2="Unreleased film reels",incorrect_answer3="vintage cars", user_id=3, trivia_package_id=7 )
+      question="How many SoulsBorne games are there?", correct_answer="6", incorrect_answer1="4", incorrect_answer2="3",incorrect_answer3="1", user_id=1, trivia_package_id=7 )
     trivia78 = Trivia(
-      question="What zodiac sign is represented by a pair of scales?", correct_answer="Libra", incorrect_answer1="Aries", incorrect_answer2="Capricorn",incorrect_answer3="Sagittarius", user_id=3, trivia_package_id=7 )
+      question="What is the newest From Software Game?", correct_answer="Elden Ring", incorrect_answer1="Kings Field", incorrect_answer2="Demon Souls",incorrect_answer3="Dark Souls 3", user_id=1, trivia_package_id=7 )
     trivia79 = Trivia(
-      question="On a dartboard, what number is directly opposite No. 1?", correct_answer="19", incorrect_answer1="20", incorrect_answer2="12",incorrect_answer3="15", user_id=3, trivia_package_id=7 )
+      question="Who is the secret boss of Bloodborne?", correct_answer="Moon Presence", incorrect_answer1="Ludwig, Holy Blade", incorrect_answer2="Lady Maria",incorrect_answer3="The Doll", user_id=1, trivia_package_id=7 )
     trivia80 = Trivia(
-      question="What was the name of the WWF professional wrestling tag team made up of the wrestlers Ax and Smash?", correct_answer="Demolition", incorrect_answer1="The Dream Team", incorrect_answer2="The Bushwackerse",incorrect_answer3="The British Bulldogs", user_id=3, trivia_package_id=7 )
+      question="what are the two swords that you can get at the end of the game in demon souls?", correct_answer="demon brandt and soul brandt", incorrect_answer1="zwei hander and drake sword", incorrect_answer2="dragon sword and dragon king greataxe",incorrect_answer3="blade of mercy and boom hammer", user_id=1, trivia_package_id=7 )
     trivia81 = Trivia(
-      question="If you are caught Goldbricking, what are you doing wrong?", correct_answer="Slacking", incorrect_answer1="Smoking", incorrect_answer2="Stealing",incorrect_answer3="Cheating", user_id=3, trivia_package_id=7 )
+      question="Who is the character known as , SUNBRO", correct_answer="Solaire of Astora", incorrect_answer1="King Allant", incorrect_answer2="Ladder Smith Gilligan",incorrect_answer3="Nameless King", user_id=1, trivia_package_id=7 )
     trivia82 = Trivia(
-      question="What does a funambulist walk on?", correct_answer="A tight rope", incorrect_answer1="broken glass", incorrect_answer2="balls",incorrect_answer3="wires", user_id=3, trivia_package_id=7 )
+      question="Who is the final boss of dark souls?", correct_answer="Gwyn", incorrect_answer1="Kalameet", incorrect_answer2="Soul of Cinder",incorrect_answer3="Gael", user_id=1, trivia_package_id=7 )
     trivia83 = Trivia(
-      question="What is the Spanish word for donkey?", correct_answer="burro", incorrect_answer1="caballo", incorrect_answer2="toro",incorrect_answer3="pero", user_id=3, trivia_package_id=7 )
+      question="Who is the nameless king?", correct_answer="Faraam the God of War", incorrect_answer1="Solaire of Astora", incorrect_answer2="Ludwig, Holy Blade",incorrect_answer3="The Rock", user_id=1, trivia_package_id=7 )
     trivia84 = Trivia(
-      question="What machine element is located in the center of fidget spinners?", correct_answer="bearings", incorrect_answer1="axles", incorrect_answer2="gears",incorrect_answer3="belts", user_id=3, trivia_package_id=7 )
+      question="which dragon is a boss?", correct_answer="midir", incorrect_answer1="hellkite", incorrect_answer2="gywn lefuire",incorrect_answer3="Jennifer Lawrence", user_id=1, trivia_package_id=7 )
     trivia85 = Trivia(
-      question="Who invented the first ever chocolate bar, in 1847?", correct_answer="Joseph Fry", incorrect_answer1="Andrew Johnson", incorrect_answer2="John Cadbury",incorrect_answer3="John Tyler", user_id=3, trivia_package_id=7 )
+      question="who created the soulsborne series?", correct_answer="Hidetaka Miyazaki", incorrect_answer1="From Software", incorrect_answer2="Hayoa Miyizaki",incorrect_answer3="Studio Ghibli", user_id=1, trivia_package_id=7 )
     trivia86 = Trivia(
-      question="When one is envious, they are said to be what color?", correct_answer="green", incorrect_answer1="red", incorrect_answer2="blue",incorrect_answer3="yellow", user_id=3, trivia_package_id=7 )
+      question="Which ring boosts damage taken from enemy's and effects?", correct_answer="calamity ring", incorrect_answer1="havels ring", incorrect_answer2="witches ring",incorrect_answer3="blue tearstone ring", user_id=1, trivia_package_id=7 )
     trivia87 = Trivia(
-      question="What is the nickname of the US state of California?", correct_answer="Golden State", incorrect_answer1="Sunshine State", incorrect_answer2="Bay State",incorrect_answer3="Treasure State", user_id=3, trivia_package_id=7 )
+      question="Where are you in Dar Souls?", correct_answer="lordran", incorrect_answer1="yharnam", incorrect_answer2="lothric",incorrect_answer3="smoldering lake", user_id=1, trivia_package_id=7 )
     trivia88 = Trivia(
-      question="Foie gras is a French delicacy typically made from what part of a duck or goose?", correct_answer="Liver", incorrect_answer1="Heart", incorrect_answer2="Stomach",incorrect_answer3="Intestines", user_id=3, trivia_package_id=7 )
+      question="What anime heavily influenced dark souls?", correct_answer="Berserk", incorrect_answer1="Fairy Tale", incorrect_answer2="Naruto",incorrect_answer3="Black Butler", user_id=1, trivia_package_id=7 )
     trivia89 = Trivia(
-      question="Who was named Sexiest Man Alive in 2003 by People Magazine?", correct_answer="Jude Law", incorrect_answer1="Johnny Depp", incorrect_answer2="Ben Affleck",incorrect_answer3="Brad Pitt", user_id=2, trivia_package_id=4 )
+      question="What game did the hollowslayer greatsword first appear in?", correct_answer="Dark Souls 2", incorrect_answer1="Dark Souls 3", incorrect_answer2="Demon Souls",incorrect_answer3="Dark Souls", user_id=1, trivia_package_id=7 )
     trivia90 = Trivia(
-      question="Which celebrity is known as Jenny from the block?", correct_answer="Jennifer Lopez", incorrect_answer1="Jennifer Aniston", incorrect_answer2="Jennifer Garner",incorrect_answer3="Jennifer Lawrence", user_id=2, trivia_package_id=4 )
-    trivia91 = Trivia(
-      question="How many SoulsBorne games are there?", correct_answer="6", incorrect_answer1="4", incorrect_answer2="3",incorrect_answer3="1", user_id=1, trivia_package_id=8 )
-    trivia92 = Trivia(
-      question="What is the newest From Software Game?", correct_answer="Elden Ring", incorrect_answer1="Kings Field", incorrect_answer2="Demon Souls",incorrect_answer3="Dark Souls 3", user_id=1, trivia_package_id=8 )
-    trivia93 = Trivia(
-      question="Who is the secret boss of Bloodborne?", correct_answer="Moon Presence", incorrect_answer1="Ludwig, Holy Blade", incorrect_answer2="Lady Maria",incorrect_answer3="The Doll", user_id=1, trivia_package_id=8 )
-    trivia94 = Trivia(
-      question="what are the two swords that you can get at the end of the game in demon souls?", correct_answer="demon brandt and soul brandt", incorrect_answer1="zwei hander and drake sword", incorrect_answer2="dragon sword and dragon king greataxe",incorrect_answer3="blade of mercy and boom hammer", user_id=1, trivia_package_id=8 )
-    trivia95 = Trivia(
-      question="Who is the character known as , SUNBRO", correct_answer="Solaire of Astora", incorrect_answer1="King Allant", incorrect_answer2="Ladder Smith Gilligan",incorrect_answer3="Nameless King", user_id=1, trivia_package_id=8 )
-    trivia96 = Trivia(
-      question="Who is the final boss of dark souls?", correct_answer="Gwyn", incorrect_answer1="Kalameet", incorrect_answer2="Soul of Cinder",incorrect_answer3="Gael", user_id=1, trivia_package_id=8 )
-    trivia97 = Trivia(
-      question="Who is the nameless king?", correct_answer="Faraam the God of War", incorrect_answer1="Solaire of Astora", incorrect_answer2="Ludwig, Holy Blade",incorrect_answer3="The Rock", user_id=1, trivia_package_id=8 )
-    trivia98 = Trivia(
-      question="which dragon is a boss?", correct_answer="midir", incorrect_answer1="hellkite", incorrect_answer2="gywn lefuire",incorrect_answer3="Jennifer Lawrence", user_id=1, trivia_package_id=8 )
-    trivia99 = Trivia(
-      question="who created the soulsborne series?", correct_answer="Hidetaka Miyazaki", incorrect_answer1="From Software", incorrect_answer2="Hayoa Miyizaki",incorrect_answer3="Studio Ghibli", user_id=1, trivia_package_id=8 )
-    trivia100 = Trivia(
-      question="Which ring boosts damage taken from enemy's and effects?", correct_answer="calamity ring", incorrect_answer1="havels ring", incorrect_answer2="witches ring",incorrect_answer3="blue tearstone ring", user_id=1, trivia_package_id=8 )
-    trivia101 = Trivia(
-      question="Where are you in Dar Souls?", correct_answer="lordran", incorrect_answer1="yharnam", incorrect_answer2="lothric",incorrect_answer3="smoldering lake", user_id=1, trivia_package_id=8 )
-    trivia102 = Trivia(
-      question="What anime heavily influenced dark souls?", correct_answer="Berserk", incorrect_answer1="Fairy Tale", incorrect_answer2="Naruto",incorrect_answer3="Black Butler", user_id=1, trivia_package_id=8 )
-    trivia103 = Trivia(
-      question="What game did the hollowslayer greatsword first appear in?", correct_answer="Dark Souls 2", incorrect_answer1="Dark Souls 3", incorrect_answer2="Demon Souls",incorrect_answer3="Dark Souls", user_id=1, trivia_package_id=8 )
-    trivia104 = Trivia(
-      question="What is the secret ending for Dark Souls?", correct_answer="Don't link the flame", incorrect_answer1="Link the flame", incorrect_answer2="You explode",incorrect_answer3="no secret ending", user_id=1, trivia_package_id=8 )
+      question="What is the secret ending for Dark Souls?", correct_answer="Don't link the flame", incorrect_answer1="Link the flame", incorrect_answer2="You explode",incorrect_answer3="no secret ending", user_id=1, trivia_package_id=7 )
     
     
     
     db.session.add_all([trivia1,trivia2,trivia3,trivia4,trivia5,trivia6,trivia7,trivia8,trivia9,trivia10,trivia11,trivia12,trivia13,trivia14,trivia15,trivia16,trivia17,trivia18,trivia19,trivia20,trivia21,trivia22,trivia23,trivia24,trivia25,trivia26,trivia27,trivia28,trivia29,
         trivia30,trivia31,trivia32,trivia33,trivia34,trivia35,trivia36,trivia37,trivia38,trivia39,trivia40,trivia41,trivia42,trivia43,trivia44,trivia45,trivia46,trivia47,trivia48,trivia49,trivia50,trivia51,trivia52,trivia53,trivia54,trivia55,trivia56,trivia57,trivia58,trivia59,
-        trivia60,trivia61,trivia62,trivia63,trivia64,trivia65,trivia66,trivia67,trivia68,trivia69,trivia70,trivia71,trivia72,trivia73,trivia74,trivia75,trivia76,trivia77,trivia78,trivia79,trivia80,trivia81,trivia82,trivia83,trivia84,trivia85,trivia86,trivia87,trivia88,trivia89,
-        trivia90,trivia91,trivia92,trivia93,trivia94,trivia95,trivia96,trivia97,trivia98,trivia99,trivia100,trivia101,trivia102,trivia103,trivia104])
+        trivia60,trivia61,trivia62,trivia63,trivia64,trivia65,trivia66,trivia67,trivia68,trivia69,trivia70,trivia71,trivia72,trivia73,trivia74,trivia75,trivia76,trivia77,trivia78,trivia79,trivia80,trivia81,trivia82,trivia83,trivia84,trivia85,trivia86,trivia87,trivia88, trivia89,
+        ])
 
     db.session.commit()
 
