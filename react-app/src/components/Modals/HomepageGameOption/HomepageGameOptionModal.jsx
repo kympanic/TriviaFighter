@@ -21,9 +21,6 @@ const HomepageGameOptionModal = ({ setIsOpen, category, difficulty }) => {
 			<div className={styles.darkBG} onClick={() => setIsOpen(false)} />
 			<div className={styles.centered}>
 				<div className={styles.homeDescriptionModal}>
-					<div className={styles.homeDescriptionModalHeader}>
-						<h5 className={styles.heading}></h5>
-					</div>
 					<button
 						className={styles.closeBtn}
 						onClick={() => setIsOpen(false)}

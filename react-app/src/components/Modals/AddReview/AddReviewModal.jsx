@@ -58,9 +58,12 @@ const AddReviewModal = ({ setIsOpen, id, setIsOpenReviewBtn }) => {
 									</div>
 								))}
 							</div>
-							<div>
-								<label>Comment: </label>
+							<div className={styles.inputBox}>
+								<label className={styles.inputLabel}>
+									Comment:{" "}
+								</label>
 								<input
+									className={styles.input}
 									type="text"
 									name="body"
 									onChange={(e) => setBody(e.target.value)}
@@ -68,9 +71,12 @@ const AddReviewModal = ({ setIsOpen, id, setIsOpenReviewBtn }) => {
 									value={body}
 								/>
 							</div>
-							<div>
-								<label>Rating: </label>
+							<div className={styles.inputBox}>
+								<label className={styles.inputLabel}>
+									Rating:{" "}
+								</label>
 								<select
+									className={styles.selectInput}
 									value={rating}
 									onChange={(e) => setRating(e.target.value)}
 								>

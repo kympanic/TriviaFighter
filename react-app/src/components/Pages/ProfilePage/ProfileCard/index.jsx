@@ -1,9 +1,11 @@
-import React from "react";
+import EditUserModal from "../../../Modals/EditUser/EditUserModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "../profilepage.css";
 
-const ProfileCard = ({ profileUser, triviapackages }) => {
+import { useState } from "react";
+const ProfileCard = ({ profileUser, triviapackages, sessionUser }) => {
+	const [isOpenEdit, setIsOpenEdit] = useState(false);
 	//getting the average rating of the triviapackages for the user
 	const averageRatingsArray = triviapackages?.map((trivia) => {
 		return parseInt(trivia.avgRating);
@@ -19,6 +21,7 @@ const ProfileCard = ({ profileUser, triviapackages }) => {
 	const onProfileImgError = (e) => {
 		e.target.src = profilePlaceholderImg;
 	};
+
 	return (
 		<div className="profilepage-profilecard-container">
 			<img
@@ -33,6 +36,20 @@ const ProfileCard = ({ profileUser, triviapackages }) => {
 			<div className="email-section">
 				<p className="profilepage-email-text">{profileUser.email}</p>
 			</div>
+			{profileUser.id === sessionUser.id && (
+				<button
+					className="profile-edit-btn"
+					onClick={() => setIsOpenEdit(true)}
+				>
+					EDIT
+				</button>
+			)}
+			{isOpenEdit && (
+				<EditUserModal
+					setIsOpen={setIsOpenEdit}
+					sessionUser={sessionUser}
+				/>
+			)}
 			<div className="average-rating-section">
 				{averageRatingsArray.length > 0 ? (
 					<p className="profilepage-rating-text">

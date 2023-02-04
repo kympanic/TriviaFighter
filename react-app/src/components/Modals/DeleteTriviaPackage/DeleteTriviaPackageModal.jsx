@@ -18,7 +18,9 @@ const DeleteTriviaPackageModal = ({ setIsOpen, triviapackage }) => {
 			<div className={styles.centered}>
 				<div className={styles.modal}>
 					<div className={styles.modalHeader}>
-						<h5 className={styles.heading}>Delete Confirmation</h5>
+						<h5 className={styles.heading}>
+							DELETE PACKAGE CONFIRMATION
+						</h5>
 					</div>
 					<button
 						className={styles.closeBtn}
@@ -27,8 +29,9 @@ const DeleteTriviaPackageModal = ({ setIsOpen, triviapackage }) => {
 						<RiCloseLine style={{ marginBottom: "-3px" }} />
 					</button>
 					<div className={styles.modalContent}>
-						Are you sure you want to delete this item?
-						<p>{triviapackage.name}</p>
+						<p className={styles.triviaText}>
+							{triviapackage.name}
+						</p>
 					</div>
 					<div className={styles.modalActions}>
 						<div className={styles.actionsContainer}>
@@ -36,13 +39,13 @@ const DeleteTriviaPackageModal = ({ setIsOpen, triviapackage }) => {
 								className={styles.submitBtn}
 								onClick={handleSubmit}
 							>
-								Submit
+								DELETE
 							</button>
 							<button
 								className={styles.cancelBtn}
 								onClick={() => setIsOpen(false)}
 							>
-								Cancel
+								CANCEL
 							</button>
 						</div>
 					</div>
