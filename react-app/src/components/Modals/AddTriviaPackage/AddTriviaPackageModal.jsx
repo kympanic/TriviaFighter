@@ -58,8 +58,11 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 						<RiCloseLine style={{ marginBottom: "-3px" }} />
 					</button>
 					<div className={styles.modalContent}>
-						<form onSubmit={handleSubmit}>
-							<div className="errors-section">
+						<form
+							className={styles.addTriviaPackageForm}
+							onSubmit={handleSubmit}
+						>
+							<div className={styles.errors}>
 								{errors.map((error, ind) => (
 									<div className="error-body" key={ind}>
 										<ul>
@@ -70,7 +73,7 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 									</div>
 								))}
 							</div>
-							<div>
+							<div className={styles.inputGroup}>
 								<label>Name: </label>
 								<input
 									type="text"
@@ -81,8 +84,27 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 									maxLength={30}
 								/>
 							</div>
-							<div>
-								<label>Category: </label>
+							<div className={styles.inputGroup}>
+								<label>Description: </label>
+								<input
+									type="text"
+									name="description"
+									onChange={(e) =>
+										setDescription(e.target.value)
+									}
+								></input>
+							</div>
+							<div className={styles.inputGroup}>
+								<label>Package Image Url: </label>
+								<input
+									type="url"
+									name="image"
+									onChange={(e) => setImage(e.target.value)}
+									placeholder="https://example.com"
+								></input>
+							</div>
+							<div className={styles.inputGroup}>
+								<label>CATEGORY: </label>
 								<select
 									onChange={(e) =>
 										setCategory(e.target.value)
@@ -107,7 +129,7 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 									<option value="Animals">Animals</option>
 								</select>
 							</div>
-							<div>
+							<div className={styles.inputGroup}>
 								<label>Difficulty: </label>
 								<select
 									onChange={(e) =>
@@ -121,41 +143,20 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 									<option value="hard">HARD</option>
 								</select>
 							</div>
-							<div>
-								<label>Description: </label>
-								<textarea
-									name="description"
-									rows="4"
-									cols="50"
-									onChange={(e) =>
-										setDescription(e.target.value)
-									}
-								></textarea>
-							</div>
-							<div>
-								<label>Cover Image: </label>
-								<input
-									// type="file"
-									type="url"
-									name="image"
-									// accept="image/*"
-									onChange={(e) => setImage(e.target.value)}
-								></input>
-							</div>
 							<div className={styles.modalActions}>
 								<div className={styles.actionsContainer}>
 									<button
 										type="submit"
 										className={styles.submitBtn}
 									>
-										Yes
+										CREATE
 									</button>
 									{/* {imageLoading && <p>Loading...</p>} */}
 									<button
 										className={styles.cancelBtn}
 										onClick={() => setIsOpen(false)}
 									>
-										Cancel
+										CANCEL
 									</button>
 								</div>
 							</div>

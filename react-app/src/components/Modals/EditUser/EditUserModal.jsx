@@ -43,8 +43,11 @@ const EditUserModal = ({ setIsOpen, sessionUser }) => {
 						<RiCloseLine style={{ marginBottom: "-3px" }} />
 					</button>
 					<div className={styles.modalContent}>
-						<form onSubmit={handleSubmit}>
-							<div className="errors-section">
+						<form
+							className={styles.editUserForm}
+							onSubmit={handleSubmit}
+						>
+							<div className={styles.errors}>
 								{errors.map((error, ind) => (
 									<div className="error-body" key={ind}>
 										<ul>
@@ -55,7 +58,7 @@ const EditUserModal = ({ setIsOpen, sessionUser }) => {
 									</div>
 								))}
 							</div>
-							<div>
+							<div className={styles.inputGroup}>
 								<label>USERNAME </label>
 								<input
 									type="text"
@@ -67,7 +70,7 @@ const EditUserModal = ({ setIsOpen, sessionUser }) => {
 									value={username}
 								/>
 							</div>
-							<div>
+							<div className={styles.inputGroup}>
 								<label>PROFILE IMAGE URL </label>
 								<input
 									type="url"
@@ -84,13 +87,13 @@ const EditUserModal = ({ setIsOpen, sessionUser }) => {
 										type="submit"
 										className={styles.submitBtn}
 									>
-										Yes
+										EDIT
 									</button>
 									<button
 										className={styles.cancelBtn}
 										onClick={() => setIsOpen(false)}
 									>
-										Cancel
+										CANCEL
 									</button>
 								</div>
 							</div>

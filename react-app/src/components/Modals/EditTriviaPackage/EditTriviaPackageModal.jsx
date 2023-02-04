@@ -77,7 +77,6 @@ const EditTriviaPackageModal = ({ setIsOpen, triviapackage, sessionUser }) => {
 									value={packageName}
 								/>
 							</div>
-
 							<div className={styles.inputGroup}>
 								<label>Description: </label>
 								<input
@@ -152,7 +151,7 @@ const EditTriviaPackageModal = ({ setIsOpen, triviapackage, sessionUser }) => {
 										className={styles.cancelBtn}
 										onClick={() => setIsOpen(false)}
 									>
-										Cancel
+										CANCEL
 									</button>
 								</div>
 							</div>
