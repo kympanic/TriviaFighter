@@ -1,14 +1,22 @@
 import ProfilePlayBtn from "../../ProfilePage/Buttons/ProfilePlayBtn";
-import "../homepage.css";
 import { useState } from "react";
 import TriviaDescription from "../../../Modals/TriviaDescription/TriviaDescription";
+import { useHistory } from "react-router-dom";
+import "../homepage.css";
 
 const UserMadeTriviaPackage = ({ triviapackage }) => {
+	const history = useHistory();
+
 	const [isOpenDescription, setIsOpenDescription] = useState(false);
 	const placeHolderImg =
 		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/defaulttriviaimage.jpg";
 	const onImageError = (e) => {
 		e.target.src = placeHolderImg;
+	};
+
+	console.log(triviapackage, "WOOW");
+	const handleClick = () => {
+		history.push(`/profile/${triviapackage?.userId}`);
 	};
 
 	return (
@@ -22,7 +30,7 @@ const UserMadeTriviaPackage = ({ triviapackage }) => {
 						alt="triviapackage.name"
 						onError={onImageError}
 					/>
-					<p className="usermade-trivia-title">
+					<p onClick={handleClick} className="usermade-trivia-title">
 						{triviapackage.name}
 					</p>
 					<p className="usermade-trivia-text">
