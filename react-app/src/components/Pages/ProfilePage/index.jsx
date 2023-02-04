@@ -86,7 +86,7 @@ const ProfilePage = () => {
 						{profileReviews.length > 0 ? (
 							<h1>Reviews</h1>
 						) : (
-							<h1>No Reviews Yet!</h1>
+							<h1>NO REVIEWS</h1>
 						)}
 					</div>
 					<div className="profilepage-comments-container">

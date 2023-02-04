@@ -123,9 +123,6 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 									</option>
 									<option value="Sports">Sports</option>
 									<option value="History">History</option>
-									<option value="Celebrities">
-										Celebrities
-									</option>
 									<option value="Animals">Animals</option>
 								</select>
 							</div>
