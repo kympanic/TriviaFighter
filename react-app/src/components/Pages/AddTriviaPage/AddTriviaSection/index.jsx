@@ -50,6 +50,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 		if (data) {
 			setErrors(data);
 		} else {
+			setErrors([]);
 			setQuestion("");
 			setCorrectAnswer("");
 			setIncorrectAnswer1("");

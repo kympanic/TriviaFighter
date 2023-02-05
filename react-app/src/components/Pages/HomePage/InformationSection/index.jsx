@@ -3,15 +3,15 @@ import "./infosection.css";
 const InformationSection = () => {
 	return (
 		<div className="info-main">
-			<div className="info-background-box"></div>
 			<div className="info-img-box">
 				<img
 					className="info-img"
 					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/cutehamster.jpg"
 					alt="cute-hamster"
 				/>
+				<div className="info-background-box"></div>
 			</div>
-			<div className="info-content bubble">
+			<div className="info-content">
 				<h2 className="info-title">
 					What are you waiting for? Play right away!
 				</h2>
@@ -22,6 +22,15 @@ const InformationSection = () => {
 				<p className="info-p">
 					It's as simple as choosing the difficulty and clicking PLAY!
 				</p>
+			</div>
+
+			<div className="info-img-box">
+				<img
+					className="info-img"
+					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/cutehamster.jpg"
+					alt="cute-hamster"
+				/>
+				<div className="info-background-box"></div>
 			</div>
 		</div>
 	);
