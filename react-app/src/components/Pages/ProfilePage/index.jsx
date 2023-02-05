@@ -11,6 +11,7 @@ import TriviaSection from "./TriviaSection";
 import ProfileCard from "./ProfileCard";
 import GameHistory from "./GameHistory";
 import "./profilepage.css";
+import InformationSection from "./InformationSection";
 const ProfilePage = () => {
 	const { userId } = useParams();
 	const id = parseInt(userId);
@@ -84,7 +85,7 @@ const ProfilePage = () => {
 					</div>
 					<div className="profilepage-reviews-title">
 						{profileReviews.length > 0 ? (
-							<h1>Reviews</h1>
+							<InformationSection userId={userId} />
 						) : (
 							<h1>NO REVIEWS</h1>
 						)}

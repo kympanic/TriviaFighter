@@ -1,8 +1,3 @@
-.battle-player-img {
-	height: 300px;
-	border-radius: 50%;
-}
-
 .battlepage-main-container {
 	margin-top: 50px;
 	display: flex;
@@ -16,10 +11,10 @@
 	);
 	flex-direction: column;
 	height: 100%;
-	padding-bottom: 75px;
 }
 
 .playertitle-text {
+	margin-top: 30px;
 	margin-bottom: 20px;
 }
 .player-name-text {
@@ -30,10 +25,12 @@
 	margin-left: 10%;
 	text-align: center;
 	border-radius: 20%;
-	height: 400px;
+	height: 100%;
+
 	width: 400px;
 	padding: 20px;
-	margin-top: 2.5%;
+	display: flex;
+	flex-direction: column;
 }
 
 .player2-summary {
@@ -44,7 +41,6 @@
 	height: 400px;
 	width: 400px;
 	padding: 20px;
-	margin-top: 2.5%;
 }
 
 .player-container {

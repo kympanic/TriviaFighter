@@ -117,3 +117,8 @@
 	transform: scale(1.2);
 	color: white;
 }
+
+.errors-section {
+	color: red;
+	z-index: 5;
+}

@@ -22,7 +22,7 @@ def get_all_trivias():
     trivias = Trivia.query.all()
 
     res = {trivia.id: trivia.to_dict() for trivia in trivias}
- 
+   
     return res
 
 #POST TRIVIA

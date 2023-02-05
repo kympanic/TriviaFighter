@@ -14,7 +14,6 @@ const UserMadeTriviaPackage = ({ triviapackage }) => {
 		e.target.src = placeHolderImg;
 	};
 
-	console.log(triviapackage, "WOOW");
 	const handleClick = () => {
 		history.push(`/profile/${triviapackage?.userId}`);
 	};

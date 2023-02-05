@@ -13,7 +13,6 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 	const [incorrectAnswer1, setIncorrectAnswer1] = useState("");
 	const [incorrectAnswer2, setIncorrectAnswer2] = useState("");
 	const [incorrectAnswer3, setIncorrectAnswer3] = useState("");
-	const [triviaData, setTriviaData] = useState({});
 
 	const updateQuestion = (e) => {
 		setQuestion(e.target.value);
@@ -50,6 +49,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 		if (data) {
 			setErrors(data);
 		} else {
+			setErrors([]);
 			setQuestion("");
 			setCorrectAnswer("");
 			setIncorrectAnswer1("");
@@ -60,39 +60,39 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 	//converting the category to a number for the api route to get trivia
 	const categoryNum = categoryConversion(triviapackage?.category);
 
-	console.log(categoryNum, "this is the number of the category");
 	//fills in form data with the fetched trivia question
 	const handleGeneration = async (e) => {
 		e.preventDefault();
+		setErrors([]);
 		const response = await fetch(
 			`https://opentdb.com/api.php?amount=1&category=${categoryNum}&difficulty=${triviapackage.difficulty.toLowerCase()}&type=multiple`
 		);
 		const jsonData = await response.json();
-		setTriviaData(jsonData);
-		if (Object.keys(triviaData).length > 0) {
+		if (jsonData) {
+			// if (Object.keys(triviaData)?.length > 0) {
 			setCorrectAnswer(
-				triviaData?.results[0]?.correct_answer.replace(/&amp;/gi, "&")
+				jsonData?.results[0]?.correct_answer.replace(/&amp;/gi, "&")
 			);
 			setIncorrectAnswer1(
-				triviaData?.results[0]?.incorrect_answers[0].replace(
+				jsonData?.results[0]?.incorrect_answers[0].replace(
 					/&amp;/gi,
 					"&"
 				)
 			);
 			setIncorrectAnswer2(
-				triviaData?.results[0]?.incorrect_answers[1].replace(
+				jsonData?.results[0]?.incorrect_answers[1].replace(
 					/&amp;/gi,
 					"&"
 				)
 			);
 			setIncorrectAnswer3(
-				triviaData?.results[0]?.incorrect_answers[2].replace(
+				jsonData?.results[0]?.incorrect_answers[2].replace(
 					/&amp;/gi,
 					"&"
 				)
 			);
 			setQuestion(
-				triviaData?.results[0]?.question.replace(/&#039;|&quot;/gi, "")
+				jsonData?.results[0]?.question.replace(/&#039;|&quot;/gi, "")
 			);
 		}
 	};
@@ -119,7 +119,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 							name="question"
 							value={question}
 							onChange={updateQuestion}
-							maxLength={170}
+							maxLength={120}
 						/>
 					</div>
 				</div>
@@ -131,7 +131,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 							type="text"
 							name="correctAnswer"
 							value={correctAnswer}
-							maxLength={60}
+							maxLength={40}
 							onChange={updateCorrectAnswer}
 						/>
 					</div>
@@ -144,7 +144,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 							type="text"
 							name="incorrectAnswer1"
 							value={incorrectAnswer1}
-							maxLength={60}
+							maxLength={40}
 							onChange={updateIncorrectAnswer1}
 						/>
 					</div>
@@ -157,7 +157,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 							type="text"
 							name="incorrectAnswer2"
 							value={incorrectAnswer2}
-							maxLength={60}
+							maxLength={40}
 							onChange={updateIncorrectAnswer2}
 						/>
 					</div>
@@ -170,7 +170,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 							type="text"
 							name="incorrectAnswer3"
 							value={incorrectAnswer3}
-							maxLength={60}
+							maxLength={40}
 							onChange={updateIncorrectAnswer3}
 						/>
 					</div>

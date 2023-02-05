@@ -8,13 +8,14 @@
 	grid-template-columns: 1fr 1fr;
 	background: white;
 	height: 144px;
+	margin-top: 20px;
 }
 
 .options-container {
 	background-color: white;
 	border: 4px solid #f64f59;
 	padding: 10px;
-	height: 230px;
+	height: 250px;
 	border-radius: 10px;
 	text-align: center;
 }

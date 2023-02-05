@@ -20,19 +20,19 @@
 	background-color: #f64f59;
 	margin-left: 8%;
 	margin-right: 8%;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	display: flex;
 }
-.homepage-title-text-container {
-	border: 4px solid #f64f59;
-	background-color: white;
-	margin-left: 33%;
-	margin-right: 33%;
-	height: 70px;
-	border-radius: 50px;
-	position: absolute;
-	top: 390px;
-	font-size: 30px;
-	z-index: 1;
+#homepage-title-text {
 	width: 600px;
+	height: 60px;
+	border: 2px solid white;
+	background-color: white;
+	margin-bottom: 150px;
+	border-radius: 25px;
+	font-size: 50px;
 }
 
 /*TriviaCard Section*/
