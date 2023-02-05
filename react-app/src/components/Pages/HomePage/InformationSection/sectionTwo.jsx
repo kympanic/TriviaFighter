@@ -11,7 +11,15 @@ const InformationSectionTwo = () => {
 	};
 	return (
 		<div className="info-main2">
-			<div className="info-content2 bubble2">
+			<div className="info-img-box2">
+				<img
+					className="info-img2"
+					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/videogamefatcat.jpg"
+					alt="fatcat-playing-videogames"
+				/>
+				<div className="info-background-box2"></div>
+			</div>
+			<div className="info-content2">
 				<h2 className="info-title2">Community Created Trivia</h2>
 				<p className="info-p2">
 					Here you can find all the trivia games made by fellow users!
@@ -31,8 +39,8 @@ const InformationSectionTwo = () => {
 					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/videogamefatcat.jpg"
 					alt="fatcat-playing-videogames"
 				/>
+				<div className="info-background-boxc"></div>
 			</div>
-			<div className="info-background-box2"></div>
 		</div>
 	);
 };

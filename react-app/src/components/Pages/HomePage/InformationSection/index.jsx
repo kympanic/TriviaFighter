@@ -27,10 +27,10 @@ const InformationSection = () => {
 			<div className="info-img-box">
 				<img
 					className="info-img"
-					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/cutehamster.jpg"
+					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/cute-cool-cat-wearing-glasses-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated_138676-4268.webp"
 					alt="cute-hamster"
 				/>
-				<div className="info-background-box"></div>
+				<div className="info-background-boxb"></div>
 			</div>
 		</div>
 	);
