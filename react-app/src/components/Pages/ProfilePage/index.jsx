@@ -41,17 +41,18 @@ const ProfilePage = () => {
 		<div className="profilepage-main-container">
 			{sessionUser && profileUser && profileTriviaPackages && (
 				<div>
-					<div className="profilepage-header-container"></div>
-					<ProfileCard
-						profileUser={profileUser}
-						triviapackages={profileTriviaPackages}
-						sessionUser={sessionUser}
-					/>
-					<GameHistory
-						gameDatas={gameDatas}
-						profileUser={profileUser}
-						alltrivia={allTriviaPackages}
-					/>
+					<div className="profilepage-header-container">
+						<ProfileCard
+							profileUser={profileUser}
+							triviapackages={profileTriviaPackages}
+							sessionUser={sessionUser}
+						/>
+						<GameHistory
+							gameDatas={gameDatas}
+							profileUser={profileUser}
+							alltrivia={allTriviaPackages}
+						/>
+					</div>
 					<div className="profilepage-content-container">
 						{sessionUser.id === id ? (
 							<AddTriviaButton sessionUser={sessionUser} />

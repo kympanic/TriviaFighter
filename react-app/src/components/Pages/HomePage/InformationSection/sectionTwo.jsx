@@ -13,7 +13,7 @@ const InformationSectionTwo = () => {
 		<div className="info-main2">
 			<div className="info-img-box2">
 				<img
-					className="info-img2"
+					className="info-img2a"
 					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/videogamefatcat.jpg"
 					alt="fatcat-playing-videogames"
 				/>
@@ -35,9 +35,9 @@ const InformationSectionTwo = () => {
 			</div>
 			<div className="info-img-box2">
 				<img
-					className="info-img2"
-					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/videogamefatcat.jpg"
-					alt="fatcat-playing-videogames"
+					className="info-img2b"
+					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/fightingkangaroo.jpg"
+					alt="fighting-kangaroo"
 				/>
 				<div className="info-background-boxc"></div>
 			</div>

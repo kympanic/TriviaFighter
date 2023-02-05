@@ -1,14 +1,13 @@
 .main-container {
 	width: 380px;
-	position: absolute;
-	height: 310px;
+	position: relative;
 	z-index: 10;
-	right: 200px;
+	top: 75px;
 	text-align: center;
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	top: 400px;
+	left: 1100px;
 }
 
 .gamehistory-data-container {

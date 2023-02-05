@@ -79,14 +79,14 @@
 .info-background-box2 {
 	height: 100%;
 	width: 100%;
-	background-color: #f64f59;
+	background-color: #12c2e9;
 	border-bottom-left-radius: 50%;
 }
 
 .info-background-boxc {
 	height: 100%;
 	width: 100%;
-	background-color: #12c2e9;
+	background-color: #f64f59;
 	border-bottom-right-radius: 50%;
 }
 .info-img-box2 {
@@ -96,10 +96,22 @@
 	height: 400px;
 }
 
-.info-img2 {
+.info-img2a {
 	height: 240px;
 	width: 240px;
-	border-radius: 50%;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-top-right-radius: 50%;
+	margin-top: 20px;
+	position: relative;
+	top: 120px;
+}
+.info-img2b {
+	height: 240px;
+	width: 240px;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border-top-left-radius: 50%;
 	margin-top: 20px;
 	position: relative;
 	top: 120px;
