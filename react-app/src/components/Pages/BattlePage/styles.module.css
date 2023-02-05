@@ -4,11 +4,16 @@
 	gap: 25px;
 	width: 100%;
 	display: flex;
+
 	justify-content: space-between;
 }
 .hudChild {
+	margin-top: 50px;
 	flex: 1;
-	height: 200px;
+	height: 300px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
 }
 .gameHeader {
 	font-size: 25px;
@@ -24,14 +29,14 @@
 }
 
 .player1Sprite img {
-	max-height: 25vh;
-	min-height: 150px;
+	max-height: 250px;
+	max-width: 250px;
 	border-radius: 50%;
 }
 
 .player2Sprite img {
-	max-height: 25vh;
-	min-height: 150px;
+	max-height: 250px;
+	min-height: 250px;
 	border-radius: 50%;
 }
 .player1Sprite .attack {

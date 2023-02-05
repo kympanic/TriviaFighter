@@ -8,7 +8,6 @@ import "../profilepage.css";
 const TriviaSection = ({ triviapackage, sessionUser, id }) => {
 	const [isOpenDescription, setIsOpenDescription] = useState(false);
 
-	console.log(triviapackage, "this is the daata being sent");
 	return (
 		<div className="profilepage-triviapackage-card">
 			<img
