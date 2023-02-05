@@ -14,7 +14,7 @@ const ProfilePlayBtn = ({ trivias }) => {
 		result.correct_answer = result.correctAnswer;
 	});
 
-	console.log(triviaData, "original data");
+	// console.log(triviaData, "original data");
 
 	// const randomElement = data.sort(() => Math.random() - 0.5);
 	// console.log(randomElement, "this is randomized data");
