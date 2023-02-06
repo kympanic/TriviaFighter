@@ -7,15 +7,12 @@ import { useDispatch } from "react-redux";
 const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 	const dispatch = useDispatch();
 
-	// const [imageLoading, setImageLoading] = useState(false);
 	const [errors, setErrors] = useState([]);
 	const [packageName, setPackageName] = useState("");
 	const [category, setCategory] = useState("");
 	const [difficulty, setDifficulty] = useState("");
 	const [description, setDescription] = useState("");
 	const [image, setImage] = useState("");
-
-	// console.log(sessionUser, "this is the session user");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();

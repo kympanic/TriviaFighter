@@ -23,6 +23,8 @@ def difficulty_check(form,field):
         raise ValidationError('Provide valid difficulty')
 
 
+
+
 # def triviapackage_name_exists(form, field):
 #     # Checking if username is already in use
 #     name = field.data
