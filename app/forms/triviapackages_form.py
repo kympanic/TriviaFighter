@@ -23,17 +23,17 @@ def difficulty_check(form,field):
         raise ValidationError('Provide valid difficulty')
 
 
-# def triviapackage_name_exists(form, field):
-#     # Checking if username is already in use
-#     name = field.data
-#     triviapackage = TriviaPackage.query.filter(TriviaPackage.name == name).first()
-#     if triviapackage:
-#         raise ValidationError('Name is already in use')
+def triviapackage_name_exists(form, field):
+    # Checking if username is already in use
+    name = field.data
+    triviapackage = TriviaPackage.query.filter(TriviaPackage.name == name).first()
+    if triviapackage:
+        raise ValidationError('Name is already in use')
 
 
 class TriviaPackageForm(FlaskForm):
     user_id=IntegerField('user_id', validators=[DataRequired()])
-    name = StringField('name', validators=[DataRequired()])
+    name = StringField('name', validators=[DataRequired(),triviapackage_name_exists])
     category=StringField('account_number', validators=[DataRequired(),category_check])
     description=StringField('description', validators=[DataRequired()])
     difficulty=StringField('difficulty', validators=[DataRequired(), difficulty_check])

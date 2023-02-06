@@ -15,7 +15,7 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 	const [description, setDescription] = useState("");
 	const [image, setImage] = useState("");
 
-	console.log(sessionUser, "this is the session user");
+	// console.log(sessionUser, "this is the session user");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();

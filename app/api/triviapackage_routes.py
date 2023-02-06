@@ -38,8 +38,8 @@ def get_trivia_package(id):
 @login_required
 def add_trivia_package():
     form = TriviaPackageForm()
+    
     form['csrf_token'].data = request.cookies['csrf_token']
-
     if form.validate_on_submit():
         trivia_package = TriviaPackage()
         form.populate_obj(trivia_package)
