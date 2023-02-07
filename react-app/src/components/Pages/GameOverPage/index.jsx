@@ -131,12 +131,6 @@ const GameOverPage = () => {
 				) : (
 					<div>
 						<h2 className="btn-load-text">...LOADING...</h2>
-						{/* <button
-							className="gameover-btn"
-							onClick={() => history.push("/")}
-						>
-							HOME
-						</button> */}
 					</div>
 				)}
 			</div>
