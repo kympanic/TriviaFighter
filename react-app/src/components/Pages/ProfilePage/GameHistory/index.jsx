@@ -26,7 +26,10 @@ const GameHistory = ({ gameDatas, profileUser, alltrivia }) => {
 								</h2>
 								<div className="gamehistory-data-container">
 									{selectedDatas.map((data) => (
-										<div className="individual-gamedata-container">
+										<div
+											key={data.id}
+											className="individual-gamedata-container"
+										>
 											<p>{data.playdate}</p>
 											<p>PlayerOne: {data.player_one}</p>
 											<p>PlayerTwo: {data.player_two}</p>
