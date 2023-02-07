@@ -106,13 +106,21 @@ const GameOverPage = () => {
 				triviaData.results[0]?.triviaPackageId &&
 				userId !== triviaData.results[0]?.userId && (
 					<div className="gameover-review-container">
-						{isOpenReviewBtn && (
+						{isOpenReviewBtn && winner ? (
 							<button
 								className="gameover-btn"
 								onClick={handleReviewClick}
 							>
 								ADD REVIEW
 							</button>
+						) : (
+							<div>
+								<div>
+									<h2 className="btn-load-text">
+										...LOADING...
+									</h2>
+								</div>
+							</div>
 						)}
 						{isOpenAddReview && (
 							<AddReviewModal
