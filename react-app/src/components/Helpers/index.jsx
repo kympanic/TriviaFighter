@@ -37,7 +37,7 @@ export const triviaIncorrect = ({ attacker, receiver }) => {
 export const player1Stats = [
 	{
 		id: 1,
-		maxHealth: 15,
+		maxHealth: 100,
 		name: "Ninja Shiba",
 		img: "https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Fighter-ShibaInu.jpg",
 		description:
@@ -80,7 +80,7 @@ export const player2Stats = [
 	},
 	{
 		id: 6,
-		maxHealth: 15,
+		maxHealth: 100,
 		name: "Wamster Hamster",
 		img: "https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/cutehamster.jpg",
 		description:
