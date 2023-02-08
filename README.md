@@ -11,7 +11,7 @@ Play Trivia Fighter! A turn based trivia game where players answer questions unt
 - [Database Schema](https://github.com/kympanic/TriviaFighter/wiki/Database-Schema)
 - [Frontend Routes](https://github.com/kympanic/TriviaFighter/wiki/Frontend-Routes)
 - [Feature List](https://github.com/kympanic/TriviaFighter/wiki/Feature-List)
-- [https://github.com/kympanic/TriviaFighter/wiki/User-Stories)
+- [User Stories][https://github.com/kympanic/TriviaFighter/wiki/User-Stories)
 
 ##
 
