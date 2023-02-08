@@ -31,15 +31,15 @@ A full stack application that purports to the theme of a trivia game site, with 
 
 After signing up, the user is greeted to the homepage where they can see games available for play. Each package has some basic information like name, category, difficulty and description. A logged in user can start any game by pressing play or choosing difficulty.  The search bar can filter any game by category, name, or difficulty
 
-<img width="1596" alt="Screen Shot 2023-01-17 at 11 07 2![Screen Shot 2023-02-07 at 8 14 12 PM](https://user-images.githubusercontent.com/98551224/217431898-d62d9d23-4751-4898-98e2-e00cab88f871.png)
+[Screen Shot 2023-02-07 at 8 14 12 PM](https://user-images.githubusercontent.com/98551224/217431898-d62d9d23-4751-4898-98e2-e00cab88f871.png)
 
 Profile Page
 
 - The owner of the profile page can edit their profile and add/edit/delete games and reviews.
 - A user can see all the packages the profile user has created and the reviews the profile user has made on other packages
 
-		       [Screen Shot 2023-02-07 at 8 14 39 PM](https://user-images.githubusercontent.com/98551224/217431952-27bd84ae-8e1b-4369-a76b-3327745f94f0.png)
-tent.com/98551224/212990949-dc675567-9440-462f-91a5-7e4b8b79b220.png)
+![Screen Shot 2023-02-07 at 8 17 36 PM](https://user-images.githubusercontent.com/98551224/217432306-9a24821e-5525-4916-bbc2-d39ad5ab6c80.png)
+
 
 Options Page
 
