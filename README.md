@@ -27,158 +27,48 @@ Play Trivia Fighter! A turn based trivia game where players answer questions unt
 ## Overview
 A full stack application that purports to the theme of a trivia game site, with a focus on three main features: trivia packages, questions, and reviews. Several partial CRUD features include Search, the game itself, and game data history. When the user first accesses the site, they are brought to a splash page, greeting the user and prompting them to sign up. Attempting to access any page on the site without login/signup will redirect them to login.
 
-![Screen Shot 2023-01-17 at 11 00 30 AM](https://user-images.githubusercontent.com/98551224/212987885-5951b00f-e8a2-4014-bdc8-78a0c56df239.png)
+![Screen Shot 2023-02-07 at 8 13 32 PM](https://user-images.githubusercontent.com/98551224/217431804-d0a01aa5-05e0-4f7f-ba33-d49366860c5a.png)
 
 After signing up, the user is greeted to the homepage where they can see games available for play. Each package has some basic information like name, category, difficulty and description. A logged in user can start any game by pressing play or choosing difficulty.  The search bar can filter any game by category, name, or difficulty
 
-<img width="1596" alt="Screen Shot 2023-01-17 at 11 07 20 AM" src="https://user-images.githubusercontent.com/98551224/212989131-71d69152-23b6-4903-843e-29d9a3c5d877.png">
+<img width="1596" alt="Screen Shot 2023-01-17 at 11 07 2![Screen Shot 2023-02-07 at 8 14 12 PM](https://user-images.githubusercontent.com/98551224/217431898-d62d9d23-4751-4898-98e2-e00cab88f871.png)
 
 Profile Page
 
 - The owner of the profile page can edit their profile and add/edit/delete games and reviews.
 - A user can see all the packages the profile user has created and the reviews the profile user has made on other packages
 
-![Screen Shot 2023-01-17 at 11 13 38 AM](https://user-images.githubusercontent.com/98551224/212990949-dc675567-9440-462f-91a5-7e4b8b79b220.png)
+		       [Screen Shot 2023-02-07 at 8 14 39 PM](https://user-images.githubusercontent.com/98551224/217431952-27bd84ae-8e1b-4369-a76b-3327745f94f0.png)
+tent.com/98551224/212990949-dc675567-9440-462f-91a5-7e4b8b79b220.png)
 
 Options Page
 
 - 2 players can choose between 6 avatars to play in the game
 - Game will only start after both players have chosen a character
-
-![Screen Shot 2023-01-17 at 11 26 41 AM](https://user-images.githubusercontent.com/98551224/212993694-6b4bb6b6-4c6c-4aec-923f-266beef5bbae.png)
+		       
+![Screen Shot 2023-02-07 at 8 15 39 PM](https://user-images.githubusercontent.com/98551224/217432088-51383592-d4a3-4086-bfdc-849d34018587.png)
 
 Game Page
 
 - Players take turns answering trivia questions
 - Game ends when one players hp falls to 0
 - Players do damage by answering correctly but if a question is answered incorrectly, the player takes damage themselves
-
-![Screen Shot 2023-01-17 at 11 30 01 AM](https://user-images.githubusercontent.com/98551224/212994294-ce4f27da-67b6-4020-923e-47a9674b1411.png)
+		       
+![Screen Shot 2023-02-07 at 8 16 10 PM](https://user-images.githubusercontent.com/98551224/217432157-e8e1584c-1265-4740-874b-4fcc145c9666.png)
 
 Game Over Page
 - User has the option to add a review(If 1. The user is not the creator of the game 2.User hasn't made a review on the package yet)
 - User can log game data only one time
 - After game data is logged, user can not go back to the results page
 
-![Screen Shot 2023-01-17 at 11 34 32 AM](https://user-images.githubusercontent.com/98551224/212994984-8639def8-f29d-4a3a-9744-c10ad5400d30.png)
-
 Code Snippets:
 The section I had the hardest time implementing was the actual game battle page. I knew I needed 3 different components to display on the page. I needed a section for displaying player info, an announcer, and a menu with trivia question options. Every time the user clicked an option, depending on if the answer was correct or incorrect, some action would happen.
 
 The game battle hook is the game logic behind my game. Depending on the mode (incorrect or correct) and turn(player 1 or 2 (0 or 1)) a set of actions were taken that would set state of data I needed like player hp, avatar animation, and announcer message. Player animation would change the class of the image depending on if they character is being attacked or taking damage. Announcer messages are set in state and queued up depending on if the answer was incorrect or correct. Finally, when the action is completed, !turn is set to switch players and the battle sequence is set to false to finish the action. 
 
-useEffect(() => {
-		const { mode, turn } = sequence;
+<img width="978" alt="Screen Shot 2023-02-07 at 8 12 06 PM" src="https://user-images.githubusercontent.com/98551224/217431594-59bca2ec-48ee-4c90-82e5-d27ad34f3bb2.png">
 
-		if (mode) {
-			const attacker = turn === 0 ? player1Data : player2Data;
-			const receiver = turn === 0 ? player2Data : player1Data;
-
-			switch (mode) {
-				case "isCorrect": {
-					const damage = triviaCorrect({ attacker, receiver });
-
-					(async () => {
-						setInSequence(true);
-						setAnnouncerMessage(
-							`${attacker.name} has gotten the answer correct!`
-						);
-						await wait(1000);
-
-						turn === 0
-							? setPlayer1Animation("attack")
-							: setPlayer2Animation("attack");
-						await wait(100);
-
-						turn === 0
-							? setPlayer1Animation("static")
-							: setPlayer2Animation("static");
-						await wait(500);
-
-						turn === 0
-							? setPlayer2Animation("damage")
-							: setPlayer1Animation("damage");
-						await wait(750);
-
-						turn === 0
-							? setPlayer2Animation("static")
-							: setPlayer1Animation("static");
-
-						setAnnouncerMessage(
-							`${receiver.name} was much wowed by your knowledge!`
-						);
-						await wait(1000);
-
-						turn === 0
-							? setPlayer2Health((health) =>
-									health - damage > 0 ? health - damage : 0
-							  )
-							: setPlayer1Health((health) =>
-									health - damage > 0 ? health - damage : 0
-							  );
-						await wait(500);
-
-						setAnnouncerMessage(
-							`Now it's ${receiver.name}'s turn!`
-						);
-						await wait(1000);
-
-						setTurn(turn === 0 ? 1 : 0);
-						setInSequence(false);
-					})();
-
-					break;
-				}
-
-				case "isIncorrect": {
-					const damage = triviaIncorrect({ attacker, receiver });
-
-					(async () => {
-						setInSequence(true);
-						setAnnouncerMessage(
-							`${attacker.name} got the question wrong! Oh no!`
-						);
-						await wait(1000);
-
-						turn === 0
-							? setPlayer1Animation("damage")
-							: setPlayer2Animation("damage");
-						await wait(750);
-
-						turn === 0
-							? setPlayer1Animation("static")
-							: setPlayer2Animation("static");
-						setAnnouncerMessage(
-							`${attacker.name} hurt itself in its confusion!`
-						);
-						await wait(1000);
-						turn === 0
-							? setPlayer1Health((health) =>
-									health - damage > 0 ? health - damage : 0
-							  )
-							: setPlayer2Health((health) =>
-									health - damage > 0 ? health - damage : 0
-							  );
-						await wait(2000);
-
-						setAnnouncerMessage(
-							`Now it's ${receiver.name}'s turn!`
-						);
-						await wait(1500);
-
-						setTurn(turn === 0 ? 1 : 0);
-						setInSequence(false);
-					})();
-
-					break;
-				}
-				default:
-					break;
-			}
-		}
-		// eslint-disable-next-line
-	}, [sequence]);
-
+<img width="960" alt="Screen Shot 2023-02-07 at 8 13 05 PM" src="https://user-images.githubusercontent.com/98551224/217431734-ca166820-7263-4c72-84d7-84178ea41fc6.png">
 
 ## My Journey
 
