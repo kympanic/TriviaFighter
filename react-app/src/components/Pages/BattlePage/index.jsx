@@ -42,6 +42,7 @@ const BattlePage = () => {
 			incorrect_answers: trivia.incorrect_answers,
 		};
 	});
+	arrayOfQuestions.sort(() => Math.random() - 0.5);
 
 	useEffect(() => {
 		if (player1Health === 0 || player2Health === 0) {

@@ -188,7 +188,7 @@ def seed_trivias():
     
     db.session.add_all([trivia1,trivia2,trivia3,trivia4,trivia5,trivia6,trivia7,trivia8,trivia9,trivia10,trivia11,trivia12,trivia13,trivia14,trivia15,trivia16,trivia17,trivia18,trivia19,trivia20,trivia21,trivia22,trivia23,trivia24,trivia25,trivia26,trivia27,trivia28,trivia29,
         trivia30,trivia31,trivia32,trivia33,trivia34,trivia35,trivia36,trivia37,trivia38,trivia39,trivia40,trivia41,trivia42,trivia43,trivia44,trivia45,trivia46,trivia47,trivia48,trivia49,trivia50,trivia51,trivia52,trivia53,trivia54,trivia55,trivia56,trivia57,trivia58,trivia59,
-        trivia60,trivia61,trivia62,trivia63,trivia64,trivia65,trivia66,trivia67,trivia68,trivia69,trivia70,trivia71,trivia72,trivia73,trivia74,trivia75,trivia76,trivia77,trivia78,trivia79,trivia80,trivia81,trivia82,trivia83,trivia84,trivia85,trivia86,trivia87,trivia88, trivia89,
+        trivia60,trivia61,trivia62,trivia63,trivia64,trivia65,trivia66,trivia67,trivia68,trivia69,trivia70,trivia71,trivia72,trivia73,trivia74,trivia75,trivia76,trivia77,trivia78,trivia79,trivia80,trivia81,trivia82,trivia83,trivia84,trivia85,trivia86,trivia87,trivia88, trivia89, trivia90
         ])
 
     db.session.commit()

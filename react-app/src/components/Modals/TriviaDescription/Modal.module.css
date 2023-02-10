@@ -9,7 +9,7 @@
 	position: relative;
 	z-index: 99999;
 	width: 500px;
-	min-height: 300px;
+	min-height: 350px;
 	max-height: 300px;
 	background: white;
 	color: white;
@@ -35,7 +35,7 @@
 }
 
 .modalContent {
-	height: 150px;
+	height: 180px;
 	overflow: auto;
 	padding: 10px;
 	font-size: 14px;
@@ -116,4 +116,9 @@
 	box-shadow: none;
 	transform: none;
 	background: whitesmoke;
+}
+
+.descriptionText {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }

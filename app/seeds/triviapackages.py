@@ -8,7 +8,7 @@ def seed_trivia_packages():
     triviapackage2 = TriviaPackage(
         name="Animals Animals All Animals", category="Animals", description="Who doesn't like animals?", difficulty="Medium", user_id=1, image_url="" )
     triviapackage3 = TriviaPackage(
-        name="History", category="History", description="Refresh your grade school history knowledge!", difficulty="Easy", user_id=1, image_url="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/historycaesar.jpg" )
+        name="Et tu, Brute?", category="History", description="Refresh your grade school history knowledge!", difficulty="Easy", user_id=1, image_url="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/historycaesar.jpg" )
     triviapackage4 = TriviaPackage(
         name="TV? MOOOO", category="Entertainment: Television", description="Normal level trivia for every tv enthusiast", difficulty="Medium", user_id=2, image_url="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/television.jpg" )
     triviapackage5 = TriviaPackage(
