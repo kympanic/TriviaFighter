@@ -28,7 +28,6 @@ const OptionsPage = () => {
 		});
 	};
 
-	// renders once and not again unless component changes
 	useEffect(() => {
 		getTriviaDataFetch();
 		// eslint-disable-next-line
@@ -42,7 +41,7 @@ const OptionsPage = () => {
 		setTriviaData(jsonData);
 	};
 
-	console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
+	// console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
 	// console.log(player1Data, "this is the player one data");
 	// console.log(player2Data, "this is the player two data");
 

@@ -10,8 +10,9 @@ import ReviewSection from "./ReviewSection";
 import TriviaSection from "./TriviaSection";
 import ProfileCard from "./ProfileCard";
 import GameHistory from "./GameHistory";
-import "./profilepage.css";
 import InformationSection from "./InformationSection";
+import "./profilepage.css";
+
 const ProfilePage = () => {
 	const { userId } = useParams();
 	const id = parseInt(userId);

@@ -59,7 +59,7 @@ def get_reviews_by_user(id):
     res = {review.id: review.to_dict() for review in reviews}
 
     return res
-
+#EDIT PROFILE BY ID
 @user_routes.route('/<int:id>', methods=['PUT','PATCH'])
 @login_required
 def edit_profile(id):

@@ -7,6 +7,7 @@ import SpashPage from "../SplashPage";
 import "./homepage.css";
 import InformationSectionThree from "./InformationSection/sectionThree";
 
+//Page that displays all the trivia games available for play
 const HomePage = () => {
 	const sessionUser = useSelector((state) => state.session.user);
 	const dispatch = useDispatch();
@@ -19,13 +20,8 @@ const HomePage = () => {
 			{sessionUser ? (
 				<div className="homepage-main-container">
 					<div className="homepage-header-container"></div>
-					{/* <div className="homepage-title-text-container">
-						<h1 id="homepage-title-text">TRIVIA FIGHTER</h1>
-					</div> */}
 					<div className="homepage-headerb-container">
-						{/* <div className="homepage-title-text-container"> */}
 						<h1 id="homepage-title-text">TRIVIA FIGHTER</h1>
-						{/* </div> */}
 					</div>
 					<InformationSection />
 					<div className="homepage-triviacard-container">

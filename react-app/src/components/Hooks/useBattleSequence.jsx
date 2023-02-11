@@ -18,7 +18,7 @@ export const useBattleSequence = (sequence) => {
 	const [player2Health, setPlayer2Health] = useState(player2Data.maxHealth);
 
 	useEffect(() => {
-		const { mode, turn } = sequence;
+		const { mode, turn, correct_answer } = sequence;
 
 		if (mode) {
 			const attacker = turn === 0 ? player1Data : player2Data;
@@ -87,6 +87,11 @@ export const useBattleSequence = (sequence) => {
 						setInSequence(true);
 						setAnnouncerMessage(
 							`${attacker.name} got the question wrong! Oh no!`
+						);
+						await wait(1000);
+
+						setAnnouncerMessage(
+							`The correct answer was ${correct_answer}!`
 						);
 						await wait(1000);
 

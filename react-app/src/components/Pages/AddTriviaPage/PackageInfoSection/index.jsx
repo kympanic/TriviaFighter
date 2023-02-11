@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 import { setDefaultTriviaImage } from "../../../Helpers";
 import "./packageinfo.css";
 
+//Displays the current triviapackage information
 const PackageInfoSection = ({ triviapackage, sessionUser }) => {
 	const history = useHistory();
 

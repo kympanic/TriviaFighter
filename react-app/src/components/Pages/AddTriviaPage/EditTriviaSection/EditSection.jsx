@@ -4,6 +4,10 @@ import EditTriviaModal from "../../../Modals/EditTrivia/EditTriviaModal";
 import DeleteTriviaModal from "../../../Modals/DeleteTrivia/DeleteTriviaModal";
 import styles from "../../../Modals/App.module.css";
 import "./editsection.css";
+
+//Component displays all the trivia questions from the selected trivia package
+//User has option to edit and delete trivia, which brings up a edit/delete modal
+
 const EditSection = ({ sessionUser, triviaId }) => {
 	const trivia = useSelector((state) => state.trivias[triviaId]);
 	const [isOpenEdit, setIsOpenEdit] = useState(false);

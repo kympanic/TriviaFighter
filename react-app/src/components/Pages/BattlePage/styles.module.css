@@ -41,11 +41,11 @@
 }
 .player1Sprite .attack {
 	transition: 0.1s;
-	transform: translateX(100px);
+	transform: translateX(200px);
 }
 .player2Sprite .attack {
 	transition: 0.1s;
-	transform: translateX(-100px);
+	transform: translateX(-200px);
 }
 
 .damage {

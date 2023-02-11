@@ -1,6 +1,4 @@
 const PremadeGameName = ({ category }) => {
-	// console.log(category, "this is the category");
-
 	if (category === 9) {
 		return <h2>General Knowledge</h2>;
 	} else if (category === 14) {
