@@ -1,4 +1,6 @@
 import { useHistory } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import "../profilepage.css";
 const ProfilePlayBtn = ({ trivias }) => {
 	const history = useHistory();
@@ -27,11 +29,13 @@ const ProfilePlayBtn = ({ trivias }) => {
 	};
 
 	return (
-		<div>
+		<div className="play-btn-container">
 			{triviaData && (
-				<button className="play-btn" onClick={handleSubmit}>
-					PLAY
-				</button>
+				<FontAwesomeIcon
+					onClick={handleSubmit}
+					className="profile-play-btn"
+					icon={faPlay}
+				/>
 			)}
 		</div>
 	);

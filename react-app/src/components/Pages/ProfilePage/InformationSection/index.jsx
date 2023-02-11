@@ -3,6 +3,13 @@ import "./profilereviewinfo.css";
 
 const InformationSection = ({ userId }) => {
 	const profileUser = useSelector((state) => state?.users[userId]);
+
+	const profilePlaceholderImg =
+		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/kitsunelogoorsplash.jpg";
+
+	const onProfileImgError = (e) => {
+		e.target.src = profilePlaceholderImg;
+	};
 	return (
 		<div className="info-main4">
 			<div className="info-background-box4"></div>
@@ -11,6 +18,7 @@ const InformationSection = ({ userId }) => {
 					className="info-img4"
 					src={profileUser.profileImg}
 					alt="profile-user"
+					onError={onProfileImgError}
 				/>
 			</div>
 			<div className="info-content4 bubble4">
