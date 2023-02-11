@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createTriviaThunk } from "../../../../store/trivia";
-import { categoryConversion } from "../categoryconversion";
+import { categoryConversion } from "../../../Hooks/useCategoryConversion";
 import "./addtriviasection.css";
 
+//Displays a user input for creating new Trivia.
+//Generate question fetches data from api that is
+//saved to state to be used in input form values
 const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 	const dispatch = useDispatch();
 
@@ -32,6 +35,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 		setIncorrectAnswer3(e.target.value);
 	};
 
+	//dispatch thunk to send data to backend
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
@@ -68,8 +72,8 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 			`https://opentdb.com/api.php?amount=1&category=${categoryNum}&difficulty=${triviapackage.difficulty.toLowerCase()}&type=multiple`
 		);
 		const jsonData = await response.json();
+		//saves data from api into state to be used for filling out the inputs of the form
 		if (jsonData) {
-			// if (Object.keys(triviaData)?.length > 0) {
 			setCorrectAnswer(
 				jsonData?.results[0]?.correct_answer.replace(/&amp;/gi, "&")
 			);

@@ -35,17 +35,11 @@ const TriviaMenu = () => {
 
 	return (
 		<div className="main-trivia-container">
-			{/* <div className="triviapackage-title-container">
-				<h1 className="sample-text">SAMPLE TRIVIA GAMES</h1>
-			</div> */}
 			<div className="premade-trivia-container">
 				{premadeCategories.map((option) => (
 					<PremadeTriviaPackage key={option} category={option} />
 				))}
 			</div>
-			{/* <div className="usertrivia-text-container">
-				<h1 className="usertrivia-text">USER TRIVIA GAMES</h1>
-			</div> */}
 			<InformationSectionTwo />
 			<div className="homepage-search-container">
 				<input

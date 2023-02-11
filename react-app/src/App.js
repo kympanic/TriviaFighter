@@ -17,6 +17,7 @@ import NotFoundPage from "./components/Pages/NotFoundPage";
 import GameFaqsPage from "./components/Pages/GameFaqsPage";
 import Footer from "./components/Footer";
 import { getAllUsersThunk } from "./store/users";
+
 function App() {
 	const [loaded, setLoaded] = useState(false);
 	const dispatch = useDispatch();

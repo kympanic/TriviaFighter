@@ -9,19 +9,20 @@ import {
 import { getAllReviewsThunk } from "../../../store/reviews";
 import "./gameover.css";
 
+//Page that displays the winner of the trivia game and
+//gives the option to review and log game history data
 const GameOverPage = () => {
 	const location = useLocation();
 	const history = useHistory();
 	const dispatch = useDispatch();
 	const userId = useSelector((state) => state.session.user.id);
 	const reviews = useSelector((state) => Object.values(state.reviews));
-	// const triviaData = location.state.triviaData;
-	// const winner = location.state.winner;
-	// const player1Data = location.state.player1Data;
-	// const player2Data = location.state.player2Data;
 	const [isOpenAddReview, setIsOpenAddReview] = useState(false);
 	const [isOpenReviewBtn, setIsOpenReviewBtn] = useState(true);
 
+	//Prevents users from trying to go back to Game Over page
+	//after game data is logged but saves data from location to state
+	//if there is information
 	let triviaData;
 	let winner;
 	let player1Data;
@@ -39,6 +40,7 @@ const GameOverPage = () => {
 		return review.userId === userId;
 	});
 
+	//Check to see if user has ever reviewed the game before
 	let existingReviews = [];
 	if (userReviews) {
 		existingReviews = userReviews?.filter((review) => {
@@ -48,6 +50,7 @@ const GameOverPage = () => {
 			);
 		});
 	}
+	//date for newGameData
 	let today = new Date();
 	let date =
 		today.getFullYear() +
@@ -61,6 +64,7 @@ const GameOverPage = () => {
 		dispatch(getAllGameDatasThunk());
 	}, [dispatch]);
 
+	//newGameData is saved to backend once log data is clicked
 	const homeSubmit = async (e) => {
 		e.preventDefault();
 		const newGameData = {
@@ -73,6 +77,7 @@ const GameOverPage = () => {
 		};
 
 		await dispatch(createGameDatasThunk(newGameData));
+		//clear out state after game data is saved to backend
 		window.history.replaceState({}, document.title);
 		history.push("/");
 	};
@@ -80,8 +85,6 @@ const GameOverPage = () => {
 	const handleReviewClick = () => {
 		setIsOpenAddReview(true);
 	};
-	// console.log(logData);
-	// console.log(triviaData);
 	return (
 		<div className="gameover-main-container">
 			<div>

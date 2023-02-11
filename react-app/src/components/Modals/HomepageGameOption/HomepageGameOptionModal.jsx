@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 const HomepageGameOptionModal = ({ setIsOpen, category, difficulty }) => {
 	const history = useHistory();
 
-	// console.log(category, difficulty);
+	console.log(category, difficulty);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();

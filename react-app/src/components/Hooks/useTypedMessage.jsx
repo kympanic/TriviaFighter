@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { wait } from "../Helpers";
+
+//Hook that takes a message and sets a wait(helper
+//function that creates a delay by using setTimeout)
 export const useTypedMessage = (message) => {
 	const [typedMessage, setTypedMessage] = useState("");
 

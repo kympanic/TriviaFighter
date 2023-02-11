@@ -1,5 +1,7 @@
 import "./gamefaqs.css";
 import { useState } from "react";
+
+//Page that displays answers to questions users may have
 const GameFaqsPage = () => {
 	const [selected, setSelected] = useState(null);
 
