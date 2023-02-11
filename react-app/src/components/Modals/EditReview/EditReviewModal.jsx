@@ -3,7 +3,7 @@ import { RiCloseLine } from "react-icons/ri";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { editReviewThunk } from "../../../store/reviews";
-const EditReviewModal = ({ setIsOpen, review, sessionUser }) => {
+const EditReviewModal = ({ setIsOpen, review, setIsOpenMenu }) => {
 	const dispatch = useDispatch();
 	const [errors, setErrors] = useState([]);
 	const [body, setBody] = useState(review.body);
@@ -25,6 +25,7 @@ const EditReviewModal = ({ setIsOpen, review, sessionUser }) => {
 			setErrors(data);
 		} else {
 			setIsOpen(false);
+			setIsOpenMenu(false);
 		}
 	};
 

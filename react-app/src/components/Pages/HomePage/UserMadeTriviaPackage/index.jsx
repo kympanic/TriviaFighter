@@ -21,7 +21,7 @@ const UserMadeTriviaPackage = ({ triviapackage }) => {
 	return (
 		<div className="usermade-trivia-card">
 			{triviapackage && (
-				<div>
+				<div className="usermade-trivia-info-container">
 					<img
 						onClick={() => setIsOpenDescription(true)}
 						className="homepage-usermade-trivia-img"

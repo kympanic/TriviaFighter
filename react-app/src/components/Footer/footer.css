@@ -1,6 +1,6 @@
 .footer-main {
 	border-top: 4px solid #12c2e9;
-	max-height: 75px;
+	max-height: 90px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -19,5 +19,6 @@
 }
 
 .footer-text {
+	margin-top: 10px;
 	padding-bottom: 10px;
 }

@@ -25,14 +25,31 @@
 	justify-content: center;
 	display: flex;
 }
-#homepage-title-text {
+.homepage-title-container {
+	background-color: white;
 	width: 600px;
 	height: 60px;
-	border: 2px solid white;
-	background-color: white;
 	margin-bottom: 150px;
 	border-radius: 25px;
+}
+#homepage-title-text {
+	margin-bottom: 150px;
 	font-size: 50px;
+
+	background: linear-gradient(
+		to right,
+		#ef5350,
+		#f48fb1,
+		#7e57c2,
+		#2196f3,
+		#26c6da,
+		#43a047,
+		#eeff41,
+		#f9a825,
+		#ff5722
+	);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 /*TriviaCard Section*/
@@ -89,6 +106,9 @@
 	height: 320px;
 	width: 250px;
 	background-color: #faf7f0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .premade-trivia-container {
@@ -99,7 +119,7 @@
 }
 
 .usermade-trivia-title {
-	margin-top: 5%;
+	margin-top: 10%;
 	font-size: 18px;
 	cursor: pointer;
 }
@@ -111,6 +131,11 @@
 
 .usermade-trivia-text {
 	margin-top: 4%;
+}
+.usermade-trivia-info-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 /* Searchbar */

@@ -21,7 +21,9 @@ const HomePage = () => {
 				<div className="homepage-main-container">
 					<div className="homepage-header-container"></div>
 					<div className="homepage-headerb-container">
-						<h1 id="homepage-title-text">TRIVIA FIGHTER</h1>
+						<div className="homepage-title-container">
+							<h1 id="homepage-title-text">TRIVIA FIGHTER</h1>
+						</div>
 					</div>
 					<InformationSection />
 					<div className="homepage-triviacard-container">

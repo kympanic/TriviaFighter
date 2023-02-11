@@ -3,13 +3,14 @@ import { RiCloseLine } from "react-icons/ri";
 import { useDispatch } from "react-redux";
 import { deleteReviewThunk } from "../../../store/reviews";
 
-const DeleteReviewModal = ({ setIsOpen, review }) => {
+const DeleteReviewModal = ({ setIsOpen, review, setIsOpenMenu }) => {
 	const dispatch = useDispatch();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		dispatch(deleteReviewThunk(review));
 		setIsOpen(false);
+		setIsOpenMenu(false);
 	};
 
 	return (
