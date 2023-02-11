@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { getRandomInt } from "../../../Helpers";
 import "./menu.css";
 
+//Component that controls the questions/options that the
+//user can select
 const Menu = ({
 	arrayOfQuestions,
 	setSequence,
@@ -19,7 +21,6 @@ const Menu = ({
 		txt.innerHTML = html;
 		return txt.value;
 	};
-
 	useEffect(() => {
 		const decodedQuestions = arrayOfQuestions.map((question) => {
 			return {
@@ -34,6 +35,8 @@ const Menu = ({
 		setQuestions(decodedQuestions);
 	}, [arrayOfQuestions]);
 
+	// questionIndex+1 after every question is answered to correctly display
+	// next questions data
 	const question = questions[questionIndex];
 
 	//Mixing correct answers and incorrect answers into options
@@ -50,13 +53,19 @@ const Menu = ({
 		setOptions(answers);
 	}, [question]);
 
+	//Once user clicks an answer, depending on if its incorrect or correct
+	//the battle sequence is triggered with the switch case incorrect or correct
 	const handleItemClick = (e) => {
 		e.preventDefault();
 		setQuestionIndex(questionIndex + 1);
 		if (e.target.textContent === question.correct_answer) {
 			setSequence({ mode: "isCorrect", turn });
 		} else {
-			setSequence({ mode: "isIncorrect", turn });
+			setSequence({
+				mode: "isIncorrect",
+				turn,
+				correct_answer: `${question?.correct_answer}`,
+			});
 		}
 	};
 

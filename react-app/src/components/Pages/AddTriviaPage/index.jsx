@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getTriviaPackageThunk } from "../../../store/triviapackage";
 import { useParams } from "react-router-dom";
+
+//Page that displays 3 sections. Triviapackage info,
+//add trivia package form and edit/delete questions section
 const AddTriviaPage = () => {
 	const sessionUser = useSelector((state) => state.session.user);
 	const { triviapackageId } = useParams();

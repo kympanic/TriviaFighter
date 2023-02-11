@@ -5,10 +5,12 @@ import EditSection from "./EditSection";
 import QuestionBar from "../QuestionBar";
 import "./editsection.css";
 
+//Displays a question bar and all the trivia questions available to triviapackage
 const EditContainer = ({ sessionUser, triviapackage }) => {
 	const dispatch = useDispatch();
 	const allTrivia = useSelector((state) => Object.values(state.trivias));
 
+	//filter out the trivia questions by triviapackage id
 	const selectedTrivia = allTrivia?.filter((trivia) => {
 		return triviapackage?.id === trivia?.triviaPackageId;
 	});
@@ -16,14 +18,15 @@ const EditContainer = ({ sessionUser, triviapackage }) => {
 	useEffect(() => {
 		dispatch(getAllTriviasThunk());
 	}, [dispatch]);
+
+	//QuestionBar component tracks the completion percentage of 14 trivia questions.
+	//The width is calculated by the (selectedTrivia.length/14 * 100)
+
 	return (
 		<div>
 			<h1>Questions</h1>
 			<div>
-				<QuestionBar
-					triviapackage={triviapackage}
-					selectedTrivia={selectedTrivia}
-				/>
+				<QuestionBar selectedTrivia={selectedTrivia} />
 			</div>
 			{selectedTrivia && selectedTrivia.length > 0 ? (
 				<div className="editsection-container">

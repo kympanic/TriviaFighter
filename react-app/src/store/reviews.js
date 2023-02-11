@@ -15,8 +15,6 @@ const deleteReview = (payload) => {
 	};
 };
 
-//THUNKS
-
 // GET all reviews
 export const getAllReviewsThunk = () => async (dispatch) => {
 	const response = await fetch(`/api/reviews`);

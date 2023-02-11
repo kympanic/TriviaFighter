@@ -12,8 +12,6 @@ const PremadeTriviaPackage = ({ category }) => {
 		setIsOpenOption(true);
 	};
 
-	// console.log(category, "this is the category");
-
 	return (
 		<div className="premade-trivia-card">
 			{category && (

@@ -1,15 +1,17 @@
-import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Bar from "./Bar/bar";
 import Menu from "./Menu";
 import Announcer from "./Announcer";
 import ReactHowler from "react-howler";
 import { useBattleSequence } from "../../Hooks/useBattleSequence";
-import { useEffect } from "react";
 import { wait } from "../../Helpers";
 import "./battlepage.css";
 import styles from "./styles.module.css";
+
+//Battle page where there are three main components. The announcer,
+//question menu, and player information
+//useBattleSequence is the hook that runs when a user clicks an answer
 const BattlePage = () => {
 	const history = useHistory();
 	const location = useLocation();
@@ -24,6 +26,8 @@ const BattlePage = () => {
 	const song =
 		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Cute_Background_Music_No_Copyright_(getmp3.pro).mp3";
 
+	//data is being changed through state and sent to main page
+	//depending on switch case from useBattleSequence
 	const {
 		turn,
 		inSequence,
@@ -34,8 +38,8 @@ const BattlePage = () => {
 		player2Animation,
 	} = useBattleSequence(sequence);
 
-	const selectedTriviaData = Object.values(triviaData?.results);
-	const arrayOfQuestions = selectedTriviaData.map((trivia) => {
+	const selectedTriviaData = Object?.values(triviaData?.results);
+	const arrayOfQuestions = selectedTriviaData?.map((trivia) => {
 		return {
 			question: trivia?.question,
 			correct_answer: trivia?.correct_answer,

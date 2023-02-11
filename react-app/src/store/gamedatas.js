@@ -7,8 +7,6 @@ const loadGameDatas = (payload) => {
 	};
 };
 
-//THUNKS
-
 // GET all gamedatas
 export const getAllGameDatasThunk = () => async (dispatch) => {
 	const response = await fetch(`/api/gamedatas`);

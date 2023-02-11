@@ -195,11 +195,16 @@
 	margin-right: 50px;
 	overflow: auto;
 	color: white;
+	cursor: pointer;
 }
 
+.splashjoin-text-container:hover {
+	color: #ff7f00;
+	background-color: white;
+}
 #splash-join-btn {
 	background-color: white;
-	border: 0;
+	border: 4px solid #ff7f00;
 	margin-top: 70px;
 	color: #ff7f00;
 	height: 50px;
