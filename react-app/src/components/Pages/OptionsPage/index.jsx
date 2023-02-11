@@ -50,7 +50,7 @@ const OptionsPage = () => {
 			<h1 className="optionspage-title">CHARACTER SELECT</h1>
 			<div className="player-boxes-container">
 				<div>
-					<h1>Player 1</h1>
+					<h1 className="selectedCharTitle">Player 1</h1>
 					{player1Stats && Object.keys(player1Data).length > 0 ? (
 						<div>
 							<div className="selected-char-container">
@@ -109,12 +109,12 @@ const OptionsPage = () => {
 					<div className="optionspage-btns-container">
 						{Object.keys(player1Data).length === 0 && (
 							<p className="player-choose-text">
-								Player One Choose a Character
+								PLAYER ONE CHOOSE YOUR CHARACTER
 							</p>
 						)}
 						{Object.keys(player2Data).length === 0 && (
-							<p className="player-choose-text">
-								Player Two Choose a Character
+							<p className="player2-choose-text">
+								PLAYER TWO CHOOSE YOUR CHARACTER
 							</p>
 						)}
 						{Object.keys(player1Data).length > 0 &&
@@ -139,11 +139,13 @@ const OptionsPage = () => {
 					</div>
 				</div>
 				<div>
-					<h1>Player 2</h1>
+					<h1 className="selectedCharTitle2">Player 2</h1>
 					{player2Stats && Object.keys(player2Data).length > 0 ? (
 						<div>
 							<div>
-								<p>{player2Data.name}</p>
+								<p className="selected-char-name">
+									{player2Data.name}
+								</p>
 								<img
 									className="selected-char-img"
 									src={player2Data.img}
