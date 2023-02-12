@@ -19,7 +19,6 @@ const BattlePage = () => {
 	const player1Data = location.state.player1Data;
 	const player2Data = location.state.player2Data;
 	const [sequence, setSequence] = useState({});
-	const [questionIndex, setQuestionIndex] = useState(0);
 	const [winner, setWinner] = useState();
 	const [playing, setPlaying] = useState(true);
 
@@ -38,16 +37,6 @@ const BattlePage = () => {
 		player2Animation,
 	} = useBattleSequence(sequence);
 
-	const selectedTriviaData = Object?.values(triviaData?.results);
-	const arrayOfQuestions = selectedTriviaData?.map((trivia) => {
-		return {
-			question: trivia?.question,
-			correct_answer: trivia?.correct_answer,
-			incorrect_answers: trivia.incorrect_answers,
-		};
-	});
-	arrayOfQuestions.sort(() => Math.random() - 0.5);
-
 	useEffect(() => {
 		if (player1Health === 0 || player2Health === 0) {
 			(async () => {
@@ -63,13 +52,6 @@ const BattlePage = () => {
 		// eslint-disable-next-line
 	}, [player1Health, player2Health, winner]);
 
-	// console.log(triviaData, "this is the trivia data");
-	// console.log(arrayOfQuestions, "these are all the questions");
-	// console.log(selectedTriviaData, "this is the trivia data");
-	// console.log(player1Data, "this is the player 1 data");
-	// console.log(player2Data, "this is the player 2 data");
-	// console.log(player1Health, "this is the player 1 health");
-	// console.log(player2Health, "this is the player 2 health");
 	return (
 		<div className="battlepage-main-container">
 			<ReactHowler playing={playing} src={[song]} />
@@ -138,11 +120,11 @@ const BattlePage = () => {
 				{!inSequence && (
 					<div className={styles.hudChild}>
 						<Menu
-							arrayOfQuestions={arrayOfQuestions}
 							setSequence={setSequence}
 							turn={turn}
-							setQuestionIndex={setQuestionIndex}
-							questionIndex={questionIndex}
+							// setQuestionIndex={setQuestionIndex}
+							// questionIndex={questionIndex}
+							triviaData={triviaData}
 						/>
 					</div>
 				)}
