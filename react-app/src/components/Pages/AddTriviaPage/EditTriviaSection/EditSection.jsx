@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import EditTriviaModal from "../../../Modals/EditTrivia/EditTriviaModal";
 import DeleteTriviaModal from "../../../Modals/DeleteTrivia/DeleteTriviaModal";
-import styles from "../../../Modals/App.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import "./editsection.css";
 
 //Component displays all the trivia questions from the selected trivia package
@@ -12,29 +13,37 @@ const EditSection = ({ sessionUser, triviaId }) => {
 	const trivia = useSelector((state) => state.trivias[triviaId]);
 	const [isOpenEdit, setIsOpenEdit] = useState(false);
 	const [isOpenDelete, setIsOpenDelete] = useState(false);
-
+	const [isOpenMenu, setIsOpenMenu] = useState(false);
 	return (
 		trivia &&
 		sessionUser && (
-			<div className="triviaquestion-container">
-				<div className="question-answer-container">
-					<p>{trivia.question}</p>
-					<p>Answer: {trivia.correctAnswer}</p>
-				</div>
-				<div className="edit-delete-trivia-btns">
-					<div className="question-btns-container">
-						<button
-							className={styles.editBtn}
+			// <div className="triviaquestion-container">
+			<div className="question-answer-container">
+				<p>{trivia.question}</p>
+				<p>Answer: {trivia.correctAnswer}</p>
+				{!isOpenMenu && (
+					<FontAwesomeIcon
+						className="trivia-edit-menu"
+						icon={faEllipsisH}
+						onClick={() => setIsOpenMenu(true)}
+					/>
+				)}
+				{isOpenMenu && (
+					<div className="edit-btns-container">
+						<h4
+							id="editlink-edit"
+							className="edit-question-links"
 							onClick={() => setIsOpenEdit(true)}
 						>
 							EDIT
-						</button>
-						<button
+						</h4>
+						<h4
+							id="editlink-delete"
+							className="edit-question-links"
 							onClick={() => setIsOpenDelete(true)}
-							className={styles.deleteBtn}
 						>
 							DELETE
-						</button>
+						</h4>
 						{isOpenEdit && (
 							<EditTriviaModal
 								setIsOpen={setIsOpenEdit}
@@ -42,6 +51,13 @@ const EditSection = ({ sessionUser, triviaId }) => {
 								sessionUser={sessionUser}
 							/>
 						)}
+						<h4
+							id="editlink-close"
+							className="edit-question-links"
+							onClick={() => setIsOpenMenu(false)}
+						>
+							CLOSE
+						</h4>
 						{isOpenDelete && (
 							<DeleteTriviaModal
 								setIsOpen={setIsOpenDelete}
@@ -49,8 +65,9 @@ const EditSection = ({ sessionUser, triviaId }) => {
 							/>
 						)}
 					</div>
-				</div>
+				)}
 			</div>
+			// </div>
 		)
 	);
 };

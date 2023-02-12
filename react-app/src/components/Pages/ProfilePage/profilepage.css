@@ -223,7 +223,7 @@
 }
 .trivia-add-btn:hover {
 	background-color: white;
-	border: #77dd77 2px solid;
+	border: #77dd77 4px solid;
 	transform: translate(-4px, 4px);
 }
 
@@ -238,7 +238,7 @@
 }
 .trivia-edit-btn:hover {
 	background-color: white;
-	border: #c471ed 2px solid;
+	border: #c471ed 4px solid;
 	transform: translate(-2px, 4px);
 }
 
@@ -252,7 +252,7 @@
 }
 .trivia-delete-btn:hover {
 	background-color: white;
-	border: #f64f59 2px solid;
+	border: #f64f59 4px solid;
 	transform: translate(2px, 4px);
 }
 
@@ -296,7 +296,7 @@
 	display: flex;
 	width: 100%;
 	justify-content: center;
-	border-bottom: #12c2e9 3px solid;
+	border-top: #12c2e9 3px solid;
 }
 .profilepage-comments-info {
 	padding-top: 30px;

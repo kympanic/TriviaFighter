@@ -3,8 +3,7 @@ import EditReviewModal from "../../../Modals/EditReview/EditReviewModal";
 import DeleteReviewModal from "../../../Modals/DeleteReview/DeleteReviewModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import styles from "../../../Modals/App.module.css";
+
 import "../profilepage.css";
 
 const ReviewEditButtons = ({ sessionUser, review }) => {

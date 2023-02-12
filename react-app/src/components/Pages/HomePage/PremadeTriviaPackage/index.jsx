@@ -31,6 +31,7 @@ const PremadeTriviaPackage = ({ category }) => {
 								setIsOpen={setIsOpenOption}
 								difficulty={difficulty}
 								category={category}
+								setDifficulty={setDifficulty}
 							/>
 						)}
 					</form>
