@@ -2,10 +2,13 @@ import styles from "./HomeDescriptionModal.module.css";
 import { RiCloseLine } from "react-icons/ri";
 import { useHistory } from "react-router-dom";
 
-const HomepageGameOptionModal = ({ setIsOpen, category, difficulty }) => {
+const HomepageGameOptionModal = ({
+	setIsOpen,
+	category,
+	difficulty,
+	setDifficulty,
+}) => {
 	const history = useHistory();
-
-	// console.log(category, difficulty);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -16,6 +19,11 @@ const HomepageGameOptionModal = ({ setIsOpen, category, difficulty }) => {
 		setIsOpen(false);
 	};
 
+	const handleCancel = (e) => {
+		e.preventDefault();
+		setDifficulty("--");
+		setIsOpen(false);
+	};
 	return (
 		<>
 			<div className={styles.darkBG} onClick={() => setIsOpen(false)} />
@@ -40,7 +48,7 @@ const HomepageGameOptionModal = ({ setIsOpen, category, difficulty }) => {
 							</button>
 							<button
 								className={styles.cancelBtn}
-								onClick={() => setIsOpen(false)}
+								onClick={handleCancel}
 							>
 								CANCEL
 							</button>
