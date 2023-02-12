@@ -4,7 +4,7 @@ import { getRandomInt } from "../../../Helpers";
 import "./menu.css";
 
 //Component that controls the questions/options that the
-//user can select
+//user selects
 const Menu = ({ setSequence, turn, triviaData }) => {
 	const [questions, setQuestions] = useState([]);
 	const [questionIndex, setQuestionIndex] = useState(0);
