@@ -41,11 +41,11 @@ const OptionsPage = () => {
 			`https://opentdb.com/api.php?amount=13&category=${category}&difficulty=${difficulty.toLowerCase()}&type=multiple`
 		);
 		const jsonData = await response.json();
-		setTriviaData(jsonData.results);
+		setTriviaData(jsonData);
 	};
 
 	let arrayOfQuestions;
-	if (triviaData.length > 0) {
+	if (triviaData?.results[0].length > 0) {
 		arrayOfQuestions = triviaData
 			?.map((trivia) => {
 				return {
@@ -57,7 +57,6 @@ const OptionsPage = () => {
 			.sort(() => Math.random() - 0.5);
 	}
 
-	console.log(triviaData);
 	return (
 		<div className="optionspage-container">
 			<h1 className="optionspage-title">CHARACTER SELECT</h1>
