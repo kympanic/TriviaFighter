@@ -34,12 +34,6 @@ const AddTriviaPackageModal = ({ setIsOpen, sessionUser }) => {
 		}
 	};
 
-	// const updateImage = (e) => {
-	// 	const file = e.target.files[0];
-	// 	setImage(file);
-	// 	console.log(image, "did this update");
-	// };
-
 	return (
 		<>
 			<div className={styles.darkBG} onClick={() => setIsOpen(false)} />

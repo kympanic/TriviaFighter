@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./gamehistory.css";
+
+//Component that displays game match history if it exists
 const GameHistory = ({ gameDatas, profileUser, alltrivia }) => {
 	const [isOpen, setIsOpen] = useState(false);
 

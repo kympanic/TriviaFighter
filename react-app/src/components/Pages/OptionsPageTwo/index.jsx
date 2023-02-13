@@ -3,6 +3,10 @@ import { useHistory, useLocation } from "react-router-dom";
 import { player1Stats } from "../../Helpers";
 import { player2Stats } from "../../Helpers";
 import "../OptionsPage/options.css";
+
+//Page that is directed from the user trivia package
+//User can choose a character
+//Array of questions and player data is sent to battlepage
 const OptionsPageTwo = () => {
 	const history = useHistory();
 	const location = useLocation();
@@ -18,10 +22,19 @@ const OptionsPageTwo = () => {
 		e.preventDefault();
 		history.push({
 			pathname: "/gamebattle",
-			state: { triviaData, player1Data, player2Data },
+			state: { triviaData, player1Data, player2Data, arrayOfQuestions },
 		});
 	};
-
+	const selectedTriviaData = Object?.values(triviaData?.results);
+	const arrayOfQuestions = selectedTriviaData
+		?.map((trivia) => {
+			return {
+				question: trivia?.question,
+				correct_answer: trivia?.correct_answer,
+				incorrect_answers: trivia.incorrect_answers,
+			};
+		})
+		.sort(() => Math.random() - 0.5);
 	return (
 		<div className="optionspage-container">
 			<h1 className="optionspage-title">CHARACTER SELECT</h1>

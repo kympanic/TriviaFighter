@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import "../profilepage.css";
+
 const ProfilePlayBtn = ({ trivias }) => {
 	const history = useHistory();
 
@@ -16,10 +17,6 @@ const ProfilePlayBtn = ({ trivias }) => {
 		result.correct_answer = result.correctAnswer;
 	});
 
-	// console.log(triviaData, "original data");
-
-	// const randomElement = data.sort(() => Math.random() - 0.5);
-	// console.log(randomElement, "this is randomized data");
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		history.push({

@@ -5,6 +5,9 @@ import { player1Stats } from "../../Helpers";
 import { player2Stats } from "../../Helpers";
 import "./options.css";
 
+//Page fetches data from external api and sets Trivia Data
+//User can choose a character
+//Array of questions and player data is sent to battlepage
 const OptionsPage = () => {
 	const history = useHistory();
 	const location = useLocation();
@@ -24,7 +27,7 @@ const OptionsPage = () => {
 
 		history.push({
 			pathname: "/gamebattle",
-			state: { triviaData, player1Data, player2Data },
+			state: { triviaData, player1Data, player2Data, arrayOfQuestions },
 		});
 	};
 
@@ -38,12 +41,21 @@ const OptionsPage = () => {
 			`https://opentdb.com/api.php?amount=13&category=${category}&difficulty=${difficulty.toLowerCase()}&type=multiple`
 		);
 		const jsonData = await response.json();
-		setTriviaData(jsonData);
+		setTriviaData(jsonData.results);
 	};
 
-	// console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
-	// console.log(player1Data, "this is the player one data");
-	// console.log(player2Data, "this is the player two data");
+	let arrayOfQuestions;
+	if (triviaData.length > 0) {
+		arrayOfQuestions = triviaData
+			?.map((trivia) => {
+				return {
+					question: trivia?.question,
+					correct_answer: trivia?.correct_answer,
+					incorrect_answers: trivia.incorrect_answers,
+				};
+			})
+			.sort(() => Math.random() - 0.5);
+	}
 
 	return (
 		<div className="optionspage-container">

@@ -1,5 +1,7 @@
 import "./infosection.css";
 
+//component that breaks up each section in the homepage
+//that offers info on what the user can do on the page
 const InformationSection = () => {
 	return (
 		<div className="info-main">

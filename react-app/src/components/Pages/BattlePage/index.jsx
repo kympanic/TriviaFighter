@@ -16,11 +16,13 @@ const BattlePage = () => {
 	const history = useHistory();
 	const location = useLocation();
 	const triviaData = location.state.triviaData;
+	const arrayOfQuestions = location.state.arrayOfQuestions;
 	const player1Data = location.state.player1Data;
 	const player2Data = location.state.player2Data;
 	const [sequence, setSequence] = useState({});
 	const [winner, setWinner] = useState();
 	const [playing, setPlaying] = useState(true);
+	const [questionIndex, setQuestionIndex] = useState(0);
 
 	const song =
 		"https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Cute_Background_Music_No_Copyright_(getmp3.pro).mp3";
@@ -122,9 +124,9 @@ const BattlePage = () => {
 						<Menu
 							setSequence={setSequence}
 							turn={turn}
-							// setQuestionIndex={setQuestionIndex}
-							// questionIndex={questionIndex}
-							triviaData={triviaData}
+							setQuestionIndex={setQuestionIndex}
+							questionIndex={questionIndex}
+							arrayOfQuestions={arrayOfQuestions}
 						/>
 					</div>
 				)}

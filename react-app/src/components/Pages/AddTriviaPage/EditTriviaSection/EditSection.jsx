@@ -17,7 +17,6 @@ const EditSection = ({ sessionUser, triviaId }) => {
 	return (
 		trivia &&
 		sessionUser && (
-			// <div className="triviaquestion-container">
 			<div className="question-answer-container">
 				<p>{trivia.question}</p>
 				<p>Answer: {trivia.correctAnswer}</p>
@@ -67,7 +66,6 @@ const EditSection = ({ sessionUser, triviaId }) => {
 					</div>
 				)}
 			</div>
-			// </div>
 		)
 	);
 };
