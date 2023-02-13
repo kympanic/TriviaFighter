@@ -35,6 +35,8 @@ const OptionsPageTwo = () => {
 			};
 		})
 		.sort(() => Math.random() - 0.5);
+
+	console.log(triviaData);
 	return (
 		<div className="optionspage-container">
 			<h1 className="optionspage-title">CHARACTER SELECT</h1>
