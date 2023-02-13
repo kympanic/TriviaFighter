@@ -24,7 +24,7 @@ const OptionsPage = () => {
 
 		history.push({
 			pathname: "/gamebattle",
-			state: { triviaData, player1Data, player2Data },
+			state: { triviaData, player1Data, player2Data, arrayOfQuestions },
 		});
 	};
 
@@ -41,23 +41,8 @@ const OptionsPage = () => {
 		setTriviaData(jsonData);
 	};
 
-	let arrayOfQuestions;
-	if (triviaData.length > 0) {
-		arrayOfQuestions = triviaData
-			?.map((trivia) => {
-				return {
-					question: trivia?.question,
-					correct_answer: trivia?.correct_answer,
-					incorrect_answers: trivia.incorrect_answers,
-				};
-			})
-			.sort(() => Math.random() - 0.5);
-	}
-	// const selectedTriviaData = Object?.values(triviaData?.results);
-	// //randomize the questions
-	// arrayOfQuestions?.sort(() => Math.random() - 0.5);
-	console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
-	console.log(arrayOfQuestions, "this is randomized");
+	const arrayOfQuestions = triviaData.results;
+
 	return (
 		<div className="optionspage-container">
 			<h1 className="optionspage-title">CHARACTER SELECT</h1>

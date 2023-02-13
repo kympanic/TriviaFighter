@@ -2,7 +2,6 @@ import styles from "./Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
 
 const TriviaDescription = ({ setIsOpen, triviapackage }) => {
-	console.log(triviapackage, "this is the triviapackage");
 	return (
 		<>
 			<div className={styles.darkBG} onClick={() => setIsOpen(false)} />
