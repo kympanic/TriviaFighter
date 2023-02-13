@@ -41,6 +41,16 @@ const OptionsPage = () => {
 		setTriviaData(jsonData);
 	};
 
+	// const selectedTriviaData = Object?.values(triviaData?.results);
+	// const arrayOfQuestions = selectedTriviaData?.map((trivia) => {
+	// 	return {
+	// 		question: trivia?.question,
+	// 		correct_answer: trivia?.correct_answer,
+	// 		incorrect_answers: trivia.incorrect_answers,
+	// 	};
+	// });
+	// //randomize the questions
+	// arrayOfQuestions?.sort(() => Math.random() - 0.5);
 	// console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
 	// console.log(player1Data, "this is the player one data");
 	// console.log(player2Data, "this is the player two data");
