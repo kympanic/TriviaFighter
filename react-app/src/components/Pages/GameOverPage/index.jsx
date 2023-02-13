@@ -42,7 +42,7 @@ const GameOverPage = () => {
 
 	//Check to see if user has ever reviewed the game before
 	let existingReviews = [];
-	if (userReviews && triviaData.length > 0) {
+	if (userReviews) {
 		existingReviews = userReviews?.filter((review) => {
 			return (
 				review.triviaPackageId ===

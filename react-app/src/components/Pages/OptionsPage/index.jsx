@@ -45,18 +45,21 @@ const OptionsPage = () => {
 	};
 
 	let arrayOfQuestions;
-	if (triviaData?.results[0].length > 0) {
-		arrayOfQuestions = triviaData
-			?.map((trivia) => {
-				return {
-					question: trivia?.question,
-					correct_answer: trivia?.correct_answer,
-					incorrect_answers: trivia.incorrect_answers,
-				};
-			})
-			.sort(() => Math.random() - 0.5);
-	}
 
+	// if (triviaData?.results.length > 0) {
+	// 	arrayOfQuestions = triviaData.results
+	// 		?.map((trivia) => {
+	// 			return {
+	// 				question: trivia?.question,
+	// 				correct_answer: trivia?.correct_answer,
+	// 				incorrect_answers: trivia.incorrect_answers,
+	// 			};
+	// 		})
+	// 		.sort(() => Math.random() - 0.5);
+	// }
+
+	console.log(triviaData);
+	console.log(arrayOfQuestions);
 	return (
 		<div className="optionspage-container">
 			<h1 className="optionspage-title">CHARACTER SELECT</h1>
