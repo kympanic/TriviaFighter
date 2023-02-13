@@ -18,9 +18,20 @@ const OptionsPageTwo = () => {
 		e.preventDefault();
 		history.push({
 			pathname: "/gamebattle",
-			state: { triviaData, player1Data, player2Data },
+			state: { triviaData, player1Data, player2Data, arrayOfQuestions },
 		});
 	};
+
+	const selectedTriviaData = Object?.values(triviaData?.results);
+	const arrayOfQuestions = selectedTriviaData
+		?.map((trivia) => {
+			return {
+				question: trivia?.question,
+				correct_answer: trivia?.correct_answer,
+				incorrect_answers: trivia.incorrect_answers,
+			};
+		})
+		.sort(() => Math.random() - 0.5);
 
 	return (
 		<div className="optionspage-container">

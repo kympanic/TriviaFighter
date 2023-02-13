@@ -21,7 +21,7 @@ const InformationSection = ({ userId }) => {
 					onError={onProfileImgError}
 				/>
 			</div>
-			<div className="info-content4 bubble4">
+			<div className="info-content4">
 				<h2 className="info-title4">Comments</h2>
 				<p className="info-p4">
 					{`This is what ${profileUser.username} thought of the games they've played so far`}

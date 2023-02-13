@@ -25,14 +25,6 @@ def difficulty_check(form,field):
 
 
 
-# def triviapackage_name_exists(form, field):
-#     # Checking if username is already in use
-#     name = field.data
-#     triviapackage = TriviaPackage.query.filter(TriviaPackage.name == name).first()
-#     if triviapackage:
-#         raise ValidationError('Name is already in use')
-
-
 class TriviaPackageForm(FlaskForm):
     user_id=IntegerField('user_id', validators=[DataRequired()])
     name = StringField('name', validators=[DataRequired()])

@@ -4,24 +4,18 @@ import { getRandomInt } from "../../../Helpers";
 import "./menu.css";
 
 //Component that controls the questions/options that the
-//user selects
-const Menu = ({ setSequence, turn, triviaData }) => {
+//user can select
+const Menu = ({
+	setSequence,
+	turn,
+	triviaData,
+	questionIndex,
+	setQuestionIndex,
+	arrayOfQuestions,
+}) => {
 	const [questions, setQuestions] = useState([]);
-	const [questionIndex, setQuestionIndex] = useState(0);
 	const [options, setOptions] = useState([]);
 
-	//Turn the data into array so I can map through the results and
-	//get the only data I need into an array of objects
-	const selectedTriviaData = Object?.values(triviaData?.results);
-	const arrayOfQuestions = selectedTriviaData?.map((trivia) => {
-		return {
-			question: trivia?.question,
-			correct_answer: trivia?.correct_answer,
-			incorrect_answers: trivia.incorrect_answers,
-		};
-	});
-	//randomize the questions
-	arrayOfQuestions?.sort(() => Math.random() - 0.5);
 	//decode the questions and answers coming from the api bc it comes out with messy quotes
 	const decodeHTML = function (html) {
 		const txt = document.createElement("textarea");

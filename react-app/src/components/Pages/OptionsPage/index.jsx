@@ -24,7 +24,7 @@ const OptionsPage = () => {
 
 		history.push({
 			pathname: "/gamebattle",
-			state: { triviaData, player1Data, player2Data },
+			state: { triviaData, player1Data, player2Data, arrayOfQuestions },
 		});
 	};
 
@@ -41,9 +41,7 @@ const OptionsPage = () => {
 		setTriviaData(jsonData);
 	};
 
-	// console.log(triviaData.results, "THIS IS THE TRIVIA DATA");
-	// console.log(player1Data, "this is the player one data");
-	// console.log(player2Data, "this is the player two data");
+	const arrayOfQuestions = triviaData.results;
 
 	return (
 		<div className="optionspage-container">
