@@ -18,6 +18,8 @@ const BattlePage = () => {
 	const triviaData = location.state.triviaData;
 	const player1Data = location.state.player1Data;
 	const player2Data = location.state.player2Data;
+	const arrayOfQuestions = location.state.arrayOfQuestions;
+	const [questionIndex, setQuestionIndex] = useState(0);
 	const [sequence, setSequence] = useState({});
 	const [winner, setWinner] = useState();
 	const [playing, setPlaying] = useState(true);
@@ -122,9 +124,10 @@ const BattlePage = () => {
 						<Menu
 							setSequence={setSequence}
 							turn={turn}
-							// setQuestionIndex={setQuestionIndex}
-							// questionIndex={questionIndex}
+							setQuestionIndex={setQuestionIndex}
+							questionIndex={questionIndex}
 							triviaData={triviaData}
+							arrayOfQuestions={arrayOfQuestions}
 						/>
 					</div>
 				)}

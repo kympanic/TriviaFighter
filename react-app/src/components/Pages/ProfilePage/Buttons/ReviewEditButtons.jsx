@@ -53,31 +53,6 @@ const ReviewEditButtons = ({ sessionUser, review }) => {
 					)}
 				</div>
 			)}
-			{/* <button
-				className={styles.editBtn}
-				onClick={() => setIsOpenEditReview(true)}
-			>
-				EDIT
-			</button>
-			<button
-				className={styles.deleteBtn}
-				onClick={() => setIsOpenDeleteReview(true)}
-			>
-				DELETE
-			</button>
-			{isOpenDeleteReview && (
-				<DeleteReviewModal
-					setIsOpen={setIsOpenDeleteReview}
-					review={review}
-				/>
-			)}
-			{isOpenEditReview && (
-				<EditReviewModal
-					setIsOpen={setIsOpenEditReview}
-					review={review}
-					sessionUser={sessionUser}
-				/>
-			)} */}
 		</div>
 	);
 };
