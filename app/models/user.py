@@ -14,7 +14,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     profile_img = db.Column(db.String(255))
     hashed_password = db.Column(db.String(255), nullable=False)
-
+    
 
     #relationships
     trivias = db.relationship('Trivia', back_populates='user', cascade='all,delete')
