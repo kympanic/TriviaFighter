@@ -2,13 +2,16 @@ import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import LogoutButton from "../auth/LogoutButton";
 import { login } from "../../store/session";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./navigationbar.css";
+import { useState } from "react";
 
 const NavigationBar = () => {
 	const dispatch = useDispatch();
 	const sessionUser = useSelector((state) => state.session.user);
 	const demoUser1 = useSelector((state) => state?.users[1]);
-
+	const [dropdown, setDropdown] = useState(false);
 	const demoUser = {
 		email: demoUser1?.email,
 		password: "password",
@@ -22,7 +25,7 @@ const NavigationBar = () => {
 	return (
 		<nav>
 			<ul className="navigation-main">
-				<li className="navbar-link" id="logo-nav">
+				<li className="logo-nav">
 					<NavLink to="/" exact={true} activeClassName="active">
 						<img
 							className="navbar-logo-img"
@@ -90,6 +93,22 @@ const NavigationBar = () => {
 						</li>
 					</>
 				)}
+				<div>
+					{!dropdown ? (
+						<FontAwesomeIcon
+							className="nav-hamburger-icon"
+							icon={faBars}
+							onClick={() => setDropdown(true)}
+						/>
+					) : (
+						<div>
+							<button onClick={() => setDropdown(false)}>
+								hi
+							</button>
+						</div>
+					)}
+				</div>
+				{}
 			</ul>
 		</nav>
 	);

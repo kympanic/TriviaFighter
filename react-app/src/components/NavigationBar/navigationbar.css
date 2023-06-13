@@ -13,7 +13,18 @@
 	border-bottom: #f64f59 4px solid;
 }
 
+.nav-hamburger-icon {
+	display: none;
+}
 .navbar-link {
+	text-decoration: none;
+	font-size: 22px;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+.logo-nav {
 	text-decoration: none;
 	font-size: 22px;
 	text-decoration: none;
@@ -79,4 +90,21 @@ a:hover {
 	color: #12c2e9;
 	border: 2px solid #12c2e9;
 	background-color: white;
+}
+
+@media only screen and (max-width: 728px) {
+	.navigation-main {
+		justify-content: space-around;
+	}
+	.navbar-link {
+		display: none;
+	}
+	.nav-hamburger-icon {
+		display: block;
+		font-size: 30px;
+	}
+	.nav-hamburger-icon:hover {
+		color: red;
+		cursor: pointer;
+	}
 }
