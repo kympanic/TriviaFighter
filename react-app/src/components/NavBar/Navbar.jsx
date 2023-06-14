@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavbarButton, Dropdown } from "./index.jsx";
-import { NavLink, Link } from "react-router-dom";
-import LogoutButton from "../auth/LogoutButton";
+import { Link } from "react-router-dom";
 import { login } from "../../store/session";
+import { logout } from "../../store/session";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
@@ -20,21 +19,29 @@ const Navbar = () => {
 		password: "password",
 	};
 
-	const handleClick = (e) => {
-		e.preventDefault();
+	const handleMenuClick = () => setMenuClick(!menuClick);
+	const closeMobileMenu = () => setMenuClick(false);
+
+	const handleClick = () => {
+		closeMobileMenu();
 		return dispatch(login(demoUser.email, demoUser.password));
 	};
 
-	const handleMenuClick = () => setMenuClick(!menuClick);
-	const closeMobileMenu = () => setMenuClick(false);
+	const onLogout = async (e) => {
+		closeMobileMenu();
+		await dispatch(logout());
+	};
 
 	return (
 		<>
 			<nav className="navbar">
-				{/* <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-					EPIC
-					<i class="fab fa-firstdraft" />
-				</Link> */}
+				<Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+					<img
+						className="navbar-logo-img"
+						src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/logo.jpg"
+						alt="trivia-fighter"
+					/>
+				</Link>
 				<div className="menu-icon" onClick={handleMenuClick}>
 					{menuClick ? (
 						<FontAwesomeIcon
@@ -42,13 +49,10 @@ const Navbar = () => {
 							icon={faXmark}
 						/>
 					) : (
-						<FontAwesomeIcon
-							className="nav-hamburger-icon"
-							icon={faBars}
-						/>
+						<FontAwesomeIcon icon={faBars} />
 					)}
 				</div>
-				<ul className={click ? "nav-menu active" : "nav-menu"}>
+				<ul className={menuClick ? "nav-menu active" : "nav-menu"}>
 					<li className="nav-item">
 						<Link
 							to="/"
@@ -60,31 +64,65 @@ const Navbar = () => {
 					</li>
 					<li className="nav-item">
 						<Link
-							to="/products"
+							to="/gamefaqs"
 							className="nav-links"
 							onClick={closeMobileMenu}
 						>
-							Products
+							Gamefaq
 						</Link>
 					</li>
-					<li className="nav-item">
-						<Link
-							to="/contact-us"
-							className="nav-links"
-							onClick={closeMobileMenu}
-						>
-							Contact Us
-						</Link>
-					</li>
-					<li>
-						<Link
-							to="/sign-up"
-							className="nav-links-mobile"
-							onClick={closeMobileMenu}
-						>
-							Sign Up
-						</Link>
-					</li>
+					{sessionUser ? (
+						<>
+							<li className="nav-item">
+								<Link
+									to={`/profile/${sessionUser.id}`}
+									className="nav-links"
+									onClick={closeMobileMenu}
+								>
+									Profile
+								</Link>
+							</li>
+							<li className="nav-item">
+								<Link
+									to="/"
+									className="nav-links"
+									onClick={onLogout}
+								>
+									Logout
+								</Link>
+							</li>
+						</>
+					) : (
+						<>
+							<li className="nav-item">
+								<Link
+									to="/login"
+									className="nav-links"
+									onClick={closeMobileMenu}
+								>
+									Login
+								</Link>
+							</li>
+							<li className="nav-item">
+								<Link
+									to="/sign-up"
+									className="nav-links"
+									onClick={closeMobileMenu}
+								>
+									Signup
+								</Link>
+							</li>
+							<li className="nav-item">
+								<Link
+									to="/"
+									className="nav-links"
+									onClick={handleClick}
+								>
+									Demo
+								</Link>
+							</li>
+						</>
+					)}
 				</ul>
 			</nav>
 		</>
