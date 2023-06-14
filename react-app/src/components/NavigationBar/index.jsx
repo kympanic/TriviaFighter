@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import LogoutButton from "../auth/LogoutButton";
 import { login } from "../../store/session";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import "./navigationbar.css";
 import { useState } from "react";
 
@@ -12,6 +12,7 @@ const NavigationBar = () => {
 	const sessionUser = useSelector((state) => state.session.user);
 	const demoUser1 = useSelector((state) => state?.users[1]);
 	const [dropdown, setDropdown] = useState(false);
+
 	const demoUser = {
 		email: demoUser1?.email,
 		password: "password",
@@ -21,6 +22,7 @@ const NavigationBar = () => {
 		e.preventDefault();
 		return dispatch(login(demoUser.email, demoUser.password));
 	};
+	const handleDropdown = () => setDropdown(!dropdown);
 
 	return (
 		<nav>
@@ -34,6 +36,19 @@ const NavigationBar = () => {
 						/>
 					</NavLink>
 				</li>
+				<div className="menu-icon" onClick={handleDropdown}>
+					{dropdown ? (
+						<FontAwesomeIcon
+							className="nav-x-icon"
+							icon={faXmark}
+						/>
+					) : (
+						<FontAwesomeIcon
+							className="nav-hamburger-icon"
+							icon={faBars}
+						/>
+					)}
+				</div>
 				<li className="navbar-link">
 					<NavLink to="/" exact={true} activeClassName="active">
 						HOME
@@ -93,22 +108,6 @@ const NavigationBar = () => {
 						</li>
 					</>
 				)}
-				<div>
-					{!dropdown ? (
-						<FontAwesomeIcon
-							className="nav-hamburger-icon"
-							icon={faBars}
-							onClick={() => setDropdown(true)}
-						/>
-					) : (
-						<div>
-							<button onClick={() => setDropdown(false)}>
-								hi
-							</button>
-						</div>
-					)}
-				</div>
-				{}
 			</ul>
 		</nav>
 	);
