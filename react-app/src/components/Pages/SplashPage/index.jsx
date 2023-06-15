@@ -68,7 +68,11 @@ const SpashPage = () => {
 							elit, sed do eiusmod tempor incididunt ut labore et
 							dolore magna aliqua. Ut enim ad minim veniam, quis
 							nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat.
+							ex ea commodo consequat.Lorem ipsum dolor sit amet,
+							consectetur adipiscing elit, sed do eiusmod tempor
+							incididunt ut labore et dolore magna aliqua. Ut enim
+							ad minim veniam, quis nostrud exercitation ullamco
+							laboris nisi ut aliquip ex ea commodo consequat.
 						</p>
 					</div>
 					<div className="splash-info-image">
@@ -84,7 +88,11 @@ const SpashPage = () => {
 							elit, sed do eiusmod tempor incididunt ut labore et
 							dolore magna aliqua. Ut enim ad minim veniam, quis
 							nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat.
+							ex ea commodo consequat.Lorem ipsum dolor sit amet,
+							consectetur adipiscing elit, sed do eiusmod tempor
+							incididunt ut labore et dolore magna aliqua. Ut enim
+							ad minim veniam, quis nostrud exercitation ullamco
+							laboris nisi ut aliquip ex ea commodo consequat.
 						</p>
 					</div>
 					<div className="splash-info-image">
@@ -102,7 +110,11 @@ const SpashPage = () => {
 							elit, sed do eiusmod tempor incididunt ut labore et
 							dolore magna aliqua. Ut enim ad minim veniam, quis
 							nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat.
+							ex ea commodo consequat.Lorem ipsum dolor sit amet,
+							consectetur adipiscing elit, sed do eiusmod tempor
+							incididunt ut labore et dolore magna aliqua. Ut enim
+							ad minim veniam, quis nostrud exercitation ullamco
+							laboris nisi ut aliquip ex ea commodo consequat.
 						</p>
 					</div>
 					<div className="splash-info-image">
@@ -115,7 +127,10 @@ const SpashPage = () => {
 				<div className="splash-join-section">
 					<div className="splashjoin-text-container">
 						<h1>SIGN UP TODAY</h1>
-						<button onClick={handleJoin} id="splash-join-btn">
+						<button
+							onClick={handleJoin}
+							className="splash-join-btn"
+						>
 							JOIN
 						</button>
 					</div>
