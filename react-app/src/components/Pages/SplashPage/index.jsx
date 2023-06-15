@@ -61,56 +61,57 @@ const SpashPage = () => {
 					)}
 				</div>
 				<div className="splash-info-section">
-					<div className="section">Section 1</div>
-					<div className="section">Section 2</div>
-					<div className="section">Section 3</div>
-					<div className="section">Section 4</div>
-				</div>
-				{/* <div className="splash-trivia-section">
-					<div className="splash-trivia-text-container">
-						<h1 id="splash-trivia-header-text">
-							PLAY AGAINST YOUR FRIENDS AND FAMILY
-						</h1>
-
-						<p className="splash-trivia-text">
-							TRIVIA FIGHTER IS A TURN BASED BATTLE GAME, BUT
-							INSTEAD OF FIGHTING WITH YOUR FISTS, YOU ANSWER
-							TRIVIA QUESTIONS USING YOUR WITS
-						</p>
-						<p className="splash-trivia-text">
-							CREATE YOUR OWN TRIVIA QUESTIONS OR CHOOSE COMMUNITY
-							CREATED GAMES
+					<div className="splash-info-text">
+						<h2>Select A Game</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
 						</p>
 					</div>
-					<div className="splash-trivia-img-container">
+					<div className="splash-info-image">
 						<img
-							className="splash-trivia-img"
 							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Splash-trivia-img.png"
-							alt="splash-trivia"
+							alt="Description"
+						/>
+					</div>
+					<div className="splash-info-text">
+						<h2>Go To Battle</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
+						</p>
+					</div>
+					<div className="splash-info-image">
+						<img
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/splash-battle-img.png"
+							alt="Description"
 						/>
 					</div>
 				</div>
-
-				<div className="splash-battle-section">
-					<div className="splashbattle-text-container">
-						<h1 id="splashbattle-header-text">Time to Battle</h1>
-						<p className="splashbattle-text">
-							TAKE TURNS ANSWERING QUESTIONS, DO SOME DAMAGE
+				<div className="splash-info-section">
+					<div className="splash-info-text">
+						<h2>Customize Your Profile</h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
 						</p>
-						<p className="splashbattle-text">
-							BE CAREFUL. ANSWER INCORRECTLY AND YOU CAN TAKE
-							DAMAGE YOURSELF
-						</p>
-						<p></p>
 					</div>
-					<div className="splashbattle-img-container">
+					<div className="splash-info-image">
 						<img
-							className="splashbattle-img"
-							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/splash-battle-img.png"
-							alt="splash-battle"
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Screen+Shot+2023-06-15+at+12.15.27+PM.png"
+							alt="Description"
 						/>
 					</div>
-				</div> */}
+				</div>
 				<div className="splash-join-section">
 					<div className="splashjoin-text-container">
 						<h1>SIGN UP TODAY</h1>
