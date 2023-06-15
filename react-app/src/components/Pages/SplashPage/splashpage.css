@@ -2,7 +2,7 @@
 	margin-top: 50px;
 	height: 100%;
 	width: 100%;
-	background-color: slategray;
+	background-color: white;
 }
 
 .splash-content-wrapper {
@@ -24,13 +24,24 @@
 }
 
 #trivia-fighter-title {
-	font-size: 100px;
-	color: #ffff33;
-	margin-top: 80px;
-	margin-bottom: 50px;
-
-	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
-		0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+	color: black;
+	width: 20ch;
+	animation: typing 2s steps(16), blink 0.5s step-end infinite alternate;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 2px solid;
+	font-family: monospace;
+	font-size: 5em;
+}
+@keyframes typing {
+	from {
+		width: 0;
+	}
+}
+@keyframes blink {
+	50% {
+		border-color: transparent;
+	}
 }
 
 .splash-logo-img {
@@ -38,14 +49,29 @@
 	height: 100%;
 }
 
+.splash-info-section {
+	border: 2px solid gray;
+	padding: 20px;
+	display: grid;
+	grid-template-rows: auto auto; /* Two rows, first row auto-sized, second row auto-sized */
+	grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+	gap: 10px; /* Gap between grid items */
+}
+
+.section {
+	background-color: #eaeaea;
+	padding: 20px;
+}
+
+/* might not use */
 .splash-trivia-section {
 	height: 100%;
 	width: 100%;
-	margin-top: 100px;
 	background-color: white;
 	display: flex;
 	justify-content: center;
 	margin-bottom: 100px;
+	border: 2px solid gray;
 }
 
 .splash-trivia-text-container {
@@ -94,21 +120,95 @@
 }
 
 .splashchar-text-container {
-	background-color: #faf7f0;
-	padding: 10px;
-	height: 180px;
-	width: 500px;
-	border-radius: 20px;
+	word-spacing: 3px;
+
 	text-align: center;
-	margin-left: 80px;
-	margin-top: 70px;
-	overflow: auto;
-	color: #c471ed;
+	width: 30%;
+	cursor: pointer;
+	border: none;
+	font-weight: bolder;
+	font-size: 20px;
+	cursor: pointer;
+	line-height: 1.5;
+}
+
+.splashchar-select-button-wrap {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#splashchar-select-button {
+	min-width: 300px;
+	min-height: 60px;
+	font-family: "Nunito", sans-serif;
+	font-size: 22px;
+	text-transform: uppercase;
+	letter-spacing: 1.3px;
+	font-weight: 700;
+	color: white;
+	background: #313133;
+	background: linear-gradient(90deg, #313133 0%, #313133 100%);
+	border: none;
+	border-radius: 1000px;
+	box-shadow: 12px 12px 24px #313133;
+	transition: all 0.3s ease-in-out 0s;
+	cursor: pointer;
+	outline: none;
+	position: relative;
+	padding: 20px;
+}
+
+#splashchar-select-button:hover,
+#splashchar-select-button:focus {
+	color: white;
+	transform: translateY(-6px);
+}
+
+#splashchar-select-button:hover::before,
+#splashchar-select-button:focus::before {
+	opacity: 1;
+}
+
+#splashchar-select-button::after {
+	content: "";
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	border: 6px solid #313133;
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: ring 0.5s infinite;
+}
+
+#splashchar-select-button:hover::after,
+#splashchar-select-button:focus::after {
+	animation: none;
+	display: none;
+}
+@keyframes ring {
+	0% {
+		width: 30px;
+		height: 30px;
+		opacity: 1;
+	}
+	100% {
+		width: 300px;
+		height: 300px;
+		opacity: 0;
+	}
+}
+
+.splashchar-text {
+	font-size: larger;
 }
 
 #splashchar-header-text {
-	margin-top: 25px;
-	font-size: 25px;
+	color: white;
 }
 
 .splash-battle-section {

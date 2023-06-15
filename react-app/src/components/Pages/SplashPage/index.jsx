@@ -1,4 +1,5 @@
 import "./splashpage.css";
+import { useState } from "react";
 import { player1Stats } from "../../Helpers";
 import { player2Stats } from "../../Helpers";
 import { useHistory } from "react-router-dom";
@@ -6,6 +7,7 @@ import { Card } from "../../Carousel/Carousel";
 import Carousel from "../../Carousel/Carousel";
 const SpashPage = () => {
 	const history = useHistory();
+	const [chooseText, setChooseText] = useState(false);
 
 	const handleSignIn = () => {
 		history.push("/login");
@@ -19,10 +21,7 @@ const SpashPage = () => {
 		<div className="splash-main">
 			<div className="splash-content-wrapper">
 				<div className="splash-logo-section">
-					<h1 id="trivia-fighter-title">TRIVIA FIGHTER</h1>
-					<button onClick={handleSignIn} className="splash-log-btns">
-						LOG IN
-					</button>
+					<h1 id="trivia-fighter-title">TRIVIA FIGHTER v1.0b</h1>
 				</div>
 				<div className="splash-char-section">
 					<div className="char-carousel-container">
@@ -36,20 +35,38 @@ const SpashPage = () => {
 							))}
 						</Carousel>
 					</div>
-					<div className="splashchar-text-container">
-						<h1 id="splashchar-header-text">
-							CHOOSE YOUR CHARACTER
-						</h1>
-						<p className="splash-trivia-text">
-							IN OPTIONS, TWO PLAYERS CAN EACH SELECT AN AVATAR
-							FROM THE CHARACTERS LIST
-						</p>
-						<p className="splash-trivia-text">
-							BATTLE UNTIL ONE OF YOU FALLS
-						</p>
-					</div>
+					{chooseText ? (
+						<div
+							className="splashchar-text-container"
+							onClick={() => setChooseText(false)}
+						>
+							<p className="splashchar-text">
+								Lorem ipsum dolor sit amet, consectetur
+								adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut
+								enim ad minim veniam, quis nostrud exercitation
+								ullamco laboris nisi ut aliquip ex ea commodo
+								consequat.
+							</p>
+						</div>
+					) : (
+						<div className="splashchar-select-button-wrap">
+							<button
+								id="splashchar-select-button"
+								onClick={() => setChooseText(true)}
+							>
+								Select your fighter
+							</button>
+						</div>
+					)}
 				</div>
-				<div className="splash-trivia-section">
+				<div className="splash-info-section">
+					<div className="section">Section 1</div>
+					<div className="section">Section 2</div>
+					<div className="section">Section 3</div>
+					<div className="section">Section 4</div>
+				</div>
+				{/* <div className="splash-trivia-section">
 					<div className="splash-trivia-text-container">
 						<h1 id="splash-trivia-header-text">
 							PLAY AGAINST YOUR FRIENDS AND FAMILY
@@ -93,7 +110,7 @@ const SpashPage = () => {
 							alt="splash-battle"
 						/>
 					</div>
-				</div>
+				</div> */}
 				<div className="splash-join-section">
 					<div className="splashjoin-text-container">
 						<h1>SIGN UP TODAY</h1>
