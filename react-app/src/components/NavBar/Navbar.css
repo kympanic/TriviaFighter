@@ -24,7 +24,7 @@
 
 .nav-menu {
 	display: grid;
-	grid-template-columns: repeat(5, auto);
+	grid-template-columns: repeat(6, auto);
 	grid-gap: 10px;
 	list-style: none;
 	text-align: center;
@@ -46,7 +46,7 @@
 }
 
 .nav-links:hover {
-	background-color: #1888ff;
+	background-color: #1761b0;
 	border-radius: 4px;
 	transition: all 0.2s ease-out;
 }

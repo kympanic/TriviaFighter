@@ -2,7 +2,7 @@
 	margin-top: 50px;
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+	background-color: slategray;
 }
 
 .splash-content-wrapper {
@@ -81,32 +81,16 @@
 }
 
 .splash-char-section {
-	height: 100%;
-	width: 100%;
-	background-color: white;
+	height: 70vh;
 	display: flex;
-	justify-content: space-evenly;
-
-	border-top: 3px solid #f64f59;
-	background-color: #f64f59;
+	align-items: center;
+	justify-content: space-around;
+	overflow: hidden;
+	background-image: linear-gradient(45deg, #8b5cf6, #ec4899);
 }
 
-.splashchar-container {
-	margin-top: 50px;
-	height: 240px;
-	width: 200px;
-	text-align: center;
-	border: 3px solid grey;
-	background-color: white;
-	margin-bottom: 50px;
-}
-.splashchar-container:hover {
-	transform: scale(1.2);
-}
-
-.splash-char-img {
-	width: 200px;
-	height: 200px;
+.char-carousel-container {
+	margin-left: 10%;
 }
 
 .splashchar-text-container {

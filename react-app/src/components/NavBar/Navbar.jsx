@@ -38,7 +38,7 @@ const Navbar = () => {
 				<Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
 					<img
 						className="navbar-logo-img"
-						src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/logo.jpg"
+						src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/videogametrivialog.jpg"
 						alt="trivia-fighter"
 					/>
 				</Link>

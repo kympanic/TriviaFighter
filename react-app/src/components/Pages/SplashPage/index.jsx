@@ -2,7 +2,8 @@ import "./splashpage.css";
 import { player1Stats } from "../../Helpers";
 import { player2Stats } from "../../Helpers";
 import { useHistory } from "react-router-dom";
-
+import { Card } from "../../Carousel/Carousel";
+import Carousel from "../../Carousel/Carousel";
 const SpashPage = () => {
 	const history = useHistory();
 
@@ -12,6 +13,7 @@ const SpashPage = () => {
 	const handleJoin = () => {
 		history.push("/sign-up");
 	};
+	const allPlayers = [...player1Stats, ...player2Stats];
 
 	return (
 		<div className="splash-main">
@@ -21,6 +23,31 @@ const SpashPage = () => {
 					<button onClick={handleSignIn} className="splash-log-btns">
 						LOG IN
 					</button>
+				</div>
+				<div className="splash-char-section">
+					<div className="char-carousel-container">
+						<Carousel>
+							{allPlayers.map((player) => (
+								<Card
+									name={player.name}
+									img={player.img}
+									description={player.description}
+								/>
+							))}
+						</Carousel>
+					</div>
+					<div className="splashchar-text-container">
+						<h1 id="splashchar-header-text">
+							CHOOSE YOUR CHARACTER
+						</h1>
+						<p className="splash-trivia-text">
+							IN OPTIONS, TWO PLAYERS CAN EACH SELECT AN AVATAR
+							FROM THE CHARACTERS LIST
+						</p>
+						<p className="splash-trivia-text">
+							BATTLE UNTIL ONE OF YOU FALLS
+						</p>
+					</div>
 				</div>
 				<div className="splash-trivia-section">
 					<div className="splash-trivia-text-container">
@@ -46,50 +73,7 @@ const SpashPage = () => {
 						/>
 					</div>
 				</div>
-				<div className="splash-char-section">
-					<div className="splashchar-container">
-						<img
-							className="splash-char-img"
-							src={player1Stats[0].img}
-							alt={player1Stats[0].name}
-						/>
-						<p className="splash-char-name">
-							{player1Stats[0].name}
-						</p>
-					</div>
-					<div className="splashchar-container">
-						<img
-							className="splash-char-img"
-							src={player2Stats[1].img}
-							alt={player2Stats[1].name}
-						/>
-						<p className="splash-char-name">
-							{player2Stats[1].name}
-						</p>
-					</div>
-					<div className="splashchar-container">
-						<img
-							className="splash-char-img"
-							src={player2Stats[2].img}
-							alt={player2Stats[2].name}
-						/>
-						<p className="splash-char-name">
-							{player2Stats[2].name}
-						</p>
-					</div>
-					<div className="splashchar-text-container">
-						<h1 id="splashchar-header-text">
-							CHOOSE YOUR CHARACTER
-						</h1>
-						<p className="splash-trivia-text">
-							IN OPTIONS, TWO PLAYERS CAN EACH SELECT AN AVATAR
-							FROM THE CHARACTERS LIST
-						</p>
-						<p className="splash-trivia-text">
-							BATTLE UNTIL ONE OF YOU FALLS
-						</p>
-					</div>
-				</div>
+
 				<div className="splash-battle-section">
 					<div className="splashbattle-text-container">
 						<h1 id="splashbattle-header-text">Time to Battle</h1>
