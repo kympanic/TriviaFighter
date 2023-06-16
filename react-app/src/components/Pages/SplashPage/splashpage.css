@@ -292,4 +292,8 @@
 	#trivia-fighter-title {
 		font-size: 30px;
 	}
+	.splash-char-section,
+	.splash-info-section {
+		display: none;
+	}
 }

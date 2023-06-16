@@ -5,25 +5,8 @@
 	margin-top: 10px;
 }
 
-.premade-trivia-container {
-	display: flex;
-	text-align: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	padding: 20px;
-	position: relative;
-	background: rgb(255, 255, 255);
-	background: rgb(255, 255, 255);
-	background: radial-gradient(
-		circle,
-		rgba(255, 255, 255, 1) 50%,
-		rgba(18, 194, 233, 1) 100%
-	);
-}
-
 .premade-trivia-card {
 	padding: 30px;
-	border: 3px solid #12c2e9;
 	margin: 40px;
 	border-radius: 20px;
 	height: 270px;
@@ -34,4 +17,16 @@
 .premade-difficulty-form {
 	margin-top: 20%;
 	font-size: 18px;
+}
+
+@media screen and (max-width: 700px) {
+	.premade-trivia-card {
+		padding: 30px;
+		height: 220px;
+		width: 200px;
+	}
+	.premade-difficulty-form {
+		margin-top: 10%;
+		font-size: 18px;
+	}
 }

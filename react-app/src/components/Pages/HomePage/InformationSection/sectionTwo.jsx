@@ -1,14 +1,6 @@
-import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 import "./infosection.css";
 
 const InformationSectionTwo = ({ infoTexts }) => {
-	const sessionUserId = useSelector((state) => state.session.user.id);
-
-	const history = useHistory();
-	const handleClick = () => {
-		history.push(`/profile/${sessionUserId}`);
-	};
 	return (
 		<div className="info-main2">
 			<div className="info-img-box2">
@@ -17,7 +9,7 @@ const InformationSectionTwo = ({ infoTexts }) => {
 					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/videogamefatcat.jpg"
 					alt="fatcat-playing-videogames"
 				/>
-				<div className="info-background-box2"></div>
+				{/* <div className="info-background-box2"></div> */}
 			</div>
 			<div className="info-content2">
 				<h2 className="info-title2">{infoTexts.title}</h2>
@@ -29,7 +21,7 @@ const InformationSectionTwo = ({ infoTexts }) => {
 					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/fightingkangaroo.jpg"
 					alt="fighting-kangaroo"
 				/>
-				<div className="info-background-boxc"></div>
+				{/* <div className="info-background-boxc"></div> */}
 			</div>
 		</div>
 	);

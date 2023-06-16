@@ -74,12 +74,23 @@ const TriviaMenu = () => {
 		<div className="main-trivia-container">
 			<div className="home-trivia-btn-container">
 				{premade ? (
-					<button className="" onClick={handleButtonClick}>
-						Play User Games
+					<button
+						className={
+							premade ? "trivia-switch-btn" : "trivia-switch-btn2"
+						}
+						// className="trivia-switch-btn"
+						onClick={handleButtonClick}
+					>
+						Click To Play User Games
 					</button>
 				) : (
-					<button onClick={handleButtonClick}>
-						Play Premade Games
+					<button
+						className={
+							premade ? "trivia-switch-btn" : "trivia-switch-btn2"
+						}
+						onClick={handleButtonClick}
+					>
+						Click to Play Premade Games
 					</button>
 				)}
 			</div>
