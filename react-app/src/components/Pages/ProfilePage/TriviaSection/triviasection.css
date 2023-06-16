@@ -1,0 +1,36 @@
+.triviacard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	border-radius: 0.35rem;
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+	background-color: white;
+	transform-style: preserve-3d;
+	transition: 150ms;
+	transform: perspective(1000px) rotateY(var(--rotate-y, 0))
+		translateY(var(--translate-y, 0));
+	height: 370px;
+	width: 300px;
+	margin: 10px;
+	z-index: 0;
+}
+
+.front {
+	z-index: 0;
+}
+.back {
+	z-index: 0;
+}
+.triviacard.flip {
+	--rotate-y: 180deg;
+}
+
+.triviacard .back {
+	transform: rotateY(180deg);
+}
+
+.triviacard-front-btn {
+	cursor: pointer;
+}

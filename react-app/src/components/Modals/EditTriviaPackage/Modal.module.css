@@ -1,5 +1,5 @@
 .centered {
-	position: fixed;
+	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -11,7 +11,7 @@
 	height: 800px;
 	background: white;
 	color: white;
-	position: relative;
+	position: absolute;
 	z-index: 99;
 	border-radius: 30px;
 	box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 1);

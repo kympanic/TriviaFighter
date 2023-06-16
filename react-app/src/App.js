@@ -7,7 +7,6 @@ import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import Navbar from "./components/NavBar/Navbar";
 import HomePage from "./components/Pages/HomePage";
-// import HomePageNew from "./components/Pages/HomePageNew";
 import ProfilePage from "./components/Pages/ProfilePage";
 import AddTriviaPage from "./components/Pages/AddTriviaPage";
 import OptionsPage from "./components/Pages/OptionsPage";

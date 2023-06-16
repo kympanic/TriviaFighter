@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import DeleteTriviaPackageModal from "../../../Modals/DeleteTriviaPackage/DeleteTriviaPackageModal";
 import EditTriviaPackageModal from "../../../Modals/EditTriviaPackage/EditTriviaPackageModal";
-
+import { useDispatch } from "react-redux";
+import { deleteTriviaPackageThunk } from "../../../../store/triviapackage";
 const TriviaEditButtons = ({ sessionUser, triviapackage }) => {
 	const history = useHistory();
+	const dispatch = useDispatch();
 
+	const handleDelete = (e) => {
+		e.preventDefault();
+		dispatch(deleteTriviaPackageThunk(triviapackage));
+	};
 	const [isOpenDeleteTriviaPackage, setIsOpenDeleteTriviaPackage] =
 		useState(false);
 	const [isOpenEditTriviaPackage, setIsOpenEditTriviaPackage] =
@@ -22,26 +27,17 @@ const TriviaEditButtons = ({ sessionUser, triviapackage }) => {
 					})
 				}
 			>
-				TRIVIA
+				Questions
 			</button>
-			<button
+			{/* <button
 				className="trivia-edit-btn"
 				onClick={() => setIsOpenEditTriviaPackage(true)}
 			>
-				EDIT
+				Info
+			</button> */}
+			<button className="trivia-delete-btn" onClick={handleDelete}>
+				Delete
 			</button>
-			<button
-				className="trivia-delete-btn"
-				onClick={() => setIsOpenDeleteTriviaPackage(true)}
-			>
-				DELETE
-			</button>
-			{isOpenDeleteTriviaPackage && (
-				<DeleteTriviaPackageModal
-					setIsOpen={setIsOpenDeleteTriviaPackage}
-					triviapackage={triviapackage}
-				/>
-			)}
 			{isOpenEditTriviaPackage && (
 				<EditTriviaPackageModal
 					setIsOpen={setIsOpenEditTriviaPackage}

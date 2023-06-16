@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getAllTriviasPackagesThunk } from "../../../store/triviapackage";
@@ -20,6 +20,9 @@ const ProfilePage = () => {
 	const profileUser = useSelector((state) => state?.users[userId]);
 	const sessionUser = useSelector((state) => state.session.user);
 	const gameDatas = useSelector((state) => Object.values(state.gamedatas));
+	const [currentPage, setCurrentPage] = useState(1);
+	const itemsPerPage = 6;
+
 	const allTriviaPackages = useSelector((state) =>
 		Object.values(state.triviapackages)
 	);
@@ -27,9 +30,25 @@ const ProfilePage = () => {
 	const profileTriviaPackages = allTriviaPackages.filter((triviaPackage) => {
 		return triviaPackage.userId === id;
 	});
+
+	const totalPages = Math.ceil(profileTriviaPackages.length / itemsPerPage);
+	//get trivia packages for current page
+
+	const startIndex = (currentPage - 1) * itemsPerPage;
+	const endIndex = startIndex + itemsPerPage;
+	const currentItems = profileTriviaPackages.slice(startIndex, endIndex);
+
 	const profileReviews = allReviews.filter((review) => {
 		return review.userId === id;
 	});
+	// Handle next page click
+	const handleNextPage = () => {
+		setCurrentPage((prevPage) => prevPage + 1);
+	};
+	// Handle previous page click
+	const handlePrevPage = () => {
+		setCurrentPage((prevPage) => prevPage - 1);
+	};
 
 	useEffect(() => {
 		dispatch(getAllTriviasPackagesThunk());
@@ -41,7 +60,7 @@ const ProfilePage = () => {
 	return (
 		<div className="profilepage-main-container">
 			{sessionUser && profileUser && profileTriviaPackages && (
-				<div>
+				<div className="profilepage-content-wrapper">
 					<div className="profilepage-header-container">
 						<ProfileCard
 							profileUser={profileUser}
@@ -65,17 +84,36 @@ const ProfilePage = () => {
 						</h1>
 						{profileTriviaPackages.length > 0 ? (
 							<div className="profilepage-triviapackage-menu">
-								{profileTriviaPackages &&
-									profileTriviaPackages.map(
-										(triviapackage) => (
+								<div className="profilepage-trivia-grid">
+									{currentItems.map((triviapackage) => (
+										<div
+											key={triviapackage.id}
+											className="trivia-grid-items"
+										>
 											<TriviaSection
 												key={triviapackage.name}
 												triviapackage={triviapackage}
 												id={id}
 												sessionUser={sessionUser}
 											/>
-										)
-									)}
+										</div>
+									))}
+								</div>
+								{totalPages > 1 && (
+									<div className="pagination">
+										{currentPage > 1 && (
+											<button onClick={handlePrevPage}>
+												Previous Page
+											</button>
+										)}
+
+										{currentPage < totalPages && (
+											<button onClick={handleNextPage}>
+												Next Page
+											</button>
+										)}
+									</div>
+								)}
 							</div>
 						) : (
 							<div className="no-packages-container">
@@ -109,5 +147,19 @@ const ProfilePage = () => {
 		</div>
 	);
 };
+
+{
+	/* {profileTriviaPackages &&
+									profileTriviaPackages.map(
+										(triviapackage) => (
+											<TriviaSection
+												key={triviapackage.name}
+												triviapackage={triviapackage}
+												id={id}
+												sessionUser={sessionUser}
+											/>
+										)
+									)} */
+}
 
 export default ProfilePage;

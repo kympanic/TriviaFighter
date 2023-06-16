@@ -7,7 +7,7 @@ const AddTriviaButton = ({ sessionUser }) => {
 
 	return (
 		<div className="create-triviabtn-container">
-			<button
+			{/* <button
 				className="add-trivia-btn"
 				onClick={() => setIsOpenAddTriviaPackage(true)}
 			>
@@ -18,7 +18,7 @@ const AddTriviaButton = ({ sessionUser }) => {
 					setIsOpen={setIsOpenAddTriviaPackage}
 					sessionUser={sessionUser}
 				/>
-			)}
+			)} */}
 		</div>
 	);
 };
