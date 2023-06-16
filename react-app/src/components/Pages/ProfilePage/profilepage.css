@@ -6,6 +6,15 @@
 	width: 100%;
 }
 
+.profilepage-content-wrapper {
+	background-color: white;
+	margin-left: 8%;
+	margin-right: 8%;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
 /* Profile Header*/
 .profilepage-header-container {
 	background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
@@ -155,27 +164,30 @@
 /*Triviapackages Section*/
 .profilepage-content-container {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 	z-index: 0;
 	background-color: white;
-	max-height: 1400px;
-	width: 1650px;
-	padding-bottom: 40px;
+	height: fit-content;
+	width: 100%;
 }
 .profilepage-triviapackage-menu {
-	display: flex;
-	text-align: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	padding: 20px;
-	margin: 20px;
-	border-radius: 20px;
-	max-height: 1000px;
+	position: relative;
+	height: 100%;
+	width: 100%;
 	overflow: auto;
 	background-color: #12c2e9;
-	margin-right: 4%;
-	margin-left: 4%;
+	z-index: 0;
 }
-.profilepage-triviapackage-card {
+
+.profilepage-trivia-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	justify-items: center;
+	align-items: center;
+}
+/* .profilepage-triviapackage-card {
 	margin: 30px;
 	border: black 2px solid;
 	border-radius: 15px;
@@ -186,18 +198,14 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
+} */
 .profilepage-triviapackage-img {
 	height: 150px;
 	width: 150px;
 	border-radius: 50%;
 	margin-bottom: 6%;
-	cursor: pointer;
 }
 
-.profilepage-triviapackage-img:hover {
-	transform: scale(1.2);
-}
 .triviacard-title-text {
 	font-size: 20px;
 }
@@ -354,7 +362,7 @@
 
 .no-packages-container {
 	border: 2px solid #12c2e9;
-	height: 140px;
+	height: 400px;
 	display: flex;
 	justify-content: center;
 	background-color: #12c2e9;

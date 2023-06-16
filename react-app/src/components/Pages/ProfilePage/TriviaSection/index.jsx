@@ -3,44 +3,67 @@ import TriviaEditButtons from "../Buttons/TriviaEditButtons";
 import ProfilePlayBtn from "../Buttons/ProfilePlayBtn";
 import TriviaDescription from "../../../Modals/TriviaDescription/TriviaDescription";
 import { setDefaultTriviaImage } from "../../../Helpers";
-import "../profilepage.css";
 
+import "./triviasection.css";
 const TriviaSection = ({ triviapackage, sessionUser, id }) => {
 	const [isOpenDescription, setIsOpenDescription] = useState(false);
-
+	const [isOpenDeleteTriviaPackage, setIsOpenDeleteTriviaPackage] =
+		useState(false);
+	const [isOpenEditTriviaPackage, setIsOpenEditTriviaPackage] =
+		useState(false);
+	const [flip, setFlip] = useState(false);
 	return (
-		<div className="profilepage-triviapackage-card">
-			<img
-				className="profilepage-triviapackage-img"
-				src={triviapackage.imageUrl}
-				alt={triviapackage.name}
-				onError={setDefaultTriviaImage}
-				onClick={() => setIsOpenDescription(true)}
-			/>
-			<p className="triviacard-title-text">{triviapackage.name}</p>
-			<p className="triviacard-text">
-				Category: {triviapackage.category}
-			</p>
-			<p className="triviacard-text">
-				Difficulty: {triviapackage.difficulty}
-			</p>
-			<p className="triviacard-text">Rating: {triviapackage.avgRating}</p>
-			{sessionUser.id === id && (
-				<TriviaEditButtons
-					triviapackage={triviapackage}
-					sessionUser={sessionUser}
-				/>
-			)}
-			{sessionUser.id !== id && triviapackage.trivias.length >= 14 && (
-				<ProfilePlayBtn trivias={triviapackage.trivias} />
-			)}
-			{isOpenDescription && (
-				<TriviaDescription
-					setIsOpen={setIsOpenDescription}
-					triviapackage={triviapackage}
-				/>
-			)}
-		</div>
+		<>
+			<div className={`triviacard ${flip ? "flip" : ""}`}>
+				{!flip ? (
+					<div className="front">
+						<div>
+							<img
+								className="profilepage-triviapackage-img"
+								src={triviapackage.imageUrl}
+								alt={triviapackage.name}
+								onError={setDefaultTriviaImage}
+							/>
+						</div>
+
+						<p className="triviacard-title-text">
+							{triviapackage.name}
+						</p>
+						<p className="triviacard-text">
+							Category: {triviapackage.category}
+						</p>
+						<p className="triviacard-text">
+							Difficulty: {triviapackage.difficulty}
+						</p>
+						<p className="triviacard-text">
+							Rating: {triviapackage.avgRating}
+						</p>
+						{sessionUser.id !== id &&
+							triviapackage.trivias.length >= 14 && (
+								<ProfilePlayBtn
+									trivias={triviapackage.trivias}
+								/>
+							)}
+						{sessionUser.id === id && (
+							<button onClick={() => setFlip(!flip)}>
+								{">"}
+							</button>
+						)}
+					</div>
+				) : (
+					<div className="back">
+						<p>{triviapackage.description}</p>
+						{sessionUser.id === id && (
+							<TriviaEditButtons
+								triviapackage={triviapackage}
+								sessionUser={sessionUser}
+							/>
+						)}
+						<button onClick={() => setFlip(!flip)}>back</button>
+					</div>
+				)}
+			</div>
+		</>
 	);
 };
 
