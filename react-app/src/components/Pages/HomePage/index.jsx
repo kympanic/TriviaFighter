@@ -19,17 +19,18 @@ const HomePage = () => {
 		<>
 			{sessionUser ? (
 				<div className="homepage-main-container">
-					<div className="homepage-header-container"></div>
-					<div className="homepage-headerb-container">
-						<div className="homepage-title-container">
-							<h1 id="homepage-title-text">TRIVIA FIGHTER</h1>
+					<div className="homepage-wrapper">
+						<div className="homepage-header-container"></div>
+						<div className="homepage-headerb-container">
+							<div className="homepage-title-container">
+								<h1 id="homepage-title-text">TRIVIA FIGHTER</h1>
+							</div>
 						</div>
+						<div className="homepage-triviacard-container">
+							<TriviaMenu />
+						</div>
+						<InformationSectionThree />
 					</div>
-					<InformationSection />
-					<div className="homepage-triviacard-container">
-						<TriviaMenu />
-					</div>
-					<InformationSectionThree />
 				</div>
 			) : (
 				<div>

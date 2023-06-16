@@ -55,26 +55,27 @@ h2 {
 }
 
 .nav {
-	color: white;
-	font-size: 5rem;
+	color: grey;
+	font-size: 3rem;
+
 	position: absolute;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	top: 50%;
-	z-index: 2;
+	z-index: 0;
 	cursor: pointer;
 	user-select: none;
 	background: unset;
 	border: unset;
 
 	&.left {
-		transform: translateX(-100%) translatey(-50%);
+		transform: translateX(-300%) translatey(-50%);
 	}
 
 	&.right {
 		right: 0;
-		transform: translateX(100%) translatey(-50%);
+		transform: translateX(300%) translatey(-50%);
 	}
 }
 

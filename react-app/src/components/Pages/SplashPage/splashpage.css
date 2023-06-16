@@ -194,7 +194,6 @@
 
 .splash-join-section {
 	height: 100%;
-	width: 100%;
 	margin-top: 50px;
 	background-color: white;
 	display: flex;
@@ -292,5 +291,9 @@
 @media screen and (max-width: 591px) {
 	#trivia-fighter-title {
 		font-size: 30px;
+	}
+	.splash-char-section,
+	.splash-info-section {
+		display: none;
 	}
 }
