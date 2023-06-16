@@ -3,6 +3,7 @@ import HomepageGameOptionModal from "../../../Modals/HomepageGameOption/Homepage
 import PremadeGameName from "./PremadeGameName";
 import PremadeGameImg from "./PremadeGameImg";
 import "./premadetrivia.css";
+
 const PremadeTriviaPackage = ({ category }) => {
 	const [difficulty, setDifficulty] = useState("");
 	const [isOpenOption, setIsOpenOption] = useState(false);

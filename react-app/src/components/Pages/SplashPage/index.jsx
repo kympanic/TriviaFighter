@@ -5,13 +5,10 @@ import { player2Stats } from "../../Helpers";
 import { useHistory } from "react-router-dom";
 import { Card } from "../../Carousel/Carousel";
 import Carousel from "../../Carousel/Carousel";
-const SpashPage = () => {
+const SplashPage = () => {
 	const history = useHistory();
 	const [chooseText, setChooseText] = useState(false);
 
-	const handleSignIn = () => {
-		history.push("/login");
-	};
 	const handleJoin = () => {
 		history.push("/sign-up");
 	};
@@ -140,4 +137,4 @@ const SpashPage = () => {
 	);
 };
 
-export default SpashPage;
+export default SplashPage;

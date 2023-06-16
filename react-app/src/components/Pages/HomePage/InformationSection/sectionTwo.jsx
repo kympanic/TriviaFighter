@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import "./infosection.css";
 
-const InformationSectionTwo = () => {
+const InformationSectionTwo = ({ infoTexts }) => {
 	const sessionUserId = useSelector((state) => state.session.user.id);
 
 	const history = useHistory();
@@ -20,18 +20,8 @@ const InformationSectionTwo = () => {
 				<div className="info-background-box2"></div>
 			</div>
 			<div className="info-content2">
-				<h2 className="info-title2">Community Created Trivia</h2>
-				<p className="info-p2">
-					Here you can find all the trivia games made by fellow users!
-					Search by name,category, or difficulty and click PLAY!
-				</p>
-				<p className="info-p2">
-					Feeling smart and creative? Create your own TRIVIA PACKAGE
-					for others to PLAY
-				</p>
-				<button onClick={handleClick} className="info-button2">
-					CREATE
-				</button>
+				<h2 className="info-title2">{infoTexts.title}</h2>
+				<p className="info-p2">{infoTexts.paragraph}</p>
 			</div>
 			<div className="info-img-box2">
 				<img
