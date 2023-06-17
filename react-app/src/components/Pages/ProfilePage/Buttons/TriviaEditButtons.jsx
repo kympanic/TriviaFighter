@@ -23,18 +23,24 @@ const TriviaEditButtons = ({ sessionUser, triviapackage }) => {
 				onClick={() =>
 					history.push({
 						pathname: `/triviapackage/${triviapackage.id}`,
-						state: { triviapackage, sessionUser },
 					})
 				}
 			>
 				Questions
 			</button>
-			{/* <button
+			<button
 				className="trivia-edit-btn"
-				onClick={() => setIsOpenEditTriviaPackage(true)}
+				// onClick={() => setIsOpenEditTriviaPackage(true)}
+
+				onClick={() =>
+					history.push({
+						pathname: `/triviapackage/${triviapackage.id}/edit`,
+						state: { triviapackage, sessionUser },
+					})
+				}
 			>
 				Info
-			</button> */}
+			</button>
 			<button className="trivia-delete-btn" onClick={handleDelete}>
 				Delete
 			</button>

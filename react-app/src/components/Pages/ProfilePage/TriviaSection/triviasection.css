@@ -17,12 +17,6 @@
 	z-index: 0;
 }
 
-.front {
-	z-index: 0;
-}
-.back {
-	z-index: 0;
-}
 .triviacard.flip {
 	--rotate-y: 180deg;
 }

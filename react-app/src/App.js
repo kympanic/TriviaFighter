@@ -15,6 +15,8 @@ import BattlePage from "./components/Pages/BattlePage";
 import GameOverPage from "./components/Pages/GameOverPage";
 import NotFoundPage from "./components/Pages/NotFoundPage";
 import GameFaqsPage from "./components/Pages/GameFaqsPage";
+import TriviaAddPage from "./components/Pages/TriviaAddPage/TriviaAddPage";
+import TriviaEditPage from "./components/Pages/TriviaEditPage/TriviaEditPage";
 import Footer from "./components/Footer";
 import { getAllUsersThunk } from "./store/users";
 
@@ -46,6 +48,15 @@ function App() {
 				</Route>
 				<ProtectedRoute path="/profile/:userId" exact={true}>
 					<ProfilePage />
+				</ProtectedRoute>
+				<ProtectedRoute path="/triviapackage/new" exact={true}>
+					<TriviaAddPage />
+				</ProtectedRoute>
+				<ProtectedRoute
+					path="/triviapackage/:triviapackageId/edit"
+					exact={true}
+				>
+					<TriviaEditPage />
 				</ProtectedRoute>
 				<ProtectedRoute
 					path="/triviapackage/:triviapackageId"

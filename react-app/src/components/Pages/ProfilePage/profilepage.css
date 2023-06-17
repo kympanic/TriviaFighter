@@ -4,6 +4,8 @@
 	text-align: center;
 	background-color: #faf7f0;
 	width: 100%;
+	position: relative;
+	/* position added */
 }
 
 .profilepage-content-wrapper {
@@ -186,6 +188,8 @@
 	grid-template-rows: repeat(2, 1fr);
 	justify-items: center;
 	align-items: center;
+	position: relative;
+	z-index: 0;
 }
 /* .profilepage-triviapackage-card {
 	margin: 30px;

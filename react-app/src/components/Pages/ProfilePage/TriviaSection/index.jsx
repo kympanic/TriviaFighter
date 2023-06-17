@@ -6,11 +6,6 @@ import { setDefaultTriviaImage } from "../../../Helpers";
 
 import "./triviasection.css";
 const TriviaSection = ({ triviapackage, sessionUser, id }) => {
-	const [isOpenDescription, setIsOpenDescription] = useState(false);
-	const [isOpenDeleteTriviaPackage, setIsOpenDeleteTriviaPackage] =
-		useState(false);
-	const [isOpenEditTriviaPackage, setIsOpenEditTriviaPackage] =
-		useState(false);
 	const [flip, setFlip] = useState(false);
 	return (
 		<>
