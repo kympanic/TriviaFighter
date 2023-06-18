@@ -191,23 +191,13 @@
 	position: relative;
 	z-index: 0;
 }
-/* .profilepage-triviapackage-card {
-	margin: 30px;
-	border: black 2px solid;
-	border-radius: 15px;
-	padding: 30px;
-	width: 300px;
-	height: 360px;
-	background-color: white;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-} */
+
 .profilepage-triviapackage-img {
 	height: 150px;
 	width: 150px;
 	border-radius: 50%;
-	margin-bottom: 6%;
+
+	margin-top: 10%;
 }
 
 .triviacard-title-text {
@@ -219,52 +209,74 @@
 }
 .trivia-editbtns-container {
 	margin-top: 3%;
-	width: 300px;
+	width: 100%;
 	height: 100px;
 }
 
-.trivia-add-btn {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	border: none;
+.triviaadd-bar {
+	margin-top: 2%;
+	width: 100%;
+	height: 30px;
+	background-color: white;
+	position: relative;
+	cursor: pointer;
+}
+
+.progress-triviaadd {
+	padding-top: 10px;
+	width: 0%;
+	height: 100%;
 	background-color: #77dd77;
-	margin-right: 2%;
-	cursor: pointer;
-}
-.trivia-add-btn:hover {
-	background-color: white;
-	border: #77dd77 4px solid;
-	transform: translate(-4px, 4px);
+	position: absolute;
+	transition: width 0.5s ease-in-out;
 }
 
-.trivia-edit-btn {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	border: none;
+.triviaadd-bar:hover .progress-triviaadd {
+	width: 100%;
+}
+
+.edit-bar {
+	margin-top: 2%;
+	width: 100%;
+	height: 30px;
+	background-color: white;
+	position: relative;
+	cursor: pointer;
+}
+
+.progress-edit {
+	padding-top: 10px;
+	width: 0%;
+	height: 100%;
 	background-color: #c471ed;
-	margin-right: 2%;
-	cursor: pointer;
-}
-.trivia-edit-btn:hover {
-	background-color: white;
-	border: #c471ed 4px solid;
-	transform: translate(-2px, 4px);
+	position: absolute;
+	transition: width 0.5s ease-in-out;
 }
 
-.trivia-delete-btn {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	border: none;
-	background-color: #f64f59;
+.edit-bar:hover .progress-edit {
+	width: 100%;
+}
+
+.delete-bar {
+	margin-top: 2%;
+	width: 100%;
+	height: 30px;
+	background-color: white;
+	position: relative;
 	cursor: pointer;
 }
-.trivia-delete-btn:hover {
-	background-color: white;
-	border: #f64f59 4px solid;
-	transform: translate(2px, 4px);
+
+.progress-delete {
+	padding-top: 10px;
+	width: 0%;
+	height: 100%;
+	background-color: #f64f59;
+	position: absolute;
+	transition: width 0.5s ease-in-out;
+}
+
+.delete-bar:hover .progress-delete {
+	width: 100%;
 }
 
 /*Comments Section*/
