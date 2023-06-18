@@ -77,6 +77,10 @@ const SplashPage = () => {
 							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Splash-trivia-img.png"
 							alt="Description"
 						/>
+						<img
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/splash-battle-img.png"
+							alt="Description"
+						/>
 					</div>
 					<div className="splash-info-text">
 						<h2>Go To Battle</h2>
@@ -91,12 +95,6 @@ const SplashPage = () => {
 							ad minim veniam, quis nostrud exercitation ullamco
 							laboris nisi ut aliquip ex ea commodo consequat.
 						</p>
-					</div>
-					<div className="splash-info-image">
-						<img
-							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/splash-battle-img.png"
-							alt="Description"
-						/>
 					</div>
 				</div>
 				<div className="splash-info-section">
