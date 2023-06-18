@@ -1,7 +1,6 @@
 import { useState } from "react";
 import TriviaEditButtons from "../Buttons/TriviaEditButtons";
 import ProfilePlayBtn from "../Buttons/ProfilePlayBtn";
-import TriviaDescription from "../../../Modals/TriviaDescription/TriviaDescription";
 import { setDefaultTriviaImage } from "../../../Helpers";
 
 import "./triviasection.css";
@@ -40,9 +39,7 @@ const TriviaSection = ({ triviapackage, sessionUser, id }) => {
 								/>
 							)}
 						{sessionUser.id === id && (
-							<button onClick={() => setFlip(!flip)}>
-								{">"}
-							</button>
+							<button onClick={() => setFlip(!flip)}>More</button>
 						)}
 					</div>
 				) : (

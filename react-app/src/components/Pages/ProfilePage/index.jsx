@@ -11,6 +11,11 @@ import TriviaSection from "./TriviaSection";
 import ProfileCard from "./ProfileCard";
 import GameHistory from "./GameHistory";
 import InformationSection from "./InformationSection";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faCircleChevronLeft,
+	faCircleChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 import "./profilepage.css";
 
 const ProfilePage = () => {
@@ -103,15 +108,19 @@ const ProfilePage = () => {
 							{totalPages > 1 && (
 								<div className="pagination">
 									{currentPage > 1 && (
-										<button onClick={handlePrevPage}>
-											Previous Page
-										</button>
+										<FontAwesomeIcon
+											onClick={handlePrevPage}
+											className="trivia-page-icon"
+											icon={faCircleChevronLeft}
+										/>
 									)}
 
 									{currentPage < totalPages && (
-										<button onClick={handleNextPage}>
-											Next Page
-										</button>
+										<FontAwesomeIcon
+											onClick={handleNextPage}
+											className="trivia-page-icon"
+											icon={faCircleChevronRight}
+										/>
 									)}
 								</div>
 							)}

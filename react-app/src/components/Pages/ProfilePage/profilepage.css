@@ -417,3 +417,22 @@
 .edit-links:hover {
 	background-color: lightgrey;
 }
+
+.pagination {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.trivia-page-icon {
+	margin-top: 20px;
+	font-size: 40px;
+	color: black;
+	margin-bottom: 10px;
+	background-color: white;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.trivia-page-icon:hover {
+	color: rgb(59, 59, 59);
+}
