@@ -11,6 +11,11 @@ import TriviaSection from "./TriviaSection";
 import ProfileCard from "./ProfileCard";
 import GameHistory from "./GameHistory";
 import InformationSection from "./InformationSection";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faCircleChevronLeft,
+	faCircleChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 import "./profilepage.css";
 
 const ProfilePage = () => {
@@ -82,47 +87,52 @@ const ProfilePage = () => {
 						<h1 id="triviapackage-title-txt">
 							FEATURED TRIVIA GAMES
 						</h1>
-						{profileTriviaPackages.length > 0 ? (
-							<div className="profilepage-triviapackage-menu">
-								<div className="profilepage-trivia-grid">
-									{currentItems.map((triviapackage) => (
-										<div
-											key={triviapackage.id}
-											className="trivia-grid-items"
-										>
-											<TriviaSection
-												key={triviapackage.name}
-												triviapackage={triviapackage}
-												id={id}
-												sessionUser={sessionUser}
-											/>
-										</div>
-									))}
-								</div>
-								{totalPages > 1 && (
-									<div className="pagination">
-										{currentPage > 1 && (
-											<button onClick={handlePrevPage}>
-												Previous Page
-											</button>
-										)}
-
-										{currentPage < totalPages && (
-											<button onClick={handleNextPage}>
-												Next Page
-											</button>
-										)}
-									</div>
-								)}
-							</div>
-						) : (
-							<div className="no-packages-container">
-								<h1 className="no-packages-text">
-									NO TRIVIA PACKAGES YET
-								</h1>
-							</div>
-						)}
 					</div>
+					{profileTriviaPackages.length > 0 ? (
+						<div className="profilepage-triviapackage-menu">
+							<div className="profilepage-trivia-grid">
+								{currentItems.map((triviapackage) => (
+									<div
+										key={triviapackage.id}
+										className="trivia-grid-items"
+									>
+										<TriviaSection
+											key={triviapackage.name}
+											triviapackage={triviapackage}
+											id={id}
+											sessionUser={sessionUser}
+										/>
+									</div>
+								))}
+							</div>
+							{totalPages > 1 && (
+								<div className="pagination">
+									{currentPage > 1 && (
+										<FontAwesomeIcon
+											onClick={handlePrevPage}
+											className="trivia-page-icon"
+											icon={faCircleChevronLeft}
+										/>
+									)}
+
+									{currentPage < totalPages && (
+										<FontAwesomeIcon
+											onClick={handleNextPage}
+											className="trivia-page-icon"
+											icon={faCircleChevronRight}
+										/>
+									)}
+								</div>
+							)}
+						</div>
+					) : (
+						<div className="no-packages-container">
+							<h1 className="no-packages-text">
+								NO TRIVIA PACKAGES YET
+							</h1>
+						</div>
+					)}
+
 					<div className="profilepage-reviews-title">
 						{profileReviews.length > 0 ? (
 							<InformationSection userId={userId} />
@@ -147,19 +157,5 @@ const ProfilePage = () => {
 		</div>
 	);
 };
-
-{
-	/* {profileTriviaPackages &&
-									profileTriviaPackages.map(
-										(triviapackage) => (
-											<TriviaSection
-												key={triviapackage.name}
-												triviapackage={triviapackage}
-												id={id}
-												sessionUser={sessionUser}
-											/>
-										)
-									)} */
-}
 
 export default ProfilePage;

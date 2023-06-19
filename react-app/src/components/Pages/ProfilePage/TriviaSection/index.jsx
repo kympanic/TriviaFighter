@@ -1,16 +1,10 @@
 import { useState } from "react";
 import TriviaEditButtons from "../Buttons/TriviaEditButtons";
 import ProfilePlayBtn from "../Buttons/ProfilePlayBtn";
-import TriviaDescription from "../../../Modals/TriviaDescription/TriviaDescription";
 import { setDefaultTriviaImage } from "../../../Helpers";
-
 import "./triviasection.css";
+
 const TriviaSection = ({ triviapackage, sessionUser, id }) => {
-	const [isOpenDescription, setIsOpenDescription] = useState(false);
-	const [isOpenDeleteTriviaPackage, setIsOpenDeleteTriviaPackage] =
-		useState(false);
-	const [isOpenEditTriviaPackage, setIsOpenEditTriviaPackage] =
-		useState(false);
 	const [flip, setFlip] = useState(false);
 	return (
 		<>
@@ -45,21 +39,34 @@ const TriviaSection = ({ triviapackage, sessionUser, id }) => {
 								/>
 							)}
 						{sessionUser.id === id && (
-							<button onClick={() => setFlip(!flip)}>
-								{">"}
+							<button
+								className="flip-btn"
+								onClick={() => setFlip(!flip)}
+							>
+								MORE
 							</button>
 						)}
 					</div>
 				) : (
 					<div className="back">
-						<p>{triviapackage.description}</p>
+						<div className="back-text-container">
+							<p className="back-description">
+								{triviapackage.description}
+							</p>
+						</div>
+
 						{sessionUser.id === id && (
 							<TriviaEditButtons
 								triviapackage={triviapackage}
 								sessionUser={sessionUser}
 							/>
 						)}
-						<button onClick={() => setFlip(!flip)}>back</button>
+						<button
+							className="flip-back-btn"
+							onClick={() => setFlip(!flip)}
+						>
+							BACK
+						</button>
 					</div>
 				)}
 			</div>

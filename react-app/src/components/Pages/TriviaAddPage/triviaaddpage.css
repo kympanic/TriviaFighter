@@ -1,0 +1,107 @@
+.createtrivia-body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+}
+
+.createtrivia-container {
+	position: relative;
+	max-width: 700px;
+	width: 100%;
+	background-color: #fff;
+	padding: 25px;
+	border-radius: 8px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.createtrivia-container header {
+	font-size: 1.5rem;
+	color: #333;
+	font-weight: 500;
+	text-align: center;
+}
+
+.createtrivia-container .form {
+	margin-top: 30px;
+}
+
+.createtrivia-form .createtrivia-input-box {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.createtrivia-input-box label {
+	color: #333;
+}
+
+.createtrivia-input-box input:focus {
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.createtrivia-form
+	:where(.createtrivia-input-box input, .createtrivia-select-box) {
+	position: relative;
+	height: 40px;
+	width: 95%;
+	outline: none;
+	font-size: 1rem;
+	color: #707070;
+	margin-top: 8px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	padding: 0 15px;
+}
+
+.createtrivia-form .createtrivia-column {
+	margin-bottom: 20px;
+	margin-top: 20px;
+	display: flex;
+	column-gap: 15px;
+}
+
+.createtrivia-select-box select {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	border: none;
+	color: #707070;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+.createtrivia-button {
+	height: 55px;
+	width: 100%;
+	outline: none;
+	border: none;
+	font-size: 1rem;
+	border-radius: 6px;
+	color: #fff;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+.createtrivia-column button:first-child {
+	background-color: #12c2e9;
+}
+.createtrivia-column button:first-child:hover {
+	background-color: #1a97b3;
+}
+
+.createtrivia-column button:nth-child(2) {
+	background-color: #f64f59;
+}
+.createtrivia-column button:nth-child(2):hover {
+	background-color: #c5323c;
+}
+/* Responsive */
+@media screen and (max-width: 500px) {
+	.createtrivia-form .createtrivia-column {
+		flex-wrap: wrap;
+	}
+}
