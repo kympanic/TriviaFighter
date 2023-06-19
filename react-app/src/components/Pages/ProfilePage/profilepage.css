@@ -356,12 +356,11 @@
 }
 
 .play-btn-container {
-	margin-top: 25px;
+	margin-top: 10px;
 	height: 50px;
 	width: 50px;
 	border-radius: 50%;
 	background-color: #77dd77;
-	animation: grow 1s infinite;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

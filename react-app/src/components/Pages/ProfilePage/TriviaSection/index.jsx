@@ -34,9 +34,11 @@ const TriviaSection = ({ triviapackage, sessionUser, id }) => {
 						</p>
 						{sessionUser.id !== id &&
 							triviapackage.trivias.length >= 14 && (
-								<ProfilePlayBtn
-									trivias={triviapackage.trivias}
-								/>
+								<div className="play-btn-start">
+									<ProfilePlayBtn
+										trivias={triviapackage.trivias}
+									/>
+								</div>
 							)}
 						{sessionUser.id === id && (
 							<button
