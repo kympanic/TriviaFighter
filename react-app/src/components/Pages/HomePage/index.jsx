@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllUsersThunk } from "../../../store/users";
 import TriviaMenu from "./TriviaMenu";
-import InformationSection from "./InformationSection";
 import SpashPage from "../SplashPage";
 import "./homepage.css";
 import InformationSectionThree from "./InformationSection/sectionThree";

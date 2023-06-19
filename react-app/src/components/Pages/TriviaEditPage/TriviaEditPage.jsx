@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { useLocation, useHistory } from "react-router-dom";
 import { editTriviaPackageThunk } from "../../../store/triviapackage";
 import { useState } from "react";
-import "./TriviaEditPage.css";
+import "../TriviaAddPage/triviaaddpage.css";
 
 const TriviaEditPage = () => {
 	const location = useLocation();
@@ -15,7 +15,7 @@ const TriviaEditPage = () => {
 	const [category, setCategory] = useState("");
 	const [difficulty, setDifficulty] = useState("");
 	const [description, setDescription] = useState(triviapackage.description);
-	const [imageUrl, setImageUrl] = useState("");
+	const [imageUrl, setImageUrl] = useState(triviapackage.imageUrl);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -38,92 +38,97 @@ const TriviaEditPage = () => {
 		}
 	};
 	return (
-		<div className="triviaedit-main">
-			<form onSubmit={handleSubmit}>
-				<div>
-					{errors.map((error, ind) => (
-						<div className="error-body" key={ind}>
-							<ul>
-								<li className="error-item">{error}</li>
-							</ul>
-						</div>
-					))}
-				</div>
-				<div>
-					<label>Name: </label>
-					<input
-						type="text"
-						name="packageName"
-						placeholder="Package Name"
-						onChange={(e) => setPackageName(e.target.value)}
-						maxLength={30}
-						value={packageName}
-					/>
-				</div>
-				<div>
-					<label>Description: </label>
-					<input
-						type="text"
-						name="description"
-						onChange={(e) => setDescription(e.target.value)}
-						value={description}
-					></input>
-				</div>
-				<div>
-					<label>Package Image Url: </label>
-					<input
-						type="url"
-						name="imageUrl"
-						onChange={(e) => setImageUrl(e.target.value)}
-						placeholder="https://example.com"
-					></input>
-				</div>
-				<div>
-					<label>Category: </label>
-					<select
-						onChange={(e) => setCategory(e.target.value)}
-						name="category"
-					>
-						<option value="--">--</option>
-						<option value="General Knowledge">
-							General Knowledge
-						</option>
-						<option value="Entertainment: Television">
-							Television
-						</option>
-						<option value="Entertainment: Video Games">
-							Video Games
-						</option>
-						<option value="Sports">Sports</option>
-						<option value="History">History</option>
-						<option value="Animals">Animals</option>
-					</select>
-				</div>
-				<div>
-					<label>Difficulty: </label>
-					<select
-						onChange={(e) => setDifficulty(e.target.value)}
-						name="difficulty"
-					>
-						<option value="--">--</option>
-						<option value="easy">EASY</option>
-						<option value="medium">MEDIUM</option>
-						<option value="hard">HARD</option>
-					</select>
-				</div>
-				<div>
+		<div className="createtrivia-body">
+			<div className="createtrivia-container">
+				<header>Edit Trivia Package</header>
+				<form onSubmit={handleSubmit} className="createtrivia-form">
 					<div>
-						<button type="submit">EDIT</button>
+						{errors.map((error, ind) => (
+							<div className="error-body" key={ind}>
+								<ul>
+									<li className="error-item">{error}</li>
+								</ul>
+							</div>
+						))}
+					</div>
+					<div className="createtrivia-input-box">
+						<label>Name </label>
+						<input
+							type="text"
+							name="packageName"
+							placeholder="Package Name"
+							onChange={(e) => setPackageName(e.target.value)}
+							maxLength={30}
+							value={packageName}
+						/>
+					</div>
+					<div className="createtrivia-input-box">
+						<label>Description </label>
+						<input
+							type="text"
+							name="description"
+							onChange={(e) => setDescription(e.target.value)}
+							value={description}
+						></input>
+					</div>
+					<div className="createtrivia-input-box">
+						<label>Package Image Url </label>
+						<input
+							type="url"
+							name="imageUrl"
+							onChange={(e) => setImageUrl(e.target.value)}
+							value={imageUrl}
+							placeholder="https://example.com"
+						></input>
+					</div>
+					<div className="createtrivia-column">
+						<div className="createtrivia-select-box">
+							<select
+								onChange={(e) => setCategory(e.target.value)}
+								name="category"
+							>
+								<option hidden>Category</option>
+								<option value="General Knowledge">
+									General Knowledge
+								</option>
+								<option value="Entertainment: Television">
+									Television
+								</option>
+								<option value="Entertainment: Video Games">
+									Video Games
+								</option>
+								<option value="Sports">Sports</option>
+								<option value="History">History</option>
+								<option value="Animals">Animals</option>
+							</select>
+						</div>
+						<div className="createtrivia-select-box">
+							<select
+								onChange={(e) => setDifficulty(e.target.value)}
+								name="difficulty"
+							>
+								<option hidden>Difficulty</option>
+								<option value="easy">EASY</option>
+								<option value="medium">MEDIUM</option>
+								<option value="hard">HARD</option>
+							</select>
+						</div>
+					</div>
+					<div className="createtrivia-column">
+						<button className="createtrivia-button" type="submit">
+							Submit
+						</button>
 						<button
+							className="createtrivia-button"
 							onClick={() =>
 								history.push(`/profile/${sessionUser.id}`)
 							}
 						>
-							CANCEL
+							Cancel
 						</button>
 					</div>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
 	);
 };

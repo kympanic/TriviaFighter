@@ -59,6 +59,7 @@
 	height: 45px;
 	border: none;
 	cursor: pointer;
+	font-weight: bolder;
 }
 
 .flip-btn {
@@ -67,6 +68,7 @@
 	width: 200px;
 	border: none;
 	cursor: pointer;
+	font-weight: bolder;
 }
 
 .flip-back-btn:hover,

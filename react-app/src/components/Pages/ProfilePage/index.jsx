@@ -158,18 +158,4 @@ const ProfilePage = () => {
 	);
 };
 
-{
-	/* {profileTriviaPackages &&
-									profileTriviaPackages.map(
-										(triviapackage) => (
-											<TriviaSection
-												key={triviapackage.name}
-												triviapackage={triviapackage}
-												id={id}
-												sessionUser={sessionUser}
-											/>
-										)
-									)} */
-}
-
 export default ProfilePage;

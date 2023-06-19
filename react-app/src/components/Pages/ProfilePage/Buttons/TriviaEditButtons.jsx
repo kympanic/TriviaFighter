@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import EditTriviaPackageModal from "../../../Modals/EditTriviaPackage/EditTriviaPackageModal";
 import { useDispatch } from "react-redux";
 import { deleteTriviaPackageThunk } from "../../../../store/triviapackage";
 
@@ -12,10 +10,6 @@ const TriviaEditButtons = ({ sessionUser, triviapackage }) => {
 		e.preventDefault();
 		dispatch(deleteTriviaPackageThunk(triviapackage));
 	};
-	const [isOpenDeleteTriviaPackage, setIsOpenDeleteTriviaPackage] =
-		useState(false);
-	const [isOpenEditTriviaPackage, setIsOpenEditTriviaPackage] =
-		useState(false);
 
 	return (
 		<div className="trivia-editbtns-container">
@@ -27,7 +21,7 @@ const TriviaEditButtons = ({ sessionUser, triviapackage }) => {
 				}
 				className="triviaadd-bar"
 			>
-				<div className="progress-triviaadd">Delete</div>
+				<div className="progress-triviaadd">Questions</div>
 			</div>
 			<div
 				onClick={() =>
