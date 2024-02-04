@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllUsersThunk } from "../../../store/users";
 import TriviaMenu from "./TriviaMenu";
-import SpashPage from "../SplashPage";
+import SplashPage from "../SplashPage";
 import "./homepage.css";
 import InformationSectionThree from "./InformationSection/sectionThree";
 
@@ -33,7 +33,7 @@ const HomePage = () => {
 				</div>
 			) : (
 				<div>
-					<SpashPage />
+					<SplashPage />
 				</div>
 			)}
 		</>
