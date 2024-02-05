@@ -17,7 +17,23 @@ const SplashPage = () => {
 	return (
 		<main>
 			<div className="container grid grid--3-cols margin-t-large">
-				<div className="splash-section-1">TEST 1</div>
+				<div className="splash-section-1">
+					<div className="splash-1-textbox">
+						<img src="" alt="" />
+						<p>Trivia Fighter</p>
+						<h2>Fun-filled Trivia.</h2>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Numquam voluptate fuga laborum iure, odio
+							deserunt. Ipsum recusandae, aut ea voluptates
+							eligendi reprehenderit quo repudiandae velit itaque
+							dignissimos nulla ratione architecto?
+						</p>
+					</div>
+					<div className="splash-2-imgbox">
+						<img src="" alt="" />
+					</div>
+				</div>
 				<div className="splash-section-2">TEST 2</div>
 				<div className="splash-section-3">TEST 3</div>
 				<div className="splash-section-4">TEST 4</div>

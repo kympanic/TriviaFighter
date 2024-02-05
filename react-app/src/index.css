@@ -23,12 +23,13 @@ textarea {
 	max-width: 120rem;
 	margin: 0 auto;
 	padding: 0 3.2rem;
+	background-color: white;
 }
 
 .grid {
 	display: grid;
-	row-gap: 9.6rem;
-	column-gap: 6.4rem;
+	row-gap: 3.2rem;
+	column-gap: 3.2rem;
 }
 
 .grid:not(:last-child) {
