@@ -41,7 +41,7 @@ const SplashPage = () => {
 						alt=""
 					/>
 					<h3>A fun learning experience for the whole family</h3>
-					<p>So much fun!</p>
+					<p>So much fu!</p>
 				</div>
 				<div className="splash splash-section-3">
 					<p>Create</p>
