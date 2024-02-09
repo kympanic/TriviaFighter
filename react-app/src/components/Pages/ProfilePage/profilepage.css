@@ -4,8 +4,21 @@
 	text-align: center;
 	background-color: #faf7f0;
 	width: 100%;
+	position: relative;
+	/* position added */
 }
 
+.profilepage-content-wrapper {
+	background-color: white;
+	margin-left: 8%;
+	margin-right: 8%;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	box-shadow: -10px 0 6px -4px rgba(0, 0, 0, 0.2),
+		10px 0 6px -4px rgba(0, 0, 0, 0.2);
+}
 /* Profile Header*/
 .profilepage-header-container {
 	background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
@@ -155,49 +168,40 @@
 /*Triviapackages Section*/
 .profilepage-content-container {
 	position: relative;
-	z-index: 0;
-	background-color: white;
-	max-height: 1400px;
-	width: 1650px;
-	padding-bottom: 40px;
-}
-.profilepage-triviapackage-menu {
-	display: flex;
-	text-align: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	padding: 20px;
-	margin: 20px;
-	border-radius: 20px;
-	max-height: 1000px;
-	overflow: auto;
-	background-color: #12c2e9;
-	margin-right: 4%;
-	margin-left: 4%;
-}
-.profilepage-triviapackage-card {
-	margin: 30px;
-	border: black 2px solid;
-	border-radius: 15px;
-	padding: 30px;
-	width: 300px;
-	height: 360px;
-	background-color: white;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	z-index: 0;
+	background-color: white;
+	height: fit-content;
+	width: 100%;
 }
+.profilepage-triviapackage-menu {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	background-color: #12c2e9;
+	z-index: 0;
+}
+
+.profilepage-trivia-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	justify-items: center;
+	align-items: center;
+	position: relative;
+	z-index: 0;
+}
+
 .profilepage-triviapackage-img {
 	height: 150px;
 	width: 150px;
 	border-radius: 50%;
-	margin-bottom: 6%;
-	cursor: pointer;
+
+	margin-top: 10%;
 }
 
-.profilepage-triviapackage-img:hover {
-	transform: scale(1.2);
-}
 .triviacard-title-text {
 	font-size: 20px;
 }
@@ -207,52 +211,74 @@
 }
 .trivia-editbtns-container {
 	margin-top: 3%;
-	width: 300px;
+	width: 100%;
 	height: 100px;
 }
 
-.trivia-add-btn {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	border: none;
+.triviaadd-bar {
+	margin-top: 2%;
+	width: 100%;
+	height: 30px;
+	background-color: white;
+	position: relative;
+	cursor: pointer;
+}
+
+.progress-triviaadd {
+	padding-top: 10px;
+	width: 0%;
+	height: 100%;
 	background-color: #77dd77;
-	margin-right: 2%;
-	cursor: pointer;
-}
-.trivia-add-btn:hover {
-	background-color: white;
-	border: #77dd77 4px solid;
-	transform: translate(-4px, 4px);
+	position: absolute;
+	transition: width 0.5s ease-in-out;
 }
 
-.trivia-edit-btn {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	border: none;
+.triviaadd-bar:hover .progress-triviaadd {
+	width: 100%;
+}
+
+.edit-bar {
+	margin-top: 2%;
+	width: 100%;
+	height: 30px;
+	background-color: white;
+	position: relative;
+	cursor: pointer;
+}
+
+.progress-edit {
+	padding-top: 10px;
+	width: 0%;
+	height: 100%;
 	background-color: #c471ed;
-	margin-right: 2%;
-	cursor: pointer;
-}
-.trivia-edit-btn:hover {
-	background-color: white;
-	border: #c471ed 4px solid;
-	transform: translate(-2px, 4px);
+	position: absolute;
+	transition: width 0.5s ease-in-out;
 }
 
-.trivia-delete-btn {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	border: none;
-	background-color: #f64f59;
+.edit-bar:hover .progress-edit {
+	width: 100%;
+}
+
+.delete-bar {
+	margin-top: 2%;
+	width: 100%;
+	height: 30px;
+	background-color: white;
+	position: relative;
 	cursor: pointer;
 }
-.trivia-delete-btn:hover {
-	background-color: white;
-	border: #f64f59 4px solid;
-	transform: translate(2px, 4px);
+
+.progress-delete {
+	padding-top: 10px;
+	width: 0%;
+	height: 100%;
+	background-color: #f64f59;
+	position: absolute;
+	transition: width 0.5s ease-in-out;
+}
+
+.delete-bar:hover .progress-delete {
+	width: 100%;
 }
 
 /*Comments Section*/
@@ -330,12 +356,11 @@
 }
 
 .play-btn-container {
-	margin-top: 25px;
+	margin-top: 10px;
 	height: 50px;
 	width: 50px;
 	border-radius: 50%;
 	background-color: #77dd77;
-	animation: grow 1s infinite;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -354,7 +379,7 @@
 
 .no-packages-container {
 	border: 2px solid #12c2e9;
-	height: 140px;
+	height: 400px;
 	display: flex;
 	justify-content: center;
 	background-color: #12c2e9;
@@ -404,4 +429,23 @@
 
 .edit-links:hover {
 	background-color: lightgrey;
+}
+
+.pagination {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.trivia-page-icon {
+	margin-top: 20px;
+	font-size: 40px;
+	color: black;
+	margin-bottom: 10px;
+	background-color: white;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.trivia-page-icon:hover {
+	color: rgb(59, 59, 59);
 }

@@ -15,6 +15,7 @@
 	background: rgb(255, 255, 255);
 	background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
 	border-radius: 40px;
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .add-trivia-page-header-container {

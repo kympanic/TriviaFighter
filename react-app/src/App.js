@@ -5,7 +5,7 @@ import { authenticate } from "./store/session";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
-import NavigationBar from "./components/NavigationBar";
+import Navbar from "./components/NavBar/Navbar";
 import HomePage from "./components/Pages/HomePage";
 import ProfilePage from "./components/Pages/ProfilePage";
 import AddTriviaPage from "./components/Pages/AddTriviaPage";
@@ -15,6 +15,8 @@ import BattlePage from "./components/Pages/BattlePage";
 import GameOverPage from "./components/Pages/GameOverPage";
 import NotFoundPage from "./components/Pages/NotFoundPage";
 import GameFaqsPage from "./components/Pages/GameFaqsPage";
+import TriviaAddPage from "./components/Pages/TriviaAddPage/TriviaAddPage";
+import TriviaEditPage from "./components/Pages/TriviaEditPage/TriviaEditPage";
 import Footer from "./components/Footer";
 import { getAllUsersThunk } from "./store/users";
 
@@ -36,7 +38,7 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			<NavigationBar />
+			<Navbar />
 			<Switch>
 				<Route path="/login" exact={true}>
 					<LoginForm />
@@ -46,6 +48,15 @@ function App() {
 				</Route>
 				<ProtectedRoute path="/profile/:userId" exact={true}>
 					<ProfilePage />
+				</ProtectedRoute>
+				<ProtectedRoute path="/triviapackage/new" exact={true}>
+					<TriviaAddPage />
+				</ProtectedRoute>
+				<ProtectedRoute
+					path="/triviapackage/:triviapackageId/edit"
+					exact={true}
+				>
+					<TriviaEditPage />
 				</ProtectedRoute>
 				<ProtectedRoute
 					path="/triviapackage/:triviapackageId"

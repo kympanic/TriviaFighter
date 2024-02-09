@@ -1,54 +1,42 @@
-import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import DeleteTriviaPackageModal from "../../../Modals/DeleteTriviaPackage/DeleteTriviaPackageModal";
-import EditTriviaPackageModal from "../../../Modals/EditTriviaPackage/EditTriviaPackageModal";
+import { useDispatch } from "react-redux";
+import { deleteTriviaPackageThunk } from "../../../../store/triviapackage";
 
 const TriviaEditButtons = ({ sessionUser, triviapackage }) => {
 	const history = useHistory();
+	const dispatch = useDispatch();
 
-	const [isOpenDeleteTriviaPackage, setIsOpenDeleteTriviaPackage] =
-		useState(false);
-	const [isOpenEditTriviaPackage, setIsOpenEditTriviaPackage] =
-		useState(false);
+	const handleDelete = (e) => {
+		e.preventDefault();
+		dispatch(deleteTriviaPackageThunk(triviapackage));
+	};
 
 	return (
 		<div className="trivia-editbtns-container">
-			<button
-				className="trivia-add-btn"
+			<div
 				onClick={() =>
 					history.push({
 						pathname: `/triviapackage/${triviapackage.id}`,
+					})
+				}
+				className="triviaadd-bar"
+			>
+				<div className="progress-triviaadd">Questions</div>
+			</div>
+			<div
+				onClick={() =>
+					history.push({
+						pathname: `/triviapackage/${triviapackage.id}/edit`,
 						state: { triviapackage, sessionUser },
 					})
 				}
+				className="edit-bar"
 			>
-				TRIVIA
-			</button>
-			<button
-				className="trivia-edit-btn"
-				onClick={() => setIsOpenEditTriviaPackage(true)}
-			>
-				EDIT
-			</button>
-			<button
-				className="trivia-delete-btn"
-				onClick={() => setIsOpenDeleteTriviaPackage(true)}
-			>
-				DELETE
-			</button>
-			{isOpenDeleteTriviaPackage && (
-				<DeleteTriviaPackageModal
-					setIsOpen={setIsOpenDeleteTriviaPackage}
-					triviapackage={triviapackage}
-				/>
-			)}
-			{isOpenEditTriviaPackage && (
-				<EditTriviaPackageModal
-					setIsOpen={setIsOpenEditTriviaPackage}
-					triviapackage={triviapackage}
-					sessionUser={sessionUser}
-				/>
-			)}
+				<div className="progress-edit">Edit</div>
+			</div>
+			<div onClick={handleDelete} className="delete-bar">
+				<div className="progress-delete">Delete</div>
+			</div>
 		</div>
 	);
 };

@@ -1,0 +1,84 @@
+.triviacard {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	justify-content: flex-start;
+	position: relative;
+	border-radius: 0.35rem;
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+	background-color: #fffffa;
+	transform-style: preserve-3d;
+	transition: 150ms;
+	transform: perspective(1000px) rotateY(var(--rotate-y, 0))
+		translateY(var(--translate-y, 0));
+	height: 370px;
+	width: 300px;
+	margin: 10px;
+	z-index: 0;
+}
+
+.triviacard.flip {
+	--rotate-y: 180deg;
+}
+
+.triviacard .back {
+	transform: rotateY(180deg);
+}
+
+.triviacard-front-btn {
+	cursor: pointer;
+}
+
+.back {
+	padding-top: 30px;
+	display: flex;
+	flex-direction: column;
+}
+.back-text-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 280px;
+	height: 100px;
+	border: 2px solid black;
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+	border-radius: 0.35rem;
+	word-wrap: break-word;
+	overflow: hidden;
+	background-color: white;
+}
+.back-description {
+	padding: 20px;
+}
+
+.flip-back-btn {
+	margin-top: 10%;
+	height: 45px;
+	border: none;
+	cursor: pointer;
+	font-weight: bolder;
+}
+
+.flip-btn {
+	margin-top: 5%;
+	height: 45px;
+	width: 200px;
+	border: none;
+	cursor: pointer;
+	font-weight: bolder;
+}
+
+.flip-back-btn:hover,
+.flip-btn:hover {
+	border: 3px solid black;
+}
+
+.play-btn-start {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

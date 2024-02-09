@@ -1,8 +1,93 @@
+/* body {
+	font-family: "Rubik", sans-serif;
+	line-height: 1;
+	font-weight: 400;
+	color: #555;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+} */
+.splash {
+	padding: 2.4rem;
+	border-radius: 0.8rem;
+}
+.splash-section-1 {
+	grid-column: span 2;
+	background-color: #d0ebff;
+	height: 30rem;
+}
+
+.splash-section-2 {
+	background-color: #d3f9d8;
+	height: 30rem;
+	display: block;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	position: relative;
+}
+
+.section2-img {
+	height: 14.6rem;
+	width: 14.6rem;
+	border-radius: 50%;
+	margin-top: 2.4rem;
+	border: 4px solid white;
+}
+
+.splash-section-2 h3 {
+	font-size: 1.4rem;
+	margin-top: 4.8rem;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #444;
+	line-height: 1.4;
+	letter-spacing: 0.2rem;
+}
+.splash-section-2 p {
+	position: absolute;
+	bottom: 12rem;
+	right: 5.2rem;
+	background-color: #f03e3e;
+	padding: 0.2rem 0.4rem;
+	border-radius: 0.2rem;
+	color: white;
+	font-size: 1rem;
+}
+
+.splash-section-3 {
+	background-color: green;
+	height: 30rem;
+}
+.splash-section-4 {
+	background-color: yellow;
+	height: 30rem;
+}
+.splash-section-5 {
+	background-color: orange;
+	height: 30rem;
+}
+.splash-section-6 {
+	background-color: red;
+	height: 30rem;
+}
+.splash-section-7 {
+	grid-column: span 2;
+	background-color: brown;
+	height: 30rem;
+}
+.splash-section-8 {
+	margin-bottom: 9.8rem;
+	grid-column: 1 / -1;
+	background-color: violet;
+	height: 30rem;
+}
+
 .splash-main {
 	margin-top: 50px;
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+	background-color: white;
 }
 
 .splash-content-wrapper {
@@ -10,6 +95,8 @@
 	height: 100%;
 	margin-left: 8%;
 	margin-right: 8%;
+	box-shadow: -10px 0 6px -4px rgba(0, 0, 0, 0.2),
+		10px 0 6px -4px rgba(0, 0, 0, 0.2);
 }
 
 .splash-logo-section {
@@ -24,13 +111,24 @@
 }
 
 #trivia-fighter-title {
-	font-size: 100px;
-	color: #ffff33;
-	margin-top: 80px;
-	margin-bottom: 50px;
-
-	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
-		0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+	color: black;
+	width: 20ch;
+	animation: typing 2s steps(16), blink 0.5s step-end infinite alternate;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 2px solid;
+	font-family: monospace;
+	font-size: 5em;
+}
+@keyframes typing {
+	from {
+		width: 0;
+	}
+}
+@keyframes blink {
+	50% {
+		border-color: transparent;
+	}
 }
 
 .splash-logo-img {
@@ -38,157 +136,164 @@
 	height: 100%;
 }
 
-.splash-trivia-section {
+/* info section */
+.splash-info-section {
+	margin-top: 3%;
 	height: 100%;
-	width: 100%;
-	margin-top: 100px;
-	background-color: white;
+	padding: 30px;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 10px;
+}
+
+.splash-info-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #eaeaea;
+	padding: 20px;
+	text-align: center;
+}
+.splash-info-text p {
+	margin-top: 8%;
+}
+
+.splash-info-image {
+	background-color: #eaeaea;
+	padding: 10px;
 	display: flex;
 	justify-content: center;
-	margin-bottom: 100px;
+	align-items: center;
+	flex-direction: column;
 }
 
-.splash-trivia-text-container {
-	padding: 30px;
-	height: 210px;
-	width: 500px;
-	background-color: #f64f59;
-	color: white;
-	border-radius: 20px;
-	text-align: center;
-	margin-right: 50px;
-	overflow: auto;
-}
-#splash-trivia-header-text {
-	font-size: 24px;
-}
-.splash-trivia-text {
-	margin-top: 20px;
-	font-size: 18px;
+.splash-info-image img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
 }
 
-.splash-trivia-img-container {
-	height: 100%;
-	width: 500px;
-	margin-left: 50px;
-}
-.splash-trivia-img-container:hover {
-	transform: scale(1.2);
-}
-.splash-trivia-img {
-	width: 100%;
-	height: 100%;
-}
-
+/* select your char section */
 .splash-char-section {
-	height: 100%;
-	width: 100%;
-	background-color: white;
+	height: 70vh;
 	display: flex;
-	justify-content: space-evenly;
-
-	border-top: 3px solid #f64f59;
-	background-color: #f64f59;
+	align-items: center;
+	justify-content: space-around;
+	overflow: hidden;
+	background-image: linear-gradient(45deg, #8b5cf6, #ec4899);
 }
 
-.splashchar-container {
-	margin-top: 50px;
-	height: 240px;
-	width: 200px;
-	text-align: center;
-	border: 3px solid grey;
-	background-color: white;
-	margin-bottom: 50px;
-}
-.splashchar-container:hover {
-	transform: scale(1.2);
-}
-
-.splash-char-img {
-	width: 200px;
-	height: 200px;
+.char-carousel-container {
+	margin-left: 10%;
 }
 
 .splashchar-text-container {
-	background-color: #faf7f0;
-	padding: 10px;
-	height: 180px;
-	width: 500px;
-	border-radius: 20px;
+	word-spacing: 3px;
 	text-align: center;
-	margin-left: 80px;
-	margin-top: 70px;
-	overflow: auto;
-	color: #c471ed;
+	width: 30%;
+	cursor: pointer;
+	border: none;
+	font-weight: bolder;
+	font-size: 20px;
+	cursor: pointer;
+	line-height: 1.5;
 }
 
-#splashchar-header-text {
-	margin-top: 25px;
-	font-size: 25px;
-}
-
-.splash-battle-section {
+.splashchar-select-button-wrap {
 	height: 100%;
-	width: 100%;
-	background-color: white;
 	display: flex;
 	align-items: center;
-	margin-top: 80px;
-	margin-bottom: 80px;
 	justify-content: center;
 }
 
-.splashbattle-text-container {
-	padding: 30px;
-	height: 120px;
-	width: 500px;
-	border: 4px solid #12c2e9;
-	background-color: #12c2e9;
-	border-radius: 20px;
-	text-align: center;
-	margin-right: 50px;
-	overflow: auto;
+#splashchar-select-button {
+	min-width: 300px;
+	min-height: 60px;
+	font-family: "Nunito", sans-serif;
+	font-size: 22px;
+	text-transform: uppercase;
+	letter-spacing: 1.3px;
+	font-weight: 700;
 	color: white;
+	background: #313133;
+	background: linear-gradient(90deg, #313133 0%, #313133 100%);
+	border: none;
+	border-radius: 1000px;
+	box-shadow: 12px 12px 24px #313133;
+	transition: all 0.3s ease-in-out 0s;
+	cursor: pointer;
+	outline: none;
+	position: relative;
+	padding: 20px;
 }
 
-.splashbattle-text {
-	margin-top: 10px;
+#splashchar-select-button:hover,
+#splashchar-select-button:focus {
+	color: white;
+	transform: translateY(-6px);
 }
 
-.splashbattle-img-container {
-	margin-top: 50px;
-	height: 400px;
-	width: 700px;
+#splashchar-select-button:hover::before,
+#splashchar-select-button:focus::before {
+	opacity: 1;
 }
 
-.splashbattle-img-container:hover {
-	transform: scale(1.05);
+#splashchar-select-button::after {
+	content: "";
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	border: 6px solid #313133;
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: ring 0.5s infinite;
 }
 
-.splashbattle-img {
-	width: 100%;
-	height: 100%;
-	border-radius: 10px;
+#splashchar-select-button:hover::after,
+#splashchar-select-button:focus::after {
+	animation: none;
+	display: none;
+}
+@keyframes ring {
+	0% {
+		width: 30px;
+		height: 30px;
+		opacity: 1;
+	}
+	100% {
+		width: 300px;
+		height: 300px;
+		opacity: 0;
+	}
+}
+
+.splashchar-text {
+	font-size: larger;
+}
+
+#splashchar-header-text {
+	color: white;
 }
 
 .splash-join-section {
 	height: 100%;
-	width: 100%;
 	margin-top: 50px;
 	background-color: white;
 	display: flex;
 	justify-content: center;
-
-	margin-top: 50px;
-	background-color: #ff7f00;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	align-items: center;
+	background-color: black;
+	padding: 8%;
 }
 
 .splashjoin-text-container {
 	padding: 30px;
-	height: 180px;
-	width: 500px;
+	height: 100%;
+	width: 50%;
 	border: 4px solid white;
 	background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
 	border-radius: 20px;
@@ -196,87 +301,86 @@
 	margin-right: 50px;
 	overflow: auto;
 	color: white;
-	cursor: pointer;
 }
 
-#splash-join-btn {
-	background-color: white;
-	border: 4px solid #f64f59;
-	margin-top: 70px;
-	color: #f64f59;
-	height: 50px;
-	width: 200px;
-	font-size: 20px;
-	font-weight: 900;
-	border-radius: 20px;
-	cursor: pointer;
-}
-#splash-join-btn:hover {
-	transform: scale(1.2);
-	border: 4px solid #12c2e9;
-	color: #12c2e9;
-}
-
-.splash-log-btns {
-	width: 200px;
-}
-
-.splash-log-btns {
-	height: 60px;
-	width: 200px;
-	font-size: 19px;
-	padding: 0.6em 2em;
+.splash-join-btn {
+	width: 30%;
+	height: 20%;
+	font-size: 22px;
+	border-radius: 1rem;
 	border: none;
-	outline: none;
-	color: rgb(255, 255, 255);
-	background: #111;
+	padding: 10px;
+	margin-top: 8%;
+	background-color: #f64f59;
+	color: white;
 	cursor: pointer;
-	position: relative;
-	z-index: 0;
-	border-radius: 10px;
-	user-select: none;
-	margin-top: 50px;
-	margin-right: 100px;
-	margin-left: 100px;
+}
 
-	-webkit-user-select: none;
-	touch-action: manipulation;
+.splash-join-btn:hover {
+	background-color: #12c2e9;
 }
-.splash-log-btns:before {
-	content: "";
-	background: linear-gradient(
-		45deg,
-		#ff0000,
-		#ff7300,
-		#fffb00,
-		#48ff00,
-		#00ffd5,
-		#002bff,
-		#7a00ff,
-		#ff00c8,
-		#ff0000
-	);
-	position: absolute;
-	top: -2px;
-	left: -2px;
-	background-size: 400%;
-	z-index: -1;
-	filter: blur(5px);
-	-webkit-filter: blur(5px);
-	width: calc(100% + 4px);
-	height: calc(100% + 4px);
-	animation: glowing-button-85 20s linear infinite;
-	transition: opacity 0.3s ease-in-out;
-	border-radius: 10px;
+
+@media screen and (max-width: 1321px) {
+	#trivia-fighter-title {
+		font-size: 50px;
+	}
+	#splashchar-select-button {
+		font-size: 15px;
+	}
+	.splash-char-section {
+		height: 60vh;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		overflow: hidden;
+		background-image: linear-gradient(45deg, #8b5cf6, #ec4899);
+	}
 }
-@keyframes glowing-button-85 {
-	0% {
-		background-position: 0 0;
+
+@media screen and (max-width: 991px) {
+	.splash-char-section {
+		padding-top: 50px;
+		height: 40vh;
+		display: flex;
+		flex-direction: column;
 	}
-	50% {
-		background-position: 400% 0;
+	.splashchar-text-container {
+		width: 60%;
+
+		font-size: 15px;
+		cursor: pointer;
+		line-height: 1.5;
+		padding-bottom: 10px;
 	}
-	100% {
-		background-position: 0 0;
+}
+
+@media screen and (max-width: 760px) {
+	#trivia-fighter-title {
+		font-size: 40px;
+	}
+	.splashchar-text-container {
+		width: 60%;
+		font-size: 14px;
+		padding-bottom: 10px;
+	}
+	.splashjoin-text-container {
+		margin-left: 50px;
+		padding: 10px;
+		width: 300px;
+	}
+	.splash-join-btn {
+		width: 30%;
+		height: 20%;
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 591px) {
+	#trivia-fighter-title {
+		font-size: 30px;
+	}
+	.splash-char-section,
+	.splash-info-section {
+		display: none;
 	}
 }
