@@ -17,7 +17,7 @@ const SplashPage = () => {
 	return (
 		<main>
 			<div className="container grid grid--3-cols margin-t-large">
-				<div className="splash-section-1">
+				<div className="splash splash-section-1">
 					<div className="splash-1-textbox">
 						<img src="" alt="" />
 						<p>Trivia Fighter</p>
@@ -30,17 +30,29 @@ const SplashPage = () => {
 							dignissimos nulla ratione architecto?
 						</p>
 					</div>
-					<div className="splash-2-imgbox">
+					<div className="splash-1-imgbox">
 						<img src="" alt="" />
 					</div>
 				</div>
-				<div className="splash-section-2">TEST 2</div>
-				<div className="splash-section-3">TEST 3</div>
-				<div className="splash-section-4">TEST 4</div>
-				<div className="splash-section-5">TEST 5</div>
-				<div className="splash-section-6">TEST 6</div>
-				<div className="splash-section-7">TEST 7</div>
-				<div className="splash-section-8">TEST 8</div>
+				<div className="splash splash-section-2">
+					<img
+						className="section2-img"
+						src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/2054.jpg"
+						alt=""
+					/>
+					<h3>A fun learning experience for the whole family</h3>
+					<p>So much fun!</p>
+				</div>
+				<div className="splash splash-section-3">
+					<p>Create</p>
+					<h3>Custom Questions</h3>
+					<p></p>
+				</div>
+				<div className="splash splash-section-4">TEST 4</div>
+				<div className="splash splash-section-5">TEST 5</div>
+				<div className="splash splash-section-6">TEST 6</div>
+				<div className="splash splash-section-7">TEST 7</div>
+				<div className="splash splash-section-8">TEST 8</div>
 			</div>
 		</main>
 
