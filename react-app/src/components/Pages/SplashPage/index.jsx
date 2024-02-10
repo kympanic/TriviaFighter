@@ -16,22 +16,26 @@ const SplashPage = () => {
 
 	return (
 		<main>
-			<div className="container grid grid--3-cols margin-t-large">
+			<div className="container grid grid--3-cols splash-main margin-t-large">
 				<div className="splash splash-section-1">
 					<div className="splash-1-textbox">
-						<img src="" alt="" />
-						<p>Trivia Fighter</p>
+						<p className="splash-1-title">Trivia Fighter</p>
 						<h2>Fun-filled Trivia.</h2>
-						<p>
+						<p className="splash-1-text">
 							Lorem ipsum dolor sit amet consectetur adipisicing
 							elit. Numquam voluptate fuga laborum iure, odio
 							deserunt. Ipsum recusandae, aut ea voluptates
 							eligendi reprehenderit quo repudiandae velit itaque
 							dignissimos nulla ratione architecto?
 						</p>
+						<button className="section-1-btn">Play now</button>
 					</div>
 					<div className="splash-1-imgbox">
-						<img src="" alt="" />
+						<img
+							className="section1-img"
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/generalknowledgelog.jpg"
+							alt=""
+						/>
 					</div>
 				</div>
 				<div className="splash splash-section-2">
@@ -40,16 +44,42 @@ const SplashPage = () => {
 						src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/2054.jpg"
 						alt=""
 					/>
-					<h3>A fun learning experience for the whole family</h3>
-					<p>So much fu!</p>
+					<h3>An entertaining experience for the whole family</h3>
+					<p>Play Together!</p>
 				</div>
 				<div className="splash splash-section-3">
-					<p>Create</p>
-					<h3>Custom Questions</h3>
-					<p></p>
+					<p className="splash-3-title">create</p>
+					<h3 className="splash-subtitle">Custom Questions</h3>
+					<p className="splash-text">
+						Tired of answering the same questions? Use our intuitive
+						question generator.
+					</p>
 				</div>
-				<div className="splash splash-section-4">TEST 4</div>
-				<div className="splash splash-section-5">TEST 5</div>
+				<div className="splash splash-section-4">
+					<img
+						className="splash-fun-img"
+						src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/sushifight.jpg"
+						alt=""
+					/>
+					<h3 className="splash-subtitle">Knowledge Battle</h3>
+					<p className="splash-text">
+						Play locally with your friends and answer correctly to
+						become the champion.
+					</p>
+				</div>
+				<div className="splash splash-section-5">
+					<img
+						className="splash-fun-img"
+						src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/unicornwithballoon.jpg"
+						alt=""
+					/>
+					<h3 className="splash-subtitle">Character Select</h3>
+					<p className="splash-text">
+						Choose among different unique avatars to battle
+						alongside you.
+					</p>
+				</div>
+
 				<div className="splash splash-section-6">TEST 6</div>
 				<div className="splash splash-section-7">TEST 7</div>
 				<div className="splash splash-section-8">TEST 8</div>

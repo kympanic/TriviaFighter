@@ -65,16 +65,15 @@ textarea {
 }
 
 .container {
-	max-width: 120rem;
+	max-width: 1400px;
 	margin: 0 auto;
-	padding: 0 3.2rem;
-	background-color: white;
+	padding: 1.2rem 1.2rem;
 }
 
 .grid {
 	display: grid;
-	row-gap: 3.2rem;
-	column-gap: 3.2rem;
+	row-gap: 1.2rem;
+	column-gap: 1.2rem;
 }
 
 .grid:not(:last-child) {
@@ -101,5 +100,5 @@ textarea {
 }
 
 .margin-t-large {
-	margin-top: 9.8rem;
+	margin-top: 200px;
 }
