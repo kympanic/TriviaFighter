@@ -171,19 +171,61 @@ main {
 	align-items: center;
 }
 .splash-section-6 {
-	background-color: red;
+	background-color: #d3f9d8;
 	height: 30rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+}
+
+.splash-6-icon {
+	stroke: #51cf66;
+	height: 13rem;
 }
 .splash-section-7 {
 	grid-column: span 2;
-	background-color: brown;
+	background-image: linear-gradient(
+			to right bottom,
+			rgba(0, 0, 0, 0.3),
+			rgba(0, 0, 0, 0.3)
+		),
+		url("https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/splash-battle-img.png");
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	height: 30rem;
+	overflow: hidden;
 }
+
+.btn-splash7 {
+	border: none;
+	border-radius: 2rem;
+	padding: 3.2rem 6.4rem;
+	font-size: 3rem;
+	letter-spacing: 0.3rem;
+	font-weight: bolder;
+	color: #f03e3e;
+	transition: all 1.5s;
+	cursor: pointer;
+
+	display: inline-block;
+}
+
+.btn-splash7:hover {
+	padding: 50rem;
+	color: #fff;
+	background-color: #12c2e9;
+}
+
+/*SECTION 8 CTA  */
 .splash-section-8 {
-	margin-bottom: 9.8rem;
+	margin-bottom: 0.8rem;
 	grid-column: 1 / -1;
-	background-color: violet;
 	height: 30rem;
+	background-color: #e9ecef;
 }
 
 .splash-main {
