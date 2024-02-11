@@ -7,12 +7,9 @@ import { Card } from "../../Carousel/Carousel";
 import Carousel from "../../Carousel/Carousel";
 const SplashPage = () => {
 	const history = useHistory();
-	const [chooseText, setChooseText] = useState(false);
-
 	const handleJoin = () => {
 		history.push("/sign-up");
 	};
-	const allPlayers = [...player1Stats, ...player2Stats];
 
 	return (
 		<main>
