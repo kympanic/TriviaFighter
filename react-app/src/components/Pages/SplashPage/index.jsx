@@ -53,11 +53,14 @@ const SplashPage = () => {
 					</p>
 				</div>
 				<div className="splash splash-section-4">
-					<img
-						className="splash-fun-img"
-						src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/sushifight.jpg"
-						alt=""
-					/>
+					<div className="splash-img-container">
+						<img
+							className="splash-fun-img"
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/sushifight.jpg"
+							alt=""
+						/>
+					</div>
+
 					<h3 className="splash-subtitle">Knowledge Battle</h3>
 					<p className="splash-text">
 						Play locally with your friends and answer correctly to
@@ -65,11 +68,13 @@ const SplashPage = () => {
 					</p>
 				</div>
 				<div className="splash splash-section-5">
-					<img
-						className="splash-fun-img"
-						src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/unicornwithballoon.jpg"
-						alt=""
-					/>
+					<div className="splash-img-container">
+						<img
+							className="splash-fun-img"
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/unicornwithballoon.jpg"
+							alt=""
+						/>
+					</div>
 					<h3 className="splash-subtitle">Character Select</h3>
 					<p className="splash-text">
 						Choose among different unique avatars to battle
@@ -99,7 +104,14 @@ const SplashPage = () => {
 				<div className="splash splash-section-7">
 					<button className="btn-splash7">DEMO</button>
 				</div>
-				<div className="splash splash-section-8">TEST 8</div>
+				<div className="splash splash-section-8">
+					<h2>Trivia Fighter</h2>
+					<p>Don't waste another second. Join today!</p>
+					<div className="splash-btn-section">
+						<button>Sign up</button>
+						<button>Login</button>
+					</div>
+				</div>
 			</div>
 		</main>
 
