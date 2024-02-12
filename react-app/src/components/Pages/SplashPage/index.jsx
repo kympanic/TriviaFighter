@@ -1,16 +1,28 @@
+import { useDispatch, useSelector } from "react-redux";
 import "./splashpage.css";
-import { useState } from "react";
-import { player1Stats } from "../../Helpers";
-import { player2Stats } from "../../Helpers";
 import { useHistory } from "react-router-dom";
-import { Card } from "../../Carousel/Carousel";
-import Carousel from "../../Carousel/Carousel";
+import { login } from "../../../store/session";
+
 const SplashPage = () => {
+	const dispatch = useDispatch();
 	const history = useHistory();
+	const demoUser1 = useSelector((state) => state?.users[1]);
+
 	const handleJoin = () => {
 		history.push("/sign-up");
 	};
+	const handleLogin = () => {
+		history.push("/login");
+	};
 
+	const demoUser = {
+		email: demoUser1?.email,
+		password: "password",
+	};
+
+	const handleClick = () => {
+		return dispatch(login(demoUser.email, demoUser.password));
+	};
 	return (
 		<main>
 			<div className="container grid grid--3-cols splash-main margin-t-large">
@@ -25,7 +37,9 @@ const SplashPage = () => {
 							eligendi reprehenderit quo repudiandae velit itaque
 							dignissimos nulla ratione architecto?
 						</p>
-						<button className="section-1-btn">Play now</button>
+						<button onClick={handleLogin} className="section-1-btn">
+							Play now
+						</button>
 					</div>
 					<div className="splash-1-imgbox">
 						<img
@@ -102,7 +116,9 @@ const SplashPage = () => {
 					</h3>
 				</div>
 				<div className="splash splash-section-7">
-					<button className="btn-splash7">DEMO</button>
+					<button className="btn-splash7" onClick={handleClick}>
+						DEMO
+					</button>
 				</div>
 				<div className="splash splash-section-8">
 					<h2>Trivia Fighter</h2>
