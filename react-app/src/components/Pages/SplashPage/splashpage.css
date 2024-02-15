@@ -46,6 +46,10 @@ main {
 
 .splash-main {
 	border-radius: 0.5rem;
+	margin-top: 50px;
+	height: 100%;
+	width: 100%;
+	background-color: white;
 }
 .splash {
 	padding: 2.4rem;
@@ -257,308 +261,79 @@ main {
 .splash-section-8 {
 	margin-bottom: 0.8rem;
 	grid-column: 1 / -1;
-	height: 30rem;
+	height: 35rem;
 	background-color: #e9ecef;
-}
-
-.splash-main {
-	margin-top: 50px;
-	height: 100%;
-	width: 100%;
-	background-color: white;
-}
-
-.splash-content-wrapper {
-	background-color: white;
-	height: 100%;
-	margin-left: 8%;
-	margin-right: 8%;
-	box-shadow: -10px 0 6px -4px rgba(0, 0, 0, 0.2),
-		10px 0 6px -4px rgba(0, 0, 0, 0.2);
-}
-
-.splash-logo-section {
-	height: 500px;
-	width: 100%;
-	background-color: #12c2e9;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	text-align: center;
+	justify-content: space-between;
 	align-items: center;
-}
-
-#trivia-fighter-title {
-	color: black;
-	width: 20ch;
-	animation: typing 2s steps(16), blink 0.5s step-end infinite alternate;
-	white-space: nowrap;
 	overflow: hidden;
-	border-right: 2px solid;
-	font-family: monospace;
-	font-size: 5em;
-}
-@keyframes typing {
-	from {
-		width: 0;
-	}
-}
-@keyframes blink {
-	50% {
-		border-color: transparent;
-	}
 }
 
-.splash-logo-img {
-	width: 100%;
-	height: 100%;
-}
-
-/* info section */
-.splash-info-section {
-	margin-top: 3%;
-	height: 100%;
-	padding: 30px;
-	display: grid;
-	grid-template-rows: auto;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 10px;
-}
-
-.splash-info-text {
+.section-8-textbox {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background-color: #eaeaea;
-	padding: 20px;
-	text-align: center;
-}
-.splash-info-text p {
-	margin-top: 8%;
-}
-
-.splash-info-image {
-	background-color: #eaeaea;
-	padding: 10px;
-	display: flex;
-	justify-content: center;
 	align-items: center;
-	flex-direction: column;
 }
-
-.splash-info-image img {
-	max-width: 100%;
-	max-height: 100%;
-	object-fit: contain;
-}
-
-/* select your char section */
-.splash-char-section {
-	height: 70vh;
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	overflow: hidden;
-	background-image: linear-gradient(45deg, #8b5cf6, #ec4899);
-}
-
-.char-carousel-container {
-	margin-left: 10%;
-}
-
-.splashchar-text-container {
-	word-spacing: 3px;
-	text-align: center;
-	width: 30%;
-	cursor: pointer;
-	border: none;
-	font-weight: bolder;
-	font-size: 20px;
-	cursor: pointer;
-	line-height: 1.5;
-}
-
-.splashchar-select-button-wrap {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-#splashchar-select-button {
-	min-width: 300px;
-	min-height: 60px;
-	font-family: "Nunito", sans-serif;
-	font-size: 22px;
+.section-8-textbox h2 {
 	text-transform: uppercase;
-	letter-spacing: 1.3px;
-	font-weight: 700;
-	color: white;
-	background: #313133;
-	background: linear-gradient(90deg, #313133 0%, #313133 100%);
-	border: none;
-	border-radius: 1000px;
-	box-shadow: 12px 12px 24px #313133;
-	transition: all 0.3s ease-in-out 0s;
-	cursor: pointer;
-	outline: none;
-	position: relative;
-	padding: 20px;
+	font-size: 4rem;
+	font-weight: bolder;
+	letter-spacing: 0.7rem;
+	margin-top: 2rem;
+	color: #333;
 }
 
-#splashchar-select-button:hover,
-#splashchar-select-button:focus {
-	color: white;
-	transform: translateY(-6px);
+.section-8-textbox p {
+	font-size: 1.2rem;
+	margin-top: 2rem;
+	color: #444;
 }
 
-#splashchar-select-button:hover::before,
-#splashchar-select-button:focus::before {
-	opacity: 1;
+.section-8-textbox p span {
+	color: #fa5252;
+	text-transform: uppercase;
+	font-weight: bolder;
 }
 
-#splashchar-select-button::after {
-	content: "";
-	width: 30px;
-	height: 30px;
-	border-radius: 100%;
-	border: 6px solid #313133;
-	position: absolute;
-	z-index: -1;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	animation: ring 0.5s infinite;
-}
-
-#splashchar-select-button:hover::after,
-#splashchar-select-button:focus::after {
-	animation: none;
-	display: none;
-}
-@keyframes ring {
-	0% {
-		width: 30px;
-		height: 30px;
-		opacity: 1;
-	}
-	100% {
-		width: 300px;
-		height: 300px;
-		opacity: 0;
-	}
-}
-
-.splashchar-text {
-	font-size: larger;
-}
-
-#splashchar-header-text {
-	color: white;
-}
-
-.splash-join-section {
-	height: 100%;
-	margin-top: 50px;
-	background-color: white;
+.splash-btn-section {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: black;
-	padding: 8%;
+	gap: 2rem;
 }
 
-.splashjoin-text-container {
-	padding: 30px;
-	height: 100%;
-	width: 50%;
-	border: 4px solid white;
-	background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
-	border-radius: 20px;
-	text-align: center;
-	margin-right: 50px;
-	overflow: auto;
-	color: white;
-}
-
-.splash-join-btn {
-	width: 30%;
-	height: 20%;
-	font-size: 22px;
-	border-radius: 1rem;
+.splash-btn-join {
 	border: none;
-	padding: 10px;
-	margin-top: 8%;
-	background-color: #f64f59;
+	padding: 1.2rem 2.4rem;
+	background-color: white;
+	margin-top: 1.5rem;
+	text-transform: uppercase;
+	font-size: 1.1rem;
+	border-radius: 5rem;
+	transition: all 0.5s;
+	background-color: #fa5252;
 	color: white;
+}
+
+.splash-btn-join:hover {
 	cursor: pointer;
+	box-shadow: inset 0 0 0 3px #fa5252;
+	background-color: white;
+	color: #fa5252;
 }
 
-.splash-join-btn:hover {
-	background-color: #12c2e9;
+.img-scroll-container {
+	overflow: hidden;
+	position: relative;
+	background-color: #555;
+	display: flex;
+	gap: 5rem;
 }
 
-@media screen and (max-width: 1321px) {
-	#trivia-fighter-title {
-		font-size: 50px;
-	}
-	#splashchar-select-button {
-		font-size: 15px;
-	}
-	.splash-char-section {
-		height: 60vh;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		overflow: hidden;
-		background-image: linear-gradient(45deg, #8b5cf6, #ec4899);
-	}
-}
-
-@media screen and (max-width: 991px) {
-	.splash-char-section {
-		padding-top: 50px;
-		height: 40vh;
-		display: flex;
-		flex-direction: column;
-	}
-	.splashchar-text-container {
-		width: 60%;
-
-		font-size: 15px;
-		cursor: pointer;
-		line-height: 1.5;
-		padding-bottom: 10px;
-	}
-}
-
-@media screen and (max-width: 760px) {
-	#trivia-fighter-title {
-		font-size: 40px;
-	}
-	.splashchar-text-container {
-		width: 60%;
-		font-size: 14px;
-		padding-bottom: 10px;
-	}
-	.splashjoin-text-container {
-		margin-left: 50px;
-		padding: 10px;
-		width: 300px;
-	}
-	.splash-join-btn {
-		width: 30%;
-		height: 20%;
-		font-size: 15px;
-	}
-}
-
-@media screen and (max-width: 591px) {
-	#trivia-fighter-title {
-		font-size: 30px;
-	}
-	.splash-char-section,
-	.splash-info-section {
-		display: none;
-	}
+.img-scroll-container img {
+	height: 10rem;
+	width: 10rem;
+	border-radius: 50%;
+	margin: 1rem;
+	border: 4px solid white;
 }

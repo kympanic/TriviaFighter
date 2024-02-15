@@ -121,133 +121,49 @@ const SplashPage = () => {
 					</button>
 				</div>
 				<div className="splash splash-section-8">
-					<h2>Trivia Fighter</h2>
-					<p>Don't waste another second. Join today!</p>
-					<div className="splash-btn-section">
-						<button>Sign up</button>
-						<button>Login</button>
+					<div className="section-8-textbox">
+						<h2>Trivia Fighter</h2>
+						<p>
+							Don't waste another second. <span>Join </span>today!
+						</p>
+						<div className="splash-btn-section">
+							<button
+								className="splash-btn-join"
+								onClick={handleJoin}
+							>
+								sign up
+							</button>
+						</div>
+					</div>
+					<div className="img-scroll-container">
+						<img
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/catwithsword.jpg"
+							alt=""
+						/>
+						<img
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/cutehamster.jpg"
+							alt=""
+						/>
+						<img
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Fighter-PandaHero.jpg"
+							alt=""
+						/>
+						<img
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/sleepingcorgi.jpg"
+							alt=""
+						/>
+						<img
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/coolcatwithbat.jpg"
+							alt=""
+						/>
+						<img
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/fightingkangaroo.jpg"
+							alt=""
+						/>
 					</div>
 				</div>
 			</div>
 		</main>
-
-		// <div className="splash-main">
-		// 	<div className="splash-content-wrapper">
-		// 		<div className="splash-logo-section">
-		// 			<h1 id="trivia-fighter-title">TRIVIA FIGHTER v1.0b</h1>
-		// 		</div>
-		// 		<div className="splash-char-section">
-		// 			<div className="char-carousel-container">
-		// 				<Carousel>
-		// 					{allPlayers.map((player) => (
-		// 						<Card
-		// 							name={player.name}
-		// 							img={player.img}
-		// 							description={player.description}
-		// 						/>
-		// 					))}
-		// 				</Carousel>
-		// 			</div>
-		// 			{chooseText ? (
-		// 				<div
-		// 					className="splashchar-text-container"
-		// 					onClick={() => setChooseText(false)}
-		// 				>
-		// 					<p className="splashchar-text">
-		// 						Lorem ipsum dolor sit amet, consectetur
-		// 						adipiscing elit, sed do eiusmod tempor
-		// 						incididunt ut labore et dolore magna aliqua. Ut
-		// 						enim ad minim veniam, quis nostrud exercitation
-		// 						ullamco laboris nisi ut aliquip ex ea commodo
-		// 						consequat.
-		// 					</p>
-		// 				</div>
-		// 			) : (
-		// 				<div className="splashchar-select-button-wrap">
-		// 					<button
-		// 						id="splashchar-select-button"
-		// 						onClick={() => setChooseText(true)}
-		// 					>
-		// 						Select your fighter
-		// 					</button>
-		// 				</div>
-		// 			)}
-		// 		</div>
-		// 		<div className="splash-info-section">
-		// 			<div className="splash-info-text">
-		// 				<h2>Select A Game</h2>
-		// 				<p>
-		// 					Lorem ipsum dolor sit amet, consectetur adipiscing
-		// 					elit, sed do eiusmod tempor incididunt ut labore et
-		// 					dolore magna aliqua. Ut enim ad minim veniam, quis
-		// 					nostrud exercitation ullamco laboris nisi ut aliquip
-		// 					ex ea commodo consequat.Lorem ipsum dolor sit amet,
-		// 					consectetur adipiscing elit, sed do eiusmod tempor
-		// 					incididunt ut labore et dolore magna aliqua. Ut enim
-		// 					ad minim veniam, quis nostrud exercitation ullamco
-		// 					laboris nisi ut aliquip ex ea commodo consequat.
-		// 				</p>
-		// 			</div>
-		// 			<div className="splash-info-image">
-		// 				<img
-		// 					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Splash-trivia-img.png"
-		// 					alt="Description"
-		// 				/>
-		// 				<img
-		// 					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/splash-battle-img.png"
-		// 					alt="Description"
-		// 				/>
-		// 			</div>
-		// 			<div className="splash-info-text">
-		// 				<h2>Go To Battle</h2>
-		// 				<p>
-		// 					Lorem ipsum dolor sit amet, consectetur adipiscing
-		// 					elit, sed do eiusmod tempor incididunt ut labore et
-		// 					dolore magna aliqua. Ut enim ad minim veniam, quis
-		// 					nostrud exercitation ullamco laboris nisi ut aliquip
-		// 					ex ea commodo consequat.Lorem ipsum dolor sit amet,
-		// 					consectetur adipiscing elit, sed do eiusmod tempor
-		// 					incididunt ut labore et dolore magna aliqua. Ut enim
-		// 					ad minim veniam, quis nostrud exercitation ullamco
-		// 					laboris nisi ut aliquip ex ea commodo consequat.
-		// 				</p>
-		// 			</div>
-		// 		</div>
-		// 		<div className="splash-info-section">
-		// 			<div className="splash-info-text">
-		// 				<h2>Customize Your Profile</h2>
-		// 				<p>
-		// 					Lorem ipsum dolor sit amet, consectetur adipiscing
-		// 					elit, sed do eiusmod tempor incididunt ut labore et
-		// 					dolore magna aliqua. Ut enim ad minim veniam, quis
-		// 					nostrud exercitation ullamco laboris nisi ut aliquip
-		// 					ex ea commodo consequat.Lorem ipsum dolor sit amet,
-		// 					consectetur adipiscing elit, sed do eiusmod tempor
-		// 					incididunt ut labore et dolore magna aliqua. Ut enim
-		// 					ad minim veniam, quis nostrud exercitation ullamco
-		// 					laboris nisi ut aliquip ex ea commodo consequat.
-		// 				</p>
-		// 			</div>
-		// 			<div className="splash-info-image">
-		// 				<img
-		// 					src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/Screen+Shot+2023-06-15+at+12.15.27+PM.png"
-		// 					alt="Description"
-		// 				/>
-		// 			</div>
-		// 		</div>
-		// 		<div className="splash-join-section">
-		// 			<div className="splashjoin-text-container">
-		// 				<h1>SIGN UP TODAY</h1>
-		// 				<button
-		// 					onClick={handleJoin}
-		// 					className="splash-join-btn"
-		// 				>
-		// 					JOIN
-		// 				</button>
-		// 			</div>
-		// 		</div>
-		// 	</div>
-		// </div>
 	);
 };
 
