@@ -121,20 +121,6 @@ const SplashPage = () => {
 					</button>
 				</div>
 				<div className="splash splash-section-8">
-					<div className="section-8-textbox">
-						<h2>Trivia Fighter</h2>
-						<p>
-							Don't waste another second. <span>Join </span>today!
-						</p>
-						<div className="splash-btn-section">
-							<button
-								className="splash-btn-join"
-								onClick={handleJoin}
-							>
-								sign up
-							</button>
-						</div>
-					</div>
 					<div className="img-scroll-container">
 						<img
 							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/catwithsword.jpg"
@@ -160,6 +146,34 @@ const SplashPage = () => {
 							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/fightingkangaroo.jpg"
 							alt=""
 						/>
+						<img
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/historycaesar.jpg"
+							alt=""
+						/>
+						<img
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/penguin.jpg"
+							alt=""
+						/>
+						<img
+							src="https://trivia-fighter.s3.us-west-2.amazonaws.com/Images/pinkbrain.jpg"
+							alt=""
+						/>
+					</div>
+					<div className="section-8-textbox">
+						<h2>Trivia Fighter</h2>
+
+						<div className="splash-btn-section">
+							<button
+								className="splash-btn-join"
+								onClick={handleJoin}
+							>
+								sign up
+							</button>
+						</div>
+						<p>
+							Don't waste another second. <span>Join </span>today!
+						</p>
+						<div className="circle"></div>
 					</div>
 				</div>
 			</div>
