@@ -73,7 +73,7 @@ const AddTriviaForm = ({ sessionUser, triviapackage }) => {
 		);
 		const jsonData = await response.json();
 		//saves data from api into state to be used for filling out the inputs of the form
-		if (jsonData) {
+		if (jsonData && jsonData.results && jsonData.results.length > 0) {
 			setCorrectAnswer(
 				jsonData?.results[0]?.correct_answer.replace(/&amp;/gi, "&")
 			);

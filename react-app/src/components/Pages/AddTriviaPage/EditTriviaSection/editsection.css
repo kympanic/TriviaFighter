@@ -1,10 +1,11 @@
 .editsection-container {
 	height: 750px;
 	overflow: auto;
-	width: 500px;
+	width: 440px;
 	word-wrap: break-word;
 	text-align: center;
 	margin-top: 10px;
+	border-bottom-right-radius: 20px;
 }
 
 .question-answer-container {

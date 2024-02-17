@@ -65,6 +65,7 @@
 	background-color: #77dd77;
 	color: white;
 	cursor: pointer;
+	margin-top: 25px;
 }
 
 #addtrivia-submit-btn:hover {
