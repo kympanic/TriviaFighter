@@ -67,14 +67,14 @@
 }
 
 .homepage-usermade-trivia-img {
-	height: 130px;
-	width: 130px;
+	height: 100px;
+	width: 100px;
 	border-radius: 20%;
 	cursor: pointer;
 }
 
 .homepage-usermade-trivia-img:hover {
-	transform: scale(1.2);
+	transform: scale(1.1);
 }
 .main-trivia-container {
 	height: 100%;
